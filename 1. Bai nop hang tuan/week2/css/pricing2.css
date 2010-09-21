@@ -1,0 +1,186 @@
+.pricing-content h1
+{
+    font-size:24px;
+    font-weight:bold;
+    color:#409092;
+}
+
+.pricing-content h2
+{
+    color:#344450;
+    font-size:14px;
+}
+
+.pricing-content h2 strong
+{
+    background-color:#ff5;
+    padding:0 4px;
+}
+
+#pricing2-matrix
+{
+    margin:10px 0;
+    border-collapse:collapse;
+}
+
+#pricing2-matrix td {
+    vertical-align:middle;
+    white-space:nowrap;
+}
+
+.pricing2-top-3
+{
+    text-align:center;
+    font-size:10px;
+    font-weight:bold;
+    line-height:20px;
+    color:#4c722e;
+    padding:0 4px;
+    height:20px;
+    border:solid 1px white;
+    border-width:0 1px;
+}
+
+.pricing2-head 
+{
+    padding:4px;
+    border:solid 1px #f0f0f0;
+    border-width:0 1px;
+}
+
+.pricing2-head h1
+{
+    margin:0;
+    padding:6px 0 4px 10px;
+    font-size:22px;
+    font-weight:bold;
+    line-height:18px;
+    color:#344450;
+    font-family:'trebuchet ms',helvetica,sans-serif;
+}
+
+.pricing2-head h2
+{
+    margin:0;
+    padding:4px 0 0 10px;
+    font-size:13px;
+    font-weight:bold;
+    line-height:18px;
+    color:#566670;
+    font-family:verdana,geneva,sans-serif;
+}
+
+.pricing2-head-3 h1
+{
+    color:#FFF;
+}
+
+.pricing2-head-3  h2
+{
+    color:#344450;
+}
+
+.pricing2-body {
+    padding:4px 8px 0 8px;
+    color:#409092;
+    font-size:13px;
+    font-weight:bold;
+    line-height:18px;
+    font-family:verdana,geneva,sans-serif;
+    background-color:#F4F4F4;
+    border:solid 1px #f0f0f0;
+}
+
+.pricing2-body-3 {
+    background-color:#E7F9C9;
+    border-bottom:solid 1px #E7FFC9;
+}
+
+.pricing2-button {
+    padding:12px 16px 8px 16px;
+    text-align:center;
+    background-color:#F4F4F4;
+    border:solid 1px #f0f0f0;
+    border-width:0 1px;
+}
+
+.pricing2-button-3 {
+    background-color:#E7F9C9;
+    border-bottom:solid 1px #E7FFC9;
+    border-width:0 1px;
+    padding-bottom:0;
+}
+
+.pricing2-bottom-3 {
+    height:15px;
+}
+
+.pricing2-col1 {
+    color:#656565;
+    font-size:12px;
+    padding:12px 1px 6px 1px;
+}
+
+.pricing2-col1 a, .pricing2-col1 a:visited {
+    color:#656565;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.pricing2-col1 img {
+    vertical-align:middle;
+}
+
+.planToolTip {
+    padding:4px 4px 0 4px;
+}
+
+.pricing2-include
+{
+    background:url(pricing_.gif) no-repeat;
+    padding-bottom:15px;
+    width:870px;
+    line-height:45px;
+    height:45px;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.pricing-faq
+{
+    padding-top:40px;
+    border-top:#ececed 1px solid;
+    width:870px;
+}
+
+.pricing-faq-left
+{
+    width:429px;
+    float:left;
+}
+
+.pricing-faq-right
+{
+    width:420px;
+    float:right;
+}
+
+.pricing-faq h3
+{
+    padding:0;
+    margin:0;
+    font-size:14px;
+    font-weight:normal;
+    line-height:16px;
+    color:#006b6e;
+}
+
+.pricing-faq p
+{
+    padding:0 0 12px;
+    margin:0;
+}
+
+.planToolTip {
+    vertical-align:text-top;
+}
