@@ -1,2 +1,5 @@
+1. Local host
 http://c3hcmus.no-ip.org/
 http://tntgroup.no-ip.org/
+2. Free host
+http://c3hcmus.somee.com/
