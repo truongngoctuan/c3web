@@ -1,5 +1,0 @@
-D:\Nam_4\Ung dung web\Bai tap\Template\Group_C3\Template\bin\Template.dll
-D:\Nam_4\Ung dung web\Bai tap\Template\Group_C3\Template\bin\Template.pdb
-D:\Nam_4\Ung dung web\Bai tap\Template\Group_C3\Template\obj\Debug\ResolveAssemblyReference.cache
-D:\Nam_4\Ung dung web\Bai tap\Template\Group_C3\Template\obj\Debug\Template.dll
-D:\Nam_4\Ung dung web\Bai tap\Template\Group_C3\Template\obj\Debug\Template.pdb
