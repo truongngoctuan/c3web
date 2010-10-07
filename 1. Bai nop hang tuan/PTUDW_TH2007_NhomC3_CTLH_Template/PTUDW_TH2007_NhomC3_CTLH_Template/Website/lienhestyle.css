@@ -1,0 +1,27 @@
+.creator_box
+{
+	background-color:#F4F4F4;
+	border:1px solid #F0F0F0;
+	color: black;
+	font-family:verdana,geneva,sans-serif;
+	font-size:13px;
+	line-height:34px;
+	padding:4px 8px 0;
+}
+
+.creator_box strong
+{
+	color:#409092;
+	font-weight:bold;
+}
+
+.creator_box p img
+{
+	float: left;
+	padding: 5px;
+}
+
+#creator_content
+{
+	padding: 0 0 0 100px;
+}
