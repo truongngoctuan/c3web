@@ -1,0 +1,49 @@
+.menu_ngang li{
+	display: block;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	list-style-type: none;
+	height: 37px;
+	width: 120px;
+	text-decoration: none;
+	padding-top: 22px;
+
+
+}.menu_ngang li a{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+}
+.menu_ngang li a:hover{
+	color: #F90;
+}
+#menu_ngang_item_current_page {
+	color: #C00;
+	text-decoration: none;
+}
+#menu_ngang_item_current_page:hover {
+	color: #F90;
+	text-decoration: none;
+}
+
+.menu_ngang {
+	background-image: url(images/menu_bg.gif);
+	height: 59px;
+	width: 682px;
+	margin: 0px;
+	padding: 0px;
+	vertical-align: middle;
+}
+#login_form {
+	background-image: url(images/login_form.gif);
+	height: 233px;
+	width: 243px;
+	margin: 0px;
+	padding: 0px;
+}
+.input {
+	background-image: url(images/hotline.gif);
+}
