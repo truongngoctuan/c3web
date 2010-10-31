@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs"
+    Inherits="Web_c3.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Master.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">    
+    <!--****************************************************************-->
+    <div id="top">
+        <table class="layout-table" width="996">
+            <tr>
+                <td colspan="3">
+                    <img src="images/header_bg_left.gif" width="270" height="193" alt="" />
+                </td>
+                <td colspan="2">
+                    <img src="images/header_bg_mid.gif" width="412" height="193" alt="" />
+                </td>
+                <td colspan="4">
+                    <img src="images/header_bg_right.gif" width="313" height="193" alt="" />
+                </td>
+                <td>
+                    <img src="images/spacer.gif" width="1" height="193" alt="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <ul class="menu_ngang">
+                        <li><a id="menu_ngang_item_current_page" href="TrangChu.html">Trang chủ</a></li>
+                        <li><a href="XemTuyen.html">Xem tuyến</a></li>
+                        <li><a href="HoTro.html">Hỗ trợ</a></li>
+                        <li><a href="LienHe.html">Liên hệ</a></li>
+                    </ul>
+                </td>
+                <td colspan="4">
+                    <img src="images/header_bg_right2.gif" width="313" height="59" alt="" />
+                </td>
+                <td>
+                    <img src="images/spacer.gif" width="1" height="59" alt="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="9">
+                    <img src="images/menu_bg_bottom.gif" width="995" height="22" alt="" />
+                </td>
+                <td>
+                    <img src="images/spacer.gif" width="1" height="22" alt="" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--****************************************************************-->
+    <div id="page">
+     <!--****************************************************************-->
+    <div id="left">
+        <asp:ContentPlaceHolder ID="LeftContent" runat="server">
+        Nội dung cột trái đặt ở đây
+        </asp:ContentPlaceHolder>
+    </div>
+    <!--****************************************************************-->
+    <div id="content">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        Nội dung chính đặt ở đây
+        </asp:ContentPlaceHolder>
+    </div>
+    <!--****************************************************************-->
+    <div id="right">
+        <asp:ContentPlaceHolder ID="RightContent" runat="server">
+        Nội dung cột phải đặt ở đây
+        </asp:ContentPlaceHolder>
+    </div>    
+    <!--****************************************************************-->
+    <div id="bottom">
+        <img src="images/footer_bg.gif" width="995" height="101" alt=""/>
+    </div>
+    <!--****************************************************************-->
+    </div>
+     <!--****************************************************************-->
+    </form>
+</body>
+</html>
