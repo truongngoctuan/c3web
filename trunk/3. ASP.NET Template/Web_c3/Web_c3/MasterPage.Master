@@ -46,7 +46,7 @@
             </tr>
             <tr>
                 <td colspan="9">
-                    <img src="images/menu_bg_bottom.gif" width="995" height="22" alt="" />
+                    <img src="images/menu_bg_bottom.png" width="995" height="22" alt="" />
                 </td>
                 <td>
                     <img src="images/spacer.gif" width="1" height="22" alt="" />
@@ -57,35 +57,35 @@
     <!--****************************************************************-->
     <div id="page">
      <!--****************************************************************-->
-    <div id="left">
-        <asp:ContentPlaceHolder ID="LeftContent" runat="server">
-            <asp:ObjectDataSource ID="ThemeDataSource" runat="server" 
-                SelectMethod="GetThemes" TypeName="ThemeManager"></asp:ObjectDataSource>
-            Theme List :
-            <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" 
-            DataSourceID="ThemeDataSource" DataTextField="Name" DataValueField="Name" 
-            ondatabound="ThemeList_DataBound" 
-            onselectedindexchanged="ThemeList_SelectedIndexChanged">
-            </asp:RadioButtonList>
-        </asp:ContentPlaceHolder>        
-    </div>
+        <div id="left">
+            <asp:ContentPlaceHolder ID="LeftContent" runat="server">
+                <asp:ObjectDataSource ID="ThemeDataSource" runat="server" 
+                    SelectMethod="GetThemes" TypeName="ThemeManager"></asp:ObjectDataSource>
+                Theme List :
+                <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" 
+                DataSourceID="ThemeDataSource" DataTextField="Name" DataValueField="Name" 
+                ondatabound="ThemeList_DataBound" 
+                onselectedindexchanged="ThemeList_SelectedIndexChanged">
+                </asp:RadioButtonList>
+            </asp:ContentPlaceHolder>        
+        </div>
+        <!--****************************************************************-->
+        <div id="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            Nội dung chính đặt ở đây
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--****************************************************************-->
+        <div id="right">
+            <asp:ContentPlaceHolder ID="RightContent" runat="server">
+            Nội dung cột phải đặt ở đây
+            </asp:ContentPlaceHolder>
+        </div>    
     <!--****************************************************************-->
-    <div id="content">
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        Nội dung chính đặt ở đây
-        </asp:ContentPlaceHolder>
     </div>
-    <!--****************************************************************-->
-    <div id="right">
-        <asp:ContentPlaceHolder ID="RightContent" runat="server">
-        Nội dung cột phải đặt ở đây
-        </asp:ContentPlaceHolder>
-    </div>    
     <!--****************************************************************-->
     <div id="bottom">
         <img src="images/footer_bg.gif" width="995" height="101" alt=""/>
-    </div>
-    <!--****************************************************************-->
     </div>
      <!--****************************************************************-->
     </form>

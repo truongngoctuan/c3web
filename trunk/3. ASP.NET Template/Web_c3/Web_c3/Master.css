@@ -1,14 +1,38 @@
 ﻿body
 {
-	margin: 0 0 0 5px;
+	margin: 0;
 	padding: 0;
-	background-color: #FFFFFF;
+	
+}
+
+form 
+{
+    position:relative;
+    float:left;
+    clear:right;
+    background:none;
+    padding:0;
+    margin:0;
+    border:none;
+}
+
+/*---header-----------------------------------------------------------------*/
+div#top
+{
+    margin: 0;
+	padding: 0;
+	position:relative;
+    float:left;
+    clear:both;
 }
 
 table.layout-table
 {
 	border: 0;
 	border-spacing: 0;
+	position:relative;
+    float:left;
+    clear:right;
 }
 
 table.layout-table td
@@ -37,7 +61,8 @@ table.layout-table td.content .header
 	font:bold 20px tahoma;
 	text-decoration:none;
 }
-
+/*---menu ngang-----------------------------------------------------------------*/
+/*---các style chung của menu ngang, màu sắc. hover, visited ở trong theme------*/
 .menu_ngang li{
 	display: block;
 	float: left;
@@ -48,27 +73,19 @@ table.layout-table td.content .header
 	width: 120px;
 	text-decoration: none;
 	padding-top: 22px;
-
-
 }
 .menu_ngang li a{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	font-weight: bold;
-	color: #000;
 	text-decoration: none;
 }
-.menu_ngang li a:hover{
-	color: #F90;
-}
+
 #menu_ngang_item_current_page {
 	color: #C00;
 	text-decoration: none;
 }
-#menu_ngang_item_current_page:hover {
-	color: #F90;
-	text-decoration: none;
-}
+
 .menu_ngang {
 	background-image: url(images/menu_bg.gif);
 	height: 59px;
@@ -78,15 +95,12 @@ table.layout-table td.content .header
 	vertical-align: middle;
 }
 
-form {
-	background:#fff;
-	padding:1em;
-	border:1px solid #eee;
-}
+/*---kết thúc css menu ngang---------------------------------------------------*/
 
 div#page
 {
-    
+    position:relative;
+    float:left;
 }
 
 div#left
@@ -107,4 +121,9 @@ div#right
     float:right;
 }
 
+div#bottom
+{
+    position:relative;
+    float:left;
+}
 
