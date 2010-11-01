@@ -59,8 +59,15 @@
      <!--****************************************************************-->
     <div id="left">
         <asp:ContentPlaceHolder ID="LeftContent" runat="server">
-        Nội dung cột trái đặt ở đây
-        </asp:ContentPlaceHolder>
+            <asp:ObjectDataSource ID="ThemeDataSource" runat="server" 
+                SelectMethod="GetThemes" TypeName="ThemeManager"></asp:ObjectDataSource>
+            Theme List :
+            <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" 
+            DataSourceID="ThemeDataSource" DataTextField="Name" DataValueField="Name" 
+            ondatabound="ThemeList_DataBound" 
+            onselectedindexchanged="ThemeList_SelectedIndexChanged">
+            </asp:RadioButtonList>
+        </asp:ContentPlaceHolder>        
     </div>
     <!--****************************************************************-->
     <div id="content">
