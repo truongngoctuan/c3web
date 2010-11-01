@@ -1,6 +1,23 @@
 ﻿body
 {
-	margin: 0 0 0 5px;
-	padding: 0;
-	background-color: #FFFFFF;
 }
+
+/*---css menu ngang---------------------------------------------------*/
+/* điều chỉnh màu sắc các thành phần trong menu 
+thay đổi back ground*/
+.menu_ngang li a{
+	color: #000;
+}
+.menu_ngang li a:hover{
+	color: #F90;
+}
+#menu_ngang_item_current_page {
+	color: #C00;
+}
+#menu_ngang_item_current_page:hover {
+	color: #F90;
+}
+.menu_ngang {
+	background-image: url(../../images/menu_bg.gif);
+}
+/*----------------------------------------------------------------------*/
