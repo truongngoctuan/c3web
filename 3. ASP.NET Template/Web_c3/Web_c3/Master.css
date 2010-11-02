@@ -1,66 +1,15 @@
 ﻿body
 {
-	margin: 0;
-	padding: 0;
-	
+    background:#64b1ff;
+    margin:auto;
 }
 
 form 
 {
-    position:relative;
-    float:left;
-    clear:right;
-    background:none;
-    padding:0;
-    margin:0;
-    border:none;
+    background:#64b1ff;
+    margin:auto;
 }
 
-/*---header-----------------------------------------------------------------*/
-div#top
-{
-    margin: 0;
-	padding: 0;
-	position:relative;
-    float:left;
-    clear:both;
-}
-
-table.layout-table
-{
-	border: 0;
-	border-spacing: 0;
-	position:relative;
-    float:left;
-    clear:right;
-}
-
-table.layout-table td
-{
-	padding: 0;
-	margin: 0;
-	text-align: inherit;
-}
-
-table.layout-table td.content
-{
-	border: 1px solid #D5D8DE;	
-	padding: 5px;
-	vertical-align: top;
-}
-
-table.layout-table td.content img
-{
-	float: left;
-	padding: 5px;
-}
-
-table.layout-table td.content .header
-{
-	color: #094C93;
-	font:bold 20px tahoma;
-	text-decoration:none;
-}
 /*---menu ngang-----------------------------------------------------------------*/
 /*---các style chung của menu ngang, màu sắc. hover, visited ở trong theme------*/
 .menu_ngang li{
@@ -80,12 +29,10 @@ table.layout-table td.content .header
 	font-weight: bold;
 	text-decoration: none;
 }
-
 #menu_ngang_item_current_page {
 	color: #C00;
 	text-decoration: none;
 }
-
 .menu_ngang {
 	background-image: url(images/menu_bg.gif);
 	height: 59px;
@@ -94,36 +41,42 @@ table.layout-table td.content .header
 	padding: 0px;
 	vertical-align: middle;
 }
-
 /*---kết thúc css menu ngang---------------------------------------------------*/
+
+div#site
+{
+    background:#9bcdff;
+    width:996px;
+    margin:auto;
+}
+
+div#top
+{
+    width:996px;
+}
 
 div#page
 {
-    position:relative;
-    float:left;
+    
 }
 
 div#left
 {
-    position:relative;
     float:left;
 }
 
 div#content
 {
-   position:relative;
    float:left;
 }
 
 div#right
 {
-    position:relative;
     float:right;
 }
 
 div#bottom
 {
-    position:relative;
-    float:left;
+
 }
 

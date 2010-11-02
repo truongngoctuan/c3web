@@ -32,15 +32,6 @@ namespace Web_c3 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// LeftContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder LeftContent;
-        
-        /// <summary>
         /// ThemeDataSource control.
         /// </summary>
         /// <remarks>
@@ -57,6 +48,15 @@ namespace Web_c3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList ThemeList;
+        
+        /// <summary>
+        /// LeftContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder LeftContent;
         
         /// <summary>
         /// MainContent control.
