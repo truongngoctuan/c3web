@@ -20,4 +20,15 @@ thay đổi back ground*/
 .menu_ngang {
 	background-image: url(../../images/menu_bg.gif);
 }
+
+.StaticItem a
+{
+	color: #C00;
+}
+
+.StaticItem a:hover
+{
+	color: #F90;
+}
+
 /*----------------------------------------------------------------------*/

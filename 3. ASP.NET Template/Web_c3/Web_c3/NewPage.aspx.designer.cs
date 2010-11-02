@@ -11,6 +11,6 @@
 namespace Web_c3 {
     
     
-    public partial class Default {
+    public partial class NewPage {
     }
 }
