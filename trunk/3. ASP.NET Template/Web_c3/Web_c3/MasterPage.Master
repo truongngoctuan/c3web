@@ -9,76 +9,52 @@
     </asp:ContentPlaceHolder>
     <link href="Master.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-    <form id="form1" runat="server">    
+<body>    
+    <form id="form1" runat="server"> 
+    <div id="site">   
     <!--****************************************************************-->
     <div id="top">
-        <table class="layout-table" width="996">
-            <tr>
-                <td colspan="3">
-                    <img src="images/header_bg_left.gif" width="270" height="193" alt="" />
-                </td>
-                <td colspan="2">
-                    <img src="images/header_bg_mid.gif" width="412" height="193" alt="" />
-                </td>
-                <td colspan="4">
-                    <img src="images/header_bg_right.gif" width="313" height="193" alt="" />
-                </td>
-                <td>
-                    <img src="images/spacer.gif" width="1" height="193" alt="" />
-                </td>
-            </tr>
-            <tr>
-                <td colspan="5">
-                    <ul class="menu_ngang">
-                        <li><a id="menu_ngang_item_current_page" href="TrangChu.html">Trang chủ</a></li>
-                        <li><a href="XemTuyen.html">Xem tuyến</a></li>
-                        <li><a href="HoTro.html">Hỗ trợ</a></li>
-                        <li><a href="LienHe.html">Liên hệ</a></li>
-                    </ul>
-                </td>
-                <td colspan="4">
-                    <img src="images/header_bg_right2.gif" width="313" height="59" alt="" />
-                </td>
-                <td>
-                    <img src="images/spacer.gif" width="1" height="59" alt="" />
-                </td>
-            </tr>
-            <tr>
-                <td colspan="9">
-                    <img src="images/menu_bg_bottom.png" width="995" height="22" alt="" />
-                </td>
-                <td>
-                    <img src="images/spacer.gif" width="1" height="22" alt="" />
-                </td>
-            </tr>
-        </table>
+        <img style="float:left" src="images/header_bg_left.gif" width="270" height="193" alt="" />
+        <img style="float:left" src="images/header_bg_mid.gif" width="412" height="193" alt="" />
+        <img style="float:left" src="images/header_bg_right.gif" width="313" height="193" alt="" />
+        <img style="float:left" src="images/spacer.gif" width="1" height="193" alt="" />
+        <ul style="float:left;" class="menu_ngang">
+            <li><a id="menu_ngang_item_current_page" href="TrangChu.html">Trang chủ</a></li>
+            <li><a href="XemTuyen.html">Xem tuyến</a></li>
+            <li><a href="HoTro.html">Hỗ trợ</a></li>
+            <li><a href="LienHe.html">Liên hệ</a></li>
+        </ul>
+        <img style="float:left;" src="images/header_bg_right2.gif" width="313" height="59" alt="" />
+        <img style="float:left;" src="images/spacer.gif" width="1" height="59" alt="" />
+        <img style="float:left;" src="images/menu_bg_bottom.gif" width="995" height="22" alt="" />
+        <img style="float:left;" src="images/spacer.gif" width="1" height="22" alt="" />
     </div>
     <!--****************************************************************-->
     <div id="page">
      <!--****************************************************************-->
         <div id="left">
+            <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
+                TypeName="ThemeManager"></asp:ObjectDataSource>
+            Theme List :
+            <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" DataSourceID="ThemeDataSource"
+                DataTextField="Name" DataValueField="Name" OnDataBound="ThemeList_DataBound"
+                OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
+            </asp:RadioButtonList>
+            
             <asp:ContentPlaceHolder ID="LeftContent" runat="server">
-                <asp:ObjectDataSource ID="ThemeDataSource" runat="server" 
-                    SelectMethod="GetThemes" TypeName="ThemeManager"></asp:ObjectDataSource>
-                Theme List :
-                <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" 
-                DataSourceID="ThemeDataSource" DataTextField="Name" DataValueField="Name" 
-                ondatabound="ThemeList_DataBound" 
-                onselectedindexchanged="ThemeList_SelectedIndexChanged">
-                </asp:RadioButtonList>
-            </asp:ContentPlaceHolder>        
+            Chỗ dành cho trang nội dung, không đụng vào.
+            </asp:ContentPlaceHolder>
         </div>
         <!--****************************************************************-->
         <div id="content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            Nội dung chính đặt ở đây
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"> 
+            Chỗ dành cho trang nội dung, không đụng vào.           
             </asp:ContentPlaceHolder>
         </div>
         <!--****************************************************************-->
         <div id="right">
-            <asp:ContentPlaceHolder ID="RightContent" runat="server">
-            Nội dung cột phải đặt ở đây
+            <asp:ContentPlaceHolder ID="RightContent" runat="server"> 
+            Chỗ dành cho trang nội dung, không đụng vào.           
             </asp:ContentPlaceHolder>
         </div>    
     <!--****************************************************************-->
@@ -87,7 +63,8 @@
     <div id="bottom">
         <img src="images/footer_bg.gif" width="995" height="101" alt=""/>
     </div>
-     <!--****************************************************************-->
-    </form>
+    <!--****************************************************************-->
+    </div>
+    </form>    
 </body>
 </html>
