@@ -1,7 +1,11 @@
 ﻿body
 {
+    background:#fff;
 }
-
+/*hình ảnh cho header-----------------------------------------------------------*/
+#header_bg_right2 {
+	background: url("../../images/header_bg_right2.gif");
+}
 /*---css menu ngang---------------------------------------------------*/
 /* điều chỉnh màu sắc các thành phần trong menu 
 thay đổi back ground*/
