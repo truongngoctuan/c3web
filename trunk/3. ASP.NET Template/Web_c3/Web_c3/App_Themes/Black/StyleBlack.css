@@ -1,24 +1,37 @@
 ﻿body
 {
-    background:lightGreen;
+    color:#0084B4;
+    background:#8EC1DA;
+    font-weight:bold;
+    font-family:'Helvetica Neue',Sans-serif;
+    font-size:13px;
+}
+/*hình ảnh cho header-----------------------------------------------------------*/
+#header_bg_right2 {
+	background: url("images/header_bg_right2.jpg");
 }
 /*---css menu ngang---------------------------------------------------*/
 /* điều chỉnh màu sắc các thành phần trong menu 
 thay đổi back ground*/
 .menu_ngang li a{
-	color: #714300;
+	color: #BABABA;
 }
 .menu_ngang li a:hover{
-	color: #F90;
+	color: #FFFFFF;
 }
 #menu_ngang_item_current_page {
-	color: #A03EC1;
+	color: #FFFFFF;
 }
 #menu_ngang_item_current_page:hover {
-	color: #B075FF;
+	color: #4AD2FF;
 }
 .menu_ngang {
-	background-image: url(../../images/menu_bg.gif);
+	background-image: url(images/menu_bg.jpg);
+}
+
+.header_bg_right2 
+{
+    src:url(images/header_bg_right2.jpg);
 }
 
 .StaticItem a
@@ -34,6 +47,12 @@ thay đổi back ground*/
 /*------------------------------------------------------------------------*/
 
 /*---------------------------------------------------*/
+/*các thẻ div chính*/
+div#site
+{
+    background:#DAECF5;
+}
+
 div#top
 {
 }

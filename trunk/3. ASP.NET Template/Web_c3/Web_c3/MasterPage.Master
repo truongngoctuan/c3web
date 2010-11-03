@@ -24,7 +24,9 @@
             <li><a href="HoTro.html">Hỗ trợ</a></li>
             <li><a href="LienHe.html">Liên hệ</a></li>
         </ul>
-        <img style="float:left;" src="images/header_bg_right2.gif" width="313" height="59" alt="" />
+        
+        <div id="header_bg_right2"></div>
+        <%--<img id="header_bg_right2" style="float:left;" src="images/header_bg_right2.gif" width="313" height="59" alt="" />--%>
         <img style="float:left;" src="images/spacer.gif" width="1" height="59" alt="" />
         <img style="float:left;" src="images/menu_bg_bottom.gif" width="995" height="22" alt="" />
         <img style="float:left;" src="images/spacer.gif" width="1" height="22" alt="" />
