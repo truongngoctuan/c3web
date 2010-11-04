@@ -21,6 +21,10 @@ public class ThemeManager
 
         foreach (DirectoryInfo d in dArrInfo)
         {
+            if (d.Name == @".svn")
+            {
+                continue;
+            }
             Theme theme = new Theme(d.Name);
             themeList.Add(theme);
         }

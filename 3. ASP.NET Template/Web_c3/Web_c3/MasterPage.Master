@@ -30,7 +30,8 @@
             <StaticMenuItemStyle CssClass="StaticItem" />
         </asp:Menu>
         <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server" SiteMapProvider="XmlSiteMapProvider" />
-        <img style="float:left;" src="images/header_bg_right2.gif" width="313" height="59" alt="" />        
+        <%--<img style="float:left;" src="images/header_bg_right2.gif" width="313" height="59" alt="" />        --%>
+        <div id="header_bg_right2"></div>
         <img style="float:left;" src="images/menu_bg_bottom.gif" width="995" height="22" alt="" />
         
     </div>
