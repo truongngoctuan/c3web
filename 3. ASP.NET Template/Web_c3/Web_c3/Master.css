@@ -1,17 +1,19 @@
 ﻿body
 {
-    margin:auto;
+    margin:0;
+    padding:0;
+}
+
+div, td, table, tr, img
+{
+	margin:0;
+	padding:0;
+	border:0;
 }
 
 form 
 {
     margin:auto;
-}
-/*hình ảnh cho header-----------------------------------------------------------*/
-#header_bg_right2 {
-	float: left;
-	width:313px;
-	height:59px;
 }
 
 #header_right 
@@ -25,36 +27,6 @@ form
 
 /*---menu ngang-----------------------------------------------------------------*/
 /*---các style chung của menu ngang, màu sắc. hover, visited ở trong theme------*/
-.menu_ngang li{
-	display: block;
-	float: left;
-	text-align: center;
-	vertical-align: middle;
-	list-style-type: none;
-	height: 37px;
-	width: 120px;
-	text-decoration: none;
-	padding-top: 22px;
-}
-.menu_ngang li a{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	font-weight: bold;
-	text-decoration: none;
-}
-#menu_ngang_item_current_page {
-	/*color: #C00;*/
-	text-decoration: none;
-}
-.menu_ngang {
-	background-image: url(images/menu_bg.gif);
-	height: 59px;
-	width: 682px;
-	margin: 0px;
-	padding: 0px;
-	vertical-align: middle;
-}
-
 .Menu {
 	background-image: url(images/menu_bg.gif);
 	height: 59px;
