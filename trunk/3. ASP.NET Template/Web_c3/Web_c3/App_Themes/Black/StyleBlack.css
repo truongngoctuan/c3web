@@ -6,20 +6,34 @@
     font-family:'Helvetica Neue',Sans-serif;
     font-size:13px;
 }
+
+/*hình ảnh cho header-----------------------------------------------------------*/
+#header_bg_right2 {
+	background: url("images/header_bg_right2.jpg");
+}
 /*---css menu ngang---------------------------------------------------*/
 /* điều chỉnh màu sắc các thành phần trong menu 
 thay đổi back ground*/
-
-.StaticItem a
-{
-	color: #714300;
+.Menu {
+	background-image: url(images/menu_bg.jpg);
 }
 
-.StaticItem a:hover
+.DynamicItem a
 {
-	color: #F90;
+	color: #FFFFFF;
 }
 
+.DynamicItem a {
+	color: #4AD2FF;
+}
+
+.StaticItem a {	
+    color: #BABABA;
+}
+
+.StaticItem a:hover {
+	color: #FFFFFF;
+}
 /*------------------------------------------------------------------------*/
 
 /*---------------------------------------------------*/

@@ -2,18 +2,31 @@
 {
     background:#fff;
 }
-
+/*hình ảnh cho header-----------------------------------------------------------*/
+#header_bg_right2 {
+	background: url("images/header_bg_right2.gif");
+}
 /*---css menu ngang---------------------------------------------------*/
 /* điều chỉnh màu sắc các thành phần trong menu 
 thay đổi back ground*/
-.StaticItem a
-{
-	color: #C00;
+.Menu {
+	background-image: url(images/menu_bg.gif);
 }
 
-.StaticItem a:hover
+.DynamicItem a
 {
+	color: #FFFFFF;
+}
+
+.DynamicItem a {
+	color: #4AD2FF;
+}
+
+.StaticItem a {	
+    color: #C00;
+}
+
+.StaticItem a:hover {
 	color: #F90;
 }
-
-/*----------------------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
