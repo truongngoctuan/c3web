@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_Login.ascx.cs" Inherits="Web_c3.user_Login" %>
-<asp:Panel ID="Panel1" runat="server" BackImageUrl="~/images/login_form.gif" 
-    Height="234px" Width="244px">
+<asp:Panel ID="Panel1" runat="server" BackImageUrl="~/images/login_form.png" 
+    Height="243px" Width="251px">
     <asp:TextBox ID="txtUsername" runat="server" 
         
         
