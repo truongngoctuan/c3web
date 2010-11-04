@@ -5,9 +5,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    Nội dung cột trái ở đây
-    <br />
-    Không được xóa đánh dấu ContentPlaceHolder
+    <img alt="" src="images/Left_1.jpg" style="width:195px; height: 146px" />
+    <img alt="" src="images/Left_2.png" style="width:195px; height: 94px" /> 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div>

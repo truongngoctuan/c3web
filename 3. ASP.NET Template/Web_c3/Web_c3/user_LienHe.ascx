@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_LienHe.ascx.cs" Inherits="Web_c3.user_LienHe" %>
 <asp:Panel ID="pnLienHe" runat="server" BorderStyle="None" Height="610px" 
-    Width="250px">
+    Width="250px" style="padding:10px">
     <asp:Label ID="lbGuiNDLH" 
         style=" LEFT: 0px; POSITION: relative; TOP: -2px; width: 503px; height: 21px; margin-bottom: 0px; background-color : Transparent;"
         runat="server" Text="GỬI NỘI DUNG LIÊN HỆ" 
@@ -42,7 +42,7 @@
         
         style=" LEFT: 0px; POSITION: relative; TOP: 29px; width: 448px; height: 22px; margin-bottom: 0px; background-color : Transparent;"></asp:TextBox>
     <asp:TextBox ID="txtNoiDung" runat="server" BackColor="White" 
-        style=" LEFT: 1px; POSITION: relative; TOP: 67px; width: 543px; height: 183px; margin-bottom: 0px; background-color : Transparent;" 
+        style=" LEFT: 1px; POSITION: relative; TOP: 67px; width: 485px; height: 183px; margin-bottom: 0px; background-color : Transparent;" 
         TextMode="MultiLine"></asp:TextBox>
     <asp:Button ID="btnGuiThongTin" runat="server" 
         style=" LEFT: 213px; POSITION: relative; TOP: 94px; width: 101px; height: 29px; margin-bottom: 0px; background-color : Transparent;" 
