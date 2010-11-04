@@ -14,6 +14,14 @@ form
 	height:59px;
 }
 
+#header_right 
+{
+	float:left; 
+	background-image: url(images/header_bg_right.gif);
+	width:313px;
+	height:193px;	
+	direction:rtl;
+}
 
 /*---menu ngang-----------------------------------------------------------------*/
 /*---các style chung của menu ngang, màu sắc. hover, visited ở trong theme------*/

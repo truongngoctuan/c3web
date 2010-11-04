@@ -41,15 +41,6 @@ namespace Web_c3 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// SiteMapDataSourceMenu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSourceMenu;
-        
-        /// <summary>
         /// ThemeDataSource control.
         /// </summary>
         /// <remarks>
@@ -66,6 +57,15 @@ namespace Web_c3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList ThemeList;
+        
+        /// <summary>
+        /// SiteMapDataSourceMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSourceMenu;
         
         /// <summary>
         /// LeftContent control.

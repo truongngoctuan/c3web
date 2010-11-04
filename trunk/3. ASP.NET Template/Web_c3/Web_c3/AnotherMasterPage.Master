@@ -15,7 +15,15 @@
     <div id="top">
         <img style="float:left" src="images/header_bg_left.gif" width="270" height="193" alt="" />
         <img style="float:left" src="images/header_bg_mid.gif" width="412" height="193" alt="" />
-        <img style="float:left" src="images/header_bg_right.gif" width="313" height="193" alt="" />
+        <div id="header_right">
+            <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
+                TypeName="ThemeManager"></asp:ObjectDataSource>
+            <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" DataSourceID="ThemeDataSource"
+                DataTextField="Name" DataValueField="Name" RepeatDirection="Horizontal" OnDataBound="ThemeList_DataBound"
+                OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
+            </asp:RadioButtonList>
+        </div>
+        
         <img style="float:left" src="images/spacer.gif" width="1" height="193" alt="" />
         <asp:Menu style="float:left" CssClass="Menu" runat="server" DataSourceID="SiteMapDataSourceMenu" Height="59px"
                         Orientation="Horizontal" StaticDisplayLevels="2">
@@ -32,14 +40,6 @@
     <div id="page">
      <!--****************************************************************-->
         <div id="left">
-            <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
-                TypeName="ThemeManager"></asp:ObjectDataSource>
-            Theme List :
-            <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" DataSourceID="ThemeDataSource"
-                DataTextField="Name" DataValueField="Name" OnDataBound="ThemeList_DataBound"
-                OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
-            </asp:RadioButtonList>
-            
             <asp:ContentPlaceHolder ID="LeftContent" runat="server">
             Chỗ dành cho trang nội dung, không đụng vào.
             </asp:ContentPlaceHolder>
