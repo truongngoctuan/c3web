@@ -24,6 +24,12 @@ form
 	width:313px;
 	height:59px;
 }
+
+#imHotLine
+{
+	width:auto;
+}
+
 /*---menu ngang-----------------------------------------------------------------*/
 /*---các style chung của menu ngang, màu sắc. hover, visited ở trong theme------*/
 .Menu {
@@ -65,27 +71,32 @@ div#site
 
 div#top
 {
-    width:996px;
+    width:100%;
 }
 
 div#page
 {
-    
+    width:100%;
 }
 
 div#left
 {
     float:left;
+    width:20%;
 }
 
 div#content
 {
-   float:left;
+   float: left;
+   width: 54%;
+   border-left: solid 1px #D5D5D5;
+   border-right: solid 1px #D5D5D5;   
 }
 
 div#right
 {
     float:right;
+    width:25%;
 }
 
 div#bottom
