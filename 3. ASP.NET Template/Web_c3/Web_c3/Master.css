@@ -32,12 +32,13 @@ form
 
 /*---menu ngang-----------------------------------------------------------------*/
 /*---các style chung của menu ngang, màu sắc. hover, visited ở trong theme------*/
+
 .Menu {
 	height: 59px;
 	width: 682px;
 	margin: 0px;
 	padding: 0px;
-	vertical-align: middle;
+	vertical-align: middle;	
 }
 
 .DynamicItem

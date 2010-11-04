@@ -9,8 +9,11 @@
 /*---css menu ngang---------------------------------------------------*/
 /* điều chỉnh màu sắc các thành phần trong menu 
 thay đổi back ground*/
-.Menu {
+
+.Menu 	
+{
 	background-image: url(images/menu_bg.gif);
+	clear:left;
 }
 
 .DynamicItem a
@@ -29,4 +32,6 @@ thay đổi back ground*/
 .StaticItem a:hover {
 	color: #F90;
 }
+
+
 /*------------------------------------------------------------------------*/
