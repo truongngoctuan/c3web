@@ -8,3 +8,8 @@ C:\My Documents\1. Study\2010-2011\3. Phat trien ung dung web\working copy c3\3.
 C:\My Documents\1. Study\2010-2011\3. Phat trien ung dung web\working copy c3\3. ASP.NET Template\Web_c3\Web_c3\obj\Debug\ResolveAssemblyReference.cache
 C:\My Documents\1. Study\2010-2011\3. Phat trien ung dung web\working copy c3\3. ASP.NET Template\Web_c3\Web_c3\obj\Debug\Web_c3.dll
 C:\My Documents\1. Study\2010-2011\3. Phat trien ung dung web\working copy c3\3. ASP.NET Template\Web_c3\Web_c3\obj\Debug\Web_c3.pdb
+D:\Temp\c3web\3. ASP.NET Template\Web_c3\Web_c3\bin\Web_c3.dll
+D:\Temp\c3web\3. ASP.NET Template\Web_c3\Web_c3\bin\Web_c3.pdb
+D:\Temp\c3web\3. ASP.NET Template\Web_c3\Web_c3\obj\Debug\ResolveAssemblyReference.cache
+D:\Temp\c3web\3. ASP.NET Template\Web_c3\Web_c3\obj\Debug\Web_c3.dll
+D:\Temp\c3web\3. ASP.NET Template\Web_c3\Web_c3\obj\Debug\Web_c3.pdb

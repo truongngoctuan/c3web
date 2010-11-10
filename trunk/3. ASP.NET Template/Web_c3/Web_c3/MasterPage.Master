@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AnotherMasterPage.master.cs" Inherits="Web_c3.AnotherMasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Web_c3.AnotherMasterPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,12 +23,25 @@
                 OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
             </asp:RadioButtonList>
         </div>        
+        <div id="Menu">
+        <asp:Menu runat="server" DataSourceID="SiteMapDataSourceMenu"
+                        Orientation="Horizontal" 
+                        staticdisplaylevels="2" 
+                        DynamicHorizontalOffset="1"
+                        staticsubmenuindent="1px" 
+                        MaximumDynamicDisplayLevels="5"
+                        Height="59px">
         
-        <asp:Menu style="float:left" CssClass="Menu" runat="server" DataSourceID="SiteMapDataSourceMenu"
-                        Orientation="Horizontal" StaticDisplayLevels="2" BackColor="Transparent">
-            <DynamicMenuItemStyle CssClass="DynamicItem" />
-            <StaticMenuItemStyle CssClass="StaticItem" />
-        </asp:Menu>        
+        <StaticMenuItemStyle CssClass="staticMenuItemStyle"/>
+        <StaticHoverStyle CssClass="staticHoverStyle" />
+        <StaticSelectedStyle CssClass="staticMenuItemSelectedStyle"/> 
+        
+        <DynamicMenuItemStyle CssClass="dynamicMenuItemStyle" />      
+        <DynamicHoverStyle CssClass="dynamicMenuItemHover" />
+        <DynamicMenuStyle CssClass="dynamicMenuStyle" />
+        <DynamicSelectedStyle CssClass="dynamicMenuItemSelectedStyle" />
+        </asp:Menu>   
+        </div>     
         <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server" SiteMapProvider="XmlSiteMapProvider" />
     
         <%--<img style="float:left;" src="images/header_bg_right2.gif" width="313" height="59" alt="" />        --%>
