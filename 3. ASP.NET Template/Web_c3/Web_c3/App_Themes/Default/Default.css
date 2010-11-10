@@ -10,7 +10,7 @@
 /* điều chỉnh màu sắc các thành phần trong menu 
 thay đổi back ground*/
 
-.Menu 	
+#Menu 	
 {
 	background-image: url(images/menu_bg.gif);
 	clear:left;
