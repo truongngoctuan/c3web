@@ -15,7 +15,7 @@ public class ThemeManager
 {
     public static List<Theme> GetThemes()
     {
-        DirectoryInfo dInfo = new DirectoryInfo(System.Web.HttpContext.Current.Server.MapPath("App_Themes"));
+        DirectoryInfo dInfo = new DirectoryInfo(System.Web.HttpContext.Current.Server.MapPath("~/App_Themes"));
         DirectoryInfo[] dArrInfo = dInfo.GetDirectories();
         List<Theme> themeList = new List<Theme>();
 
