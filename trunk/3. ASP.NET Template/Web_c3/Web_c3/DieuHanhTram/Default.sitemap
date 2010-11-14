@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode>
+    <siteMapNode url="Default.aspx" title="Trang Chủ"  description="Trang Chủ"/>
+    <siteMapNode title="Các hoạt động thường nhật"  description="Các hoạt động thường nhật">
+      <siteMapNode url="DieuHanhTram/PhanCongChuyen.aspx" title="Phân công chuyến"  description="Phân công chuyến" />
+      <siteMapNode url="DieuHanhTram/TheoDoiChuyenXeDiVe.aspx" title="Theo dõi chuyến xe đi về"  description="Theo dõi chuyến xe đi về" />
+      <siteMapNode url="DieuHanhTram/XacNhanXeToiTram.aspx" title="Xác nhận xe tới trạm"  description="Xác nhận xe tới trạm" />
+      <siteMapNode url="DieuHanhTram/CapNhatTinhTrangCho.aspx" title="Cập nhật tình trạng chỗ"  description="Cập nhật tình trạng chỗ" />
+    </siteMapNode>
+
+    <siteMapNode title="Quản lý chuyến"  description="Quản lý chuyến">
+      <siteMapNode url="DieuHanhTram/ThemChuyen.aspx" title="Thêm chuyến"  description="Thêm chuyến" />
+      <siteMapNode url="DieuHanhTram/XoaChuyen.aspx" title="Xóa chuyến"  description="Xóa chuyến" />
+      <siteMapNode url="DieuHanhTram/SuaChuyen.aspx" title="Sửa chuyến"  description="Sửa chuyến" />
+    </siteMapNode>
+
+    <siteMapNode title="Phản hồi"  description="Phản hồi">
+      <siteMapNode url="DieuHanhTram/GhiNhanPhanHoi.aspx" title="Ghi nhận phản hồi"  description="Ghi nhận phản hồi" />
+      <siteMapNode url="DieuHanhTram/XemPhanHoi.aspx" title="Xem phản hồi"  description="Xem phản hồi" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
