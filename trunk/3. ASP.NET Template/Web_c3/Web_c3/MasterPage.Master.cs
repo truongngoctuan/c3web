@@ -11,6 +11,16 @@ namespace Web_c3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //http://www.codeproject.com/KB/aspnet/sitemapwithmasterpage.aspx
+            //chinh menu co noi dung dong
+            if (!IsPostBack)
+            {
+                string sURL = Request.Url.ToString().ToLower();
+                if (sURL.Contains("/admin/"))
+                {
+                    SiteMapDataSourceMenu.SiteMapProvider = "AdminSiteMap";
+                }
+            }            
         }
 
         protected void ThemeList_SelectedIndexChanged(object sender, EventArgs e)
@@ -22,6 +32,11 @@ namespace Web_c3
         protected void ThemeList_DataBound(object sender, EventArgs e)
         {
             ThemeList.SelectedValue = Page.Theme;
+        }
+
+        public void SetSiteMap(string strSiteMapNameProvider)
+        {
+            SiteMapDataSourceMenu.SiteMapProvider = strSiteMapNameProvider;
         }
     }
 }
