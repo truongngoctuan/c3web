@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web_c3.Admin {
+namespace Web_c3.TaiXe {
     
     
-    public partial class XoaTaiKhoan {
+    public partial class XemThongBao {
     }
 }

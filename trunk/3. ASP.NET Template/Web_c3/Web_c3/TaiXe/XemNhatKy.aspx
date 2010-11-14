@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="XemNhatKy.aspx.cs" Inherits="Web_c3.TaiXe.XemNhatKy" %>
