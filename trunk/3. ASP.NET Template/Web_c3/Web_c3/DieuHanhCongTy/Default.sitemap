@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode>
+    <siteMapNode url="DieuHanhCongTy/Default.aspx" title="Trang Chủ"  description="Trang Chủ"/>
+    <siteMapNode title="QL xe"  description="Quản lý xe">
+      <siteMapNode url="DieuHanhCongTy/NhapXeMoi.aspx" title="Nhập xe mới"  description="Nhập xe mới" />
+      <siteMapNode url="DieuHanhCongTy/CapNhatTinhTrangXe.aspx" title="Cập nhật tình trạng xe"  description="Cập nhật tình trạng xe" />
+      <siteMapNode url="DieuHanhCongTy/PhanXeChoTaiXe.aspx" title="Phân xe cho tài xế"  description="Phân xe cho tài xế" />
+    </siteMapNode>
+
+    <siteMapNode title="QL nhân viên"  description="Quản lý nhân viên">
+      <siteMapNode url="DieuHanhCongTy/ThemNhanVien.aspx" title="Thêm nhân viên"  description="Thêm nhân viên" />
+      <siteMapNode url="DieuHanhCongTy/XoaNhanVien.aspx" title="Xóa nhân viên"  description="Xóa nhân viên" />
+      <siteMapNode url="DieuHanhCongTy/CapNhatNhanVien.aspx" title="Cập nhật nhân viên"  description="Cập nhật nhân viên" />
+    </siteMapNode>
+
+    <siteMapNode title="QL tuyến"  description="Quản lý tuyến">
+      <siteMapNode url="DieuHanhCongTy/ThemTuyen.aspx" title="Thêm tuyến"  description="Thêm tuyến" />
+      <siteMapNode url="DieuHanhCongTy/XoaTuyen.aspx" title="Xóa tuyến"  description="Xóa tuyến" />
+      <siteMapNode url="DieuHanhCongTy/SuaTuyen.aspx" title="Sửa tuyến"  description="Sửa tuyến" />
+      <siteMapNode url="DieuHanhCongTy/TraCuuTuyen.aspx" title="Tra cứu tuyến"  description="Tra cứu tuyến" />
+    </siteMapNode>
+
+    <siteMapNode title="QL trạm"  description="Quản lý trạm">
+      <siteMapNode url="DieuHanhCongTy/ThemTram.aspx" title="Thêm trạm"  description="Thêm trạm" />
+      <siteMapNode url="DieuHanhCongTy/XoaTram.aspx" title="Xóa trạm"  description="Xóa trạm" />
+      <siteMapNode url="DieuHanhCongTy/CapNhatTram.aspx" title="Sửa trạm"  description="Sửa trạm" />
+      <siteMapNode url="DieuHanhCongTy/TraCuuTram.aspx" title="Tra cứu trạm"  description="Tra cứu trạm" />
+    </siteMapNode>
+
+    <siteMapNode title="Thống kê"  description="Thống kê">
+      <siteMapNode url="DieuHanhCongTy/ThongKeChuyen.aspx" title="Thống kê chuyến"  description="Thống kê chuyến" />
+      <siteMapNode url="DieuHanhCongTy/ThongKeDoanhThu.aspx" title="Thống kê doanh thu"  description="Thống kê doanh thu" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
