@@ -20,6 +20,11 @@ namespace Web_c3
                 {
                     SiteMapDataSourceMenu.SiteMapProvider = "AdminSiteMap";
                 }
+
+                if (sURL.Contains("/taixe/"))
+                {
+                    SiteMapDataSourceMenu.SiteMapProvider = "TaiXeSiteMap";
+                }
             }            
         }
 
