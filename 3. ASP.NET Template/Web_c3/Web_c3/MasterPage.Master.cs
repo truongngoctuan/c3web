@@ -30,6 +30,11 @@ namespace Web_c3
                 {
                     SiteMapDataSourceMenu.SiteMapProvider = "DieuHanhTramSiteMap";
                 }
+
+                if (sURL.Contains("/dieuhanhcongty/"))
+                {
+                    SiteMapDataSourceMenu.SiteMapProvider = "DieuHanhCongTySiteMap";
+                }
             }            
         }
 
