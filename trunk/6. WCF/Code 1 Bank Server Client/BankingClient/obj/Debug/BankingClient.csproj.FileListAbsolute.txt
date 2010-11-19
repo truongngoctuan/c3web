@@ -1,0 +1,15 @@
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingClient\bin\Debug\BankingClient.exe
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingClient\bin\Debug\BankingClient.pdb
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingClient\obj\Debug\ResolveAssemblyReference.cache
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingClient\obj\Debug\BankingClient.Properties.Resources.resources
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingClient\obj\Debug\BankingClient.csproj.GenerateResource.Cache
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingClient\obj\Debug\BankingClient.exe
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingClient\obj\Debug\BankingClient.pdb
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingClient\bin\Debug\BankingClient.exe.config
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingClient\obj\Debug\BankingClient.BankingClientForm.resources
+C:\My Documents\1. Study\2010-2011\3. Phat trien ung dung web\WCF\PTUDW_WCF\BankingClient\bin\Debug\BankingClient.exe.config
+C:\My Documents\1. Study\2010-2011\3. Phat trien ung dung web\WCF\PTUDW_WCF\BankingClient\obj\Debug\BankingClient.exe
+C:\My Documents\1. Study\2010-2011\3. Phat trien ung dung web\WCF\PTUDW_WCF\BankingClient\obj\Debug\BankingClient.pdb
+C:\My Documents\1. Study\2010-2011\3. Phat trien ung dung web\WCF\2. Code\BankingClient\bin\Debug\BankingClient.exe.config
+C:\My Documents\1. Study\2010-2011\3. Phat trien ung dung web\WCF\2. Code\BankingClient\obj\Debug\BankingClient.exe
+C:\My Documents\1. Study\2010-2011\3. Phat trien ung dung web\WCF\2. Code\BankingClient\obj\Debug\BankingClient.pdb

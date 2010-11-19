@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8a5e40a2-146d-435a-ab85-47979d1ae8ba" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2377/BankingService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BankingService.xsd" MetadataType="Schema" ID="2062ba09-74fe-46e5-8619-47aec781e76f" SourceId="1" SourceUrl="http://localhost:2377/BankingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BankingService1.xsd" MetadataType="Schema" ID="4fef7758-9a78-4ee5-bbe0-d62a4b371865" SourceId="1" SourceUrl="http://localhost:2377/BankingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BankingService2.xsd" MetadataType="Schema" ID="11f81a6c-c2e6-4c7c-8f19-1903acc9a1e1" SourceId="1" SourceUrl="http://localhost:2377/BankingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BankingService.wsdl" MetadataType="Wsdl" ID="0005207f-c810-4a92-b707-e1f073a83d30" SourceId="1" SourceUrl="http://localhost:2377/BankingService.svc?wsdl" />
+    <MetadataFile FileName="BankingService.disco" MetadataType="Disco" ID="c4cf4115-4a20-4e52-87be-415247143c64" SourceId="1" SourceUrl="http://localhost:2377/BankingService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
