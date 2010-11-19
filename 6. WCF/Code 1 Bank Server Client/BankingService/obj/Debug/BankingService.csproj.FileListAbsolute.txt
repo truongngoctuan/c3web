@@ -1,0 +1,5 @@
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingService\obj\Debug\ResolveAssemblyReference.cache
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingService\bin\BankingService.dll
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingService\bin\BankingService.pdb
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingService\obj\Debug\BankingService.dll
+E:\My Documents\Visual Studio 2008\Projects\PTUDW_WCF\BankingService\obj\Debug\BankingService.pdb
