@@ -61,6 +61,13 @@
     </Compile>
     <Content Include="App_Code\Theme.cs" />
     <Content Include="App_Code\ThemeManager.cs" />
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Guest\user_Guest_TimKiemTuyenXe.ascx.cs">
       <DependentUpon>user_Guest_TimKiemTuyenXe.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -89,6 +96,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user_Feedback.ascx.cs">
+      <DependentUpon>user_Feedback.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user_Feedback.ascx.designer.cs">
+      <DependentUpon>user_Feedback.ascx</DependentUpon>
     </Compile>
     <Compile Include="user_GioiThieu.ascx.cs">
       <DependentUpon>user_GioiThieu.ascx</DependentUpon>
@@ -140,12 +154,14 @@
     <Content Include="App_Themes\Default\Default.css" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Feedback.aspx" />
     <Content Include="Guest\user_Guest_TimKiemTuyenXe.ascx" />
     <Content Include="Guest\user_Guest_XemThongTinChuyenXe.ascx" />
     <Content Include="images\content_img.jpg" />
     <Content Include="images\hotline.gif" />
     <Content Include="images\login_form.gif" />
     <Content Include="LienHe.aspx" />
+    <Content Include="user_Feedback.ascx" />
     <Content Include="user_GioiThieu.ascx" />
     <Content Include="user_HotLine.ascx" />
     <Content Include="user_LienHe.ascx" />
