@@ -61,6 +61,20 @@
     </Compile>
     <Content Include="App_Code\Theme.cs" />
     <Content Include="App_Code\ThemeManager.cs" />
+    <Compile Include="Guest\user_Guest_TimKiemTuyenXe.ascx.cs">
+      <DependentUpon>user_Guest_TimKiemTuyenXe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_Guest_TimKiemTuyenXe.ascx.designer.cs">
+      <DependentUpon>user_Guest_TimKiemTuyenXe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_Guest_XemThongTinChuyenXe.ascx.cs">
+      <DependentUpon>user_Guest_XemThongTinChuyenXe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_Guest_XemThongTinChuyenXe.ascx.designer.cs">
+      <DependentUpon>user_Guest_XemThongTinChuyenXe.ascx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,6 +140,8 @@
     <Content Include="App_Themes\Default\Default.css" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Guest\user_Guest_TimKiemTuyenXe.ascx" />
+    <Content Include="Guest\user_Guest_XemThongTinChuyenXe.ascx" />
     <Content Include="images\content_img.jpg" />
     <Content Include="images\hotline.gif" />
     <Content Include="images\login_form.gif" />
