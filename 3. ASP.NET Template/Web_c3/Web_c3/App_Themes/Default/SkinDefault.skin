@@ -16,8 +16,21 @@ Default skin template. The following skins are provided as examples only.
 
 <asp:Button runat="server" 
 BorderWidth="1px" 
-BorderColor="#3366CC" 
-ForeColor="#003399" 
+BorderColor="#3a92ff" 
+ForeColor="#090d37" 
 Font-Names="Verdana" 
-Font-Size="8pt" />
+Font-Size="11px" 
+Font-Bold="true"
+Cssclass="ucButton"
+Height="28px"
+/>
 
+<asp:TextBox runat="server" 
+BorderWidth="1px" 
+BorderColor="#3a92ff" 
+ForeColor="#090d37" 
+Font-Names="Verdana" 
+Font-Size="11px" 
+Cssclass="ucTextbox"
+Height="20px"
+/>
