@@ -46,4 +46,6 @@
 
 <br />
 
-<asp:Button CssClass="btTimKiem" ID="btTimKiem" runat="server" Text="Tìm kiếm" />
+<asp:Button CssClass="ucButton" ID="btTimKiem" runat="server" Text="Tìm kiếm" />
+
+
