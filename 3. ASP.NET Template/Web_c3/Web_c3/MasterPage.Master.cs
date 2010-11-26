@@ -38,12 +38,32 @@ namespace Web_c3
             }            
         }
 
+        protected string strFileJsUserControlPathKey = "Default";
         protected void ThemeList_SelectedIndexChanged(object sender, EventArgs e)
         {
             Session.Add("Theme", ThemeList.SelectedValue);
             Server.Transfer(Request.FilePath);
+
+            //http://forums.asp.net/p/1609779/4120816.aspx
+            strFileJsUserControlPathKey = ThemeList.SelectedValue;
         }
 
+        protected override void OnPreRender(EventArgs e)
+        {
+            base.OnPreRender(e);
+
+            //dynamic update resource javascript user control depend on
+            //current theme 
+            String csName = "CounterScript";
+            Type csType = this.GetType();
+            ClientScriptManager cs = Page.ClientScript;
+
+            String scriptText = "";
+            scriptText += "<script src=\"App_Themes/";
+            scriptText += strFileJsUserControlPathKey;
+            scriptText += "/jsUserControl.js\" type=\"text/javascript\"></script>";
+            cs.RegisterClientScriptBlock(csType, csName, scriptText);
+        }
         protected void ThemeList_DataBound(object sender, EventArgs e)
         {
             ThemeList.SelectedValue = Page.Theme;
