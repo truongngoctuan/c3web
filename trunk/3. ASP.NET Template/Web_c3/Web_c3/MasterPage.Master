@@ -7,7 +7,31 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="Master.css" rel="stylesheet" type="text/css" />
+
+    <script src="jquery-1.4.4.js" type="text/javascript"></script>
+    <%--<script src="App_Themes/Default/jsUserControl.js" type="text/javascript"></script>--%>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        // execute any code here that you'd like to be run as soon as the dom is ready. You may often
+        // want to show/hide certain controls on page load
+        //alert("asd");
+        //alert($(".ucButton").attr("id"));
+        //http://www.west-wind.com/weblog/posts/42319.aspx
+//        $(".ucButton").css('-webkit-border-radius', '10px');
+
+//        $(".ucButton").hover(function() {
+//            $(this).css('-webkit-border-radius', '5px');
+//        });
+
+        Init();
+
+    });
+
+    </script>
+    
 </head>
+
 <body>    
     <form id="form1" runat="server"> 
     <div id="site">   
