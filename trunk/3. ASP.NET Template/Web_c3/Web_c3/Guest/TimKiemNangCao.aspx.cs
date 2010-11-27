@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Web_c3.Guest
 {
-    public partial class TimKiemNangCao : System.Web.UI.Page
+    public partial class TimKiemNangCao : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

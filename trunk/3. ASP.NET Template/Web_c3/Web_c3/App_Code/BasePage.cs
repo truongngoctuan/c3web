@@ -29,5 +29,26 @@ namespace Web_c3
                 Page.Theme = Session["Theme"].ToString();
             }
         }
+
+        protected void AddScript(string[] listFunction)
+        {
+            String csName = "CounterScript";
+            Type csType = this.GetType();
+            ClientScriptManager cs = Page.ClientScript;
+
+            String scriptText = "";
+            scriptText += "<script type=\"text/javascript\">";
+            scriptText += "$(document).ready(function() {";
+
+            for (int i = 0; i < listFunction.Length; i++)
+            {
+                scriptText += listFunction[i];
+            }
+                
+            scriptText += "});";
+            
+            scriptText += "</script>";
+            cs.RegisterClientScriptBlock(csType, csName, scriptText);
+        }
     }
 }

@@ -13,5 +13,10 @@ namespace Web_c3
         {
 
         }
+        protected override void OnPreInit(EventArgs e)
+        {
+            base.OnPreInit(e);
+            AddScript(new string[] { "InitCheckBox();" });
+        }
     }
 }
