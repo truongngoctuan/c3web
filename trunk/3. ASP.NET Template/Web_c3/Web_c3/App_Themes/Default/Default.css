@@ -45,6 +45,11 @@ thay đổi back ground*/
 
 .ucDropDownList
 {
+    border-width: 1px; 
+    border-color:Blue;
+    color: #090d37; 
+    font-family: Verdana; 
+    font-weight: bold
 }
 
 .ucListBox

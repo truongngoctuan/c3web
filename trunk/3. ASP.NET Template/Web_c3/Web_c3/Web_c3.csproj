@@ -97,6 +97,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="user_Feedback.ascx.cs">
       <DependentUpon>user_Feedback.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,6 +168,7 @@
     <Content Include="images\hotline.gif" />
     <Content Include="images\login_form.gif" />
     <Content Include="LienHe.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="user_Feedback.ascx" />
     <Content Include="user_GioiThieu.ascx" />
     <Content Include="user_HotLine.ascx" />

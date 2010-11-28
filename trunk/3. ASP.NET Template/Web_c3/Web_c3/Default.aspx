@@ -11,8 +11,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
     <uc2:user_Guest_TimKiemTuyenXe ID="user_Guest_TimKiemTuyenXe1" runat="server" />
-    <img alt="" src="images/Left_1.jpg" style="width:195px; height: 146px" />
-    <img alt="" src="images/Left_2.png" style="width:195px; height: 94px" /> 
+    &nbsp;  
     
 </asp:Content>
 
