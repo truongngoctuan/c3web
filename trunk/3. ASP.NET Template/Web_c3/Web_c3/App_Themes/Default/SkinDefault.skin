@@ -16,8 +16,6 @@ Default skin template. The following skins are provided as examples only.
 
 <asp:Button runat="server" 
     BorderWidth="1px" 
-    BorderColor="#3a92ff" 
-    ForeColor="#090d37" 
     Font-Names="Verdana" 
     Font-Size="11px" 
     Font-Bold="true"
