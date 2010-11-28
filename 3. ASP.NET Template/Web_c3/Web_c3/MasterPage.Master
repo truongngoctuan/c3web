@@ -74,7 +74,7 @@
     <!--****************************************************************-->
     <div id="page">
      <!--****************************************************************-->
-        <div id="left">
+         <div id="left">
             <asp:ContentPlaceHolder ID="LeftContent" runat="server">
             
             Chỗ dành cho trang nội dung, không đụng vào.
@@ -86,6 +86,7 @@
             Chỗ dành cho trang nội dung, không đụng vào.           
             </asp:ContentPlaceHolder>
         </div>
+  
         <!--****************************************************************-->
         <div id="right">
             <asp:ContentPlaceHolder ID="RightContent" runat="server"> 
