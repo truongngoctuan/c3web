@@ -51,17 +51,37 @@ thay đổi back ground*/
 {
 }
 
+/*ucButton-----------------------------------------------------------*/
 .ucButton
-{
+{    
+    color:#090d37;
     vertical-align:middle;
     background-color:Transparent;
-    background-image: url(images/btBackgroundGradient.jpg);
+    background-image: url(images/btBackgroundGradientNormal.jpg);
     /*http://vinasupport.com/blog/2010/08/tao-goc-bo-tron-rounded-corner-voi-css3/*/
     /*for chrome, safari*/
     -webkit-border-radius: 4px;
     /*for firefox*/
     -moz-border-radius: 4px;
+    border-color:#3a92ff;
 }
+
+.ucButton:hover
+{
+    color:White;
+    text-shadow: 0 -1px 0 #4C9021;
+    border-color:#235899;
+    background-image: url(images/btBackgroundGradientHover.jpg);
+}
+.ucButton:active
+{
+    color:White;
+    text-shadow: 0 -1px 0 #4C9021;
+    border-color:#235899;
+    background-image: url(images/btBackgroundGradientActive.jpg);
+}
+
+/*ucTextbox-----------------------------------------------------------*/
 
 .ucTextbox
 {
