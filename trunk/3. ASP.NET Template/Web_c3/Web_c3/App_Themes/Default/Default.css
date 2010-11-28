@@ -49,13 +49,17 @@ thay đổi back ground*/
     border-color:Blue;
     color: #090d37; 
     font-family: Verdana; 
-    font-weight: bold
+    font-weight: bold;
+    /*http://vinasupport.com/blog/2010/08/tao-goc-bo-tron-rounded-corner-voi-css3/*/
+    /*for chrome, safari*/
+    -webkit-border-radius: 4px;
+    /*for firefox*/
+    -moz-border-radius: 4px;
 }
 
 .ucListBox
 {
 }
-
 /*ucButton-----------------------------------------------------------*/
 .ucButton
 {    
