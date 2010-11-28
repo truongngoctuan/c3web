@@ -68,6 +68,20 @@
     <Compile Include="Feedback.aspx.designer.cs">
       <DependentUpon>Feedback.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Guest\TimKiemNangCao.aspx.cs">
+      <DependentUpon>TimKiemNangCao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\TimKiemNangCao.aspx.designer.cs">
+      <DependentUpon>TimKiemNangCao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\ucTimKiemNangCao.ascx.cs">
+      <DependentUpon>ucTimKiemNangCao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\ucTimKiemNangCao.ascx.designer.cs">
+      <DependentUpon>ucTimKiemNangCao.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Guest\user_Guest_TimKiemTuyenXe.ascx.cs">
       <DependentUpon>user_Guest_TimKiemTuyenXe.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -162,6 +176,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Feedback.aspx" />
+    <Content Include="Guest\TimKiemNangCao.aspx" />
+    <Content Include="Guest\ucTimKiemNangCao.ascx" />
     <Content Include="Guest\user_Guest_TimKiemTuyenXe.ascx" />
     <Content Include="Guest\user_Guest_XemThongTinChuyenXe.ascx" />
     <Content Include="images\content_img.jpg" />
