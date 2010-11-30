@@ -10,19 +10,20 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <div style="width:225px;float:left">
     <uc2:user_Guest_TimKiemTuyenXe ID="user_Guest_TimKiemTuyenXe1" runat="server" />
     &nbsp;  
-    
+     </div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div>
+    <div style="width:520px;float:left">
         <uc4:user_GioiThieu ID="user_GioiThieu1" runat="server" />
     </div>
-    </asp:Content>
+</asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
-    <div >
+    <div style="width:245px;float:right">
        <uc3:user_HotLine ID="user_HotLine1"  runat="server" />
        <div >
             <uc1:user_Login ID="user_Login1"  runat="server" />
