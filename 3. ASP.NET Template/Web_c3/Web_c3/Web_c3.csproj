@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{61090A77-8820-48BC-A3E6-E9461ADF07F2}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -61,6 +61,13 @@
     </Compile>
     <Content Include="App_Code\Theme.cs" />
     <Content Include="App_Code\ThemeManager.cs" />
+    <Compile Include="DanhSachCacChuyen.aspx.cs">
+      <DependentUpon>DanhSachCacChuyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachCacChuyen.aspx.designer.cs">
+      <DependentUpon>DanhSachCacChuyen.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Feedback.aspx.cs">
       <DependentUpon>Feedback.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -82,13 +89,6 @@
     <Compile Include="Guest\ucTimKiemNangCao.ascx.designer.cs">
       <DependentUpon>ucTimKiemNangCao.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Guest\user_Guest_TimKiemTuyenXe.ascx.cs">
       <DependentUpon>user_Guest_TimKiemTuyenXe.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,6 +102,13 @@
     </Compile>
     <Compile Include="Guest\user_Guest_XemThongTinChuyenXe.ascx.designer.cs">
       <DependentUpon>user_Guest_XemThongTinChuyenXe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_Template_ThongTinChuyen.ascx.cs">
+      <DependentUpon>user_Template_ThongTinChuyen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_Template_ThongTinChuyen.ascx.designer.cs">
+      <DependentUpon>user_Template_ThongTinChuyen.ascx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -117,6 +124,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinChiTietChuyenXe.aspx.cs">
+      <DependentUpon>ThongTinChiTietChuyenXe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinChiTietChuyenXe.aspx.designer.cs">
+      <DependentUpon>ThongTinChiTietChuyenXe.aspx</DependentUpon>
     </Compile>
     <Compile Include="user_Feedback.ascx.cs">
       <DependentUpon>user_Feedback.ascx</DependentUpon>
@@ -176,16 +190,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Default\jsUserControl.js" />
+    <Content Include="DanhSachCacChuyen.aspx" />
     <Content Include="Feedback.aspx" />
     <Content Include="Guest\TimKiemNangCao.aspx" />
     <Content Include="Guest\ucTimKiemNangCao.ascx" />
-    <Content Include="Test.aspx" />
     <Content Include="Guest\user_Guest_TimKiemTuyenXe.ascx" />
     <Content Include="Guest\user_Guest_XemThongTinChuyenXe.ascx" />
+    <Content Include="Guest\user_Template_ThongTinChuyen.ascx" />
     <Content Include="images\content_img.jpg" />
     <Content Include="images\hotline.gif" />
     <Content Include="images\login_form.gif" />
     <Content Include="LienHe.aspx" />
+    <Content Include="ThongTinChiTietChuyenXe.aspx" />
     <Content Include="user_Feedback.ascx" />
     <Content Include="user_GioiThieu.ascx" />
     <Content Include="user_HotLine.ascx" />
@@ -216,9 +232,6 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
