@@ -67,3 +67,9 @@ function InitCheckBox() {
         }
     });
 }
+
+function initDropDownList() {
+    $("select[class=ucDropDownList]").bind("mouseenter mouseleave", function(event) {
+        $(this).toggleClass("ucDropDownListMouseOver");
+    });
+}

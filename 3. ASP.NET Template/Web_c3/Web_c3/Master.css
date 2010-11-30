@@ -84,13 +84,11 @@ div#page
 div#left
 {
     float:left;
-    width:25%;
 }
 
 div#content
 {
    float: left;
-   width:49.9%;
    border-left: solid 1px #D5D5D5;
    border-right: solid 1px #D5D5D5;  
 }
@@ -98,7 +96,6 @@ div#content
 div#right
 {
     float:right;
-    width:25%;
 }
 
 div#bottom
