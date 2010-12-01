@@ -55,3 +55,15 @@ Default skin template. The following skins are provided as examples only.
 <asp:DropDownList runat="server"
     CssClass="ucDropDownList"
 />
+
+<asp:Menu runat="server"
+    DynamicHoverStyle-BackColor="Aqua"
+    DynamicHoverStyle-BorderColor="Blue"
+    DynamicHoverStyle-BorderStyle="Solid"
+    DynamicHoverStyle-BorderWidth="2px"
+    StaticHoverStyle-BackColor="Aqua"
+    StaticHoverStyle-BorderColor="Blue"
+    StaticHoverStyle-BorderStyle="Solid"
+    StaticHoverStyle-BorderWidth="2px"
+/>
+
