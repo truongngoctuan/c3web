@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-  <siteMapNode>
-    <siteMapNode url="Default.aspx" title="Trang Chủ"  description="Trang Chủ"/>
-    <siteMapNode url="XemTuyen.aspx" title="Xem Tuyến"  description="Xem Tuyến">
-      <siteMapNode url="x.aspx" title="test1"  description="Hỗ Trợ" />
-      <siteMapNode url="xx.aspx" title="test2"  description="Liên Hệ" />
+
+    <siteMapNode>
+        <siteMapNode url="Default.aspx" title="Trang Chủ"  description="Trang Chủ"/>
+        <siteMapNode url="XemTuyen.aspx" title="Xem Tuyến"  description="Xem Tuyến"/>
+        <siteMapNode url="HoTro.aspx" title="Hỗ Trợ"  description="Hỗ Trợ" />
+        <siteMapNode url="LienHe.aspx" title="Liên Hệ"  description="Liên Hệ" />
+    
+        <siteMapNode url="~/Views/Menu5.aspx" title="Menu5" description="Menu5" accesskey="A">
+            <siteMapNode url="~/Views/Menu5Sub1.aspx" title="Menu5sub1" description="Menu5Sub1" accesskey="C" />
+            <siteMapNode url="~/Views/Menu5Sub2.aspx" title="Menu5Sub2"  description="Menu5Sub2" accesskey="D">
+                <siteMapNode url="~/Views/Menu5SubSub1.aspx" title="Menu5SubSub1" description="Menu5SubSub1" accesskey="T"/>
+                <siteMapNode url="~/Views/Menu5SubSubSub1.aspx" title="AnotherSub" description="AnotherSub" accesskey="O" />
+            </siteMapNode>
+        </siteMapNode>
     </siteMapNode>
-    <siteMapNode url="HoTro.aspx" title="Hỗ Trợ"  description="Hỗ Trợ" />
-    <siteMapNode url="LienHe.aspx" title="Liên Hệ"  description="Liên Hệ" />
-    <siteMapNode url="~/Views/Menu5.aspx" title="Menu5&lt;u>A&lt;/u>" description="Menu5" accesskey="A">
-      <siteMapNode url="~/Views/Menu5Sub1.aspx" title="Menu4sub1&lt;u>C&lt;/u>" description="Menu5Sub1" accesskey="C" />
-      <siteMapNode url="~/Views/Menu5Sub2.aspx" title="Menu4Sub2&lt;u>D&lt;/u>"  description="Menu5Sub2" accesskey="D">
-        <siteMapNode url="~/Views/Menu5SubSub1.aspx" title="Menu5SubSub1&lt;u>T&lt;/u>" description="Menu5SubSub1" accesskey="T"/>
-        <siteMapNode url="~/Views/Menu5SubSubSub1.aspx" title="An&lt;u>o&lt;/u>therSub" description="AnotherSub" accesskey="O" />
-      </siteMapNode>
-    </siteMapNode>
-  </siteMapNode>
+    
 </siteMap>

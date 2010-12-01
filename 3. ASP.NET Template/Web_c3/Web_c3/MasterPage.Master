@@ -2,32 +2,13 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head id="Head1" runat="server">
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="Master.css" rel="stylesheet" type="text/css" />
-
     <script src="jquery-1.4.4.js" type="text/javascript"></script>
-    <%--<script src="App_Themes/Default/jsUserControl.js" type="text/javascript"></script>--%>
-<%--<script type="text/javascript">
-
-    $(document).ready(function() {
-        // execute any code here that you'd like to be run as soon as the dom is ready. You may often
-        // want to show/hide certain controls on page load
-        //alert("asd");
-        //alert($(".ucButton").attr("id"));
-        //http://www.west-wind.com/weblog/posts/42319.aspx
-        //        $(".ucButton").css('-webkit-border-radius', '10px');
-
-        //        $(".ucButton").hover(function() {
-        //            $(this).css('-webkit-border-radius', '5px');
-        //        });
-
-        InitCheckBox();
-    });
-    </script>--%>
-    
 </head>
 
 <body>    
@@ -44,32 +25,32 @@
                 DataTextField="Name" DataValueField="Name" RepeatDirection="Horizontal" OnDataBound="ThemeList_DataBound"
                 OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
             </asp:RadioButtonList>
-        </div>        
+        </div>  
+              
         <div id="Menu">
-        <asp:Menu runat="server" DataSourceID="SiteMapDataSourceMenu"
-                        Orientation="Horizontal" 
-                        staticdisplaylevels="2" 
-                        DynamicHorizontalOffset="1"
-                        staticsubmenuindent="1px" 
-                        MaximumDynamicDisplayLevels="5"
-                        Height="59px">
-        
-        <StaticMenuItemStyle CssClass="staticMenuItemStyle"/>
-        <StaticHoverStyle CssClass="staticHoverStyle" />
-        <StaticSelectedStyle CssClass="staticMenuItemSelectedStyle"/> 
-        
-        <DynamicMenuItemStyle CssClass="dynamicMenuItemStyle" />      
-        <DynamicHoverStyle CssClass="dynamicMenuItemHover" />
-        <DynamicMenuStyle CssClass="dynamicMenuStyle" />
-        <DynamicSelectedStyle CssClass="dynamicMenuItemSelectedStyle" />
-        </asp:Menu>   
-        </div>     
+            <asp:Menu runat="server" DataSourceID="SiteMapDataSourceMenu"
+                            Orientation="Horizontal" 
+                            staticdisplaylevels="2" 
+                            DynamicHorizontalOffset="1"
+                            staticsubmenuindent="1px" 
+                            MaximumDynamicDisplayLevels="5"
+                            Height="59px">
+            
+            <StaticMenuItemStyle CssClass="staticMenuItemStyle"/>
+            <StaticHoverStyle CssClass="staticHoverStyle" />
+            <StaticSelectedStyle CssClass="staticMenuItemSelectedStyle"/> 
+            
+            <DynamicMenuItemStyle CssClass="dynamicMenuItemStyle" />      
+            <DynamicHoverStyle CssClass="dynamicMenuItemHover" />
+            <DynamicMenuStyle CssClass="dynamicMenuStyle" />
+            <DynamicSelectedStyle CssClass="dynamicMenuItemSelectedStyle" />
+            </asp:Menu>          
+        </div>   
+          
         <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server"/>
     
-        <%--<img style="float:left;" src="images/header_bg_right2.gif" width="313" height="59" alt="" />        --%>
         <div id="header_bg_right2"></div>
         <img style="float:left;" src="../images/menu_bg_bottom.gif" width="995" height="22" alt="" />
-        
     </div>
     <!--****************************************************************-->
     <div id="page">
