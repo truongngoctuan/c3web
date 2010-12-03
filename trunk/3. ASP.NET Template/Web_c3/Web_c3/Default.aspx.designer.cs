@@ -23,6 +23,15 @@ namespace Web_c3 {
         protected global::Web_c3.user_Guest_TimKiemTuyenXe user_Guest_TimKiemTuyenXe1;
         
         /// <summary>
+        /// tbxTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxTest;
+        
+        /// <summary>
         /// user_GioiThieu1 control.
         /// </summary>
         /// <remarks>
