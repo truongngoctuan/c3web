@@ -48,8 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChoNgoiDAO.cs" />
     <Compile Include="ChuyenXeDAO.cs" />
+    <Compile Include="DatChoDAO.cs" />
+    <Compile Include="PhanHoiDAO.cs" />
+    <Compile Include="PhanHoiKhachHangDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TinhTrangDatChoDAO.cs" />
+    <Compile Include="TramXeDAO.cs" />
+    <Compile Include="TuyenXeDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

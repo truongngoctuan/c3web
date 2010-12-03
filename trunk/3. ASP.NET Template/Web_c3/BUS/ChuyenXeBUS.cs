@@ -20,5 +20,15 @@ namespace BUS
         {
             _chuyenxeDao.InsertChuyenXe(chuyenxe);
         }
+
+        public void DeleteChuyenXe(int machuyenxe)
+        {
+            _chuyenxeDao.DeleteChuyenXe(machuyenxe);
+        }
+
+        public void UpdateChuyenXe(CHUYEN_XE chuyenxe)
+        {
+            _chuyenxeDao.UpdateChuyenXe(chuyenxe);
+        }
     }
 }

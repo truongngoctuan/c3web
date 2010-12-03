@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Web_c3.Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Web_c3.Default" %>
 <%@ Register src="user_Login.ascx" tagname="user_Login" tagprefix="uc1" %>
 <%@ Register src="user_HotLine.ascx" tagname="user_HotLine" tagprefix="uc3" %>
 <%@ Register src="user_GioiThieu.ascx" tagname="user_GioiThieu" tagprefix="uc4" %>
@@ -19,6 +19,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div style="width:520px;float:left">
         <asp:TextBox ID="tbxTest" runat="server">Test</asp:TextBox>
+        <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Button" />
         <uc4:user_GioiThieu ID="user_GioiThieu1" runat="server" />
     </div>
 </asp:Content>
