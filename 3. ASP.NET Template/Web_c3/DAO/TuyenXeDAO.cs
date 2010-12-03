@@ -50,5 +50,31 @@ namespace DAO
 
             _dataContext.SubmitChanges();
         }
+
+        public List<TUYEN_XE> SelectTuyenXesByMaTramDi(int matramdi)
+        {
+            var query = from c in _dataContext.TUYEN_XEs
+                        where c.MaTramDi == matramdi
+                        select c;
+            List<TUYEN_XE> kq = new List<TUYEN_XE>();
+            foreach (var cx in query)
+            {
+                kq.Add((TUYEN_XE)cx);
+            }
+            return kq;
+        }
+
+        public List<TUYEN_XE> SelectTuyenXesByMaTramDen(int matramden)
+        {
+            var query = from c in _dataContext.TUYEN_XEs
+                        where c.MaTramDen == matramden
+                        select c;
+            List<TUYEN_XE> kq = new List<TUYEN_XE>();
+            foreach (var cx in query)
+            {
+                kq.Add((TUYEN_XE)cx);
+            }
+            return kq;
+        }
     }
 }

@@ -46,5 +46,31 @@ namespace DAO
 
             _dataContext.SubmitChanges();
         }
+
+        public List<PHAN_QUYEN> SelectPhanQuyensByMaChucNang(int machucnang)
+        {
+            var query = from c in _dataContext.PHAN_QUYENs
+                        where c.MaChucNang == machucnang
+                        select c;
+            List<PHAN_QUYEN> kq = new List<PHAN_QUYEN>();
+            foreach (var cx in query)
+            {
+                kq.Add((PHAN_QUYEN)cx);
+            }
+            return kq;
+        }
+
+        public List<PHAN_QUYEN> SelectPhanQuyensByMaLoaiNhanVien(int maloainhanvien)
+        {
+            var query = from c in _dataContext.PHAN_QUYENs
+                        where c.MaLoaiNhanVien == maloainhanvien
+                        select c;
+            List<PHAN_QUYEN> kq = new List<PHAN_QUYEN>();
+            foreach (var cx in query)
+            {
+                kq.Add((PHAN_QUYEN)cx);
+            }
+            return kq;
+        }
     }
 }

@@ -49,5 +49,31 @@ namespace DAO
 
             _dataContext.SubmitChanges();
         }
+
+        public List<XE> SelectXesByMaLoaiXe(int maloaixe)
+        {
+            var query = from c in _dataContext.XEs
+                        where c.MaLoaiXe == maloaixe
+                        select c;
+            List<XE> kq = new List<XE>();
+            foreach (var cx in query)
+            {
+                kq.Add((XE)cx);
+            }
+            return kq;
+        }
+
+        public List<XE> SelectXesByMaTinhTrang(int matinhtrang)
+        {
+            var query = from c in _dataContext.XEs
+                        where c.TinhTrang == matinhtrang
+                        select c;
+            List<XE> kq = new List<XE>();
+            foreach (var cx in query)
+            {
+                kq.Add((XE)cx);
+            }
+            return kq;
+        }
     }
 }

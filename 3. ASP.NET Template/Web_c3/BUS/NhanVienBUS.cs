@@ -30,5 +30,10 @@ namespace BUS
         {
             _nhanvienDao.UpdateNhanVien(nhanvien);
         }
+
+        public List<NHAN_VIEN> SelectNhanViensByLoaiNhanVien(int loainhanvien)
+        {
+            return _nhanvienDao.SelectNhanViensByLoaiNhanVien(loainhanvien);
+        }
     }
 }

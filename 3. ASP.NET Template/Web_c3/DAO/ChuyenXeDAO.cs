@@ -52,5 +52,31 @@ namespace DAO
 
             _dataContext.SubmitChanges();
         }
+
+        public List<CHUYEN_XE> SelectChuyenXesByMaTaiXe(int mataixe)
+        {
+            var query = from c in _dataContext.CHUYEN_XEs
+                        where c.MaTaiXe == mataixe
+                        select c;
+            List<CHUYEN_XE> kq = new List<CHUYEN_XE>();
+            foreach (var cx in query)
+            {
+                kq.Add((CHUYEN_XE)cx);                    
+            }
+            return kq;
+        }
+
+        public List<CHUYEN_XE> SelectChuyenXesByMaTuyenXe(int matuyenxe)
+        {
+            var query = from c in _dataContext.CHUYEN_XEs
+                        where c.MaTuyenXe == matuyenxe
+                        select c;
+            List<CHUYEN_XE> kq = new List<CHUYEN_XE>();
+            foreach (var cx in query)
+            {
+                kq.Add((CHUYEN_XE)cx);
+            }
+            return kq;
+        }
     }
 }

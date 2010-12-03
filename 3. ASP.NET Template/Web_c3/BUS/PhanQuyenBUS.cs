@@ -30,5 +30,15 @@ namespace BUS
         {
             _phanquyenDao.UpdatePhanQuyen(phanquyen);
         }
+
+        public List<PHAN_QUYEN> SelectPhanQuyensByMaChucNang(int machucnang)
+        {
+            return _phanquyenDao.SelectPhanQuyensByMaChucNang(machucnang);
+        }
+
+        public List<PHAN_QUYEN> SelectNhanViensByMaLoaiNhanVien(int maloainhanvien)
+        {
+            return _phanquyenDao.SelectPhanQuyensByMaLoaiNhanVien(maloainhanvien);
+        }
     }
 }

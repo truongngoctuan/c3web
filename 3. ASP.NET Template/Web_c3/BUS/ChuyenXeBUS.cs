@@ -30,5 +30,15 @@ namespace BUS
         {
             _chuyenxeDao.UpdateChuyenXe(chuyenxe);
         }
+
+        public List<CHUYEN_XE> SelectChuyenXesByMaTaiXe(int mataixe)
+        {
+            return _chuyenxeDao.SelectChuyenXesByMaTaiXe(mataixe);
+        }
+
+        public List<CHUYEN_XE> SelectChuyenXesByMaTuyenXe(int matuyenxe)
+        {
+            return _chuyenxeDao.SelectChuyenXesByMaTuyenXe(matuyenxe);
+        }
     }
 }

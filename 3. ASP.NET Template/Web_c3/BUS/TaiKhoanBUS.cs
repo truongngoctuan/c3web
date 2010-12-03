@@ -30,5 +30,10 @@ namespace BUS
         {
             _taikhoanDao.UpdateTaiKhoan(taikhoan);
         }
+
+        public List<TAI_KHOAN> SelectTaiKhoansByMaNhanVien(int manhanvien)
+        {
+            return _taikhoanDao.SelectTaiKhoansByMaNhanVien(manhanvien);
+        }
     }
 }

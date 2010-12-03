@@ -48,5 +48,18 @@ namespace DAO
 
             _dataContext.SubmitChanges();
         }
+
+        public List<TRAM_XE> SelectTramXesByMaTruongTram(int matruongtram)
+        {
+            var query = from c in _dataContext.TRAM_XEs
+                        where c.MaTruongTram == matruongtram
+                        select c;
+            List<TRAM_XE> kq = new List<TRAM_XE>();
+            foreach (var cx in query)
+            {
+                kq.Add((TRAM_XE)cx);
+            }
+            return kq;
+        }
     }
 }
