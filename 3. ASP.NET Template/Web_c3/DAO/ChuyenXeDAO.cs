@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using DTO;
 
+using System.Data.SqlClient;
+
 namespace DAO
 {
     public class ChuyenXeDAO
@@ -12,11 +14,18 @@ namespace DAO
 
         public CHUYEN_XE SelectChuyenXeByMaChuyenXe(int machuyen)
         {
-            var query = (from c in _dataContext.CHUYEN_XEs
-                         where c.MaChuyenXe == machuyen
-                         select c).Single();
+            try
+            {
+                var query = (from c in _dataContext.CHUYEN_XEs
+                             where c.MaChuyenXe == machuyen
+                             select c).Single();
 
-            return query;
+                return query;
+            }
+            catch (SqlException e)
+            {
+                return new CHUYEN_XE();
+            }
         }
 
         public void InsertChuyenXe(CHUYEN_XE chuyenxe)
