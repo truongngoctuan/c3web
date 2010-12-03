@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BUS;
+using DTO;
 
 namespace Web_c3
 {
@@ -11,6 +13,19 @@ namespace Web_c3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Test
+            CHUYEN_XE chuyenxe = new CHUYEN_XE();
+            chuyenxe.KhoiHanh = DateTime.Now;
+            chuyenxe.DuKienDen = DateTime.Now;
+            chuyenxe.ThoiGianDenTram=DateTime.Now;
+            chuyenxe.LuongTaiXe = 500000;
+            chuyenxe.GiaVe = 50000;
+            ChuyenXeBUS cxb = new ChuyenXeBUS();
+            cxb.InsertChuyenXe(chuyenxe);
+
+            CHUYEN_XE cx = new CHUYEN_XE();
+            cx = cxb.SelectChuyenXeByMaChuyenXe(1);
+            tbxTest.Text = cx.GiaVe.ToString();
 
         }
         protected override void OnPreInit(EventArgs e)
