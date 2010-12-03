@@ -30,5 +30,15 @@ namespace BUS
         {
             _xeDao.UpdateXe(xe);
         }
+
+        public List<XE> SelectXesByMaLoaiXe(int maloaixe)
+        {
+            return _xeDao.SelectXesByMaLoaiXe(maloaixe);
+        }
+
+        public List<XE> SelectXesByMaTinhTrang(int matinhtrang)
+        {
+            return _xeDao.SelectXesByMaTinhTrang(matinhtrang);
+        }
     }
 }

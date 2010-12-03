@@ -49,5 +49,18 @@ namespace DAO
 
             _dataContext.SubmitChanges();
         }
+
+        public List<TAI_KHOAN> SelectTaiKhoansByMaNhanVien(int manhanvien)
+        {
+            var query = from c in _dataContext.TAI_KHOANs
+                        where c.MaNhanVien == manhanvien
+                        select c;
+            List<TAI_KHOAN> kq = new List<TAI_KHOAN>();
+            foreach (var cx in query)
+            {
+                kq.Add((TAI_KHOAN)cx);
+            }
+            return kq;
+        }
     }
 }

@@ -50,5 +50,18 @@ namespace DAO
 
             _dataContext.SubmitChanges();
         }
+
+        public List<TIN_TUC> SelectTinTucsByMaAdminDuyet(int maadminduyet)
+        {
+            var query = from c in _dataContext.TIN_TUCs
+                        where c.MaAdminDuyet == maadminduyet
+                        select c;
+            List<TIN_TUC> kq = new List<TIN_TUC>();
+            foreach (var cx in query)
+            {
+                kq.Add((TIN_TUC)cx);
+            }
+            return kq;
+        }
     }
 }

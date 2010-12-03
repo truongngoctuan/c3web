@@ -30,5 +30,20 @@ namespace BUS
         {
             _phanhoiDao.UpdatePhanHoi(phanhoi);
         }
+
+        public List<PHAN_HOI> SelectPhanHoisByMaNhanVien(int manhanvien)
+        {
+            return _phanhoiDao.SelectPhanHoisByMaNhanVien(manhanvien);
+        }
+
+        public List<PHAN_HOI> SelectPhanHoisByMaPhanHoiKhach(int maphanhoikhach)
+        {
+            return _phanhoiDao.SelectPhanHoisByMaPhanHoiKhach(maphanhoikhach);
+        }
+
+        public List<PHAN_HOI> SelectPhanHoisByMaChuyen(int machuyen)
+        {
+            return _phanhoiDao.SelectPhanHoisByMaChuyen(machuyen);
+        }
     }
 }

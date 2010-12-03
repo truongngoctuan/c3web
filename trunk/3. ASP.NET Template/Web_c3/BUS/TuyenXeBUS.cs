@@ -30,5 +30,14 @@ namespace BUS
         {
             _tuyenxeDao.UpdateTuyenXe(tuyenxe);
         }
+        public List<TUYEN_XE> SelectTuyenXesByMaTramDi(int matramdi)
+        {
+            return _tuyenxeDao.SelectTuyenXesByMaTramDi(matramdi);
+        }
+
+        public List<TUYEN_XE> SelectTuyenXesByMaTramDen(int matramden)
+        {
+            return _tuyenxeDao.SelectTuyenXesByMaTramDen(matramden);
+        }
     }
 }

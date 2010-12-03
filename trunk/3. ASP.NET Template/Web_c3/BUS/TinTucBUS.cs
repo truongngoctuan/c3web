@@ -30,5 +30,10 @@ namespace BUS
         {
             _tintucDao.UpdateTinTuc(tintuc);
         }
+
+        public List<TIN_TUC> SelectTinTucsByMaAdminDuyet(int maadminduyet)
+        {
+            return _tintucDao.SelectTinTucsByMaAdminDuyet(maadminduyet);
+        }
     }
 }

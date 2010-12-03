@@ -49,5 +49,18 @@ namespace DAO
 
             _dataContext.SubmitChanges();
         }
+
+        public List<NHAN_VIEN> SelectNhanViensByLoaiNhanVien(int loainhanvien)
+        {
+            var query = from c in _dataContext.NHAN_VIENs
+                        where c.LoaiNhanVien == loainhanvien
+                        select c;
+            List<NHAN_VIEN> kq = new List<NHAN_VIEN>();
+            foreach (var cx in query)
+            {
+                kq.Add((NHAN_VIEN)cx);
+            }
+            return kq;
+        }
     }
 }

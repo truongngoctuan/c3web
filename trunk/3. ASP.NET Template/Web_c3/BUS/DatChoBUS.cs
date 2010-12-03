@@ -30,5 +30,20 @@ namespace BUS
         {
             _datchoDao.UpdateDatCho(datcho);
         }
+
+        public List<DAT_CHO> SelectDatChosByMaChoNgoi(int machongoi)
+        {
+            return _datchoDao.SelectDatChosByMaChoNgoi(machongoi);
+        }
+
+        public List<DAT_CHO> SelectDatChosByMaChuyenXe(int machuyenxe)
+        {
+            return _datchoDao.SelectDatChosByMaChuyenXe(machuyenxe);
+        }
+
+        public List<DAT_CHO> SelectDatChosByMaTinhTrang(int matinhtrang)
+        {
+            return _datchoDao.SelectDatChosByMaTinhTrang(matinhtrang);
+        }
     }
 }
