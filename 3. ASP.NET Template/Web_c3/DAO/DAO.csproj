@@ -49,14 +49,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChoNgoiDAO.cs" />
+    <Compile Include="ChucNangDAO.cs" />
     <Compile Include="ChuyenXeDAO.cs" />
     <Compile Include="DatChoDAO.cs" />
+    <Compile Include="LoaiNhanVienDAO.cs" />
+    <Compile Include="LoaiXeDAO.cs" />
+    <Compile Include="NhanVienDAO.cs" />
     <Compile Include="PhanHoiDAO.cs" />
     <Compile Include="PhanHoiKhachHangDAO.cs" />
+    <Compile Include="PhanQuyenDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaiKhoanDAO.cs" />
     <Compile Include="TinhTrangDatChoDAO.cs" />
+    <Compile Include="TinhTrangXeDAO.cs" />
+    <Compile Include="TinTucDAO.cs" />
     <Compile Include="TramXeDAO.cs" />
     <Compile Include="TuyenXeDAO.cs" />
+    <Compile Include="XeDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

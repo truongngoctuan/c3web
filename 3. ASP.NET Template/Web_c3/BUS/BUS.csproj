@@ -46,14 +46,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChoNgoiBUS.cs" />
+    <Compile Include="ChucNangBUS.cs" />
     <Compile Include="ChuyenXeBUS.cs" />
     <Compile Include="DatChoBUS.cs" />
+    <Compile Include="LoaiNhanVienBUS.cs" />
+    <Compile Include="LoaiXeBUS.cs" />
+    <Compile Include="NhanVienBUS.cs" />
     <Compile Include="PhanHoiBUS.cs" />
     <Compile Include="PhanHoiKhachHangBUS.cs" />
+    <Compile Include="PhanQuyenBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaiKhoanBUS.cs" />
     <Compile Include="TinhTrangDatChoBUS.cs" />
+    <Compile Include="TinhTrangXeBUS.cs" />
+    <Compile Include="TinTucBUS.cs" />
     <Compile Include="TramXeBUS.cs" />
     <Compile Include="TuyenXeBUS.cs" />
+    <Compile Include="XeBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
