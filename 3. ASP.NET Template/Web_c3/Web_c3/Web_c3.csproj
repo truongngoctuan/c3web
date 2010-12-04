@@ -61,13 +61,6 @@
     </Compile>
     <Compile Include="Core\Theme.cs" />
     <Compile Include="Core\ThemeManager.cs" />
-    <Compile Include="TimKiemNangCao.aspx.cs">
-      <DependentUpon>TimKiemNangCao.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TimKiemNangCao.aspx.designer.cs">
-      <DependentUpon>TimKiemNangCao.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Guest\ucTimKiemNangCao.ascx.cs">
       <DependentUpon>ucTimKiemNangCao.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,7 +122,6 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="TimKiemNangCao.aspx" />
     <Content Include="Guest\ucTimKiemNangCao.ascx" />
     <Compile Include="Guest\user_Feedback.ascx.cs">
       <DependentUpon>user_Feedback.ascx</DependentUpon>
@@ -167,6 +159,14 @@
     </Compile>
     <Compile Include="Guest\user_Login.ascx.designer.cs">
       <DependentUpon>user_Login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="TimKiemNangCao.aspx" />
+    <Compile Include="TimKiemNangCao.aspx.cs">
+      <DependentUpon>TimKiemNangCao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimKiemNangCao.aspx.designer.cs">
+      <DependentUpon>TimKiemNangCao.aspx</DependentUpon>
     </Compile>
     <Content Include="jquery-1.4.4.js" />
   </ItemGroup>

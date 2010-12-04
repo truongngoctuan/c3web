@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Web_c3
 {
-    public partial class TimKiemNangCao : BasePage
+    public partial class TimKiemNangCao : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
