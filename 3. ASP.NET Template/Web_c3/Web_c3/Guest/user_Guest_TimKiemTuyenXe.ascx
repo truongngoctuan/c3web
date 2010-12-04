@@ -22,9 +22,6 @@
             </td>
             <td style="text-align: left">
                 <asp:DropDownList ID="ddlNoiKhoihanh" runat="server">
-                    <asp:ListItem>Test 1</asp:ListItem>
-                    <asp:ListItem>Test 2</asp:ListItem>
-                    <asp:ListItem>Test 3</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
@@ -34,15 +31,12 @@
             </td>
             <td style="text-align: left">
                 <asp:DropDownList ID="ddlNoiDen" runat="server">
-                    <asp:ListItem>Test 4</asp:ListItem>
-                    <asp:ListItem>Test 5</asp:ListItem>
-                    <asp:ListItem>Test 6</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
     </table>
     <div>
-        <asp:Button ID="btTimKiem" runat="server" Style="text-align: center" Text="Tìm Kiếm" />
+        <asp:Button ID="btTimKiem" runat="server" Style="text-align: center" Text="Tìm Kiếm" PostBackUrl="../DanhSachCacChuyen.aspx" />
     </div>
     <a href="TimKiemNangCao.aspx">Tìm kiếm nâng cao</a>
     <asp:ListView ID="lvThongTin" runat="server">

@@ -18,8 +18,6 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div style="width:520px;float:left">
-        <asp:TextBox ID="tbxTest" runat="server">Test</asp:TextBox>
-        <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Button" />
         <webUC:user_GioiThieu ID="user_GioiThieu1" runat="server" />
     </div>
 </asp:Content>

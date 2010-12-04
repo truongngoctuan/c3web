@@ -10,6 +10,9 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using BUS;
+using DTO;
+using System.Collections.Generic;
 
 namespace Web_c3
 {
@@ -17,7 +20,9 @@ namespace Web_c3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ChuyenXeBUS chuyenxeBus  =new ChuyenXeBUS();
+            List<CHUYEN_XE> lst= chuyenxeBus.SelectAllChuyenXes();
+            //
         }
     }
 }
