@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
-namespace Web_c3
+namespace Web_c3.Guest
 {
     public partial class user_Guest_TimKiemTuyenXe : System.Web.UI.UserControl
     {

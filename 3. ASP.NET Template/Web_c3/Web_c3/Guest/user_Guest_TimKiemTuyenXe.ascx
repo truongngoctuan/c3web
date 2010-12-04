@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_Guest_TimKiemTuyenXe.ascx.cs"
-    Inherits="Web_c3.user_Guest_TimKiemTuyenXe" %>
+    Inherits="Web_c3.Guest.user_Guest_TimKiemTuyenXe" %>
 <style type="text/css">
     .style1
     {
@@ -44,7 +44,7 @@
     <div>
         <asp:Button ID="btTimKiem" runat="server" Style="text-align: center" Text="Tìm Kiếm" />
     </div>
-    <a href="Guest/TimKiemNangCao.aspx">Tìm kiếm nâng cao</a>
+    <a href="TimKiemNangCao.aspx">Tìm kiếm nâng cao</a>
     <asp:ListView ID="lvThongTin" runat="server">
     </asp:ListView>
 </asp:Panel>

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_Guest_XemThongTinChuyenXe.ascx.cs" Inherits="Web_c3.user_Guest_XemThongTinChuyenXe" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_Guest_XemThongTinChuyenXe.ascx.cs" Inherits="Web_c3.Guest.user_Guest_XemThongTinChuyenXe" %>
 <asp:Panel ID="pnXemThongTinChuyenXe" runat="server">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Label ID="lbThongTinChuyenXe" runat="server" Font-Bold="True" 
