@@ -1,0 +1,9 @@
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\BUS\bin\Debug\BUS.dll
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\BUS\bin\Debug\BUS.pdb
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\BUS\bin\Debug\DAO.dll
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\BUS\bin\Debug\DTO.dll
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\BUS\bin\Debug\DAO.pdb
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\BUS\bin\Debug\DTO.pdb
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\BUS\obj\Debug\ResolveAssemblyReference.cache
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\BUS\obj\Debug\BUS.dll
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\BUS\obj\Debug\BUS.pdb

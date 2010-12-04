@@ -11,7 +11,8 @@
 <uc:ucCalendar />--%>
 
 <%--chọn loại tìm kiếm là chuyến hay tuyến
---%><asp:Label CssClass="ucLabel" ID="lbChonLoaiTimKiem" runat="server" Text="Chọn loại tìm kiếm: "></asp:Label>
+--%>
+<asp:Label CssClass="ucLabel" ID="lbChonLoaiTimKiem" runat="server" Text="Chọn loại tìm kiếm: "></asp:Label>
 <br />
 <asp:RadioButton CssClass="ucRadioButton" ID="rbTuyen" runat="server" Text="Tuyến du lịch."
 />

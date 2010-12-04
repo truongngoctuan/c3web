@@ -1,0 +1,11 @@
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\Web_c3\obj\Debug\ResolveAssemblyReference.cache
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\Web_c3\bin\Web_c3.dll
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\Web_c3\bin\Web_c3.pdb
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\Web_c3\bin\BUS.dll
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\Web_c3\bin\DTO.dll
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\Web_c3\bin\DAO.dll
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\Web_c3\bin\DAO.pdb
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\Web_c3\bin\BUS.pdb
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\Web_c3\bin\DTO.pdb
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\Web_c3\obj\Debug\Web_c3.dll
+D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\Web_c3\obj\Debug\Web_c3.pdb

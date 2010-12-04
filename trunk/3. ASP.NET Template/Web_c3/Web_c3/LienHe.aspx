@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Web_c3.Default" %>
-<%@ Register src="user_Login.ascx" tagname="user_Login" tagprefix="uc1" %>
-<%@ Register src="user_HotLine.ascx" tagname="user_HotLine" tagprefix="uc3" %>
-<%@ Register src="user_LienHe.ascx" tagname="user_LienHe" tagprefix="uc3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="LienHe.aspx.cs" Inherits="Web_c3.LienHe" %>
+<%@ Register src="~/Guest/user_Login.ascx" tagname="user_Login" tagprefix="webUC" %>
+<%@ Register src="~/Guest/user_HotLine.ascx" tagname="user_HotLine" tagprefix="webUC" %>
+<%@ Register src="~/Guest/user_LienHe.ascx" tagname="user_LienHe" tagprefix="webUC" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 </asp:Content>
@@ -10,13 +10,13 @@
     <img alt="" src="images/Left_2.png" style="width:195px; height: 94px" /> 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <uc3:user_LienHe ID="user_LienHe1" runat="server" />
+    <webUC:user_LienHe ID="user_LienHe1" runat="server" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
     <div >
-       <uc3:user_HotLine ID="user_HotLine1"  runat="server" />
+       <webUC:user_HotLine ID="user_HotLine1"  runat="server" />
        <div >
-            <uc1:user_Login ID="user_Login1"  runat="server" />
+            <webUC:user_Login ID="user_Login1"  runat="server" />
        </div>
     </div>
 </asp:Content>

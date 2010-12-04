@@ -56,23 +56,16 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\BasePage.cs">
+    <Compile Include="Core\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Content Include="App_Code\Theme.cs" />
-    <Content Include="App_Code\ThemeManager.cs" />
-    <Compile Include="Feedback.aspx.cs">
-      <DependentUpon>Feedback.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Feedback.aspx.designer.cs">
-      <DependentUpon>Feedback.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Guest\TimKiemNangCao.aspx.cs">
+    <Compile Include="Core\Theme.cs" />
+    <Compile Include="Core\ThemeManager.cs" />
+    <Compile Include="TimKiemNangCao.aspx.cs">
       <DependentUpon>TimKiemNangCao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Guest\TimKiemNangCao.aspx.designer.cs">
+    <Compile Include="TimKiemNangCao.aspx.designer.cs">
       <DependentUpon>TimKiemNangCao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Guest\ucTimKiemNangCao.ascx.cs">
@@ -96,68 +89,7 @@
     <Compile Include="Guest\user_Guest_XemThongTinChuyenXe.ascx.designer.cs">
       <DependentUpon>user_Guest_XemThongTinChuyenXe.ascx</DependentUpon>
     </Compile>
-    <Compile Include="MasterPage.Master.cs">
-      <DependentUpon>MasterPage.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPage.Master.designer.cs">
-      <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="user_Feedback.ascx.cs">
-      <DependentUpon>user_Feedback.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user_Feedback.ascx.designer.cs">
-      <DependentUpon>user_Feedback.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="user_GioiThieu.ascx.cs">
-      <DependentUpon>user_GioiThieu.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user_GioiThieu.ascx.designer.cs">
-      <DependentUpon>user_GioiThieu.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="user_HotLine.ascx.cs">
-      <DependentUpon>user_HotLine.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user_HotLine.ascx.designer.cs">
-      <DependentUpon>user_HotLine.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="user_LienHe.ascx.cs">
-      <DependentUpon>user_LienHe.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user_LienHe.ascx.designer.cs">
-      <DependentUpon>user_LienHe.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="user_Login.ascx.cs">
-      <DependentUpon>user_Login.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user_Login.ascx.designer.cs">
-      <DependentUpon>user_Login.ascx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="images\footer_bg.gif" />
-    <Content Include="images\header_bg_left.gif" />
-    <Content Include="images\header_bg_mid.gif" />
-    <Content Include="images\header_bg_right.gif" />
-    <Content Include="images\header_bg_right2.gif" />
-    <Content Include="images\menu_bg.gif" />
-    <Content Include="images\menu_bg_bottom.gif" />
-    <Content Include="Master.css" />
-    <Content Include="MasterPage.Master" />
-    <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Default\SkinDefault.skin" />
@@ -169,22 +101,74 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Default\jsUserControl.js" />
-    <Content Include="Feedback.aspx" />
-    <Content Include="Guest\TimKiemNangCao.aspx" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LienHe.aspx.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LienHe.aspx.designer.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TimKiemNangCao.aspx" />
     <Content Include="Guest\ucTimKiemNangCao.ascx" />
+    <Compile Include="Guest\user_Feedback.ascx.cs">
+      <DependentUpon>user_Feedback.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_Feedback.ascx.designer.cs">
+      <DependentUpon>user_Feedback.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_GioiThieu.ascx.cs">
+      <DependentUpon>user_GioiThieu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_GioiThieu.ascx.designer.cs">
+      <DependentUpon>user_GioiThieu.ascx</DependentUpon>
+    </Compile>
     <Content Include="Guest\user_Guest_TimKiemTuyenXe.ascx" />
     <Content Include="Guest\user_Guest_XemThongTinChuyenXe.ascx" />
-    <Content Include="images\content_img.jpg" />
-    <Content Include="images\hotline.gif" />
-    <Content Include="images\login_form.gif" />
+    <Compile Include="Guest\user_HotLine.ascx.cs">
+      <DependentUpon>user_HotLine.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_HotLine.ascx.designer.cs">
+      <DependentUpon>user_HotLine.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_LienHe.ascx.cs">
+      <DependentUpon>user_LienHe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_LienHe.ascx.designer.cs">
+      <DependentUpon>user_LienHe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_Login.ascx.cs">
+      <DependentUpon>user_Login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_Login.ascx.designer.cs">
+      <DependentUpon>user_Login.ascx</DependentUpon>
+    </Compile>
     <Content Include="jquery-1.4.4.js" />
-    <Content Include="LienHe.aspx" />
-    <Content Include="user_Feedback.ascx" />
-    <Content Include="user_GioiThieu.ascx" />
-    <Content Include="user_HotLine.ascx" />
-    <Content Include="user_LienHe.ascx" />
-    <Content Include="user_Login.ascx" />
-    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\CongTyLuHanh.mdf">
@@ -193,6 +177,7 @@
       <DependentUpon>CongTyLuHanh.mdf</DependentUpon>
     </Content>
     <Content Include="Default.sitemap" />
+    <Content Include="Guest\Css\CssTimKiemNangCao.css" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj">
@@ -203,6 +188,29 @@
       <Project>{9EA7E90C-7C04-40A9-A0CE-C7B9A6210831}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\bgDynamicMenuItem.jpg" />
+    <Content Include="images\bgDynamicMenuItemHover.jpg" />
+    <Content Include="images\footer_bg.gif" />
+    <Content Include="images\header_bg_left.gif" />
+    <Content Include="images\header_bg_mid.gif" />
+    <Content Include="images\header_bg_right.gif" />
+    <Content Include="images\header_bg_right2.gif" />
+    <Content Include="images\login_form.png" />
+    <Content Include="images\Logo.png" />
+    <Content Include="images\menu_bg.gif" />
+    <Content Include="images\menu_bg_bottom.gif" />
+    <Content Include="LienHe.aspx" />
+    <Content Include="Master.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Feedback.aspx" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="Guest\user_Feedback.ascx" />
+    <Content Include="Guest\user_GioiThieu.ascx" />
+    <Content Include="Guest\user_HotLine.ascx" />
+    <Content Include="Guest\user_LienHe.ascx" />
+    <Content Include="Guest\user_Login.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -219,7 +227,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3920</DevelopmentServerPort>
+          <DevelopmentServerPort>7810</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
