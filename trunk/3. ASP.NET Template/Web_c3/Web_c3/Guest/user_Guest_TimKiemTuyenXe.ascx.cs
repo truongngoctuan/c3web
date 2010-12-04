@@ -19,5 +19,37 @@ namespace Web_c3.Guest
         {
 
         }
+
+        public void addNoiDi(string arg)
+        {
+            ddlNoiKhoihanh.Items.Add(arg);
+        }
+
+        public void addNoiDen(string arg)
+        {
+            ddlNoiDen.Items.Add(arg);
+        }
+
+        public string getNoiDi()
+        {
+            return ddlNoiKhoihanh.SelectedItem.Text;
+        }
+
+        public string getNoiDen()
+        {
+            return ddlNoiDen.SelectedItem.Text;
+        }
+
+        // Hàm này để kiểm tra xem trong 
+        //  control có dữ liệu chưa
+        //
+        public Boolean haveData()
+        {
+            if (ddlNoiDen.Items.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
