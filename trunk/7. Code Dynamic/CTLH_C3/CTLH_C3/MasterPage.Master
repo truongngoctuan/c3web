@@ -16,8 +16,8 @@
     <div id="site">   
     <!--****************************************************************-->
     <div id="top">
-        <img style="float:left" src="images/header_bg_left.gif" width="270" height="193" alt="" />
-        <img style="float:left" src="images/header_bg_mid.gif" width="412" height="193" alt="" />
+        <img style="float:left" src="../images/header_bg_left.gif" width="270" height="193" alt="" />
+        <img style="float:left" src="../images/header_bg_mid.gif" width="412" height="193" alt="" />
         <div id="header_right">
             <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
                 TypeName="ThemeManager"></asp:ObjectDataSource>
@@ -50,7 +50,7 @@
         <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server"/>
     
         <div id="header_bg_right2"></div>
-        <img style="float:left;" src="images/menu_bg_bottom.gif" width="995" height="22" alt="" />
+        <img style="float:left;" src="../images/menu_bg_bottom.gif" width="995" height="22" alt="" />
     </div>
     <!--****************************************************************-->
     <div id="page">
