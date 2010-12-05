@@ -1,0 +1,172 @@
+﻿body
+{
+    background:#fff;
+}
+/*hình ảnh cho header-----------------------------------------------------------*/
+#header_bg_right2 {
+	background: url("images/header_bg_right2.gif");
+}
+/*---css menu---------------------------------------------------*/
+/* điều chỉnh màu sắc các thành phần trong menu 
+thay đổi back ground*/
+
+#Menu 	
+{
+	background-image: url(images/menu_bg.gif);
+	clear:left;
+}
+
+.DynamicItem a
+{
+	color: #FFFFFF;
+}
+
+.DynamicItem a {
+	color: #4AD2FF;
+}
+
+.StaticItem a {	
+    color: #C00;
+}
+
+.StaticItem a:hover {
+	color: #F90;
+}
+
+
+/*user control------------------------------------------------------------------------*/
+.ucLabel 
+{
+}
+
+.ucRadioButton
+{
+}
+
+.ucDropDownList
+{
+    border-width: 1px; 
+    border-color:Blue;
+    color: #090d37; 
+    font-family: Verdana; 
+    font-weight: bold;
+    /*http://vinasupport.com/blog/2010/08/tao-goc-bo-tron-rounded-corner-voi-css3/*/
+    /*for chrome, safari*/
+    -webkit-border-radius: 4px;
+    /*for firefox*/
+    -moz-border-radius: 4px;
+}
+
+.ucDropDownListMouseOver
+{
+    border-width: 3px; 
+}
+
+.ucListBox
+{
+}
+/*ucButton-----------------------------------------------------------*/
+.ucButton
+{    
+    color:#090d37;
+    vertical-align:middle;
+    background-color:Transparent;
+    background-image: url(images/btBackgroundGradientNormal.jpg);
+    /*http://vinasupport.com/blog/2010/08/tao-goc-bo-tron-rounded-corner-voi-css3/*/
+    /*for chrome, safari*/
+    -webkit-border-radius: 4px;
+    /*for firefox*/
+    -moz-border-radius: 4px;
+    border-color:#3a92ff;
+}
+
+.ucButton:hover
+{
+    color:White;
+    text-shadow: 0 -1px 0 #4C9021;
+    border-color:#235899;
+    background-image: url(images/btBackgroundGradientHover.jpg);
+}
+.ucButton:active
+{
+    color:White;
+    text-shadow: 0 -1px 0 #4C9021;
+    border-color:#235899;
+    background-image: url(images/btBackgroundGradientActive.jpg);
+}
+
+/*ucTextbox-----------------------------------------------------------*/
+
+.ucTextbox
+{
+    vertical-align:baseline;
+    background-color:Transparent;
+    background-image: url(images/tbBackgroundGradient.jpg);
+    /*http://vinasupport.com/blog/2010/08/tao-goc-bo-tron-rounded-corner-voi-css3/*/
+    /*for chrome, safari*/
+    -webkit-border-radius: 4px;
+    /*for firefox*/
+    -moz-border-radius: 4px;
+}
+
+.ucRadioButton
+{
+    background-image: url(images/tbBackgroundGradient.jpg);
+}
+
+/* checkbox + radio button-------------------------------------------------- */
+/* wrapper divs */
+.custom-checkbox, .custom-radio { position: relative; }
+	
+/* input, label positioning */
+.custom-checkbox input, 
+.custom-radio input {
+	position: absolute;
+	left: 2px;
+	top: 3px;
+	margin: 0;
+	z-index: 0;
+}
+
+.custom-checkbox label, 
+.custom-radio label {
+	display: block;
+	position: relative;
+	z-index: 1;
+	/*font-size: 1.3em;*/
+	padding-right: 1em;
+	line-height: 1;
+	padding: .5em 0 1em 30px;
+	margin: 0 0 .3em;
+	cursor: pointer;
+}
+
+.custom-checkbox label{ background: url(images/checkbox.gif) no-repeat; }
+
+.custom-radio label { background: url(images/radiobutton.gif) no-repeat; }
+
+.custom-checkbox label, .custom-radio label {
+	background-position: -10px -16px;
+}
+
+.custom-checkbox label.hover,
+.custom-checkbox label.focus,
+.custom-radio label:hover,
+.custom-radio label.focus {
+	background-position: -10px -116px;
+}
+
+.custom-checkbox label.checked, 
+.custom-radio label.checked {
+	background-position: -10px -216px;
+}
+
+.custom-checkbox label.checkedHover, 
+.custom-checkbox label.checkedFocus {
+	background-position: -10px -316px;
+}
+
+.custom-checkbox label.focus, 
+.custom-radio label.focus {
+	outline: 1px dotted #ccc;
+}

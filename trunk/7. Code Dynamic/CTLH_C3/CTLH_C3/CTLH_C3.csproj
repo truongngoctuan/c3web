@@ -80,6 +80,11 @@
       <DependentUpon>TRAVEL_WEB.mdf</DependentUpon>
     </Content>
     <Content Include="Default.aspx" />
+    <Compile Include="Core\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\Theme.cs" />
+    <Compile Include="Core\ThemeManager.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -91,8 +96,81 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Content Include="jquery-1.4.4-vsdoc.js" />
+    <Content Include="jquery-1.4.4.js" />
+    <Content Include="Master.css" />
     <Content Include="Site.css" />
     <Content Include="Site.master" />
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\ucTimKiemNangCao.ascx.cs">
+      <DependentUpon>ucTimKiemNangCao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\ucTimKiemNangCao.ascx.designer.cs">
+      <DependentUpon>ucTimKiemNangCao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_Feedback.ascx.cs">
+      <DependentUpon>user_Feedback.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_Feedback.ascx.designer.cs">
+      <DependentUpon>user_Feedback.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_GioiThieu.ascx.cs">
+      <DependentUpon>user_GioiThieu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_GioiThieu.ascx.designer.cs">
+      <DependentUpon>user_GioiThieu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_Guest_TimKiemTuyenXe.ascx.cs">
+      <DependentUpon>user_Guest_TimKiemTuyenXe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_Guest_TimKiemTuyenXe.ascx.designer.cs">
+      <DependentUpon>user_Guest_TimKiemTuyenXe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_Guest_XemThongTinChuyenXe.ascx.cs">
+      <DependentUpon>user_Guest_XemThongTinChuyenXe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_Guest_XemThongTinChuyenXe.ascx.designer.cs">
+      <DependentUpon>user_Guest_XemThongTinChuyenXe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_HotLine.ascx.cs">
+      <DependentUpon>user_HotLine.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_HotLine.ascx.designer.cs">
+      <DependentUpon>user_HotLine.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_LienHe.ascx.cs">
+      <DependentUpon>user_LienHe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_LienHe.ascx.designer.cs">
+      <DependentUpon>user_LienHe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_Login.ascx.cs">
+      <DependentUpon>user_Login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_Login.ascx.designer.cs">
+      <DependentUpon>user_Login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_Template_ThongTinChuyen.ascx.cs">
+      <DependentUpon>user_Template_ThongTinChuyen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_Template_ThongTinChuyen.ascx.designer.cs">
+      <DependentUpon>user_Template_ThongTinChuyen.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Site.master.cs">
       <DependentUpon>Site.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -280,6 +358,44 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Black\images\header_bg_right2.jpg" />
+    <Content Include="App_Themes\Black\images\menu_bg.jpg" />
+    <Content Include="App_Themes\Black\StyleBlack.css" />
+    <Content Include="App_Themes\Default\Default.css" />
+    <Content Include="App_Themes\Default\images\btBackgroundGradient.jpg" />
+    <Content Include="App_Themes\Default\images\btBackgroundGradientActive.jpg" />
+    <Content Include="App_Themes\Default\images\btBackgroundGradientHover.jpg" />
+    <Content Include="App_Themes\Default\images\btBackgroundGradientNormal.jpg" />
+    <Content Include="App_Themes\Default\images\checkbox.gif" />
+    <Content Include="App_Themes\Default\images\header_bg_right2.gif" />
+    <Content Include="App_Themes\Default\images\menu_bg.gif" />
+    <Content Include="App_Themes\Default\images\radiobutton.gif" />
+    <Content Include="App_Themes\Default\images\tbBackgroundGradient.jpg" />
+    <Content Include="App_Themes\Default\jsUserControl.js" />
+    <Content Include="Default.sitemap" />
+    <Content Include="images\bgDynamicMenuItem.jpg" />
+    <Content Include="images\bgDynamicMenuItemHover.jpg" />
+    <Content Include="images\footer_bg.gif" />
+    <Content Include="images\header_bg_left.gif" />
+    <Content Include="images\header_bg_mid.gif" />
+    <Content Include="images\header_bg_right.gif" />
+    <Content Include="images\header_bg_right2.gif" />
+    <Content Include="images\login_form.png" />
+    <Content Include="images\Logo.png" />
+    <Content Include="images\menu_bg.gif" />
+    <Content Include="images\menu_bg_bottom.gif" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="Guest\ucTimKiemNangCao.ascx" />
+    <Content Include="Guest\user_Feedback.ascx" />
+    <Content Include="Guest\user_GioiThieu.ascx" />
+    <Content Include="Guest\user_Guest_TimKiemTuyenXe.ascx" />
+    <Content Include="Guest\user_Guest_XemThongTinChuyenXe.ascx" />
+    <Content Include="Guest\user_HotLine.ascx" />
+    <Content Include="Guest\user_LienHe.ascx" />
+    <Content Include="Guest\user_Login.ascx" />
+    <Content Include="Guest\user_Template_ThongTinChuyen.ascx" />
+    <Content Include="App_Themes\Black\SkinBlack.skin" />
+    <Content Include="App_Themes\Default\SkinDefault.skin" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>
