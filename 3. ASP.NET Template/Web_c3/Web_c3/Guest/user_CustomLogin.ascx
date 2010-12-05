@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_CustomLogin.ascx.cs" Inherits="Web_c3.user_CustomLogin" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_CustomLogin.ascx.cs" Inherits="Web_c3.Guest.user_CustomLogin" %>
 <style type="text/css">
     .style1
     {

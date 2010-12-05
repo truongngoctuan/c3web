@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web_c3 {
+namespace Web_c3.Guest {
     
     
     public partial class user_CustomLogin {
