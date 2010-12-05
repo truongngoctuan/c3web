@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Web_c3
+namespace Web_c3.Guest
 {
     public partial class user_CustomLogin : System.Web.UI.UserControl
     {
