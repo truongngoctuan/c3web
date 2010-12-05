@@ -1,0 +1,59 @@
+﻿body
+{
+    color:#0084B4;
+    background:#8EC1DA;
+    font-weight:bold;
+    font-family:'Helvetica Neue',Sans-serif;
+    font-size:13px;
+}
+
+/*hình ảnh cho header-----------------------------------------------------------*/
+#header_bg_right2 {
+	background: url("images/header_bg_right2.jpg");
+}
+/*---css menu ngang---------------------------------------------------*/
+/* điều chỉnh màu sắc các thành phần trong menu 
+thay đổi back ground*/
+#Menu {
+	background-image: url(images/menu_bg.jpg);
+}
+
+.DynamicItem a
+{
+	color: #FFFFFF;
+}
+
+.DynamicItem a {
+	color: #4AD2FF;
+}
+
+.StaticItem a {	
+    color: #BABABA;
+}
+
+.StaticItem a:hover {
+	color: #FFFFFF;
+}
+/*------------------------------------------------------------------------*/
+
+/*---------------------------------------------------*/
+/*các thẻ div chính*/
+div#site
+{
+    background:#DAECF5;
+}
+
+div#top
+{
+}
+div#left
+{
+}
+
+div#content
+{
+}
+
+div#right
+{
+}
