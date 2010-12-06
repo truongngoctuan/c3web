@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.DynamicData;
 
-namespace Web_c3.TaiXe
+namespace CTLH_C3
 {
-    public partial class ThayDoiThongTinCaNhan : System.Web.UI.Page
+    public partial class ThayDoiThongTinCaNhan : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
