@@ -5,6 +5,7 @@
 
 <head id="Head1" runat="server">
     <title></title>
+    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="Master.css" rel="stylesheet" type="text/css" />
@@ -13,6 +14,10 @@
 
 <body>    
     <form id="form1" runat="server"> 
+    <asp:ScriptManager ID="TheScriptManager" runat="server">
+        </asp:ScriptManager>
+
+
     <div id="site">   
     <!--****************************************************************-->
     <div id="top">
