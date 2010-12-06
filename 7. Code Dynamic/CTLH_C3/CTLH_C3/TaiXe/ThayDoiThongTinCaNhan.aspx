@@ -1,11 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ThayDoiThongTinCaNhan.aspx.cs" Inherits="CTLH_C3._Default" %>
-<%--<asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server" />--%>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
-    
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
-
-    <%--<asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />--%>
-
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
@@ -19,7 +14,7 @@
                 AutoGenerateRows="False">
                 <FieldHeaderStyle CssClass="bold" />
                 <Fields>
-                    <asp:BoundField DataField="HoTen" HeaderText="HoTen" ReadOnly="True" 
+                    <asp:BoundField DataField="HoTen" HeaderText="Họ ten" ReadOnly="True" 
                         SortExpression="HoTen" />
                     <asp:BoundField DataField="DienThoai" HeaderText="DienThoai" ReadOnly="True" 
                         SortExpression="DienThoai" />

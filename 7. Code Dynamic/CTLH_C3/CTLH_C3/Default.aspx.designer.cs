@@ -20,16 +20,7 @@ namespace CTLH_C3 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UserControl user_Guest_TimKiemTuyenXe1;
-        
-        /// <summary>
-        /// user_GioiThieu1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UserControl user_GioiThieu1;
+        protected global::Web_c3.Guest.user_Guest_TimKiemTuyenXe user_Guest_TimKiemTuyenXe1;
         
         /// <summary>
         /// user_HotLine1 control.
@@ -38,7 +29,7 @@ namespace CTLH_C3 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UserControl user_HotLine1;
+        protected global::Web_c3.Guest.user_HotLine user_HotLine1;
         
         /// <summary>
         /// user_Login1 control.
@@ -47,6 +38,6 @@ namespace CTLH_C3 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UserControl user_Login1;
+        protected global::Web_c3.Guest.user_Login user_Login1;
     }
 }
