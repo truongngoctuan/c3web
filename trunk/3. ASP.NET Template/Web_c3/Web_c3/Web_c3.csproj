@@ -94,6 +94,72 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Default\jsUserControl.js" />
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PhanQuyenTaiKhoan.aspx.cs">
+      <DependentUpon>PhanQuyenTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PhanQuyenTaiKhoan.aspx.designer.cs">
+      <DependentUpon>PhanQuyenTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QuanLyThongTinCongTy.aspx.cs">
+      <DependentUpon>QuanLyThongTinCongTy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\QuanLyThongTinCongTy.aspx.designer.cs">
+      <DependentUpon>QuanLyThongTinCongTy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ThayDoiGiaoDien.aspx.cs">
+      <DependentUpon>ThayDoiGiaoDien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ThayDoiGiaoDien.aspx.designer.cs">
+      <DependentUpon>ThayDoiGiaoDien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ThemTaiKhoan.aspx.cs">
+      <DependentUpon>ThemTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ThemTaiKhoan.aspx.designer.cs">
+      <DependentUpon>ThemTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\XoaTaiKhoan.aspx.cs">
+      <DependentUpon>XoaTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\XoaTaiKhoan.aspx.designer.cs">
+      <DependentUpon>XoaTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authenticated\Controls\ucDoiMatKhau.ascx.cs">
+      <DependentUpon>ucDoiMatKhau.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authenticated\Controls\ucDoiMatKhau.ascx.designer.cs">
+      <DependentUpon>ucDoiMatKhau.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Authenticated\DoiMatKhau.aspx.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authenticated\DoiMatKhau.aspx.designer.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\ConfigHelper.cs" />
+    <Compile Include="Core\CustomMembershipProvider.cs" />
+    <Compile Include="Core\CustomRoleProvider.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,12 +174,33 @@
     <Compile Include="Feedback.aspx.designer.cs">
       <DependentUpon>Feedback.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Guest\QuenMatKhau.ascx.cs">
+      <DependentUpon>QuenMatKhau.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\QuenMatKhau.ascx.designer.cs">
+      <DependentUpon>QuenMatKhau.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_CustomLogin.ascx.cs">
+      <DependentUpon>user_CustomLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_CustomLogin.ascx.designer.cs">
+      <DependentUpon>user_CustomLogin.ascx</DependentUpon>
+    </Compile>
     <Compile Include="LienHe.aspx.cs">
       <DependentUpon>LienHe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LienHe.aspx.designer.cs">
       <DependentUpon>LienHe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -160,6 +247,13 @@
     <Compile Include="Guest\user_Login.ascx.designer.cs">
       <DependentUpon>user_Login.ascx</DependentUpon>
     </Compile>
+    <Compile Include="QuenMatKhau.aspx.cs">
+      <DependentUpon>QuenMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuenMatKhau.aspx.designer.cs">
+      <DependentUpon>QuenMatKhau.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TimKiemNangCao.aspx" />
     <Compile Include="TimKiemNangCao.aspx.cs">
       <DependentUpon>TimKiemNangCao.aspx</DependentUpon>
@@ -190,6 +284,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\PhanQuyenTaiKhoan.aspx" />
+    <Content Include="Admin\QuanLyThongTinCongTy.aspx" />
+    <Content Include="Admin\ThayDoiGiaoDien.aspx" />
+    <Content Include="Admin\ThemTaiKhoan.aspx" />
+    <Content Include="Admin\XoaTaiKhoan.aspx" />
+    <Content Include="Guest\user_CustomLogin.ascx" />
     <Content Include="images\bgDynamicMenuItem.jpg" />
     <Content Include="images\bgDynamicMenuItemHover.jpg" />
     <Content Include="images\footer_bg.gif" />
@@ -211,6 +312,20 @@
     <Content Include="Guest\user_HotLine.ascx" />
     <Content Include="Guest\user_LienHe.ascx" />
     <Content Include="Guest\user_Login.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Default.sitemap" />
+    <Content Include="Admin\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\MasterPage.Master" />
+    <Content Include="Authenticated\Controls\ucDoiMatKhau.ascx" />
+    <Content Include="Authenticated\DoiMatKhau.aspx" />
+    <Content Include="Guest\QuenMatKhau.ascx" />
+    <Content Include="DangNhap.aspx" />
+    <Content Include="images\login_button.png" />
+    <Content Include="images\logout-button.png" />
+    <Content Include="QuenMatKhau.aspx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

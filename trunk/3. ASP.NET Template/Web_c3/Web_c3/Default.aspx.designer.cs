@@ -14,15 +14,6 @@ namespace Web_c3 {
     public partial class Default {
         
         /// <summary>
-        /// user_Guest_TimKiemTuyenXe1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Web_c3.Guest.user_Guest_TimKiemTuyenXe user_Guest_TimKiemTuyenXe1;
-        
-        /// <summary>
         /// user_GioiThieu1 control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,6 @@ namespace Web_c3 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Web_c3.Guest.user_Login user_Login1;
+        protected global::Web_c3.Guest.user_CustomLogin user_Login1;
     }
 }

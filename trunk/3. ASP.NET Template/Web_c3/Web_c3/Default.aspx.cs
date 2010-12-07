@@ -16,7 +16,7 @@ namespace Web_c3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!user_Guest_TimKiemTuyenXe1.haveData())
+            /*if (!user_Guest_TimKiemTuyenXe1.haveData())
             {
                 TramXeBUS tramxeBus = new TramXeBUS();
                 List<TRAM_XE> lstTram = tramxeBus.SelectAllTramXes();
@@ -25,13 +25,13 @@ namespace Web_c3
                     user_Guest_TimKiemTuyenXe1.addNoiDi(lstTram[i].TenTramXe);
                     user_Guest_TimKiemTuyenXe1.addNoiDen(lstTram[i].TenTramXe);
                 }
-            }
+            }*/
         }
 
         protected override void OnPreInit(EventArgs e)
         {
             base.OnPreInit(e);
-            AddScript(new string[] { "InitCheckBox();","initDropDownList();"});
+            //AddScript(new string[] { "InitCheckBox();","initDropDownList();"});
         }
     }
 }
