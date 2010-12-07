@@ -4,10 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head id="Head1" runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <title>
+    <asp:ContentPlaceHolder ID="head" runat="server">        
     </asp:ContentPlaceHolder>
+    </title>
     <link href="Master.css" rel="stylesheet" type="text/css" />
+	<link href="~/Site.css" rel="stylesheet" type="text/css" />
     <script src="jquery-1.4.4.js" type="text/javascript"></script>
 </head>
 
@@ -16,8 +18,8 @@
     <div id="site">   
     <!--****************************************************************-->
     <div id="top">
-        <img style="float:left" src="images/header_bg_left.gif" width="270" height="193" alt="" />
-        <img style="float:left" src="images/header_bg_mid.gif" width="412" height="193" alt="" />
+        <img style="float:left" src="../images/header_bg_left.gif" width="270" height="193" alt="" />
+        <img style="float:left" src="../images/header_bg_mid.gif" width="412" height="193" alt="" />
         <div id="header_right">
             <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
                 TypeName="ThemeManager"></asp:ObjectDataSource>
@@ -57,21 +59,20 @@
      <!--****************************************************************-->
          <div id="left">
             <asp:ContentPlaceHolder ID="LeftContent" runat="server">
-            
-            Chỗ dành cho trang nội dung, không đụng vào.
+                &nbsp;
             </asp:ContentPlaceHolder>
         </div>
         <!--****************************************************************-->
         <div id="content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"> 
-            Chỗ dành cho trang nội dung, không đụng vào.           
+                &nbsp;         
             </asp:ContentPlaceHolder>
         </div>
   
         <!--****************************************************************-->
         <div id="right">
             <asp:ContentPlaceHolder ID="RightContent" runat="server"> 
-            Chỗ dành cho trang nội dung, không đụng vào.           
+                &nbsp;           
             </asp:ContentPlaceHolder>
         </div>    
     <!--****************************************************************-->

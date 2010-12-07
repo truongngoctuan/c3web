@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace Web_c3
 {
@@ -15,25 +16,40 @@ namespace Web_c3
             //chinh menu co noi dung dong
             if (!IsPostBack)
             {
-                string sURL = Request.Url.ToString().ToLower();
-                if (sURL.Contains("/admin/"))
+                if (Page.User.Identity.IsAuthenticated)
                 {
-                    SiteMapDataSourceMenu.SiteMapProvider = "AdminSiteMap";
+                    string role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
+                    switch (role)
+                    {
+                        case "Admin":
+                            {
+                                SiteMapDataSourceMenu.SiteMapProvider = "AdminSiteMap";
+                                break;
+                            }
+                        case "TaiXe":
+                            {
+                                SiteMapDataSourceMenu.SiteMapProvider = "TaiXeSiteMap";
+                                break;
+                            }
+                        case "DieuHanhTram":
+                            {
+                                SiteMapDataSourceMenu.SiteMapProvider = "DieuHanhTramSiteMap";
+                                break;
+                            }
+                        case "DieuHanhCongTy":
+                            {
+                                SiteMapDataSourceMenu.SiteMapProvider = "DieuHanhCongTySiteMap";
+                                break;
+                            }
+                        default:
+                            {
+                                SiteMapDataSourceMenu.SiteMapProvider = "XmlSiteMapProvider";
+                                break;
+                            }
+                    }
                 }
-
-                if (sURL.Contains("/taixe/"))
+                else
                 {
-                    SiteMapDataSourceMenu.SiteMapProvider = "TaiXeSiteMap";
-                }
-
-                if (sURL.Contains("/dieuhanhtram/"))
-                {
-                    SiteMapDataSourceMenu.SiteMapProvider = "DieuHanhTramSiteMap";
-                }
-
-                if (sURL.Contains("/dieuhanhcongty/"))
-                {
-                    SiteMapDataSourceMenu.SiteMapProvider = "DieuHanhCongTySiteMap";
                 }
             }            
         }
