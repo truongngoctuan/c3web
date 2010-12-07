@@ -6,8 +6,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    <img alt="" src="images/Left_1.jpg" style="width:195px; height: 146px" />
-    <img alt="" src="images/Left_2.png" style="width:195px; height: 94px" /> 
+    
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <webUC:user_LienHe ID="user_LienHe1" runat="server" />

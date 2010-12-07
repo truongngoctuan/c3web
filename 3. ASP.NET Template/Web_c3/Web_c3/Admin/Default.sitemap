@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode>
-    <siteMapNode url="Admin/Default.aspx" title="Trang Chủ"  description="Trang Chủ"/>
+    <siteMapNode url="~/Default.aspx" title="Trang Chủ"  description="Trang Chủ"/>
     <siteMapNode title="Quản lý tài khoản"  description="Quản lý tài khoản">
-      <siteMapNode url="Admin/ThemTaiKhoan.aspx" title="Thêm tài khoản"  description="Thêm tài khoản" />
-      <siteMapNode url="Admin/XoaTaiKhoan.aspx" title="Xóa tài khoản"  description="Xóa tài khoản" />
-      <siteMapNode url="Admin/PhanQuyenTaiKhoan.aspx" title="Phân quyền tài khoản"  description="Phân quyền tài khoản" />
+      <siteMapNode url="~/Admin/ThemTaiKhoan.aspx" title="Thêm tài khoản"  description="Thêm tài khoản" />
+      <siteMapNode url="~/Admin/XoaTaiKhoan.aspx" title="Xóa tài khoản"  description="Xóa tài khoản" />
+      <siteMapNode url="~/Admin/PhanQuyenTaiKhoan.aspx" title="Phân quyền tài khoản"  description="Phân quyền tài khoản" />
     </siteMapNode>
   </siteMapNode>
 </siteMap>

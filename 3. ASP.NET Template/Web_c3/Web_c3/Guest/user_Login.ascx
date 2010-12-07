@@ -12,7 +12,7 @@
         TextMode="Password"
         style="position:relative; float:left; clear:both; margin-top:5px; margin-left:25px; width:185px">
     </asp:TextBox>
-     <asp:CheckBox CssClass="custom-checkbox" ID="cbLuuMatKhau" Text="Ghi nhớ mật khẩu" runat="server" 
+    <asp:CheckBox CssClass="custom-checkbox" ID="cbLuuMatKhau" Text="Ghi nhớ mật khẩu" runat="server" 
      style="position:relative; float:left; clear:both; margin-top:5px; margin-left:25px"/>
     <asp:Button ID="btnLogin" 
         runat="server" Text="Đăng Nhập" onclick="btnLogin_Click" 
