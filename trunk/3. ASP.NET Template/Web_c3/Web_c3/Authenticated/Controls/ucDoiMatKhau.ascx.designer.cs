@@ -8,18 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web_c3.Guest {
+namespace Web_c3.Authenticated.Controls {
     
     
-    public partial class user_CustomLogin {
+    public partial class ucDoiMatKhau {
         
         /// <summary>
-        /// LoginView1 control.
+        /// ChangePassword1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView LoginView1;
+        protected global::System.Web.UI.WebControls.ChangePassword ChangePassword1;
     }
 }

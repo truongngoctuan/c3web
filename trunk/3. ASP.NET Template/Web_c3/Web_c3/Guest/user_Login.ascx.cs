@@ -24,7 +24,6 @@ namespace Web_c3.Guest
         {
             if (txtUsername.Text == "123")
             {
-                
             }
             else
             {

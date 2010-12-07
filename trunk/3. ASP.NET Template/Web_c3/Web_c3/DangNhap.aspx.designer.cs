@@ -8,18 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web_c3.Guest {
+namespace Web_c3 {
     
     
-    public partial class user_CustomLogin {
+    public partial class DangNhap {
         
         /// <summary>
-        /// LoginView1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView LoginView1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
     }
 }

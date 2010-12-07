@@ -3,26 +3,80 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using System.Configuration.Provider;
+using Web_c3.Core;
+using System.Collections.Specialized;
 
 namespace Web_c3.Core
 {
     public class CustomRoleProvider : RoleProvider
     {
-        public override void AddUsersToRoles(string[] usernames, string[] roleNames)
-        {
-            throw new NotImplementedException();
-        }
+        private string _AppName;
+        private string _DatabaseFileName;
+        private int _ApplicationId = 0;
+        private DateTime _ApplicationIDCacheDate;
 
         public override string ApplicationName
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get { return _AppName; }
             set
             {
-                throw new NotImplementedException();
+                if (_AppName != value)
+                {
+                    _ApplicationId = 0;
+                    _AppName = value;
+                }
             }
+        }
+        public override void Initialize(string name, NameValueCollection config)
+        {
+            if (config == null)
+                throw new ArgumentNullException("config");
+            if (String.IsNullOrEmpty(name))
+                name = "AccessRoleProvider";
+            if (string.IsNullOrEmpty(config["description"]))
+            {
+                config.Remove("description");
+                config.Add("description", "$safeprojectname$ Role Provider");
+            }
+            base.Initialize(name, config);
+
+            _DatabaseFileName = config["connectionStringName"];
+            if (_DatabaseFileName == null || _DatabaseFileName.Length < 1)
+                throw new ProviderException("Connection name not specified");
+
+            /*string temp = MyConnectionHelper.GetFileNameFromConnectionName(_DatabaseFileName, true);
+            if (temp == null || temp.Length < 1)
+            {
+                throw new ProviderException("Connection string not found: " + _DatabaseFileName);
+            }
+            _DatabaseFileName = temp;
+            //HandlerBase.CheckAndReadRegistryValue(ref _DatabaseFileName, true);
+            MyConnectionHelper.CheckConnectionString(_DatabaseFileName);*/
+
+            _AppName = config["applicationName"];
+            if (string.IsNullOrEmpty(_AppName))
+                _AppName = ConfigHelper.GetDefaultAppName();
+
+            if (_AppName.Length > 255)
+            {
+                throw new ProviderException("Provider application name too long, max is 255.");
+            }
+
+            config.Remove("connectionStringName");
+            config.Remove("applicationName");
+            config.Remove("description");
+            if (config.Count > 0)
+            {
+                string attribUnrecognized = config.GetKey(0);
+                if (!String.IsNullOrEmpty(attribUnrecognized))
+                    throw new ProviderException("Provider unrecognized attribute: " + attribUnrecognized);
+            }
+        }
+
+        public override void AddUsersToRoles(string[] usernames, string[] roleNames)
+        {
+            throw new NotImplementedException();
         }
 
         public override void CreateRole(string roleName)
@@ -37,7 +91,6 @@ namespace Web_c3.Core
 
         public override string[] FindUsersInRole(string roleName, string usernameToMatch)
         {
-            //Role
             throw new NotImplementedException();
         }
 
@@ -48,7 +101,10 @@ namespace Web_c3.Core
 
         public override string[] GetRolesForUser(string username)
         {
-            throw new NotImplementedException();
+            if(username == "demo")
+                return new string[] {"Admin"};
+            return null;
+            //throw new NotImplementedException();
         }
 
         public override string[] GetUsersInRole(string roleName)
