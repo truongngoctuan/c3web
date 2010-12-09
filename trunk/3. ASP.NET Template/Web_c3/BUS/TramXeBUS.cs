@@ -35,5 +35,10 @@ namespace BUS
         {
             return _tramxeDao.SelectTramXesByMaTruongTram(matruongtram);
         }
+
+        public List<TRAM_XE> SelectAllTramXes()
+        {
+            return _tramxeDao.SelectAllTramXes();
+        }
     }
 }

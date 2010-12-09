@@ -40,5 +40,10 @@ namespace BUS
         {
             return _chuyenxeDao.SelectChuyenXesByMaTuyenXe(matuyenxe);
         }
+
+        public List<CHUYEN_XE> SelectAllChuyenXes()
+        {
+            return _chuyenxeDao.SelectAllChuyenXes();
+        }
     }
 }

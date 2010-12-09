@@ -87,5 +87,17 @@ namespace DAO
             }
             return kq;
         }
+
+        public List<CHUYEN_XE> SelectAllChuyenXes()
+        {
+            var query = from c in _dataContext.CHUYEN_XEs
+                        select c;
+            List<CHUYEN_XE> kq = new List<CHUYEN_XE>();
+            foreach (var cx in query)
+            {
+                kq.Add((CHUYEN_XE)cx);
+            }
+            return kq;
+        }
     }
 }
