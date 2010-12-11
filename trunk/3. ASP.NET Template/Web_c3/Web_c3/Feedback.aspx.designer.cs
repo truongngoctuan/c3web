@@ -21,23 +21,5 @@ namespace Web_c3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Web_c3.Guest.user_Feedback user_Feedback;
-        
-        /// <summary>
-        /// user_HotLine1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Web_c3.Guest.user_HotLine user_HotLine1;
-        
-        /// <summary>
-        /// user_Login1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Web_c3.Guest.user_Login user_Login1;
     }
 }

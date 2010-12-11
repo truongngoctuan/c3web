@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Web_c3
 {
-    public partial class DangNhap : System.Web.UI.Page
+    public partial class DangNhap : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
