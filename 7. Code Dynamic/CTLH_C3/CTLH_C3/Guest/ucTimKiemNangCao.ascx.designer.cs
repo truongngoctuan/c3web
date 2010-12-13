@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web_c3.Guest {
+namespace CTLH_C3.Guest {
     
     
     public partial class ucTimKiemNangCao {

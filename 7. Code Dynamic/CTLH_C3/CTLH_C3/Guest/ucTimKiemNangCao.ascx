@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucTimKiemNangCao.ascx.cs" Inherits="Web_c3.Guest.ucTimKiemNangCao" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucTimKiemNangCao.ascx.cs" Inherits="CTLH_C3.Guest.ucTimKiemNangCao" %>
 <%--<%@ Register src="~/User Control/ucComboBox.ascx" tagname="ucComboBox" tagprefix="uc" %>
 <%@ Register src="~/User Control/ucCalendar.ascx" tagname="ucCalendar" tagprefix="uc" %>
 <%@ Register src="~/User Control/ucLabel.ascx" tagname="ucLabel" tagprefix="uc" %>

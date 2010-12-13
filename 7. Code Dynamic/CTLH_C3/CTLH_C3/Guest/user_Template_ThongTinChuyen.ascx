@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_Template_ThongTinChuyen.ascx.cs" Inherits="Web_c3.Guest.user_GridView_ThongTinChuyen" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_Template_ThongTinChuyen.ascx.cs" Inherits="CTLH_C3.Guest.user_GridView_ThongTinChuyen" %>
 <asp:Panel ID="Panel1" runat="server">
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         Width="990px" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" 

@@ -80,11 +80,77 @@
       <DependentUpon>TRAVEL_WEB.mdf</DependentUpon>
     </Content>
     <Content Include="Default.aspx" />
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PhanQuyenTaiKhoan.aspx.cs">
+      <DependentUpon>PhanQuyenTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PhanQuyenTaiKhoan.aspx.designer.cs">
+      <DependentUpon>PhanQuyenTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QuanLyThongTinCongTy.aspx.cs">
+      <DependentUpon>QuanLyThongTinCongTy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\QuanLyThongTinCongTy.aspx.designer.cs">
+      <DependentUpon>QuanLyThongTinCongTy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ThayDoiGiaoDien.aspx.cs">
+      <DependentUpon>ThayDoiGiaoDien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ThayDoiGiaoDien.aspx.designer.cs">
+      <DependentUpon>ThayDoiGiaoDien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ThemTaiKhoan.aspx.cs">
+      <DependentUpon>ThemTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ThemTaiKhoan.aspx.designer.cs">
+      <DependentUpon>ThemTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\XoaTaiKhoan.aspx.cs">
+      <DependentUpon>XoaTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\XoaTaiKhoan.aspx.designer.cs">
+      <DependentUpon>XoaTaiKhoan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Core\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Core\ConfigHelper.cs" />
+    <Compile Include="Core\CustomMembershipProvider.cs" />
+    <Compile Include="Core\CustomRoleProvider.cs" />
     <Compile Include="Core\Theme.cs" />
     <Compile Include="Core\ThemeManager.cs" />
+    <Compile Include="DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachCacChuyen.aspx.cs">
+      <DependentUpon>DanhSachCacChuyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachCacChuyen.aspx.designer.cs">
+      <DependentUpon>DanhSachCacChuyen.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -93,6 +159,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Content Include="Global.asax" />
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -101,6 +174,27 @@
     <Content Include="Master.css" />
     <Content Include="Site.css" />
     <Content Include="Site.master" />
+    <Compile Include="Guest\QuenMatKhau.ascx.cs">
+      <DependentUpon>QuenMatKhau.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\QuenMatKhau.ascx.designer.cs">
+      <DependentUpon>QuenMatKhau.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\user_CustomLogin.ascx.cs">
+      <DependentUpon>user_CustomLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_CustomLogin.ascx.designer.cs">
+      <DependentUpon>user_CustomLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LienHe.aspx.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LienHe.aspx.designer.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -170,6 +264,13 @@
     </Compile>
     <Compile Include="Guest\user_Template_ThongTinChuyen.ascx.designer.cs">
       <DependentUpon>user_Template_ThongTinChuyen.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="QuenMatKhau.aspx.cs">
+      <DependentUpon>QuenMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuenMatKhau.aspx.designer.cs">
+      <DependentUpon>QuenMatKhau.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.master.cs">
       <DependentUpon>Site.master</DependentUpon>
@@ -341,10 +442,17 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
     </Compile>
+    <Compile Include="ThongTinChiTietChuyenXe.aspx.cs">
+      <DependentUpon>ThongTinChiTietChuyenXe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinChiTietChuyenXe.aspx.designer.cs">
+      <DependentUpon>ThongTinChiTietChuyenXe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TRAVEL_WEB.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -358,6 +466,12 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\PhanQuyenTaiKhoan.aspx" />
+    <Content Include="Admin\QuanLyThongTinCongTy.aspx" />
+    <Content Include="Admin\ThayDoiGiaoDien.aspx" />
+    <Content Include="Admin\ThemTaiKhoan.aspx" />
+    <Content Include="Admin\XoaTaiKhoan.aspx" />
     <Content Include="App_Themes\Black\images\header_bg_right2.jpg" />
     <Content Include="App_Themes\Black\images\menu_bg.jpg" />
     <Content Include="App_Themes\Black\StyleBlack.css" />
@@ -372,7 +486,12 @@
     <Content Include="App_Themes\Default\images\radiobutton.gif" />
     <Content Include="App_Themes\Default\images\tbBackgroundGradient.jpg" />
     <Content Include="App_Themes\Default\jsUserControl.js" />
+    <Content Include="DangNhap.aspx" />
+    <Content Include="DanhSachCacChuyen.aspx" />
     <Content Include="Default.sitemap" />
+    <Content Include="Feedback.aspx" />
+    <Content Include="Guest\QuenMatKhau.ascx" />
+    <Content Include="Guest\user_CustomLogin.ascx" />
     <Content Include="images\bgDynamicMenuItem.jpg" />
     <Content Include="images\bgDynamicMenuItemHover.jpg" />
     <Content Include="images\footer_bg.gif" />
@@ -384,6 +503,7 @@
     <Content Include="images\Logo.png" />
     <Content Include="images\menu_bg.gif" />
     <Content Include="images\menu_bg_bottom.gif" />
+    <Content Include="LienHe.aspx" />
     <Content Include="MasterPage.Master" />
     <Content Include="Guest\ucTimKiemNangCao.ascx" />
     <Content Include="Guest\user_Feedback.ascx" />
@@ -396,6 +516,11 @@
     <Content Include="Guest\user_Template_ThongTinChuyen.ascx" />
     <Content Include="App_Themes\Black\SkinBlack.skin" />
     <Content Include="App_Themes\Default\SkinDefault.skin" />
+    <Content Include="Admin\Default.sitemap" />
+    <Content Include="Admin\MasterPage.Master" />
+    <Content Include="Admin\web.config" />
+    <Content Include="QuenMatKhau.aspx" />
+    <Content Include="ThongTinChiTietChuyenXe.aspx" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>

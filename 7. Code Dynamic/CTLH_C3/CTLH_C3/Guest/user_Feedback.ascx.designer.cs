@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web_c3.Guest {
+namespace CTLH_C3.Guest {
     
     
     public partial class user_Feedback {
@@ -23,31 +23,13 @@ namespace Web_c3.Guest {
         protected global::System.Web.UI.WebControls.Panel pnFeedback;
         
         /// <summary>
-        /// tbEmail control.
+        /// tbCustomerEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbEmail;
-        
-        /// <summary>
-        /// tbPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPassword;
-        
-        /// <summary>
-        /// tbReceiveEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbReceiveEmail;
+        protected global::System.Web.UI.WebControls.TextBox tbCustomerEmail;
         
         /// <summary>
         /// tbSubject control.

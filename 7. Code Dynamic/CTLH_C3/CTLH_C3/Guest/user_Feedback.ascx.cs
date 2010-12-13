@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net.Configuration;
+using System.Configuration;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.Mail;
+using System.Web.Configuration;
+using System.Text;
 
-namespace Web_c3.Guest
+namespace CTLH_C3.Guest
 {
     public partial class user_Feedback : System.Web.UI.UserControl
     {
@@ -17,30 +19,28 @@ namespace Web_c3.Guest
 
         protected void btSubmit_Click(object sender, EventArgs e)
         {
+            string strCustomerEmail = tbCustomerEmail.Text;    
             try
             {
-                string strEmail = tbEmail.Text;
-                string strPass = tbPassword.Text;
-                string strReceive = tbReceiveEmail.Text;
+                Configuration config = WebConfigurationManager.OpenWebConfiguration(HttpContext.Current.Request.ApplicationPath);
+                MailSettingsSectionGroup settings = (MailSettingsSectionGroup)config.GetSectionGroup("system.net/mailSettings");
+                string strFrom = settings.Smtp.From;
+          
                 MailMessage message = new MailMessage();
-                message.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
-                message.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", "465");
-                message.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", "2");
-                message.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", "1");
-                //Use 0 for anonymous
-                message.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", strEmail);
-                message.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", strPass);
-                message.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", "true");
-                message.To = strReceive;
-                message.From = "C3HCMUS@hcmus.edu.vn";
+                message.From = new MailAddress(strFrom);
+                message.To.Add(new MailAddress("luhanhc3hcmus@gmail.com"));
                 message.Subject = tbSubject.Text;
-                message.BodyFormat = MailFormat.Text;
-                message.Body = tbThongTinPhanHoi.Text;
-                SmtpMail.SmtpServer = "smtp.gmail.com:465";
-                SmtpMail.Send(message);
+                message.SubjectEncoding = Encoding.UTF8;
+                message.Body = "From: " + strCustomerEmail + "\n" + tbThongTinPhanHoi.Text;
+                message.BodyEncoding = Encoding.UTF8;
+                message.Priority = MailPriority.High;
+                SmtpClient client = new SmtpClient();
+                client.EnableSsl = true;
+                client.Send(message);
             }
             catch (Exception ex)
             {
+                HttpContext.Current.Response.Write(ex.Message);
             }
         }
     }
