@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_Guest_TimKiemTuyenXe.ascx.cs"
-    Inherits="Web_c3.Guest.user_Guest_TimKiemTuyenXe" %>
+    Inherits="CTLH_C3.Guest.user_Guest_TimKiemTuyenXe" %>
 <style type="text/css">
     .style1
     {

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_LienHe.ascx.cs" Inherits="Web_c3.Guest.user_LienHe" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_LienHe.ascx.cs" Inherits="CTLH_C3.Guest.user_LienHe" %>
 <asp:Panel ID="pnLienHe" runat="server" BorderStyle="None" Height="610px" 
     Width="250px" style="padding:10px">
     <asp:Label ID="lbGuiNDLH" 

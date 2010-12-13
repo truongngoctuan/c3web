@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
-namespace Web_c3.Guest
+namespace CTLH_C3.Guest
 {
     public partial class user_GridView_ThongTinChuyen : System.Web.UI.UserControl
     {

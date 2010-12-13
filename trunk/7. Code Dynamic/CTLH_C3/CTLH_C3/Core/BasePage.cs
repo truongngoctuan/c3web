@@ -28,6 +28,8 @@ namespace CTLH_C3
             {
                 Page.Theme = Session["Theme"].ToString();
             }
+
+            AddScript(new string[] { "InitCheckBox();", "initDropDownList();" });
         }
 
         protected void AddScript(string[] listFunction)
