@@ -1,6 +1,0 @@
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DTO\bin\Debug\DTO.dll.config
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DTO\bin\Debug\DTO.dll
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DTO\bin\Debug\DTO.pdb
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DTO\obj\Debug\ResolveAssemblyReference.cache
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DTO\obj\Debug\DTO.dll
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DTO\obj\Debug\DTO.pdb

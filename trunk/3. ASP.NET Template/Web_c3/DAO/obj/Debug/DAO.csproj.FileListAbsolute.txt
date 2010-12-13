@@ -1,7 +1,0 @@
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DAO\bin\Debug\DAO.dll
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DAO\bin\Debug\DAO.pdb
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DAO\bin\Debug\DTO.dll
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DAO\bin\Debug\DTO.pdb
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DAO\obj\Debug\ResolveAssemblyReference.cache
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DAO\obj\Debug\DAO.dll
-D:\MinhDaiCa\Bai giang\Hoc Ki VII\PTUDWeb\c3web.googlecode.com\3. ASP.NET Template\Web_c3\DAO\obj\Debug\DAO.pdb
