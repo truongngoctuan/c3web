@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Web.Services;
 using System.Net;
 using System.IO;
+using System.Xml.Linq;
+using System.Web.DynamicData;
 
 namespace CTLH_C3
 {
@@ -14,16 +16,16 @@ namespace CTLH_C3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*if (!user_Guest_TimKiemTuyenXe1.haveData())
+            // Load dữ liệu
+            System.Collections.IList visibleTables = MetaModel.Default.VisibleTables;
+            if (visibleTables.Count == 0)
             {
-                TramXeBUS tramxeBus = new TramXeBUS();
-                List<TRAM_XE> lstTram = tramxeBus.SelectAllTramXes();
-                for (int i = 0; i < lstTram.Count; i++)
-                {
-                    user_Guest_TimKiemTuyenXe1.addNoiDi(lstTram[i].TenTramXe);
-                    user_Guest_TimKiemTuyenXe1.addNoiDen(lstTram[i].TenTramXe);
-                }
-            }*/
+                throw new InvalidOperationException("There are no accessible tables. Make sure that at least one data model is registered in Global.asax and scaffolding is enabled or implement custom pages.");
+            }
+            
+            //Menu1.DataSource = visibleTables;
+            //Menu1.DataBind();
+
         }
 
         protected override void OnPreInit(EventArgs e)
