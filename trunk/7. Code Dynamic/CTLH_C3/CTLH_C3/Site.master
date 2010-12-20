@@ -20,6 +20,9 @@
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </div>
+    <div id="bottom">
+        <img src="../images/footer_bg.gif" width="995" height="101" alt=""/>
+    </div>
     </form>
 </body>
 </html>
