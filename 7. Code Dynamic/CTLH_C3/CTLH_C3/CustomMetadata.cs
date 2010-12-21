@@ -169,4 +169,272 @@ namespace CTLH_C3
 
     }
 #endregion
+
+#region Phan hoi khach hang
+    public class PHAN_HOI_KHACH_HANG_Metadata
+    {
+        [DisplayName("Nội dung")]
+        public object NoiDung { set; get; }
+
+        [DisplayName("Ngày đăng")]
+        public object NgayDang { set; get; }
+
+        [DisplayName("Nằm trong")]
+        public object PHAN_HOIs { set; get; }
+    }
+
+    [MetadataType(typeof(PHAN_HOI_KHACH_HANG_Metadata))]
+    [DisplayName("Phản hồi của khách")]
+    public partial class PHAN_HOI_KHACH_HANG
+    {
+
+    }
+#endregion
+
+#region Phan hoi
+    public class PHAN_HOI_Metadata
+    {
+        [DisplayName("Chuyến xe")]
+        public object CHUYEN_XE { set; get; }
+
+        [DisplayName("Nhân viên")]
+        public object NHAN_VIEN { set; get; }
+
+        [DisplayName("Phản hồi của khách")]
+        public object PHAN_HOI_KHACH_HANG { set; get; }
+    }
+
+    [MetadataType(typeof(PHAN_HOI_Metadata))]
+    [DisplayName("Phản hồi")]
+    public partial class PHAN_HOI
+    {
+
+    }
+#endregion
+
+#region Tin tuc
+    public class TIN_TUC_Metadata
+    {
+        [DisplayName("Tiêu đề")]
+        public object TieuDe { set; get; }
+
+        [DisplayName("Hình ảnh")]
+        public object HinhAnh { set; get; }
+
+        [DisplayName("Tóm tắt")]
+        public object TomTat { set; get; }
+
+        [DisplayName("Nội dung")]
+        public object NoiDung { set; get; }
+
+        [DisplayName("Ngày đăng")]
+        public object NgayDang { set; get; }
+
+        [DisplayName("Người duyệt")]
+        public object NHAN_VIEN { set; get; }
+    }
+
+    [MetadataType(typeof(TIN_TUC_Metadata))]
+    [DisplayName("Tin tức")]
+    public partial class TIN_TUC
+    {
+
+    }
+#endregion
+
+#region Nhan vien
+    public class NHAN_VIEN_Metadata
+    {
+        [DisplayName("Họ tên")]
+        public object HoTen { set; get; }
+
+        [DisplayName("Điện thoại")]
+        public object DienThoai { set; get; }
+
+        [DisplayName("Địa chỉ")]
+        public object DiaChi { set; get; }
+
+        [DisplayName("Loại nhân viên")]
+        public object LOAI_NHAN_VIEN { set; get; }
+
+        [DisplayName("Lương trong tháng")]
+        public object LuongTrongThang { set; get; }
+
+        [DisplayName("Tài khoản")]
+        public object TAI_KHOANs { set; get; }
+
+        [DisplayName("Tin tức")]
+        public object TIN_TUCs { set; get; }
+
+        [DisplayName("Xe")]
+        public object XEs { set; get; }
+
+        [DisplayName("Trạm")]
+        public object TRAM_XEs { set; get; }
+
+        [DisplayName("Chuyến")]
+        public object CHUYEN_XEs { set; get; }
+
+        [DisplayName("Phản hồi")]
+        public object PHAN_HOIs { set; get; }
+    }
+
+    [MetadataType(typeof(NHAN_VIEN_Metadata))]
+    [DisplayName("Nhân viên")]
+    public partial class NHAN_VIEN
+    {
+
+    }
+#endregion
+    
+#region Loai nhan vien
+    public class LOAI_NHAN_VIEN_Metadata
+    {
+        [DisplayName("Loại")]
+        public object TenLoai { set; get; }
+
+        [DisplayName("Nhân viên")]
+        public object NHAN_VIENs { set; get; }
+
+        [DisplayName("Quyền")]
+        public object PHAN_QUYENs { set; get; }
+    }
+
+    [MetadataType(typeof(LOAI_NHAN_VIEN_Metadata))]
+    [DisplayName("Loại nhân viên")]
+    public partial class LOAI_NHAN_VIEN
+    {
+
+    }
+#endregion
+
+#region Phan quyen
+    public class PHAN_QUYEN_Metadata
+    {
+        [DisplayName("Loại")]
+        public object LOAI_NHAN_VIEN { set; get; }
+
+        [DisplayName("Chức năng")]
+        public object CHUC_NANG { set; get; }
+    }
+
+    [MetadataType(typeof(PHAN_QUYEN_Metadata))]
+    [DisplayName("Phân quyền")]
+    public partial class PHAN_QUYEN
+    {
+
+    }
+#endregion
+
+#region Chuc nang
+    public class CHUC_NANG_Metadata
+    {
+        [DisplayName("Chức năng")]
+        public object TenChucNang { set; get; }
+
+        [DisplayName("Phân quyền")]
+        public object PHAN_QUYENs { set; get; }
+    }
+
+    [MetadataType(typeof(CHUC_NANG_Metadata))]
+    [DisplayName("Chức năng")]
+    public partial class CHUC_NANG
+    {
+
+    }
+#endregion
+
+#region Tai khoan
+    public class TAI_KHOAN_Metadata
+    {
+        [DisplayName("Username")]
+        public object Username { set; get; }
+
+        [DisplayName("Password")]
+        public object Password { set; get; }
+
+        [DisplayName("Email")]
+        public object Email { set; get; }
+
+        [DisplayName("Ngày kích hoạt")]
+        public object NgayKichHoat { set; get; }
+
+        [DisplayName("Nhân viên")]
+        public object NHAN_VIEN { set; get; }
+    }
+
+    [MetadataType(typeof(TAI_KHOAN_Metadata))]
+    [DisplayName("Tài khoản")]
+    public partial class TAI_KHOAN
+    {
+
+    }
+#endregion
+
+#region Xe
+    public class XE_Metadata
+    {
+        [DisplayName("Biển số")]
+        public object BienSoXe { set; get; }
+
+        [DisplayName("Tài xế")]
+        public object NHAN_VIEN { set; get; }
+
+        [DisplayName("Ngày nhập")]
+        public object NgayNhap { set; get; }
+
+        [DisplayName("Loại")]
+        public object LOAI_XE { set; get; }
+
+        [DisplayName("Tình trạng")]
+        public object TINH_TRANG_XE { set; get; }
+    }
+
+    [MetadataType(typeof(XE_Metadata))]
+    [DisplayName("Xe")]
+    public partial class XE
+    {
+
+    }
+#endregion
+
+#region Tinh trang xe
+    public class TINH_TRANG_XE_Metadata
+    {
+        [DisplayName("Tình trạng")]
+        public object TenTinhTrangXe { set; get; }
+
+        [DisplayName("Xe")]
+        public object XEs { set; get; }
+    }
+
+    [MetadataType(typeof(TINH_TRANG_XE_Metadata))]
+    [DisplayName("Tình trạng xe")]
+    public partial class TINH_TRANG_XE
+    {
+
+    }
+#endregion
+
+#region Loai xe
+    public class LOAI_XE_Metadata
+    {
+        [DisplayName("Hình ảnh")]
+        public object HinhAnh { set; get; }
+
+        [DisplayName("Hãng sản xuất")]
+        public object HangSanXuat { set; get; }
+
+        [DisplayName("Xe")]
+        public object XEs { set; get; }
+    }
+
+    [MetadataType(typeof(LOAI_XE_Metadata))]
+    [DisplayName("Loại xe")]
+    public partial class LOAI_XE
+    {
+
+    }
+#endregion
+
 }
