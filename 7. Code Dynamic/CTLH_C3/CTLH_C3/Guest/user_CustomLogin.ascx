@@ -13,7 +13,7 @@
     <AnonymousTemplate>
         <asp:Login ID="Login1" runat="server" onloginerror="Login1_LoginError" >
             <LayoutTemplate>
-                <asp:Panel ID="Panel1" runat="server" BackImageUrl="~/images/login_form.png" 
+                <asp:Panel ID="Panel1" runat="server" BackImageUrl="~/images/login_form.png"  
             Width="245px" Height="250px">
                     <table border="0" cellpadding="1" cellspacing="5"
             style="border-collapse:collapse; position: relative; top: 55px;" 

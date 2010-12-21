@@ -180,4 +180,26 @@
       <Association Name="TINH_TRANG_XE_XE" Member="TINH_TRANG_XE" ThisKey="TinhTrang" OtherKey="MaTinhTrangXe" Type="TINH_TRANG_XE" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.GetAllNhanViens" Method="GetAllNhanViens">
+    <ElementType Name="GetAllNhanViensResult">
+      <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoaiNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LuongTrongThang" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAllNhanViensAndLoaiNhanVien" Method="GetAllNhanViensAndLoaiNhanVien">
+    <ElementType Name="GetAllNhanViensAndLoaiNhanVienResult">
+      <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoaiNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LuongTrongThang" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaLoaiNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

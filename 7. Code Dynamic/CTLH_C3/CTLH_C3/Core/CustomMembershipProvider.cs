@@ -221,19 +221,10 @@ namespace CTLH_C3.Core
 
         public override MembershipUser GetUser(string username, bool userIsOnline)
         {
-            string strName = "CustomMembershipProvider";
             int userID = 1;
-            string strEmail = "luhanhc3hcmus@gmail.com";
-            string strPasswordQuestion = String.Empty;
-            string strComment = String.Empty;
-            bool bIsApproved = true;
-            bool bIsLockedOut = false;
-            DateTime creationDate = DateTime.Today;
-            DateTime lastLoginDate = DateTime.Today;
-            DateTime lastActivityDate = DateTime.Today;
-            DateTime lastPasswordChangedDate = DateTime.Today;
-            DateTime lastLockedOutDate = DateTime.MinValue;
-            return new MembershipUser(strName, username, userID, strEmail, strPasswordQuestion, strComment, bIsApproved, bIsLockedOut, creationDate, lastLoginDate, lastActivityDate, lastPasswordChangedDate, lastLockedOutDate); 
+            string email = "luhanhc3hcmus@gmail.com";
+            bool isLockedOut = false;
+            return new CustomMembershipUser(username, userID, email, isLockedOut);
             //throw new NotImplementedException();
         }
 
@@ -249,12 +240,7 @@ namespace CTLH_C3.Core
 
         public override string ResetPassword(string username, string answer)
         {
-            if (username == "demo")
-            {
-                strTempPass = "123";
-            }
-            return "123";
-            //throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public override bool UnlockUser(string userName)

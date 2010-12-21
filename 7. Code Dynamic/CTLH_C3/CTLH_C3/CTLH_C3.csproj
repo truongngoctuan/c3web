@@ -134,6 +134,9 @@
     </Compile>
     <Compile Include="Core\ConfigHelper.cs" />
     <Compile Include="Core\CustomMembershipProvider.cs" />
+    <Compile Include="Core\CustomMembershipUser.cs" />
+    <Compile Include="Core\ImageFormatAttribute.cs" />
+    <Compile Include="Core\NHAN_VIEN.cs" />
     <Compile Include="CustomMetadata.cs" />
     <Compile Include="Core\CustomRoleProvider.cs" />
     <Compile Include="Core\Theme.cs" />
@@ -160,6 +163,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Content Include="Global.asax" />
+    <Compile Include="DynamicData\CustomPages\NHAN_VIENs\ListDetails.aspx.cs">
+      <DependentUpon>ListDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\NHAN_VIENs\ListDetails.aspx.designer.cs">
+      <DependentUpon>ListDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Feedback.aspx.cs">
       <DependentUpon>Feedback.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -489,6 +499,7 @@
     <Content Include="DangNhap.aspx" />
     <Content Include="DanhSachCacChuyen.aspx" />
     <Content Include="Default.sitemap" />
+    <Content Include="DynamicData\CustomPages\NHAN_VIENs\ListDetails.aspx" />
     <Content Include="Feedback.aspx" />
     <Content Include="Guest\QuenMatKhau.ascx" />
     <Content Include="Guest\user_CustomLogin.ascx" />
@@ -525,9 +536,6 @@
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DynamicData\CustomPages\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
