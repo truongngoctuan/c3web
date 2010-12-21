@@ -134,6 +134,7 @@
     </Compile>
     <Compile Include="Core\ConfigHelper.cs" />
     <Compile Include="Core\CustomMembershipProvider.cs" />
+    <Compile Include="CustomMetadata.cs" />
     <Compile Include="Core\CustomRoleProvider.cs" />
     <Compile Include="Core\Theme.cs" />
     <Compile Include="Core\ThemeManager.cs" />
@@ -173,7 +174,6 @@
     <Content Include="jquery-1.4.4.js" />
     <Content Include="Master.css" />
     <Content Include="Site.css" />
-    <Content Include="Site.master" />
     <Compile Include="Guest\QuenMatKhau.ascx.cs">
       <DependentUpon>QuenMatKhau.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -271,13 +271,6 @@
     </Compile>
     <Compile Include="QuenMatKhau.aspx.designer.cs">
       <DependentUpon>QuenMatKhau.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Site.master.cs">
-      <DependentUpon>Site.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.master.designer.cs">
-      <DependentUpon>Site.master</DependentUpon>
     </Compile>
     <Content Include="web.config" />
     <Content Include="DynamicData\web.config" />
@@ -442,6 +435,13 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
     </Compile>
+    <Compile Include="Site.master.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Site.master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.master.designer.cs">
+      <DependentUpon>Site.master</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinChiTietChuyenXe.aspx.cs">
       <DependentUpon>ThongTinChiTietChuyenXe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -521,6 +521,7 @@
     <Content Include="Admin\web.config" />
     <Content Include="QuenMatKhau.aspx" />
     <Content Include="ThongTinChiTietChuyenXe.aspx" />
+    <Content Include="Site.master" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>
