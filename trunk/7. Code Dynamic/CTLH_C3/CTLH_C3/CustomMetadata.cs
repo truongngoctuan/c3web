@@ -27,6 +27,9 @@ namespace CTLH_C3
 
         [DisplayName("Lương tài xế")]
         public object LuongTaiXe { get; set; }
+
+        [DisplayName("Các chuyến")]
+        public object CHUYEN_XEs { set; get; }
     }
 
     [MetadataType(typeof(TUYEN_XE_Metadata))]
@@ -34,5 +37,45 @@ namespace CTLH_C3
     public partial class TUYEN_XE
     {
 
-    } 
+    }
+
+    public class CHUYEN_XE_Metadata
+    {
+        [DisplayName("Giờ khởi hành")]
+        public object KhoiHanh { set; get; }
+
+        [DisplayName("Giờ đến dự kiến")]
+        public object DuKienDen { set; get; }
+
+        [DisplayName("Tuyến xe")]
+        public object TUYEN_XE { set; get; }
+
+        [DisplayName("Tài xế")]
+        public object NHAN_VIEN { set; get; }
+
+        [DisplayName("Tình trạng")]
+        public object TinhTrang { set; get; }
+
+        [DisplayName("Thời điểm đến trạm")]
+        public object ThoiGianDenTram { set; get; }
+
+        [DisplayName("Lương tài xế")]
+        public object LuongTaiXe { set; get; }
+
+        [DisplayName("Giá Vé")]
+        public object GiaVe { set; get; }
+
+        [DisplayName("Chỗ ngồi")]
+        public object DAT_CHOs { set; get; }
+
+        [DisplayName("Phản hồi")]
+        public object PHAN_HOIs { set; get; }
+    }
+
+    [MetadataType(typeof(CHUYEN_XE_Metadata))]
+    [DisplayName("Chuyến xe")]
+    public partial class CHUYEN_XE
+    {
+
+    }
 }
