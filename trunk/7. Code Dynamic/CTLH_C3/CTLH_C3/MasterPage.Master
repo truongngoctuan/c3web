@@ -64,6 +64,7 @@
         </div>
         <!--****************************************************************-->
         <div id="content">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"/>
             <asp:ContentPlaceHolder ID="MainContent" runat="server"> 
                 &nbsp;         
             </asp:ContentPlaceHolder>

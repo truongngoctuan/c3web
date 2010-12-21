@@ -248,6 +248,20 @@ namespace CTLH_C3
 				return this.GetTable<XE>();
 			}
 		}
+		
+		[Function(Name="dbo.GetAllNhanViens")]
+		public ISingleResult<GetAllNhanViensResult> GetAllNhanViens()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GetAllNhanViensResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GetAllNhanViensAndLoaiNhanVien")]
+		public ISingleResult<GetAllNhanViensAndLoaiNhanVienResult> GetAllNhanViensAndLoaiNhanVien()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GetAllNhanViensAndLoaiNhanVienResult>)(result.ReturnValue));
+		}
 	}
 	
 	[Table(Name="dbo.CHO_NGOI")]
@@ -3955,6 +3969,274 @@ namespace CTLH_C3
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class GetAllNhanViensResult
+	{
+		
+		private int _MaNhanVien;
+		
+		private string _HoTen;
+		
+		private string _DienThoai;
+		
+		private string _DiaChi;
+		
+		private int _LoaiNhanVien;
+		
+		private System.Nullable<double> _LuongTrongThang;
+		
+		public GetAllNhanViensResult()
+		{
+		}
+		
+		[Column(Storage="_MaNhanVien", DbType="Int NOT NULL")]
+		public int MaNhanVien
+		{
+			get
+			{
+				return this._MaNhanVien;
+			}
+			set
+			{
+				if ((this._MaNhanVien != value))
+				{
+					this._MaNhanVien = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_HoTen", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string HoTen
+		{
+			get
+			{
+				return this._HoTen;
+			}
+			set
+			{
+				if ((this._HoTen != value))
+				{
+					this._HoTen = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DienThoai", DbType="NVarChar(50)")]
+		public string DienThoai
+		{
+			get
+			{
+				return this._DienThoai;
+			}
+			set
+			{
+				if ((this._DienThoai != value))
+				{
+					this._DienThoai = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DiaChi", DbType="NVarChar(50)")]
+		public string DiaChi
+		{
+			get
+			{
+				return this._DiaChi;
+			}
+			set
+			{
+				if ((this._DiaChi != value))
+				{
+					this._DiaChi = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LoaiNhanVien", DbType="Int NOT NULL")]
+		public int LoaiNhanVien
+		{
+			get
+			{
+				return this._LoaiNhanVien;
+			}
+			set
+			{
+				if ((this._LoaiNhanVien != value))
+				{
+					this._LoaiNhanVien = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LuongTrongThang", DbType="Float")]
+		public System.Nullable<double> LuongTrongThang
+		{
+			get
+			{
+				return this._LuongTrongThang;
+			}
+			set
+			{
+				if ((this._LuongTrongThang != value))
+				{
+					this._LuongTrongThang = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetAllNhanViensAndLoaiNhanVienResult
+	{
+		
+		private int _MaNhanVien;
+		
+		private string _HoTen;
+		
+		private string _DienThoai;
+		
+		private string _DiaChi;
+		
+		private int _LoaiNhanVien;
+		
+		private System.Nullable<double> _LuongTrongThang;
+		
+		private int _MaLoaiNhanVien;
+		
+		private string _TenLoai;
+		
+		public GetAllNhanViensAndLoaiNhanVienResult()
+		{
+		}
+		
+		[Column(Storage="_MaNhanVien", DbType="Int NOT NULL")]
+		public int MaNhanVien
+		{
+			get
+			{
+				return this._MaNhanVien;
+			}
+			set
+			{
+				if ((this._MaNhanVien != value))
+				{
+					this._MaNhanVien = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_HoTen", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string HoTen
+		{
+			get
+			{
+				return this._HoTen;
+			}
+			set
+			{
+				if ((this._HoTen != value))
+				{
+					this._HoTen = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DienThoai", DbType="NVarChar(50)")]
+		public string DienThoai
+		{
+			get
+			{
+				return this._DienThoai;
+			}
+			set
+			{
+				if ((this._DienThoai != value))
+				{
+					this._DienThoai = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DiaChi", DbType="NVarChar(50)")]
+		public string DiaChi
+		{
+			get
+			{
+				return this._DiaChi;
+			}
+			set
+			{
+				if ((this._DiaChi != value))
+				{
+					this._DiaChi = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LoaiNhanVien", DbType="Int NOT NULL")]
+		public int LoaiNhanVien
+		{
+			get
+			{
+				return this._LoaiNhanVien;
+			}
+			set
+			{
+				if ((this._LoaiNhanVien != value))
+				{
+					this._LoaiNhanVien = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LuongTrongThang", DbType="Float")]
+		public System.Nullable<double> LuongTrongThang
+		{
+			get
+			{
+				return this._LuongTrongThang;
+			}
+			set
+			{
+				if ((this._LuongTrongThang != value))
+				{
+					this._LuongTrongThang = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MaLoaiNhanVien", DbType="Int NOT NULL")]
+		public int MaLoaiNhanVien
+		{
+			get
+			{
+				return this._MaLoaiNhanVien;
+			}
+			set
+			{
+				if ((this._MaLoaiNhanVien != value))
+				{
+					this._MaLoaiNhanVien = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TenLoai", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TenLoai
+		{
+			get
+			{
+				return this._TenLoai;
+			}
+			set
+			{
+				if ((this._TenLoai != value))
+				{
+					this._TenLoai = value;
+				}
 			}
 		}
 	}
