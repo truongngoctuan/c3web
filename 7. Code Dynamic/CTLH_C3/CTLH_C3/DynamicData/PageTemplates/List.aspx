@@ -13,7 +13,7 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
-                HeaderText="List of validation errors" />
+                HeaderText="Danh sách lỗi" />
             <asp:DynamicValidator runat="server" ID="GridViewValidator" ControlToValidate="GridView1" Display="None" />
 
             <asp:FilterRepeater ID="FilterRepeater" runat="server">
@@ -31,12 +31,12 @@
                         <ItemTemplate>
                             <asp:HyperLink ID="EditHyperLink" runat="server"
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Edit, GetDataItem()) %>'
-                            Text="Edit" />&nbsp;<asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete"
-                                CausesValidation="false" Text="Delete"
+                            Text="Sửa" />&nbsp;<asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete"
+                                CausesValidation="false" Text="Xóa"
                                 OnClientClick='return confirm("Are you sure you want to delete this item?");'
                             />&nbsp;<asp:HyperLink ID="DetailsHyperLink" runat="server"
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Details, GetDataItem()) %>'
-                                Text="Details" />
+                                Text="Chi tiết" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

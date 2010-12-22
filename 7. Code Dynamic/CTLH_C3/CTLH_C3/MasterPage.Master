@@ -16,6 +16,7 @@
 <body>    
     <form id="form1" runat="server"> 
     <div id="site">   
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"/>
     <!--****************************************************************-->
     <div id="top">
         <img style="float:left" src="../images/header_bg_left.gif" width="270" height="193" alt="" />
@@ -64,7 +65,6 @@
         </div>
         <!--****************************************************************-->
         <div id="content">
-            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"/>
             <asp:ContentPlaceHolder ID="MainContent" runat="server"> 
                 &nbsp;         
             </asp:ContentPlaceHolder>
