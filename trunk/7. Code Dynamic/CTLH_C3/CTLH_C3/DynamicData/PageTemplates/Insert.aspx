@@ -11,7 +11,7 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
-                HeaderText="List of validation errors" />
+                HeaderText="Danh sách lỗi" />
             <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView1" Display="None" />
 
             <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="DetailsDataSource" DefaultMode="Insert"

@@ -11,7 +11,7 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
-                HeaderText="List of validation errors" />
+                HeaderText="Danh sách lỗi" />
             <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView1" Display="None" />
 
             <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="DetailsDataSource" OnItemDeleted="DetailsView1_ItemDeleted"
@@ -21,10 +21,10 @@
                         <ItemTemplate>
                             <asp:HyperLink ID="EditHyperLink" runat="server"
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Edit, GetDataItem()) %>'
-                                Text="Edit" />
+                                Text="Sửa" />
                             <asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete" CausesValidation="false"
                                 OnClientClick='return confirm("Are you sure you want to delete this item?");'
-                                Text="Delete" />
+                                Text="Xóa" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Fields>
