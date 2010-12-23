@@ -48,7 +48,7 @@
                 </asp:FilterRepeater>
             </div>
             
-            <%--Phần bên phải: danh sách tuyến--%>
+            <%--Phần bên phải: trình bày dữ liệu--%>
             <div style="width: 520px; float: left">
             
                 <%--Giới thiệu--%>
@@ -63,26 +63,29 @@
                 <asp:DynamicValidator runat="server" ID="GridViewValidator" ControlToValidate="GridView1"
                     Display="None" />
                 
-                <%--Trình bày dữ liệu--%> 
+                <div><b>Các tuyến</b></div>
+                
+                <%--Trình bày dữ liệu: tuyến--%> 
                 <asp:GridView ID="GridView1" runat="server" DataSourceID="GridDataSource" AllowPaging="True"
-                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False">
+                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" 
+                    onselectedindexchanged="GridView1_SelectedIndexChanged">
                     <Columns>
-                        <asp:DynamicField DataField="MaTuyenXe" HeaderText="Mã tuyến" ReadOnly="True" />
+                        <asp:CommandField ShowSelectButton="True" />
+                        <asp:DynamicField DataField="MaTuyenXe" HeaderText="Mã tuyến" />
                         <asp:DynamicField DataField="GiaVe" />
                         <asp:DynamicField DataField="TRAM_XE" />
                         <asp:DynamicField DataField="TRAM_XE1" />
-                        <asp:DynamicField DataField="CHUYEN_XEs" />
                     </Columns>
                     <PagerStyle CssClass="footer" />
                     <PagerTemplate>
                         <asp:GridViewPager ID="GridViewPager1" runat="server" />
                     </PagerTemplate>
                     <EmptyDataTemplate>
-                        There are currently no items in this table.
+                        Không có thông tin.
                     </EmptyDataTemplate>
                 </asp:GridView>
                 
-                <%--Nguồn dữ liệu--%>
+                <%--Nguồn dữ liệu cho tuyến--%>
                 <asp:LinqDataSource ID="GridDataSource" runat="server" ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext"
                     Select="new (GiaVe, CHUYEN_XEs, TRAM_XE, TRAM_XE1, MaTuyenXe, MaTramDi,MaTramDen)"
                     TableName="TUYEN_XEs">
@@ -90,6 +93,37 @@
                         <asp:DynamicControlParameter ControlId="FilterRepeater" />
                     </WhereParameters>
                 </asp:LinqDataSource>
+                
+                <div><b>Các chuyến</b></div>
+                
+                <%--Trình bày dữ liệu: chuyến--%> 
+                <asp:GridView ID="GridView2" runat="server" DataSourceID="LinqDataSource1" AllowPaging="True"
+                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" 
+                    onselectedindexchanged="GridView1_SelectedIndexChanged">
+                    <Columns>
+                        <asp:DynamicField DataField="MaChuyenXe" HeaderText="Mã chuyến" />
+                        <asp:DynamicField DataField="KhoiHanh" />
+                        <asp:DynamicField DataField="DuKienDen" />
+                        <asp:DynamicField DataField="GiaVe" />
+                    </Columns>
+                    <PagerStyle CssClass="footer" />
+                    <PagerTemplate>
+                        <asp:GridViewPager ID="GridViewPager2" runat="server" />
+                    </PagerTemplate>
+                    <EmptyDataTemplate>
+                        Không có thông tin.
+                    </EmptyDataTemplate>
+                </asp:GridView>
+                
+                <%--Nguồn dữ liệu cho chuyến--%>
+                <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext"
+                    Select="new (MaChuyenXe, KhoiHanh, DuKienDen, MaTuyenXe, GiaVe)"
+                    TableName="CHUYEN_XEs">
+                    <WhereParameters>
+                        <asp:DynamicControlParameter ControlID="GridView1" Name="MaTuyenXe"/>
+                    </WhereParameters>
+                </asp:LinqDataSource>
+                
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
