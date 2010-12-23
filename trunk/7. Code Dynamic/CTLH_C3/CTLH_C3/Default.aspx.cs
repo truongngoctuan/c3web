@@ -16,7 +16,8 @@ namespace CTLH_C3
     {      
         protected void Page_Init(object sender, EventArgs e)
         {
-            DynamicDataManager1.RegisterControl(GridView1, true /*setSelectionFromUrl*/);
+            DynamicDataManager1.RegisterControl(GridView1, false);
+            DynamicDataManager1.RegisterControl(GridView2, false);
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,6 +29,8 @@ namespace CTLH_C3
             {
                 throw new InvalidOperationException("There are no accessible tables. Make sure that at least one data model is registered in Global.asax and scaffolding is enabled or implement custom pages.");
             }
+
+            GridView2.Visible = false;
         }
 
         protected override void OnPreInit(EventArgs e)
@@ -37,14 +40,20 @@ namespace CTLH_C3
         }
 
         protected void OnFilterSelectedIndexChanged(object sender, EventArgs e)
-        {            
+        {
             GridView1.PageIndex = 0;
+            GridView2.Visible = false;
         }
 
         protected void Close_Click(object sender, EventArgs e)
         {
             btnClose.Visible = false;
             user_GioiThieu1.Visible = false;
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridView2.Visible = true;
         }
     }
 }
