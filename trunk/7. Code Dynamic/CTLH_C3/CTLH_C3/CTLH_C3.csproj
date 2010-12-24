@@ -170,6 +170,13 @@
     <Compile Include="DynamicData\CustomPages\NHAN_VIENs\ListDetails.aspx.designer.cs">
       <DependentUpon>ListDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DynamicDefault.aspx.cs">
+      <DependentUpon>DynamicDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicDefault.aspx.designer.cs">
+      <DependentUpon>DynamicDefault.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Feedback.aspx.cs">
       <DependentUpon>Feedback.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,6 +204,55 @@
     </Compile>
     <Compile Include="Guest\user_CustomLogin.ascx.designer.cs">
       <DependentUpon>user_CustomLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\TaiKhoan.aspx.cs">
+      <DependentUpon>TaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\TaiKhoan.aspx.designer.cs">
+      <DependentUpon>TaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\ThongTinCongTy.aspx.cs">
+      <DependentUpon>ThongTinCongTy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\ThongTinCongTy.aspx.designer.cs">
+      <DependentUpon>ThongTinCongTy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guest\TimKiemChuyen.aspx.cs">
+      <DependentUpon>TimKiemChuyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Guest\TimKiemChuyen.aspx.designer.cs">
+      <DependentUpon>TimKiemChuyen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TaiXe\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\TaiXe\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TaiXe\NhatKi.aspx.cs">
+      <DependentUpon>NhatKi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\TaiXe\NhatKi.aspx.designer.cs">
+      <DependentUpon>NhatKi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TaiXe\ThongTinNhanVien.aspx.cs">
+      <DependentUpon>ThongTinNhanVien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\TaiXe\ThongTinNhanVien.aspx.designer.cs">
+      <DependentUpon>ThongTinNhanVien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TaiXe\XemPhanHoi.aspx.cs">
+      <DependentUpon>XemPhanHoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\TaiXe\XemPhanHoi.aspx.designer.cs">
+      <DependentUpon>XemPhanHoi.aspx</DependentUpon>
     </Compile>
     <Compile Include="LienHe.aspx.cs">
       <DependentUpon>LienHe.aspx</DependentUpon>
@@ -500,9 +556,17 @@
     <Content Include="DanhSachCacChuyen.aspx" />
     <Content Include="Default.sitemap" />
     <Content Include="DynamicData\CustomPages\NHAN_VIENs\ListDetails.aspx" />
+    <Content Include="DynamicDefault.aspx" />
     <Content Include="Feedback.aspx" />
     <Content Include="Guest\QuenMatKhau.ascx" />
     <Content Include="Guest\user_CustomLogin.ascx" />
+    <Content Include="GUI\Admin\TaiKhoan.aspx" />
+    <Content Include="GUI\Admin\ThongTinCongTy.aspx" />
+    <Content Include="GUI\Guest\TimKiemChuyen.aspx" />
+    <Content Include="GUI\TaiXe\Default.aspx" />
+    <Content Include="GUI\TaiXe\NhatKi.aspx" />
+    <Content Include="GUI\TaiXe\ThongTinNhanVien.aspx" />
+    <Content Include="GUI\TaiXe\XemPhanHoi.aspx" />
     <Content Include="images\bgDynamicMenuItem.jpg" />
     <Content Include="images\bgDynamicMenuItemHover.jpg" />
     <Content Include="images\footer_bg.gif" />

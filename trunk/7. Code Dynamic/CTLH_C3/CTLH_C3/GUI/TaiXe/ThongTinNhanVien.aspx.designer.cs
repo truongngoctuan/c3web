@@ -8,108 +8,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.NHAN_VIENs {
+namespace CTLH_C3.GUI.TaiXe {
     
     
-    public partial class ListDetails {
+    public partial class ThongTinNhanVien {
         
         /// <summary>
-        /// DynamicDataManager1 control.
+        /// Image1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.DynamicData.DynamicDataManager DynamicDataManager1;
+        protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
-        /// ScriptManagerProxy1 control.
+        /// Literal1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManagerProxy ScriptManagerProxy1;
+        protected global::System.Web.UI.WebControls.Literal Literal1;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// Literal2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Literal Literal2;
         
         /// <summary>
-        /// ValidationSummary1 control.
+        /// Literal3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        protected global::System.Web.UI.WebControls.Literal Literal3;
         
         /// <summary>
-        /// GridViewValidator control.
+        /// Literal4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.DynamicData.DynamicValidator GridViewValidator;
+        protected global::System.Web.UI.WebControls.Literal Literal4;
         
         /// <summary>
-        /// DetailsViewValidator control.
+        /// Literal5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.DynamicData.DynamicValidator DetailsViewValidator;
+        protected global::System.Web.UI.WebControls.Literal Literal5;
         
         /// <summary>
-        /// GridView1 control.
+        /// HyperLink1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
         
         /// <summary>
-        /// GridDataSource control.
+        /// HyperLink2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinqDataSource GridDataSource;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
         
         /// <summary>
-        /// DetailsPanel control.
+        /// HyperLink3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel DetailsPanel;
-        
-        /// <summary>
-        /// DetailsView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
-        
-        /// <summary>
-        /// DetailsDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinqDataSource DetailsDataSource;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
     }
 }
