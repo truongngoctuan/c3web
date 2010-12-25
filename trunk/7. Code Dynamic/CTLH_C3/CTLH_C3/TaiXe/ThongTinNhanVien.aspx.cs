@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CTLH_C3.TaiXe
+namespace CTLH_C3
 {
     public partial class ThongTinNhanVien : System.Web.UI.Page
     {

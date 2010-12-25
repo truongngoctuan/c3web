@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.TaiXe {
+namespace CTLH_C3 {
     
     
     public partial class NhatKi {

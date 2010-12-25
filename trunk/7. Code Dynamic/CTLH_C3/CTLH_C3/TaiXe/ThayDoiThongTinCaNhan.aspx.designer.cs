@@ -8,11 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.TaiXe {
-
-
-    public partial class ThayDoiThongTinCaNhan
-    {
+namespace CTLH_C3 {
+    
+    
+    public partial class ThayDoiThongTinCaNhan {
         
         /// <summary>
         /// DynamicDataManager1 control.
@@ -24,6 +23,15 @@ namespace CTLH_C3.TaiXe {
         protected global::System.Web.DynamicData.DynamicDataManager DynamicDataManager1;
         
         /// <summary>
+        /// ScriptManagerProxy1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManagerProxy ScriptManagerProxy1;
+        
+        /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
@@ -31,6 +39,15 @@ namespace CTLH_C3.TaiXe {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// lblLoaiNhanVien control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoaiNhanVien;
         
         /// <summary>
         /// ValidationSummary1 control.
