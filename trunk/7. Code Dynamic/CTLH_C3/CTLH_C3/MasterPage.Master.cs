@@ -26,17 +26,17 @@ namespace CTLH_C3
                                 SiteMapDataSourceMenu.SiteMapProvider = "AdminSiteMap";
                                 break;
                             }
-                        case "TaiXe":
+                        case "Tài Xế":
                             {
                                 SiteMapDataSourceMenu.SiteMapProvider = "TaiXeSiteMap";
                                 break;
                             }
-                        case "DieuHanhTram":
+                        case "Điều Hành Trạm":
                             {
                                 SiteMapDataSourceMenu.SiteMapProvider = "DieuHanhTramSiteMap";
                                 break;
                             }
-                        case "DieuHanhCongTy":
+                        case "Điều Hành Công Ty":
                             {
                                 SiteMapDataSourceMenu.SiteMapProvider = "DieuHanhCongTySiteMap";
                                 break;

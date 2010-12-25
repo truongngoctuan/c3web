@@ -170,13 +170,22 @@ namespace CTLH_C3.Core
         
         public override bool ChangePassword(string username, string oldPassword, string newPassword)
         {
-            if (username == "demo" && oldPassword == strTempPass)
+            TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
+            var user = from u in dataContext.TAI_KHOANs
+                       where u.Username == username
+                       select u;
+
+            if (user.Count() == 1)
             {
-                strTempPass = newPassword;
-                return true;
+                TAI_KHOAN tk = user.Single();
+                if(oldPassword == tk.Password && oldPassword != newPassword)
+                {
+                    tk.Password = newPassword;
+                    dataContext.SubmitChanges();
+                    return true;
+                }                
             }
             return false;
-            //throw new NotImplementedException();
         }
 
         public override bool ChangePasswordQuestionAndAnswer(string username, string password, string newPasswordQuestion, string newPasswordAnswer)
@@ -221,11 +230,20 @@ namespace CTLH_C3.Core
 
         public override MembershipUser GetUser(string username, bool userIsOnline)
         {
-            int userID = 1;
-            string email = "luhanhc3hcmus@gmail.com";
-            bool isLockedOut = false;
-            return new CustomMembershipUser(username, userID, email, isLockedOut);
-            //throw new NotImplementedException();
+            TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
+            var user = from u in dataContext.TAI_KHOANs
+                       where u.Username == username
+                       select u;
+
+            if (user.Count() == 1)
+            {
+                TAI_KHOAN tk = user.Single();
+                int userID = tk.MaTaiKhoan;
+                string email = tk.Email;
+                bool isLockedOut = false;
+                return new CustomMembershipUser(username, userID, email, isLockedOut);
+            }
+            return null;
         }
 
         public override MembershipUser GetUser(object providerUserKey, bool userIsOnline)
@@ -255,9 +273,6 @@ namespace CTLH_C3.Core
 
         public override bool ValidateUser(string username, string password)
         {
-            if (username == "demo" && password == strTempPass)
-                return true;
-
             TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
             var user = from u in dataContext.TAI_KHOANs
                        where u.Username == username
@@ -268,9 +283,8 @@ namespace CTLH_C3.Core
                 TAI_KHOAN tk = user.Single();
                 if (tk.Password.Equals(password))
                     return true;
-                else
-                    return false;
             }
+            
             return false;            
         }
     }
