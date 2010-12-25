@@ -136,7 +136,6 @@
     <Compile Include="Core\CustomMembershipProvider.cs" />
     <Compile Include="Core\CustomMembershipUser.cs" />
     <Compile Include="Core\ImageFormatAttribute.cs" />
-    <Compile Include="Core\NHAN_VIEN.cs" />
     <Compile Include="CustomMetadata.cs" />
     <Compile Include="Core\CustomRoleProvider.cs" />
     <Compile Include="Core\Theme.cs" />
