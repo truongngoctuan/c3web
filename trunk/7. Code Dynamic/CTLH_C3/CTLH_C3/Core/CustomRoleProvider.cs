@@ -101,9 +101,36 @@ namespace CTLH_C3.Core
 
         public override string[] GetRolesForUser(string username)
         {
-            if(username == "demo")
-                return new string[] {"Admin"};
-            return null;
+            if (username == "demo")
+                return new string[] { "Admin", "" };
+
+            TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
+            var user = from u in dataContext.TAI_KHOANs
+                       where u.Username.Equals(username)
+                       select u;
+            if (user.Count()==1)
+            {
+                TAI_KHOAN tk = user.Single();
+
+                var nhanvien = from n in dataContext.NHAN_VIENs
+                               where n.MaNhanVien == tk.MaNhanVien
+                               select n;
+                if (nhanvien.Count() == 1)
+                {
+                    NHAN_VIEN nv = nhanvien.Single();
+                    var loainv = from l in dataContext.LOAI_NHAN_VIENs
+                              where l.MaLoaiNhanVien == nv.LoaiNhanVien
+                              select l;
+                    if (loainv.Count() == 1)
+                    {
+                        LOAI_NHAN_VIEN lnv = loainv.Single();
+                        return new string[] { lnv.TenLoai, nv.MaNhanVien.ToString() }; 
+                    }
+                }                                   
+            }
+            return new string[] {"",""};
+            
+            //return null;
             //throw new NotImplementedException();
         }
 

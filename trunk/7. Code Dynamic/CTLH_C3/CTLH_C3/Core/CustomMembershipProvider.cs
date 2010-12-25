@@ -257,6 +257,20 @@ namespace CTLH_C3.Core
         {
             if (username == "demo" && password == strTempPass)
                 return true;
+
+            TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
+            var user = from u in dataContext.TAI_KHOANs
+                       where u.Username == username
+                       select u;
+
+            if (user.Count() == 1)
+            {
+                TAI_KHOAN tk = user.Single();
+                if (tk.Password.Equals(password))
+                    return true;
+                else
+                    return false;
+            }
             return false;            
         }
     }
