@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master"AutoEventWireup="true" CodeBehind="ThongTinNhanVien.aspx.cs" Inherits="CTLH_C3.TaiXe.ThongTinNhanVien" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master"AutoEventWireup="true" CodeBehind="ThongTinNhanVien.aspx.cs" Inherits="CTLH_C3.ThongTinNhanVien" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     Thông Tin Nhân Viên

@@ -99,6 +99,7 @@ namespace CTLH_C3.Core
             throw new NotImplementedException();
         }
 
+        //Trả về vai trò và mã nhân viên
         public override string[] GetRolesForUser(string username)
         {
             TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
@@ -121,11 +122,11 @@ namespace CTLH_C3.Core
                     if (loainv.Count() == 1)
                     {
                         LOAI_NHAN_VIEN lnv = loainv.Single();
-                        return new string[] { lnv.TenLoai }; 
+                        return new string[] { lnv.TenLoai,nv.MaNhanVien.ToString() }; 
                     }
                 }                                   
             }
-            return new string[] {""};
+            return new string[] {"",""};
         }
 
         public override string[] GetUsersInRole(string roleName)
