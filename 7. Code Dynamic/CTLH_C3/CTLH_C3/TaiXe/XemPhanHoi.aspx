@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="XemPhanHoi.aspx.cs" Inherits="CTLH_C3.GUI.TaiXe.XemPhanHoi" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="XemPhanHoi.aspx.cs" Inherits="CTLH_C3.TaiXe.XemPhanHoi" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     Xem Phản Hồi

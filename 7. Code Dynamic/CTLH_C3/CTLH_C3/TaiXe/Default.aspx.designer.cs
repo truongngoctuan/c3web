@@ -8,18 +8,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3 {
+namespace CTLH_C3.TaiXe {
     
     
-    public partial class _Default {
+    public partial class Default {
         
         /// <summary>
-        /// EditHyperLink control.
+        /// HyperLink1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink EditHyperLink;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        
+        /// <summary>
+        /// HyperLink2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
     }
 }
