@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3 {
-    
-    
-    public partial class _Default {
+namespace CTLH_C3.TaiXe {
+
+
+    public partial class ThayDoiThongTinCaNhan
+    {
         
         /// <summary>
         /// DynamicDataManager1 control.

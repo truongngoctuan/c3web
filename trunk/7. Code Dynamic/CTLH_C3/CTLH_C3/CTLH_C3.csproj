@@ -225,32 +225,39 @@
     <Compile Include="GUI\Guest\TimKiemChuyen.aspx.designer.cs">
       <DependentUpon>TimKiemChuyen.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\TaiXe\Default.aspx.cs">
+    <Compile Include="TaiXe\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\TaiXe\Default.aspx.designer.cs">
+    <Compile Include="TaiXe\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\TaiXe\NhatKi.aspx.cs">
+    <Compile Include="TaiXe\NhatKi.aspx.cs">
       <DependentUpon>NhatKi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\TaiXe\NhatKi.aspx.designer.cs">
+    <Compile Include="TaiXe\NhatKi.aspx.designer.cs">
       <DependentUpon>NhatKi.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\TaiXe\ThongTinNhanVien.aspx.cs">
+    <Compile Include="TaiXe\ThayDoiThongTinCaNhan.aspx.cs">
+      <DependentUpon>ThayDoiThongTinCaNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaiXe\ThayDoiThongTinCaNhan.aspx.designer.cs">
+      <DependentUpon>ThayDoiThongTinCaNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaiXe\ThongTinNhanVien.aspx.cs">
       <DependentUpon>ThongTinNhanVien.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\TaiXe\ThongTinNhanVien.aspx.designer.cs">
+    <Compile Include="TaiXe\ThongTinNhanVien.aspx.designer.cs">
       <DependentUpon>ThongTinNhanVien.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\TaiXe\XemPhanHoi.aspx.cs">
+    <Compile Include="TaiXe\XemPhanHoi.aspx.cs">
       <DependentUpon>XemPhanHoi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\TaiXe\XemPhanHoi.aspx.designer.cs">
+    <Compile Include="TaiXe\XemPhanHoi.aspx.designer.cs">
       <DependentUpon>XemPhanHoi.aspx</DependentUpon>
     </Compile>
     <Compile Include="LienHe.aspx.cs">
@@ -562,10 +569,11 @@
     <Content Include="GUI\Admin\TaiKhoan.aspx" />
     <Content Include="GUI\Admin\ThongTinCongTy.aspx" />
     <Content Include="GUI\Guest\TimKiemChuyen.aspx" />
-    <Content Include="GUI\TaiXe\Default.aspx" />
-    <Content Include="GUI\TaiXe\NhatKi.aspx" />
-    <Content Include="GUI\TaiXe\ThongTinNhanVien.aspx" />
-    <Content Include="GUI\TaiXe\XemPhanHoi.aspx" />
+    <Content Include="TaiXe\Default.aspx" />
+    <Content Include="TaiXe\NhatKi.aspx" />
+    <Content Include="TaiXe\ThayDoiThongTinCaNhan.aspx" />
+    <Content Include="TaiXe\ThongTinNhanVien.aspx" />
+    <Content Include="TaiXe\XemPhanHoi.aspx" />
     <Content Include="images\bgDynamicMenuItem.jpg" />
     <Content Include="images\bgDynamicMenuItemHover.jpg" />
     <Content Include="images\footer_bg.gif" />
@@ -596,9 +604,13 @@
     <Content Include="QuenMatKhau.aspx" />
     <Content Include="ThongTinChiTietChuyenXe.aspx" />
     <Content Include="Site.master" />
+    <Content Include="TaiXe\Default.sitemap" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\TaiXe\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
