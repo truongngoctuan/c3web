@@ -9,7 +9,7 @@ using System.Web.Security;
 
 namespace CTLH_C3
 {
-    public partial class ThayDoiThongTinCaNhan : System.Web.UI.Page
+    public partial class ThayDoiThongTinCaNhan :CTLH_C3.Core.BasePage
     {
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -25,7 +25,7 @@ namespace CTLH_C3
                     String _role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
                     String _maNhanVien = Roles.GetRolesForUser(Page.User.Identity.Name)[1];
                     if (!_role.Equals("Tài Xế"))
-                        Response.Redirect("Default.aspx");
+                        Response.Redirect("/Default.aspx");
                     else
                     {
                         DetailsDataSource.AutoGenerateWhereClause = false;
@@ -36,7 +36,7 @@ namespace CTLH_C3
                 }
                 else
                 {
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("/Default.aspx");
                 }
             }
         }

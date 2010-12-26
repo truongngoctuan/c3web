@@ -1,7 +1,14 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
     CodeBehind="ThayDoiThongTinCaNhan.aspx.cs" Inherits="CTLH_C3.ThayDoiThongTinCaNhan" %>
 
-<asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    Tài xế - Thay đổi thông tin cá nhân
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true"/>
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
 
@@ -23,7 +30,7 @@
                     <asp:DynamicField DataField="HoTen" />
                     <asp:DynamicField DataField="DienThoai" />
                     <asp:DynamicField DataField="DiaChi" />
-                    <asp:DynamicField DataField="LuongTrongThang" />
+                    <asp:BoundField DataField="LuongTrongThang" HeaderText="Lương trong tháng" ReadOnly="true"/>
                 </Fields>
             </asp:DetailsView>
             
@@ -36,4 +43,7 @@
             
         </ContentTemplate>
     </asp:UpdatePanel>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
 </asp:Content>
