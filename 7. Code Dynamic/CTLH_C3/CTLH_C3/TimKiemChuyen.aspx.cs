@@ -54,13 +54,16 @@ namespace CTLH_C3
             /*chuyenXeQuery = chuyenXeQuery.Where(
                     c => c.KhoiHanh >= DateTime.Today && c.KhoiHanh <= DateTime.Today.AddDays(1)
                 );*/
-            if(ddlTramDi.SelectedItem.Text != "All"
-                && ddlTramDen.SelectedItem.Text != "All")
+            if(ddlTramDi.SelectedItem.Text != "All")
             {
-                  chuyenXeQuery = chuyenXeQuery.Where(
-                                c => c.TUYEN_XE.MaTramDi.ToString() == ddlTramDi.SelectedValue
-                                    && c.TUYEN_XE.MaTramDen.ToString() == ddlTramDen.SelectedValue);
+			    chuyenXeQuery = chuyenXeQuery.Where(
+                                c => c.TUYEN_XE.MaTramDi.ToString() == ddlTramDi.SelectedValue);
             }
+			if(ddlTramDen.SelectedItem.Text != "All")
+			{
+				chuyenXeQuery = chuyenXeQuery.Where(
+                                c => c.TUYEN_XE.MaTramDen.ToString() == ddlTramDen.SelectedValue);
+			}
             /*bool bAdvanceSearch = (bool)Session["AdvanceSearch"];
             if (bAdvanceSearch)
             {
