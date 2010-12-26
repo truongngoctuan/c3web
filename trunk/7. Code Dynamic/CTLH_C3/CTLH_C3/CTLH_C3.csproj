@@ -133,20 +133,6 @@
     <Compile Include="Admin\XoaTaiKhoan.aspx.designer.cs">
       <DependentUpon>XoaTaiKhoan.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Authenticated\Controls\ucDoiMatKhau.ascx.cs">
-      <DependentUpon>ucDoiMatKhau.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Authenticated\Controls\ucDoiMatKhau.ascx.designer.cs">
-      <DependentUpon>ucDoiMatKhau.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Authenticated\DoiMatKhau.aspx.cs">
-      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Authenticated\DoiMatKhau.aspx.designer.cs">
-      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Core\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -243,18 +229,19 @@
     <Compile Include="GUI\Guest\TimKiemChuyen.aspx.designer.cs">
       <DependentUpon>TimKiemChuyen.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TaiXe\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TaiXe\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="TaiXe\NhatKi.aspx.cs">
       <DependentUpon>NhatKi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TaiXe\NhatKi.aspx.designer.cs">
       <DependentUpon>NhatKi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaiXe\TaiXe_Default.aspx.cs">
+      <DependentUpon>TaiXe_Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaiXe\TaiXe_Default.aspx.designer.cs">
+      <DependentUpon>TaiXe_Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="TaiXe\ThayDoiThongTinCaNhan.aspx.cs">
       <DependentUpon>ThayDoiThongTinCaNhan.aspx</DependentUpon>
@@ -582,8 +569,6 @@
     <Content Include="App_Themes\Default\images\radiobutton.gif" />
     <Content Include="App_Themes\Default\images\tbBackgroundGradient.jpg" />
     <Content Include="App_Themes\Default\jsUserControl.js" />
-    <Content Include="Authenticated\Controls\ucDoiMatKhau.ascx" />
-    <Content Include="Authenticated\DoiMatKhau.aspx" />
     <Content Include="DangNhap.aspx" />
     <Content Include="DanhSachCacChuyen.aspx" />
     <Content Include="Default.sitemap" />
@@ -595,8 +580,8 @@
     <Content Include="GUI\Admin\TaiKhoan.aspx" />
     <Content Include="GUI\Admin\ThongTinCongTy.aspx" />
     <Content Include="GUI\Guest\TimKiemChuyen.aspx" />
-    <Content Include="TaiXe\Default.aspx" />
     <Content Include="TaiXe\NhatKi.aspx" />
+    <Content Include="TaiXe\TaiXe_Default.aspx" />
     <Content Include="TaiXe\ThayDoiThongTinCaNhan.aspx" />
     <Content Include="TaiXe\ThongTinNhanVien.aspx" />
     <Content Include="TaiXe\XemPhanHoi.aspx" />
@@ -632,7 +617,6 @@
     <Content Include="Site.master" />
     <Content Include="TaiXe\Default.sitemap" />
     <Content Include="TimKiemChuyen.aspx" />
-    <Content Include="Authenticated\web.config" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>
