@@ -46,7 +46,8 @@
                 <th>Mã</th>
                 <th>Giờ đi</th>
                 <th>Giờ đến</th>
-                <th>Chỗ trống</th>
+                <th>Giá vé</th>
+                <th>Chỗ trống</th>                
                 <th>Xe</th>
                 <th>Chi Tiết</th>
             </tr>
@@ -56,7 +57,8 @@
             <td>1</td>
             <td>10:00</td>
             <td>23:00</td>
-            <td>5</td>
+            <td>50000</td>
+            <td>5</td>            
             <td><asp:HyperLink runat="server" NavigateUrl="~/GUI/Guest/TimKiemChuyen.aspx">Xe</asp:HyperLink></td>
             <td><asp:HyperLink runat="server" NavigateUrl="~/GUI/Guest/TimKiemChuyen.aspx">Xem chi tiết</asp:HyperLink></td>
         </tr>
@@ -65,6 +67,7 @@
             <td>1</td>
             <td>10:00</td>
             <td>23:00</td>
+            <td>50000</td>
             <td>5</td>
             <td><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/GUI/Guest/TimKiemChuyen.aspx">Xe</asp:HyperLink></td>
             <td><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/GUI/Guest/TimKiemChuyen.aspx">Xem chi tiết</asp:HyperLink></td>
@@ -74,6 +77,7 @@
             <td>1</td>
             <td>10:00</td>
             <td>23:00</td>
+            <td>50000</td>
             <td>5</td>
             <td><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/GUI/Guest/TimKiemChuyen.aspx">Xe</asp:HyperLink></td>
             <td><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/GUI/Guest/TimKiemChuyen.aspx">Xem chi tiết</asp:HyperLink></td>

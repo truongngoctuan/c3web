@@ -521,6 +521,13 @@
     <Compile Include="ThongTinChiTietChuyenXe.aspx.designer.cs">
       <DependentUpon>ThongTinChiTietChuyenXe.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TimKiemChuyen.aspx.cs">
+      <DependentUpon>TimKiemChuyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimKiemChuyen.aspx.designer.cs">
+      <DependentUpon>TimKiemChuyen.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TRAVEL_WEB.designer.cs">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -605,6 +612,7 @@
     <Content Include="ThongTinChiTietChuyenXe.aspx" />
     <Content Include="Site.master" />
     <Content Include="TaiXe\Default.sitemap" />
+    <Content Include="TimKiemChuyen.aspx" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>
