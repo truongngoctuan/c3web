@@ -2,16 +2,56 @@
 <asp:LoginView ID="LoginView1" runat="server">
     <RoleGroups>
         <asp:RoleGroup Roles="Admin">
+            <ContentTemplate>
+                Đăng nhập thành công !!!<br />
+        Tên Admin : 
+        <asp:LoginName ID="LoginName1" runat="server" />
+        <br />
+        <asp:LoginStatus ID="LoginStatus1" runat="server" 
+            LoginImageUrl="~/images/login_button.png" 
+            LogoutImageUrl="~/images/logout-button.png"
+            LogoutPageUrl="~/Default.aspx" />   
+            </ContentTemplate>
         </asp:RoleGroup>
+        
         <asp:RoleGroup Roles="Tài Xế">
+        <ContentTemplate>
+                Đăng nhập thành công !!!<br />
+        Tên TX : 
+        <asp:LoginName ID="LoginName1" runat="server" />
+        <br />
+        <asp:LoginStatus ID="LoginStatus1" runat="server" 
+            LoginImageUrl="~/images/login_button.png" 
+            LogoutImageUrl="~/images/logout-button.png"
+            LogoutPageUrl="~/Default.aspx" />   
+            </ContentTemplate>
         </asp:RoleGroup>
         <asp:RoleGroup Roles="Quản Lý Trạm">
+        <ContentTemplate>
+                Đăng nhập thành công !!!<br />
+        Tên QLT : 
+        <asp:LoginName ID="LoginName1" runat="server" />
+        <br />
+        <asp:LoginStatus ID="LoginStatus1" runat="server" 
+            LoginImageUrl="~/images/login_button.png" 
+            LogoutImageUrl="~/images/logout-button.png"
+            LogoutPageUrl="~/Default.aspx" />   
+            </ContentTemplate>
         </asp:RoleGroup>
         <asp:RoleGroup Roles="Quản Lý Công Ty">
+        <ContentTemplate>
+                Đăng nhập thành công !!!<br />
+        Tên QLCT : 
+        <asp:LoginName ID="LoginName1" runat="server" />
+        <br />
+        <asp:LoginStatus ID="LoginStatus1" runat="server" 
+            LoginImageUrl="~/images/login_button.png" 
+            LogoutImageUrl="~/images/logout-button.png"
+            LogoutPageUrl="~/Default.aspx" />   
+            </ContentTemplate>
         </asp:RoleGroup>
     </RoleGroups>
-    <LoggedInTemplate>
-        
+    <LoggedInTemplate>        
         Đăng nhập thành công !!!<br />
         Tên user : 
         <asp:LoginName ID="LoginName1" runat="server" />

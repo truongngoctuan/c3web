@@ -20,6 +20,6 @@ namespace CTLH_C3 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CTLH_C3.Guest.user_Login user_Login;
+        protected global::CTLH_C3.Guest.user_CustomLogin user_Login;
     }
 }

@@ -24,7 +24,10 @@ namespace CTLH_C3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Request.QueryString["MaTramDi"] != null)
+                ddlTramDi.SelectedValue = Request.QueryString["MaTramDi"];
+            if (Request.QueryString["MaTramDen"] != null)
+                ddlTramDen.SelectedValue = Request.QueryString["MaTramDen"];
         }
 
         protected DateTime getTimeToday(string str)
