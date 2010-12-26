@@ -14,10 +14,10 @@ namespace CTLH_C3
         [DisplayName("Giá vé")]
         public object GiaVe { get; set; }
 
-        [DisplayName("Trạm đi")]
+        [DisplayName("Trạm đến")]
         public object TRAM_XE { get; set; }
 
-        [DisplayName("Trạm đến")]
+        [DisplayName("Trạm đi")]
         public object TRAM_XE1 { get; set; }
 
         [DisplayName("Khoảng thời gian đi")]

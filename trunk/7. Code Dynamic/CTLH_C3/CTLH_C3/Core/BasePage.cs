@@ -29,7 +29,11 @@ namespace CTLH_C3.Core
                 Page.Theme = Session["Theme"].ToString();
             }
 
-            AddScript(new string[] { "InitCheckBox();", "initDropDownList();" });
+            //Dòng này gây lỗi cho:
+            // - checkbox của login box; 
+            // - các trang tài xế 
+            // - và có thể một số trang khác
+            //AddScript(new string[] { "InitCheckBox();", "initDropDownList();" });
         }
 
         protected void AddScript(string[] listFunction)
