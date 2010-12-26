@@ -53,7 +53,7 @@
         <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server"/>
     
         <div id="header_bg_right2"></div>
-        <img style="float:left;" src="images/menu_bg_bottom.gif" width="995" height="22" alt="" />
+        <img style="float:left;" src="../images/menu_bg_bottom.gif" width="995" height="22" alt="" />
     </div>
     <!--****************************************************************-->
     <div id="page">

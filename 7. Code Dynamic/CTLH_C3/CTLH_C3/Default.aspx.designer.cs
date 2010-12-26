@@ -122,15 +122,6 @@ namespace CTLH_C3 {
         protected global::System.Web.UI.WebControls.LinqDataSource LinqDataSource1;
         
         /// <summary>
-        /// user_HotLine1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CTLH_C3.Guest.user_HotLine user_HotLine1;
-        
-        /// <summary>
         /// user_Login1 control.
         /// </summary>
         /// <remarks>

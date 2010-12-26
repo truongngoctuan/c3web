@@ -73,8 +73,8 @@
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:DynamicField DataField="MaTuyenXe" HeaderText="Mã tuyến" />
                         <asp:DynamicField DataField="GiaVe" />
-                        <asp:DynamicField DataField="TRAM_XE" />
                         <asp:DynamicField DataField="TRAM_XE1" />
+                        <asp:DynamicField DataField="TRAM_XE" />                        
                     </Columns>
                     <PagerStyle CssClass="footer" />
                     <PagerTemplate>
@@ -98,8 +98,7 @@
                 
                 <%--Trình bày dữ liệu: chuyến--%> 
                 <asp:GridView ID="GridView2" runat="server" DataSourceID="LinqDataSource1" AllowPaging="True"
-                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" 
-                    onselectedindexchanged="GridView1_SelectedIndexChanged">
+                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False">
                     <Columns>
                         <asp:DynamicField DataField="MaChuyenXe" HeaderText="Mã chuyến" />
                         <asp:DynamicField DataField="KhoiHanh" />
@@ -133,7 +132,7 @@
 <%--Cột phải: login--%>
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
     <div style="width: 245px; float: right">
-        <webUC:user_HotLine ID="user_HotLine1" runat="server" />
+        <%--<webUC:user_HotLine ID="user_HotLine1" runat="server" />--%>
         <div>
             <webUC:user_Login ID="user_Login1" runat="server" />
         </div>
