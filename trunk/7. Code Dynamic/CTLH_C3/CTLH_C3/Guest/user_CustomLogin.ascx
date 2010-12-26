@@ -1,6 +1,17 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_CustomLogin.ascx.cs" Inherits="CTLH_C3.Guest.user_CustomLogin" %>
 <asp:LoginView ID="LoginView1" runat="server">
+    <RoleGroups>
+        <asp:RoleGroup Roles="Admin">
+        </asp:RoleGroup>
+        <asp:RoleGroup Roles="Tài Xế">
+        </asp:RoleGroup>
+        <asp:RoleGroup Roles="Quản Lý Trạm">
+        </asp:RoleGroup>
+        <asp:RoleGroup Roles="Quản Lý Công Ty">
+        </asp:RoleGroup>
+    </RoleGroups>
     <LoggedInTemplate>
+        
         Đăng nhập thành công !!!<br />
         Tên user : 
         <asp:LoginName ID="LoginName1" runat="server" />
