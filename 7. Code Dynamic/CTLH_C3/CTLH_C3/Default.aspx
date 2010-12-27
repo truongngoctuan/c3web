@@ -18,14 +18,29 @@
 
 <%--Cột nội dung trái: bỏ không dùng--%>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <asp:Repeater ID="rptTram" runat="server" DataSourceID="ldsTram">
+        <HeaderTemplate>
+            <ul>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <li>
+            <a href="TimKiemChuyen.aspx?MaTramDi=<%# DataBinder.Eval(Container.DataItem, "MaTramXe")%>">
+              <%# DataBinder.Eval(Container.DataItem, "TenTramXe") %></a>                    
+            </li>
+        </ItemTemplate>
+        <FooterTemplate>
+            </ul>
+        </FooterTemplate>
+    </asp:Repeater>
+    <asp:LinqDataSource ID="ldsTram" runat="server" ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext" TableName="TRAM_XEs">
+    </asp:LinqDataSource>    
 </asp:Content>
 
 <%--Cột nội dung giữa: danh sách tuyến--%>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-        <ContentTemplate>
-        
-            <%--Phần bên trái: chọn trạm--%>
+        <ContentTemplate>        
+            <%--Phần bên trái: chọn trạm--%>                    
             <div style="width: 227px; float: left;">
                 <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
                 <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
