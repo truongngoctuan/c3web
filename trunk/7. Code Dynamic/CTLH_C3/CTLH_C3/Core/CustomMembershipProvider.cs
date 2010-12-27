@@ -11,8 +11,6 @@ namespace CTLH_C3.Core
 {
     public class CustomMembershipProvider : MembershipProvider
     {
-        string strTempPass = "123";
-
         private bool _EnablePasswordRetrieval;
         private bool _EnablePasswordReset;
         private bool _RequiresQuestionAndAnswer;
