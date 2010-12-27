@@ -11,9 +11,30 @@ namespace CTLH_C3
 {
     public partial class XemPhanHoi : CTLH_C3.Core.BasePage
     {
+        private string _role = "";
+        private string _maNhanVien = "";
+
         protected override void OnPreInit(EventArgs e)
         {
             base.OnPreInit(e);
+        }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                if (Page.User.Identity.IsAuthenticated)
+                {
+                    _role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
+                    _maNhanVien = Roles.GetRolesForUser(Page.User.Identity.Name)[1];
+                    if (!_role.Equals("Tài Xế"))
+                        Response.Redirect("/Default.aspx");
+                }
+                else
+                {
+                    Response.Redirect("/Default.aspx");
+                }
+            }
         }
 
         protected void Page_Init(object sender, EventArgs e)
@@ -26,28 +47,14 @@ namespace CTLH_C3
         {
             if (!IsPostBack)
             {
-                if (Page.User.Identity.IsAuthenticated)
-                {
-                    String _role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
-                    String _maNhanVien = Roles.GetRolesForUser(Page.User.Identity.Name)[1];
-                    if (!_role.Equals("Tài Xế"))
-                        Response.Redirect("/Default.aspx");
-                    else
-                    {
-                        TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
-                        var query = (from c in dataContext.CHUYEN_XEs
-                                     join t in dataContext.TUYEN_XEs on c.MaTuyenXe equals t.MaTuyenXe
-                                     where c.MaTaiXe.Equals(_maNhanVien)
-                                     select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe }).Distinct();
-                        GridView1.DataSource = query;
-                        GridView1.DataKeyNames = new string[] { "MaChuyen" };
-                        GridView1.DataBind();                        
-                    }
-                }
-                else
-                {
-                    Response.Redirect("/Default.aspx");
-                }
+                TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
+                var query = (from c in dataContext.CHUYEN_XEs
+                             join t in dataContext.TUYEN_XEs on c.MaTuyenXe equals t.MaTuyenXe
+                             where c.MaTaiXe.Equals(_maNhanVien)
+                             select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe }).Distinct();
+                GridView1.DataSource = query;
+                GridView1.DataKeyNames = new string[] { "MaChuyen" };
+                GridView1.DataBind();                       
             } 
         }
         
