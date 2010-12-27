@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode>
+    <siteMapNode url="~/Default.aspx" title="Trang Chủ"  description="Trang Chủ"/>
+    <siteMapNode url="~/XEs/List.aspx" title="Quản lý xe"  description="Quản lý xe">
+    </siteMapNode>
+    <siteMapNode url="~/TUYEN_XEs/List.aspx" title="Quản lý tuyến"  description="Quản lý tuyến">
+    </siteMapNode>
+    <siteMapNode url="~/TRAM_XEs/List.aspx" title="Quản lý trạm"  description="Quản lý trạm">
+    </siteMapNode>
+    <siteMapNode url="~/NHAN_VIENs/List.aspx" title="Quản lý nhân viên"  description="Quản lý nhân viên">
+    </siteMapNode>
+    <siteMapNode title="Thống kê"  description="Thống kê">
+      <siteMapNode title="Thống kê khách/tuyến"  description="Thống kê khách/tuyến" />
+      <siteMapNode title="Thống kê doanh thu"  description="Thống kê doanh thu" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
