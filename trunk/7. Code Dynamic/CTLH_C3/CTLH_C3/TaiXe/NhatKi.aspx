@@ -1,69 +1,61 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="NhatKi.aspx.cs" Inherits="CTLH_C3.NhatKi" %>
 
+<%@ Register Src="~/DynamicData/Content/GridViewPager.ascx" TagName="GridViewPager"
+    TagPrefix="asp" %>
+<%@ Register Src="~/DynamicData/Content/FilterUserControl.ascx" TagName="DynamicFilter"
+    TagPrefix="asp" %>
+    
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     Nhật kí
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    &nbsp;
 </asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Nhật Kí</h1>
-    <div>
-        Từ : 
-        <asp:TextBox ID="TextBox1" runat="server">1/1/2010</asp:TextBox>
-        Đến :
-        <asp:TextBox ID="TextBox2" runat="server">24/12/2010</asp:TextBox>
-    </div>
-    <table>
-        <thead>
-        <tr>
-            <td>STT</td>
-            <td>Trạm đầu</td>
-            <td>Trạm cuối</td>
-            <td>Giờ đi</td>
-            <td>Giờ đến</td>
-            <td>Lương</td>
-            <td>Phản hồi</td>
-        </tr>
-        </thead>
-        <tr>
-            <td>1</td>
-            <td>HCM</td>
-            <td>HaNoi</td>
-            <td>01:00</td>
-            <td>23:59</td>
-            <td>100000</td>
-            <td><asp:HyperLink ID="HyperLink6" NavigateUrl="~/GUI/TaiXe/NhatKi.aspx" runat="server">5 phản hồi (chưa đọc)</asp:HyperLink></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>HCM</td>
-            <td>HaNoi</td>
-            <td>01:00</td>
-            <td>23:59</td>
-            <td>100000</td>
-            <td><asp:HyperLink ID="HyperLink5" NavigateUrl="~/GUI/TaiXe/NhatKi.aspx" runat="server">5 phản hồi (chưa đọc)</asp:HyperLink></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>HCM</td>
-            <td>HaNoi</td>
-            <td>01:00</td>
-            <td>23:59</td>
-            <td>100000</td>
-            <td><asp:HyperLink ID="HyperLink4" NavigateUrl="~/GUI/TaiXe/NhatKi.aspx" runat="server">5 phản hồi</asp:HyperLink></td>
-        </tr>
-    </table>
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            
+            <div style="width: 227px; float: left;">
+                <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
+                <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
+            </div>
+            
+            <%--Phần bên phải: trình bày dữ liệu--%>
+            <div style="width: 520px; float: left">
+               
+                <%--Báo lỗi--%>
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
+                    HeaderText="Danh sách lỗi" />
+                <asp:DynamicValidator runat="server" ID="GridViewValidator" ControlToValidate="GridView1"
+                    Display="None" />
+                
+                <div><b>Các chuyến đã phục vụ:</b></div>
+                
+                <%--Các chuyến đã chạy --%>      
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True"
+                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" >
+                    <Columns>
+                        <asp:BoundField DataField="MaChuyen" HeaderText="Mã chuyến" />
+                        <asp:BoundField DataField="TramDi" HeaderText="Trạm đi" />
+                        <asp:BoundField DataField="TramDen" HeaderText="Trạm đến"/>
+                        <asp:BoundField DataField="KhoiHanh" HeaderText="Khởi hành"/>
+                        <asp:BoundField DataField="DuKienDen" HeaderText="Giờ đến dự kiến"/>
+                        <asp:BoundField DataField="ThoiDiemDenTram" HeaderText="Đã đến trạm lúc"/>
+                    </Columns>
+                    <PagerStyle CssClass="footer" />
+                    <PagerTemplate>
+                        <asp:GridViewPager ID="GridViewPager1" runat="server" />
+                    </PagerTemplate>
+                    <EmptyDataTemplate>
+                        Không có thông tin.
+                    </EmptyDataTemplate>
+                </asp:GridView>                 
+                                              
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>    
 </asp:Content>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
-    <%-- 
-    <asp:LoginView ID="LoginView1" runat="server">
-    </asp:LoginView> 
-    %>
-    Hình đại diện <br />
-    Tên nhân viên <br />
-    <h2>Lương tháng : 5000000 VNĐ</h2> <br />
-    <asp:HyperLink ID="HyperLink1" NavigateUrl="~/GUI/TaiXe/Default.aspx" runat="server">Xem chuyến kế tiếp</asp:HyperLink><br />
-    <asp:HyperLink ID="HyperLink2" NavigateUrl="~/GUI/TaiXe/Default.aspx" runat="server">Xem phan hoi</asp:HyperLink> : 5 phản hồi mới<br />
-    <asp:HyperLink ID="HyperLink3" NavigateUrl="~/GUI/TaiXe/Default.aspx" runat="server">Xem nhat ki</asp:HyperLink><br />
 </asp:Content>

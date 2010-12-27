@@ -73,9 +73,6 @@
                     ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext" 
                     Select="new (MaPhanHoiKhach,PHAN_HOI_KHACH_HANG ,MaChuyen, MaPhanHoi)" 
                     TableName="PHAN_HOIs">
-                    <%--<WhereParameters>
-                        <asp:DynamicControlParameter ControlID="GridView1" Name="MaChuyen" />
-                    </WhereParameters>--%>
                 </asp:LinqDataSource>   
                                                                    
             </div>

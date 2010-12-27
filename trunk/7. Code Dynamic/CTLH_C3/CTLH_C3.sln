@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+# Visual Web Developer Express 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTLH_C3", "CTLH_C3\CTLH_C3.csproj", "{6ED17684-A77F-4ACE-A8CB-10CDB0515FC0}"
 EndProject
 Global
