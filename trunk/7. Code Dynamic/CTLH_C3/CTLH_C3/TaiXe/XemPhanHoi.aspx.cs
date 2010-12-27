@@ -14,6 +14,8 @@ namespace CTLH_C3
         private string _role = "";
         private string _maNhanVien = "";
 
+        // Nếu người dùng chưa đăng nhập với vai trò "Tài Xế" 
+        // thì không cho vào trang
         protected override void OnPreInit(EventArgs e)
         {
             base.OnPreInit(e);
@@ -53,7 +55,7 @@ namespace CTLH_C3
                              where c.MaTaiXe.Equals(_maNhanVien)
                              select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe }).Distinct();
                 GridView1.DataSource = query;
-                GridView1.DataKeyNames = new string[] { "MaChuyen" };
+                GridView1.DataKeyNames = new string[] { "MaChuyen" };// xác định cột khóa chính
                 GridView1.DataBind();                       
             } 
         }

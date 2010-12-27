@@ -59,6 +59,24 @@ namespace CTLH_C3 {
         protected global::System.Web.DynamicData.DynamicValidator GridViewValidator;
         
         /// <summary>
+        /// lstThang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList lstThang;
+        
+        /// <summary>
+        /// lstNam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList lstNam;
+        
+        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>
