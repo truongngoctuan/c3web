@@ -38,9 +38,10 @@
          />
     <asp:Button ID="btAdvanceSearch" runat="server" Text="Nâng cao" 
         onclick="btAdvanceSearch_Click" />
-        
+        <br/>
     <asp:GridView ID="gvChuyenXe" DataSourceID="ldsChuyenXe" runat="server" 
-        AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" >
+        AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" 
+        >
         <Columns>
             <asp:BoundField DataField="MaChuyenXe" HeaderText="MaChuyenXe" ReadOnly="True" 
                 SortExpression="MaChuyenXe" />
@@ -54,6 +55,7 @@
                 SortExpression="SoChoTrong" />
         </Columns>
     </asp:GridView>
+    <br />
     <asp:LinqDataSource ID="ldsChuyenXe" runat="server" 
         ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext" TableName="CHUYEN_XEs"         
         onselecting="LinqDataSource2_Selecting" >
