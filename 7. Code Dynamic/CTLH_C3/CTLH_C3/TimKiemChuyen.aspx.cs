@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.DynamicData;
+using CTLH_C3.Core;
 
 namespace CTLH_C3
 {
-    public partial class TimKiemChuyen : System.Web.UI.Page
+    public partial class TimKiemChuyen : BasePage
     {
         protected override void OnPreInit(EventArgs e)
         {
