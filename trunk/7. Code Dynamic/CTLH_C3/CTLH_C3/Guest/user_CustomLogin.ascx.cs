@@ -25,7 +25,8 @@ namespace CTLH_C3.Guest
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Login Error", strScript, true);
             //Page.ClientScript.RegisterClientScriptBlock(Page.GetType(), "Login Error", strScript, true);
         }
-
+        //---------------------------------------------------------
+        //phan he admin
         protected void ldsTenNhanVien_Selecting(object sender, LinqDataSourceSelectEventArgs e)
         {
             TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
@@ -36,6 +37,8 @@ namespace CTLH_C3.Guest
             e.Result = nvQuery;
         }
 
+        //---------------------------------------------------------
+        //phan he tai xe
         protected void ldsDanhSachPhanHoi_Selecting(object sender, LinqDataSourceSelectEventArgs e)
         {
             TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
@@ -47,6 +50,16 @@ namespace CTLH_C3.Guest
                 Join(dataContext.PHAN_HOI_KHACH_HANGs, c => c.MaPhanHoi, o => o.MaPhanHoi,
                 (c, o) => new {o.NoiDung, o.NgayDang}).
                 OrderByDescending(c => c.NgayDang).Take(5);
+
+            e.Result = nvQuery;
+        }
+
+        protected void ldsTenLuongNhanVien_Selecting(object sender, LinqDataSourceSelectEventArgs e)
+        {
+            TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
+            var nvQuery = dataContext.NHAN_VIENs.Join(dataContext.TAI_KHOANs, c => c.MaNhanVien, o => o.MaNhanVien,
+                (c, o) => new { c.HoTen, o.Username, c.LuongTrongThang}).
+                Where(q => q.Username.ToString() == Page.User.Identity.Name.ToString());
 
             e.Result = nvQuery;
         }

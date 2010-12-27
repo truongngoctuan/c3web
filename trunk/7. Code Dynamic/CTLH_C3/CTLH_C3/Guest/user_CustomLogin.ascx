@@ -4,57 +4,103 @@
     <%--Admin--%>
         <asp:RoleGroup Roles="Admin">
             <ContentTemplate>
-                <asp:FormView ID="FormView1" runat="server" DataSourceID="ldsTenNhanVien">
-                    <ItemTemplate>
+                 <asp:FormView ID="FormView1" runat="server" DataSourceID="ldsTenNhanVien"
+                        Width="245px">
+                        <ItemTemplate>
+                        <div style="width:245px;">
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" 
+                            LoginText="Đăng nhập"
+                            CssClass="ucloginlogout"
+                            
+                            LogoutText="Đăng xuất" 
+                            
+                            LogoutPageUrl="~/Default.aspx"
+                            style="float:right;"/>
                         <asp:Image ID="Image1" runat="server" ImageUrl="~/images/HinhDaiDien.jpg"
-                        style="float:left; clear:both;"/>
+                            style="
+                            margin-left:49px;"/>
                         
                         <asp:Label ID="lbHoTen" runat="server" 
-                        Text='<%#Bind("HoTen")%>' style="float:left; clear:both;"></asp:Label>
-                        
-                        <asp:LoginStatus ID="LoginStatus1" runat="server" 
-                            LoginImageUrl="~/images/login_button.png" 
-                            LogoutImageUrl="~/images/logout-button.png"
-                            LogoutPageUrl="~/Default.aspx" 
-                            style="float:left; clear:both;"/>
-                    
+                        Text='<%#Bind("HoTen")%>' 
+                        style="
+                            float:left; clear:both;
+                            text-align:center;
+                            width:245px"></asp:Label>
                         <asp:HyperLink ID="HyperLink3" NavigateUrl="~/GUI/Admin/TaiKhoan.aspx" runat="server"
-                        style="float:left; clear:both;">Quản lý tài khoản</asp:HyperLink>
+                        style="float:left; clear:both;text-align:center;width:245px;">Quản lý tài khoản</asp:HyperLink>
                         <asp:HyperLink ID="HyperLink2" NavigateUrl="~/GUI/Admin/TaiKhoan.aspx" runat="server"
-                        style="float:left; clear:both;">Thông tin công ty</asp:HyperLink>
-                           
-                        <asp:GridView ID="GridView1" runat="server" DataSourceID="ldsDanhSachPhanHoi"
-                        style="float:left; clear:both; width:240px;" AutoGenerateColumns="False">
-                        <Columns>
-                            <asp:BoundField DataField="NoiDung" HeaderText="Nội dung phản hồi" ReadOnly="True"
-                            HeaderStyle-Width="150px"
-                            ItemStyle-Width="150px"/>
-                            <asp:BoundField DataField="NgayDang" HeaderText="Ngày đăng" ReadOnly="True" />
-                        </Columns>
-                        </asp:GridView>        
+                        style="float:left; clear:both;text-align:center;width:245px;">Thông tin công ty</asp:HyperLink>
+                        </div>
                     </ItemTemplate>
-                </asp:FormView>    
+                </asp:FormView>   
                 
                 <asp:LinqDataSource ID="ldsTenNhanVien" runat="server" 
                 onselecting="ldsTenNhanVien_Selecting">
-                </asp:LinqDataSource>
-                <asp:LinqDataSource ID="ldsDanhSachPhanHoi" runat="server" 
-                        onselecting="ldsDanhSachPhanHoi_Selecting">
                 </asp:LinqDataSource>
                 
             </ContentTemplate>
         </asp:RoleGroup>
         
         <asp:RoleGroup Roles="Tài Xế">
-        <ContentTemplate>
-                Đăng nhập thành công !!!<br />
-        Tên TX : 
-        <asp:LoginName ID="LoginName1" runat="server" />
-        <br />
-        <asp:LoginStatus ID="LoginStatus1" runat="server" 
-            LoginImageUrl="~/images/login_button.png" 
-            LogoutImageUrl="~/images/logout-button.png"
-            LogoutPageUrl="~/Default.aspx" />   
+            <ContentTemplate>
+            <asp:FormView ID="FormView2" runat="server" DataSourceID="ldsTenLuongNhanVien"
+                        Width="245px">
+                        <ItemTemplate>
+                        <div style="width:245px;">
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" 
+                            LoginText="Đăng nhập"
+                            CssClass="ucloginlogout"
+                            
+                            LogoutText="Đăng xuất" 
+                            
+                            LogoutPageUrl="~/Default.aspx"
+                            style="float:right;"/>
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/HinhDaiDien.jpg"
+                            style="
+                            margin-left:49px;"/>
+                        
+                        <asp:Label ID="lbHoTen" runat="server" 
+                        Text='<%#Bind("HoTen")%>' 
+                        style="
+                            float:left; clear:both;
+                            text-align:center; width:245px"></asp:Label>
+                        
+                        <div style="
+                            float:left; clear:both;
+                            text-align:center; width:245px">
+                            Lương: 
+                            <asp:Literal ID="Label1" runat="server" 
+                        Text=" <%#Bind('LuongTrongThang')%>"></asp:Literal> VNĐ</div>
+                        
+                    
+                        <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Default.aspx" runat="server"
+                        style="float:left; clear:both;text-align:center;width:245px;">Xem chuyến kế tiếp</asp:HyperLink><br />
+                        <asp:HyperLink ID="HyperLink5" NavigateUrl="~/TaiXe/NhatKi.aspx" runat="server"
+                        style="float:left; clear:both;text-align:center;width:245px;">Xem nhật kí</asp:HyperLink><br />
+                        
+                        <asp:HyperLink ID="HyperLink4" NavigateUrl="~/TaiXe/XemPhanHoi.aspx" runat="server"
+                        style="float:left; clear:both;text-align:center;width:245px;">Xem phàn hồi</asp:HyperLink>
+                        Phản hồi gần nhất:<br />
+                        <asp:GridView ID="GridView1" runat="server" DataSourceID="ldsDanhSachPhanHoi"
+                        style="float:left; clear:both; width:240px;" AutoGenerateColumns="False"
+                        CssClass="gridview">
+                        <Columns>
+                            <asp:BoundField DataField="NoiDung" HeaderText="Nội dung phản hồi" ReadOnly="True"
+                            HeaderStyle-Width="150px"
+                            ItemStyle-Width="150px"/>
+                            <asp:BoundField DataField="NgayDang" HeaderText="Ngày đăng" ReadOnly="True" />
+                        </Columns>
+                        </asp:GridView>
+                                                   
+                       </div>  
+                    </ItemTemplate>
+                </asp:FormView>
+                <asp:LinqDataSource ID="ldsTenLuongNhanVien" runat="server" 
+                        onselecting="ldsTenLuongNhanVien_Selecting" >
+                </asp:LinqDataSource>
+                <asp:LinqDataSource ID="ldsDanhSachPhanHoi" runat="server" 
+                        onselecting="ldsDanhSachPhanHoi_Selecting">
+                </asp:LinqDataSource>
             </ContentTemplate>
         </asp:RoleGroup>
         <asp:RoleGroup Roles="Quản Lý Trạm">
@@ -146,6 +192,7 @@
                     </table>
                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
                         ShowMessageBox="True" ValidationGroup="Login1" ShowSummary="False" />
+                
                 </asp:Panel>
             </LayoutTemplate>
         </asp:Login>
