@@ -66,3 +66,6 @@ Default skin template. The following skins are provided as examples only.
     StaticHoverStyle-BorderWidth="2px"
 />
 
+<asp:GridView runat="server"
+    CssClass="gridview"/>
+
