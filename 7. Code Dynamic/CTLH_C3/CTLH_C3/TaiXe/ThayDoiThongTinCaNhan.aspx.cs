@@ -14,6 +14,8 @@ namespace CTLH_C3
         private string _role = "";
         private string _maNhanVien = "";
 
+        // Nếu người dùng chưa đăng nhập với vai trò "Tài Xế" 
+        // thì không cho vào trang
         protected void Page_PreInit(object sender, EventArgs e)
         {            
             if (!IsPostBack)
