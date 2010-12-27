@@ -1,16 +1,47 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="user_CustomLogin.ascx.cs" Inherits="CTLH_C3.Guest.user_CustomLogin" %>
-<asp:LoginView ID="LoginView1" runat="server">
+<asp:LoginView ID="LoginView1" runat="server" >
     <RoleGroups>
+    <%--Admin--%>
         <asp:RoleGroup Roles="Admin">
             <ContentTemplate>
-                Đăng nhập thành công !!!<br />
-        Tên Admin : 
-        <asp:LoginName ID="LoginName1" runat="server" />
-        <br />
-        <asp:LoginStatus ID="LoginStatus1" runat="server" 
-            LoginImageUrl="~/images/login_button.png" 
-            LogoutImageUrl="~/images/logout-button.png"
-            LogoutPageUrl="~/Default.aspx" />   
+                <asp:FormView ID="FormView1" runat="server" DataSourceID="ldsTenNhanVien">
+                    <ItemTemplate>
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/HinhDaiDien.jpg"
+                        style="float:left; clear:both;"/>
+                        
+                        <asp:Label ID="lbHoTen" runat="server" 
+                        Text='<%#Bind("HoTen")%>' style="float:left; clear:both;"></asp:Label>
+                        
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" 
+                            LoginImageUrl="~/images/login_button.png" 
+                            LogoutImageUrl="~/images/logout-button.png"
+                            LogoutPageUrl="~/Default.aspx" 
+                            style="float:left; clear:both;"/>
+                    
+                        <asp:HyperLink ID="HyperLink3" NavigateUrl="~/GUI/Admin/TaiKhoan.aspx" runat="server"
+                        style="float:left; clear:both;">Quản lý tài khoản</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink2" NavigateUrl="~/GUI/Admin/TaiKhoan.aspx" runat="server"
+                        style="float:left; clear:both;">Thông tin công ty</asp:HyperLink>
+                           
+                        <asp:GridView ID="GridView1" runat="server" DataSourceID="ldsDanhSachPhanHoi"
+                        style="float:left; clear:both; width:240px;" AutoGenerateColumns="False">
+                        <Columns>
+                            <asp:BoundField DataField="NoiDung" HeaderText="Nội dung phản hồi" ReadOnly="True"
+                            HeaderStyle-Width="150px"
+                            ItemStyle-Width="150px"/>
+                            <asp:BoundField DataField="NgayDang" HeaderText="Ngày đăng" ReadOnly="True" />
+                        </Columns>
+                        </asp:GridView>        
+                    </ItemTemplate>
+                </asp:FormView>    
+                
+                <asp:LinqDataSource ID="ldsTenNhanVien" runat="server" 
+                onselecting="ldsTenNhanVien_Selecting">
+                </asp:LinqDataSource>
+                <asp:LinqDataSource ID="ldsDanhSachPhanHoi" runat="server" 
+                        onselecting="ldsDanhSachPhanHoi_Selecting">
+                </asp:LinqDataSource>
+                
             </ContentTemplate>
         </asp:RoleGroup>
         
@@ -52,7 +83,7 @@
         </asp:RoleGroup>
     </RoleGroups>
     <LoggedInTemplate>        
-        Đăng nhập thành công !!!<br />
+        LoggedInTemplate - Đăng nhập thành công !!!<br />
         Tên user : 
         <asp:LoginName ID="LoginName1" runat="server" />
         <br />
@@ -64,7 +95,7 @@
     <AnonymousTemplate>
         <asp:Login ID="Login1" runat="server" onloginerror="Login1_LoginError" >
             <LayoutTemplate>
-                <asp:Panel ID="Panel1" runat="server" BackImageUrl="~/images/login_form.png"  
+                <asp:Panel ID="Panel1" runat="server" BackImageUrl="~/images/login_form.png"
             Width="245px" Height="250px">
                     <table border="0" cellpadding="1" cellspacing="5"
             style="border-collapse:collapse; position: relative; top: 55px;" 
