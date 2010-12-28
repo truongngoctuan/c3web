@@ -6,6 +6,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <div style="width:250px;" ></div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
@@ -19,11 +20,15 @@
         
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
                 HeaderText="List of validation errors" />
-            <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView1"
+            <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView_ThongTinCaNhan"
                 Display="None" />
+            <asp:DynamicValidator runat="server" ID="DetailsViewValidator2" ControlToValidate="DetailsView_TaiKhoan"
+            Display="None" />
             
-            <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="DetailsDataSource"
-                DefaultMode="Edit" AutoGenerateEditButton="True" CssClass="detailstable" FieldHeaderStyle-CssClass="bold"
+           <%-- Thông tin cá nhân--%>
+            <asp:DetailsView ID="DetailsView_ThongTinCaNhan" runat="server" 
+                DataSourceID="ThongTinDataSource" AutoGenerateEditButton="True" 
+                CssClass="detailstable" FieldHeaderStyle-CssClass="bold"
                 AutoGenerateRows="False">
                 <FieldHeaderStyle CssClass="bold" />
                 <Fields>
@@ -34,11 +39,31 @@
                 </Fields>
             </asp:DetailsView>
             
-           <asp:LinqDataSource ID="DetailsDataSource" runat="server" 
+           <asp:LinqDataSource ID="ThongTinDataSource" runat="server" 
                 ContextTypeName = "CTLH_C3.TRAVEL_WEBDataContext"
-                TableName = "NHAN_VIENs"
-                EnableUpdate = "true" 
-                AutoGenerateWhereClause="false"> 
+                TableName = "NHAN_VIENs" 
+                Select="new (MaNhanVien, HoTen, DienThoai, DiaChi, LuongTrongThang, LoaiNhanVien, LOAI_NHAN_VIEN)"> 
+           </asp:LinqDataSource>
+           
+           <br />
+           
+           <%--Thông tin tài khoản--%>
+           <asp:DetailsView ID="DetailsView_TaiKhoan" runat="server" 
+                DataSourceID="TaiKhoanDataSource" AutoGenerateEditButton="True" 
+                CssClass="detailstable" FieldHeaderStyle-CssClass="bold"
+                AutoGenerateRows="False">
+                <FieldHeaderStyle CssClass="bold" />
+                <Fields>
+                    <asp:BoundField DataField="Username" HeaderText="Tên tài khoản" ReadOnly="true"/>
+                    <asp:DynamicField DataField="Password" />
+                    <asp:BoundField DataField="Email" HeaderText="Email" ReadOnly="true"/>
+                </Fields>
+            </asp:DetailsView>
+            
+           <asp:LinqDataSource ID="TaiKhoanDataSource" runat="server" 
+                ContextTypeName = "CTLH_C3.TRAVEL_WEBDataContext"
+                TableName = "TAI_KHOANs" 
+                Select="new (Username, Password, MaTaiKhoan, Email)"> 
            </asp:LinqDataSource>
             
         </ContentTemplate>
