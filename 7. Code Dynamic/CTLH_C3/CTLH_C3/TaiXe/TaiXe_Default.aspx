@@ -10,16 +10,15 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <div style="width:250px;" ></div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             
-            <div style="width: 227px; float: left;">
-                <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
-                <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
-            </div>
+            <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
+            <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
             
             <%--Phần bên phải: trình bày dữ liệu--%>
             <div style="width: 520px; float: left">
@@ -31,6 +30,15 @@
                     Display="None" />
                 
                 <div><b>Lịch chạy</b></div>
+                <br />
+                <br />
+                    <b>Tháng:</b>
+                    <asp:Label ID="lblThang" runat="server"></asp:Label>
+                    <b>Năm:</b>
+                    <asp:Label ID="lblNam" runat="server"></asp:Label>
+                <br />
+                <br />
+
                 
                 <%--Các chuyến sắp chạy --%>      
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True"

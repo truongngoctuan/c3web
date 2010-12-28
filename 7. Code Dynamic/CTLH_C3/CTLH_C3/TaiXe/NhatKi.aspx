@@ -10,16 +10,17 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <div style="width:250px;" ></div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             
-            <div style="width: 227px; float: left;">
-                <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
-                <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
-            </div>
+
+            <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
+            <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
+
             
             <%--Phần bên phải: trình bày dữ liệu--%>
             <div style="width: 520px; float: left">
@@ -32,26 +33,13 @@
                 
                 <div><b>Các chuyến đã phục vụ:</b>
                     <br />
+                    <br />
                     <b>Tháng:</b>
-                    <asp:DropDownList ID="lstThang" runat="server" AutoPostBack="True" 
-                        onselectedindexchanged="lstThang_SelectedIndexChanged">
-                        <asp:ListItem>1</asp:ListItem>
-                        <asp:ListItem>2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                        <asp:ListItem>6</asp:ListItem>
-                        <asp:ListItem>7</asp:ListItem>
-                        <asp:ListItem>8</asp:ListItem>
-                        <asp:ListItem>9</asp:ListItem>
-                        <asp:ListItem>10</asp:ListItem>
-                        <asp:ListItem>11</asp:ListItem>
-                        <asp:ListItem>12</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:Label ID="lblThang" runat="server"></asp:Label>
                     <b>Năm:</b>
-                    <asp:DropDownList ID="lstNam" runat="server" AutoPostBack="True" 
-                        onselectedindexchanged="lstNam_SelectedIndexChanged">
-                    </asp:DropDownList>
+                    <asp:Label ID="lblNam" runat="server"></asp:Label>
+                    <br />
+                    <br />
                 </div>
                 
                 <%--Các chuyến đã chạy --%>      

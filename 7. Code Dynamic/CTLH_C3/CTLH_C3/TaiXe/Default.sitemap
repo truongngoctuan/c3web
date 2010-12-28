@@ -5,8 +5,8 @@
     <siteMapNode url="TaiXe/TaiXe_Default.aspx" title="Lịch chạy"  description="Lịch chạy"/>
     <siteMapNode title="Xem thông tin"  description="Xem thông tin">
       <siteMapNode url="TaiXe/XemPhanHoi.aspx" title="Xem phản hồi"  description="Xem phản hồi" />
-      <siteMapNode url="TaiXe/NhatKi.aspx" title="Xem nhật ký"  description="Xem nhật ký" />
+      <siteMapNode url="TaiXe/ThongKe.aspx" title="Xem thống kê"  description="Xem thống kê" />
     </siteMapNode>
-    <siteMapNode url="TaiXe/ThayDoiThongTinCaNhan.aspx" title="Thay đổi thông tin cá nhân"  description="Thay đổi thông tin cá nhân" />
+    <siteMapNode url="TaiXe/ThayDoiThongTinCaNhan.aspx" title="Thông tin cá nhân"  description="Thông tin cá nhân" />
   </siteMapNode>
 </siteMap>

@@ -9,16 +9,15 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <div style="width:250px;" ></div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             
-            <div style="width: 227px; float: left;">
-                <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
-                <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
-            </div>
+            <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
+            <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
             
             <%--Phần bên phải: trình bày dữ liệu--%>
             <div style="width: 520px; float: left">
@@ -30,7 +29,9 @@
                 <asp:DynamicValidator runat="server" ID="GridViewValidator" ControlToValidate="GridView1"
                     Display="None" />
                 
+                <br />
                 <div><b>Các chuyến</b></div>
+                <br />
                 
                 <%--Trình bày dữ liệu: các chuyến do nhân viên này làm tài xế--%> 
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True"
@@ -51,7 +52,9 @@
                     </EmptyDataTemplate>
                 </asp:GridView>
                 
+                <br />
                 <div><b>Phản hồi:</b></div>
+                <br />
                 
                 <%--Các phản hồi của chuyến --%>      
                 <asp:GridView ID="GridView2" runat="server" AllowPaging="True" DataSourceID="PhanHoiDataSource"

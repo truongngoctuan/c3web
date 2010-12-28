@@ -355,12 +355,12 @@
     <Compile Include="TaiXe\ThayDoiThongTinCaNhan.aspx.designer.cs">
       <DependentUpon>ThayDoiThongTinCaNhan.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TaiXe\ThongTinNhanVien.aspx.cs">
-      <DependentUpon>ThongTinNhanVien.aspx</DependentUpon>
+    <Compile Include="TaiXe\ThongKe.aspx.cs">
+      <DependentUpon>ThongKe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TaiXe\ThongTinNhanVien.aspx.designer.cs">
-      <DependentUpon>ThongTinNhanVien.aspx</DependentUpon>
+    <Compile Include="TaiXe\ThongKe.aspx.designer.cs">
+      <DependentUpon>ThongKe.aspx</DependentUpon>
     </Compile>
     <Compile Include="TaiXe\XemPhanHoi.aspx.cs">
       <DependentUpon>XemPhanHoi.aspx</DependentUpon>
@@ -702,7 +702,7 @@
     <Content Include="TaiXe\NhatKi.aspx" />
     <Content Include="TaiXe\TaiXe_Default.aspx" />
     <Content Include="TaiXe\ThayDoiThongTinCaNhan.aspx" />
-    <Content Include="TaiXe\ThongTinNhanVien.aspx" />
+    <Content Include="TaiXe\ThongKe.aspx" />
     <Content Include="TaiXe\XemPhanHoi.aspx" />
     <Content Include="images\bgDynamicMenuItem.jpg" />
     <Content Include="images\bgDynamicMenuItemHover.jpg" />

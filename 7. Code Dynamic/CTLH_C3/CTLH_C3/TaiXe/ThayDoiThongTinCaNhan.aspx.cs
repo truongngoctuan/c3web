@@ -36,17 +36,21 @@ namespace CTLH_C3
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            DynamicDataManager1.RegisterControl(DetailsView1);
+            DynamicDataManager1.RegisterControl(DetailsView_ThongTinCaNhan);
+            DynamicDataManager1.RegisterControl(DetailsView_TaiKhoan);
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                DetailsDataSource.AutoGenerateWhereClause = false;
                 lblLoaiNhanVien.Text = _role;
-                DetailsDataSource.Select = "new (MaNhanVien,HoTen, DienThoai, DiaChi, LuongTrongThang, LoaiNhanVien, LOAI_NHAN_VIEN)";
-                DetailsDataSource.Where = "MaNhanVien==" + _maNhanVien;
+
+                ThongTinDataSource.AutoGenerateWhereClause = false;                
+                ThongTinDataSource.Where = "MaNhanVien==" + _maNhanVien;
+
+                TaiKhoanDataSource.AutoGenerateWhereClause = false;
+                TaiKhoanDataSource.Where = "MaNhanVien==" + _maNhanVien;
             }
         }
     }

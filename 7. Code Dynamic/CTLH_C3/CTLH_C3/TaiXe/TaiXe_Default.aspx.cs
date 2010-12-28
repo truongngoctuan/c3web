@@ -43,12 +43,22 @@ namespace CTLH_C3
         {
             if (!IsPostBack)
             {
+                int month = DateTime.Now.Month;
+                int year = DateTime.Now.Year;
+
+                // Khởi tạo 2 label tháng và năm
+                lblThang.Text = month.ToString();
+                lblNam.Text = year.ToString();
+
                 // Chọn các chuyến mà tài xế này sẽ phục vụ
                 // (Các chuyến chưa đến nơi)
                 TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
                 var query = (from c in dataContext.CHUYEN_XEs
                              join t in dataContext.TUYEN_XEs on c.MaTuyenXe equals t.MaTuyenXe
-                             where (c.MaTaiXe.Equals(_maNhanVien) && c.ThoiGianDenTram==null)
+                             where (c.MaTaiXe.Equals(_maNhanVien) 
+                                    && c.ThoiGianDenTram==null
+                                    && c.KhoiHanh.Value.Month == month
+                                    && c.KhoiHanh.Value.Year == year)
                              select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe, KhoiHanh = c.KhoiHanh, DuKienDen = c.DuKienDen }).Distinct();
                 GridView1.DataSource = query;
                 //GridView1.DataKeyNames = new string[] { "MaChuyen" };

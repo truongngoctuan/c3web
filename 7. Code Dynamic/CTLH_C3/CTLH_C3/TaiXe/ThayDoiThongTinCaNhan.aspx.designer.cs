@@ -68,21 +68,48 @@ namespace CTLH_C3 {
         protected global::System.Web.DynamicData.DynamicValidator DetailsViewValidator;
         
         /// <summary>
-        /// DetailsView1 control.
+        /// DetailsViewValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
+        protected global::System.Web.DynamicData.DynamicValidator DetailsViewValidator2;
         
         /// <summary>
-        /// DetailsDataSource control.
+        /// DetailsView_ThongTinCaNhan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinqDataSource DetailsDataSource;
+        protected global::System.Web.UI.WebControls.DetailsView DetailsView_ThongTinCaNhan;
+        
+        /// <summary>
+        /// ThongTinDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource ThongTinDataSource;
+        
+        /// <summary>
+        /// DetailsView_TaiKhoan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DetailsView DetailsView_TaiKhoan;
+        
+        /// <summary>
+        /// TaiKhoanDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource TaiKhoanDataSource;
     }
 }
