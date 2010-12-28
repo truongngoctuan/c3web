@@ -19,6 +19,64 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"/>
     <!--****************************************************************-->
     <div id="top">
+        <img style="float:left; clear:both;z-index:9;" src="../images/banner.jpg" width="995" height="193" alt=""/>
+        <img style="float:left; clear:both;z-index:9;" src="../images/menu_bg.jpg" width="995" height="58" alt=""/>
+        <div id="Menu" style="position:absolute; z-index:9;
+            left:0px; top:193px;">
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSourceMenu"
+                            Orientation="Horizontal" 
+                            staticdisplaylevels="2" 
+                            DynamicHorizontalOffset="1"
+                            staticsubmenuindent="1px" 
+                            MaximumDynamicDisplayLevels="5"
+                            Height="59px">
+            
+            <StaticMenuItemStyle CssClass="staticMenuItemStyle"/>
+            <StaticHoverStyle CssClass="staticHoverStyle" />
+            <StaticSelectedStyle CssClass="staticMenuItemSelectedStyle"/> 
+            
+            <DynamicMenuItemStyle CssClass="dynamicMenuItemStyle" />      
+            <DynamicHoverStyle CssClass="dynamicMenuItemHover" />
+            <DynamicMenuStyle CssClass="dynamicMenuStyle" />
+            <DynamicSelectedStyle CssClass="dynamicMenuItemSelectedStyle" />
+            </asp:Menu>          
+        </div> 
+        <%--menu shadow--%>
+        <img style="position:absolute; 
+        left:0px; top:181px;z-index:9;" 
+        src="../images/menushadowtop.png" width="995" height="12" alt=""/>
+        <img style="float:left; clear:both;z-index:9;" 
+        src="../images/menushadowbottom.png" width="995" height="17" alt=""/>
+        
+        <div style="position:absolute; left:0px; top:0px; z-index:8;
+        width:995px; height:251px">
+            <%--truck--%>
+            <img style="position:absolute; 
+            right:0px; top:0px;" 
+            src="../images/truck.png" width="374" height="277" alt=""/>
+            
+            <%--transparent menu above truck--%>
+            <img style="position:absolute; 
+            right:0px; top:192px;" 
+            src="../images/menu_transparent.png" width="374" height="59" alt=""/>
+        </div>
+        <%--chứa các radio button cho chọn theme--%>
+        <div id="header_right"
+        style="position:absolute; right:0px; top:0px; z-index:10;
+        width:200px; height:100px">
+            <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
+                TypeName="ThemeManager"></asp:ObjectDataSource>
+            <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" DataSourceID="ThemeDataSource"
+                DataTextField="Name" DataValueField="Name" RepeatDirection="Horizontal" OnDataBound="ThemeList_DataBound"
+                OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
+            </asp:RadioButtonList>
+        </div> 
+         
+          
+          
+        <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server"/>
+        
+        <%-- code cũ ----------------------------------------------------------
         <img style="float:left" src="../images/header_bg_left.gif" width="270" height="193" alt="" />
         <img style="float:left" src="../images/header_bg_mid.gif" width="412" height="193" alt="" />
         <div id="header_right">
@@ -53,7 +111,7 @@
         <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server"/>
     
         <div id="header_bg_right2"></div>
-        <img style="float:left;" src="../images/menu_bg_bottom.gif" width="995" height="22" alt="" />
+        <img style="float:left;" src="../images/menu_bg_bottom.gif" width="995" height="22" alt="" />--%>
     </div>
     <!--****************************************************************-->
     <div id="page">
