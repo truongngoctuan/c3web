@@ -30,7 +30,7 @@
                     <asp:DynamicField DataField="HoTen" />
                     <asp:DynamicField DataField="DienThoai" />
                     <asp:DynamicField DataField="DiaChi" />
-                    <asp:BoundField DataField="LuongTrongThang" HeaderText="Lương trong tháng" ReadOnly="true"/>
+                    <asp:BoundField DataField="LuongTrongThang" HeaderText="Lương căn bản" ReadOnly="true"/>
                 </Fields>
             </asp:DetailsView>
             

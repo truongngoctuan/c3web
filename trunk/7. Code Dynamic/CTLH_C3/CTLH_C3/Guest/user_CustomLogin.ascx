@@ -73,13 +73,13 @@
                         Text=" <%#Bind('LuongTrongThang')%>"></asp:Literal> VNĐ</div>
                         
                     
-                        <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Default.aspx" runat="server"
+                        <asp:HyperLink ID="HyperLink1" NavigateUrl="~/TaiXe/TaiXe_Default.aspx" runat="server"
                         style="float:left; clear:both;text-align:center;width:245px;">Xem chuyến kế tiếp</asp:HyperLink><br />
                         <asp:HyperLink ID="HyperLink5" NavigateUrl="~/TaiXe/NhatKi.aspx" runat="server"
                         style="float:left; clear:both;text-align:center;width:245px;">Xem nhật kí</asp:HyperLink><br />
                         
                         <asp:HyperLink ID="HyperLink4" NavigateUrl="~/TaiXe/XemPhanHoi.aspx" runat="server"
-                        style="float:left; clear:both;text-align:center;width:245px;">Xem phàn hồi</asp:HyperLink>
+                        style="float:left; clear:both;text-align:center;width:245px;">Xem phản hồi</asp:HyperLink>
                         Phản hồi gần nhất:<br />
                         <asp:GridView ID="GridView1" runat="server" DataSourceID="ldsDanhSachPhanHoi"
                         style="float:left; clear:both; width:240px;" AutoGenerateColumns="False"
@@ -177,12 +177,15 @@
                                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/QuenMatKhau.aspx">Quên Mật Khẩu</asp:HyperLink>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <asp:CheckBox ID="CheckBox1" runat="server" CssClass="custom-checkbox" 
+                        <%--Bỏ checkbox này luôn (do không có yêu cầu)--%>
+                        <%--<tr>
+                            <td>--%>
+                                <%--CssClass="custom-checkbox": bỏ - 
+                                do đã bỏ script tương ứng vì gây lỗi--%>
+                                <%--<asp:CheckBox ID="CheckBox1" runat="server"  
                         Text="Remember me next time." />
                             </td>
-                        </tr>
+                        </tr>--%>
                         <tr>
                             <td align="center" >
                                 <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" 

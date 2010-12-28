@@ -16,7 +16,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
-<%--Cột nội dung trái: bỏ không dùng--%>
+<%--Cột nội dung trái: danh sách các trạm--%>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
     <asp:Repeater ID="rptTram" runat="server" DataSourceID="ldsTram">
         <HeaderTemplate>
@@ -41,7 +41,7 @@
     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
         <ContentTemplate>        
             <%--Phần bên trái: chọn trạm--%>                    
-            <div style="width: 227px; float: left;">
+            <div style="width: 200px; float: left;">
                 <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
                 <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
                 
@@ -49,10 +49,10 @@
                     TableName="TUYEN_XEs">
                     <ItemTemplate>
                         <div>
-                            <div style="text-align:right;width:30%;float:left;">
+                            <div style="text-align:right;width:35%;float:left;">
                                 <asp:Label ID="Label1" runat="server" Text='<%# Eval("DisplayName") %>' AssociatedControlID="DynamicFilter$DropDownList1" />
                             </div>
-                            <div style="text-align:center;width:65%">
+                            <div style="text-align:center;width:60%; float:right;">
                                 <asp:DynamicFilter runat="server" ID="DynamicFilter" OnSelectedIndexChanged="OnFilterSelectedIndexChanged" />
                             </div>
                         </div>
@@ -64,7 +64,7 @@
             </div>
             
             <%--Phần bên phải: trình bày dữ liệu--%>
-            <div style="width: 520px; float: left">
+            <div style="width: 445px; float: left">
             
                 <%--Giới thiệu--%>
                 <webUC:user_GioiThieu ID="user_GioiThieu1" runat="server" />
@@ -146,9 +146,9 @@
 
 <%--Cột phải: login--%>
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
-    <div style="width: 245px; float: right">
+    <div style="width: 245px; float: right;">
         <%--<webUC:user_HotLine ID="user_HotLine1" runat="server" />--%>
-        <div>
+        <div style="height: 256px">
             <webUC:user_Login ID="user_Login1" runat="server" />
         </div>
     </div>
