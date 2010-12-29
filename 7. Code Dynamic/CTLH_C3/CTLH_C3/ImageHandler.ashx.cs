@@ -35,27 +35,24 @@ namespace CTLH_C3
         {
             MemoryStream stream = null;
             TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-            var imageTable = from i in context.ImageTables select i;
+            var imageList = (from img in context.ImageTables where img.Id == id select img);
+            
 			// Lấy image từ CSDL ra, nếu chưa có thì dùng ảnh mặc định
-            if (imageTable.Count() == 0)
-            {
-				// Nên thay bằng một hình đại diện cho Empty
+            if (imageList.Count() == 0)
                 stream = GetDefaultImageStream();
-            }
             else
             {
-				// Hiện tại chỉ hỗ trợ 1 giao diện -> lấy luôn phần tử đầu tiên
-				// Nếu cần hỗ trợ nhiều giao diện thì dùng biến id bên trên để chọn
-                var image = from img in imageTable where img.Id == id select img.Image;
-                if (image.Count() == 0 || image == null)
-                    stream = GetDefaultImageStream();                    
+                var image = imageList.Single();
+                if(image.Image == null)
+                    stream = GetDefaultImageStream();
                 else
-                    stream = new MemoryStream(image.First().ToArray());
-            }
+                    stream = new MemoryStream(image.Image.ToArray());
+            }            
             return stream;
         }
         public MemoryStream GetDefaultImageStream()
         {
+            // Nên thay bằng một hình đại diện cho Empty
             Image image = Image.FromFile(Path.Combine(HttpContext.Current.Request.PhysicalApplicationPath, "images\\Logo.png"));
             MemoryStream stream = new MemoryStream();
             image.Save(stream, System.Drawing.Imaging.ImageFormat.Gif);
