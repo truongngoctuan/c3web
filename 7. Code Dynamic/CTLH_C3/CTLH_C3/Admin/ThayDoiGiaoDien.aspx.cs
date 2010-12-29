@@ -15,7 +15,10 @@ namespace CTLH_C3.Admin
         {
             if (!IsPostBack)
             {
+				// Hiện tại chỉ hỗ trợ 1 giao diện -> lấy luôn cái phần tử đầu tiên
                 image1.ImageUrl = "~/ImageHandler.ashx?Id=1";
+				
+				// Lấy thông tin ra
                 TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
                 var thongtins = from a in context.ImageTables select a;
                 if (thongtins.Count() == 0)
@@ -28,6 +31,8 @@ namespace CTLH_C3.Admin
             }
             else
             {
+				// Postback : được hiểu là khi user click vào Upload hoặc Submit
+				// Vấn đề là button Submit : có handler là javascript (bắt buộc) nên không gọi vào sự kiện Click ở Server được => cần gom lại vào xử lý trong PageLoad luôn
                 string strGioiThieu = rteGioiThieu.Text;
                 TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
 
@@ -39,11 +44,13 @@ namespace CTLH_C3.Admin
                     var thongtin = thongtins.First();
                     thongtin.Intro = strGioiThieu;
                 }
-                context.SubmitChanges(); 
+                context.SubmitChanges();
+
+                UploadImage();
             }
         }
 
-        protected void UploadButton_Click(object sender, EventArgs e)
+        protected void UploadImage()
         {
             if (FileUpload1.HasFile)
             {
@@ -56,15 +63,17 @@ namespace CTLH_C3.Admin
                             string filename = Path.GetFileName(FileUpload1.FileName);        
 
                             byte[] fileByte = FileUpload1.FileBytes;
-                            Binary binaryObj = new Binary(fileByte);
-                            
+                            Binary binaryObj = new Binary(fileByte);                            
+														
                             TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-
                             var thongtins = from a in context.ImageTables select a;
+							
+							// Đưa vào CSDL, chưa có thì add cái mới
                             if (thongtins.Count() == 0)
                                 context.ImageTables.InsertOnSubmit(new ImageTable { Image = binaryObj});
                             else
                             {
+								// Đã có thì ghi đè vào
                                 var thongtin = thongtins.First();
                                 thongtin.Image = binaryObj;
                             }                               
