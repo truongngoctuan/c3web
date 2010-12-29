@@ -134,8 +134,6 @@
     <Compile Include="Core\ConfigHelper.cs" />
     <Compile Include="Core\CustomMembershipProvider.cs" />
     <Compile Include="Core\CustomMembershipUser.cs" />
-    <Compile Include="Core\ImageFormatAttribute.cs" />
-    <Compile Include="Core\ImageTable.cs" />
     <Compile Include="Core\ThongTinCongTy.cs" />
     <Compile Include="CustomMetadata.cs" />
     <Compile Include="Core\CustomRoleProvider.cs" />
