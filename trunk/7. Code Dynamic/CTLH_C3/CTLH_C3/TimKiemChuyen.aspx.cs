@@ -95,8 +95,9 @@ namespace CTLH_C3
                             {
                                 chuyenXe.MaChuyenXe,
                                 chuyenXe.KhoiHanh,
+                                DuKienDen = ((DateTime)chuyenXe.KhoiHanh).AddHours((double)chuyenXe.TUYEN_XE.ThoiGianDi),
                                 chuyenXe.GiaVe,
-                                SoChoTrong = chuyenXe.DAT_CHOs.Count
+                                SoChoTrong = chuyenXe.DAT_CHOs.Count(dt => dt.TINH_TRANG_DAT_CHO.TenTinhTrangDatCho == "Chưa đặt")
                             };
             e.Result = chuyenXes;
         }
