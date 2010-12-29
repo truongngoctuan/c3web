@@ -55,5 +55,10 @@ namespace CTLH_C3
         {
             GridView2.Visible = true;
         }
+
+        protected void ldsTram_Selecting(object sender, LinqDataSourceSelectEventArgs e)
+        {
+
+        }
     }
 }

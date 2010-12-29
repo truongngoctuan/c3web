@@ -95,7 +95,6 @@ namespace CTLH_C3
                             {
                                 chuyenXe.MaChuyenXe,
                                 chuyenXe.KhoiHanh,
-                                chuyenXe.DuKienDen,
                                 chuyenXe.GiaVe,
                                 SoChoTrong = chuyenXe.DAT_CHOs.Count
                             };

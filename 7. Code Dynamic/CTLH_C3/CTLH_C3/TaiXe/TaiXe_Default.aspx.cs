@@ -59,7 +59,7 @@ namespace CTLH_C3
                                     && c.ThoiGianDenTram==null
                                     && c.KhoiHanh.Value.Month == month
                                     && c.KhoiHanh.Value.Year == year)
-                             select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe, KhoiHanh = c.KhoiHanh, DuKienDen = c.DuKienDen }).Distinct();
+                             select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe, KhoiHanh = c.KhoiHanh }).Distinct();
                 GridView1.DataSource = query;
                 //GridView1.DataKeyNames = new string[] { "MaChuyen" };
                 GridView1.DataBind();

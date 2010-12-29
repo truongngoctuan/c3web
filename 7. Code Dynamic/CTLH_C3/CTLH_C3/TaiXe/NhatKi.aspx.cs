@@ -66,7 +66,7 @@ namespace CTLH_C3
                                  TramDi = t.TRAM_XE1.TenTramXe,
                                  TramDen = t.TRAM_XE.TenTramXe,
                                  KhoiHanh = c.KhoiHanh,
-                                 DuKienDen = c.DuKienDen,
+                                 
                                  ThoiDiemDenTram = c.ThoiGianDenTram,
                                  Luong = c.LuongTaiXe
                              }).Distinct();

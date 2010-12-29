@@ -11,8 +11,9 @@ namespace CTLH_C3
 #region Tuyen xe
     public class TUYEN_XE_Metadata
     {
-        [DisplayName("Giá vé")]
-        public object GiaVe { get; set; }
+        [DisplayName("Tên tuyến xe")]
+        public object TenTuyenXe { get; set; }
+
 
         [DisplayName("Trạm đến")]
         public object TRAM_XE { get; set; }
@@ -20,11 +21,20 @@ namespace CTLH_C3
         [DisplayName("Trạm đi")]
         public object TRAM_XE1 { get; set; }
 
-        [DisplayName("Khoảng thời gian đi")]
-        public object KhoangThoiGianDi { get; set; }
+        [DisplayName("Số lượng chuyến")]
+        public object SoLuongChuyen { get; set; }
 
         [DisplayName("Tần suất chuyến")]
         public object TanSuatChuyen { get; set; }
+
+        [DisplayName("Thời gian bắt đầu")]
+        public object ThoiGianBatDau { get; set; }
+
+        [DisplayName("Khoảng thời gian đi")]
+        public object ThoiGianDi { get; set; }
+
+        [DisplayName("Giá vé")]
+        public object GiaVe { get; set; }
 
         [DisplayName("Lương tài xế")]
         public object LuongTaiXe { get; set; }
@@ -46,9 +56,6 @@ namespace CTLH_C3
     {
         [DisplayName("Giờ khởi hành")]
         public object KhoiHanh { set; get; }
-
-        [DisplayName("Giờ đến dự kiến")]
-        public object DuKienDen { set; get; }
 
         [DisplayName("Tuyến xe")]
         public object TUYEN_XE { set; get; }
@@ -254,17 +261,11 @@ namespace CTLH_C3
         [DisplayName("Địa chỉ")]
         public object DiaChi { set; get; }
 
-        [DisplayName("Loại nhân viên")]
-        public object LOAI_NHAN_VIEN { set; get; }
-
         [DisplayName("Lương trong tháng")]
         public object LuongTrongThang { set; get; }
 
         [DisplayName("Tài khoản")]
         public object TAI_KHOANs { set; get; }
-
-        [DisplayName("Tin tức")]
-        public object TIN_TUCs { set; get; }
 
         [DisplayName("Xe")]
         public object XEs { set; get; }
@@ -380,8 +381,9 @@ namespace CTLH_C3
         [DisplayName("Tài xế")]
         public object NHAN_VIEN { set; get; }
 
-        [DisplayName("Ngày nhập")]
-        public object NgayNhap { set; get; }
+        [DisplayName("Trạm xe xe đang lưu trú")]
+        public object TRAM_XE { set; get; }
+
 
         [DisplayName("Loại")]
         public object LOAI_XE { set; get; }

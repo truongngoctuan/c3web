@@ -67,7 +67,7 @@ namespace CTLH_C3
                                  TramDi = t.TRAM_XE1.TenTramXe,
                                  TramDen = t.TRAM_XE.TenTramXe,
                                  KhoiHanh = c.KhoiHanh,
-                                 DuKienDen = c.DuKienDen,
+                               
                                  ThoiDiemDenTram = c.ThoiGianDenTram,
                                  Luong = c.LuongTaiXe
                              }).Distinct();
@@ -83,7 +83,7 @@ namespace CTLH_C3
                                     && c.ThoiGianDenTram == null
                                     && c.KhoiHanh.Value.Month == month
                                     && c.KhoiHanh.Value.Year == year)
-                             select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe, KhoiHanh = c.KhoiHanh, DuKienDen = c.DuKienDen }).Distinct();
+                             select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe, KhoiHanh = c.KhoiHanh }).Distinct();
                 grdSapChay.DataSource = query_SapChay;
                 grdSapChay.DataBind();
 

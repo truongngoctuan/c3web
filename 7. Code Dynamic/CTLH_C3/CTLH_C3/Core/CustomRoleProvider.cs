@@ -110,21 +110,16 @@ namespace CTLH_C3.Core
             {
                 TAI_KHOAN tk = user.Single();
 
-                var nhanvien = from n in dataContext.NHAN_VIENs
-                               where n.MaNhanVien == tk.MaNhanVien
-                               select n;
-                if (nhanvien.Count() == 1)
-                {
-                    NHAN_VIEN nv = nhanvien.Single();
-                    var loainv = from l in dataContext.LOAI_NHAN_VIENs
-                              where l.MaLoaiNhanVien == nv.LoaiNhanVien
-                              select l;
-                    if (loainv.Count() == 1)
+               
+                var loaitk = from l in dataContext.LOAI_TAI_KHOANs
+                             where l.MaLoaiTaiKhoan == tk.LoaiTaiKhoan
+                             select l;
+                    if (loaitk.Count() == 1)
                     {
-                        LOAI_NHAN_VIEN lnv = loainv.Single();
-                        return new string[] { lnv.TenLoai,nv.MaNhanVien.ToString() }; 
+                        LOAI_TAI_KHOAN ltk = loaitk.Single();
+                        return new string[] { ltk.TenLoaiTaiKhoan,tk.MaNhanVien.ToString() }; 
                     }
-                }                                   
+                                                  
             }
             return new string[] {"",""};
         }

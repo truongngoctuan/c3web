@@ -78,11 +78,6 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\TRAVEL_WEB.mdf">
-    </Content>
-    <Content Include="App_Data\TRAVEL_WEB_log.ldf">
-      <DependentUpon>TRAVEL_WEB.mdf</DependentUpon>
-    </Content>
     <Content Include="Default.aspx" />
     <Compile Include="Admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -777,6 +772,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\CTLH_C3.mdf">
+    </Content>
+    <Content Include="App_Data\CTLH_C3_log.ldf">
+      <DependentUpon>CTLH_C3.mdf</DependentUpon>
+    </Content>
     <Content Include="ImageHandler.ashx" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
