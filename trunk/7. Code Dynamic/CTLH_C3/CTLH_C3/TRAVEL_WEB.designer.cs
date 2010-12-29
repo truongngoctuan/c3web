@@ -33,6 +33,9 @@ namespace CTLH_C3
     partial void InsertCHO_NGOI(CHO_NGOI instance);
     partial void UpdateCHO_NGOI(CHO_NGOI instance);
     partial void DeleteCHO_NGOI(CHO_NGOI instance);
+    partial void InsertXE(XE instance);
+    partial void UpdateXE(XE instance);
+    partial void DeleteXE(XE instance);
     partial void InsertCHUC_NANG(CHUC_NANG instance);
     partial void UpdateCHUC_NANG(CHUC_NANG instance);
     partial void DeleteCHUC_NANG(CHUC_NANG instance);
@@ -78,9 +81,9 @@ namespace CTLH_C3
     partial void InsertTUYEN_XE(TUYEN_XE instance);
     partial void UpdateTUYEN_XE(TUYEN_XE instance);
     partial void DeleteTUYEN_XE(TUYEN_XE instance);
-    partial void InsertXE(XE instance);
-    partial void UpdateXE(XE instance);
-    partial void DeleteXE(XE instance);
+    partial void InsertImageTable(ImageTable instance);
+    partial void UpdateImageTable(ImageTable instance);
+    partial void DeleteImageTable(ImageTable instance);
     #endregion
 		
 		public TRAVEL_WEBDataContext() : 
@@ -118,6 +121,14 @@ namespace CTLH_C3
 			get
 			{
 				return this.GetTable<CHO_NGOI>();
+			}
+		}
+		
+		public System.Data.Linq.Table<XE> XEs
+		{
+			get
+			{
+				return this.GetTable<XE>();
 			}
 		}
 		
@@ -241,26 +252,12 @@ namespace CTLH_C3
 			}
 		}
 		
-		public System.Data.Linq.Table<XE> XEs
+		public System.Data.Linq.Table<ImageTable> ImageTables
 		{
 			get
 			{
-				return this.GetTable<XE>();
+				return this.GetTable<ImageTable>();
 			}
-		}
-		
-		[Function(Name="dbo.GetAllNhanViens")]
-		public ISingleResult<GetAllNhanViensResult> GetAllNhanViens()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<GetAllNhanViensResult>)(result.ReturnValue));
-		}
-		
-		[Function(Name="dbo.GetAllNhanViensAndLoaiNhanVien")]
-		public ISingleResult<GetAllNhanViensAndLoaiNhanVienResult> GetAllNhanViensAndLoaiNhanVien()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<GetAllNhanViensAndLoaiNhanVienResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -375,6 +372,311 @@ namespace CTLH_C3
 		{
 			this.SendPropertyChanging();
 			entity.CHO_NGOI = null;
+		}
+	}
+	
+	[Table(Name="dbo.XE")]
+	public partial class XE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaXe;
+		
+		private string _BienSoXe;
+		
+		private System.Nullable<int> _MaTaiXe;
+		
+		private System.Nullable<System.DateTime> _NgayNhap;
+		
+		private System.Nullable<int> _MaLoaiXe;
+		
+		private System.Nullable<int> _TinhTrang;
+		
+		private EntityRef<LOAI_XE> _LOAI_XE;
+		
+		private EntityRef<NHAN_VIEN> _NHAN_VIEN;
+		
+		private EntityRef<TINH_TRANG_XE> _TINH_TRANG_XE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaXeChanging(int value);
+    partial void OnMaXeChanged();
+    partial void OnBienSoXeChanging(string value);
+    partial void OnBienSoXeChanged();
+    partial void OnMaTaiXeChanging(System.Nullable<int> value);
+    partial void OnMaTaiXeChanged();
+    partial void OnNgayNhapChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayNhapChanged();
+    partial void OnMaLoaiXeChanging(System.Nullable<int> value);
+    partial void OnMaLoaiXeChanged();
+    partial void OnTinhTrangChanging(System.Nullable<int> value);
+    partial void OnTinhTrangChanged();
+    #endregion
+		
+		public XE()
+		{
+			this._LOAI_XE = default(EntityRef<LOAI_XE>);
+			this._NHAN_VIEN = default(EntityRef<NHAN_VIEN>);
+			this._TINH_TRANG_XE = default(EntityRef<TINH_TRANG_XE>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_MaXe", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaXe
+		{
+			get
+			{
+				return this._MaXe;
+			}
+			set
+			{
+				if ((this._MaXe != value))
+				{
+					this.OnMaXeChanging(value);
+					this.SendPropertyChanging();
+					this._MaXe = value;
+					this.SendPropertyChanged("MaXe");
+					this.OnMaXeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_BienSoXe", DbType="NVarChar(50)")]
+		public string BienSoXe
+		{
+			get
+			{
+				return this._BienSoXe;
+			}
+			set
+			{
+				if ((this._BienSoXe != value))
+				{
+					this.OnBienSoXeChanging(value);
+					this.SendPropertyChanging();
+					this._BienSoXe = value;
+					this.SendPropertyChanged("BienSoXe");
+					this.OnBienSoXeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaTaiXe", DbType="Int")]
+		public System.Nullable<int> MaTaiXe
+		{
+			get
+			{
+				return this._MaTaiXe;
+			}
+			set
+			{
+				if ((this._MaTaiXe != value))
+				{
+					if (this._NHAN_VIEN.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaTaiXeChanging(value);
+					this.SendPropertyChanging();
+					this._MaTaiXe = value;
+					this.SendPropertyChanged("MaTaiXe");
+					this.OnMaTaiXeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_NgayNhap", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayNhap
+		{
+			get
+			{
+				return this._NgayNhap;
+			}
+			set
+			{
+				if ((this._NgayNhap != value))
+				{
+					this.OnNgayNhapChanging(value);
+					this.SendPropertyChanging();
+					this._NgayNhap = value;
+					this.SendPropertyChanged("NgayNhap");
+					this.OnNgayNhapChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaLoaiXe", DbType="Int")]
+		public System.Nullable<int> MaLoaiXe
+		{
+			get
+			{
+				return this._MaLoaiXe;
+			}
+			set
+			{
+				if ((this._MaLoaiXe != value))
+				{
+					if (this._LOAI_XE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaLoaiXeChanging(value);
+					this.SendPropertyChanging();
+					this._MaLoaiXe = value;
+					this.SendPropertyChanged("MaLoaiXe");
+					this.OnMaLoaiXeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_TinhTrang", DbType="Int")]
+		public System.Nullable<int> TinhTrang
+		{
+			get
+			{
+				return this._TinhTrang;
+			}
+			set
+			{
+				if ((this._TinhTrang != value))
+				{
+					if (this._TINH_TRANG_XE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTinhTrangChanging(value);
+					this.SendPropertyChanging();
+					this._TinhTrang = value;
+					this.SendPropertyChanged("TinhTrang");
+					this.OnTinhTrangChanged();
+				}
+			}
+		}
+		
+		[Association(Name="LOAI_XE_XE", Storage="_LOAI_XE", ThisKey="MaLoaiXe", OtherKey="MaLoaixe", IsForeignKey=true)]
+		public LOAI_XE LOAI_XE
+		{
+			get
+			{
+				return this._LOAI_XE.Entity;
+			}
+			set
+			{
+				LOAI_XE previousValue = this._LOAI_XE.Entity;
+				if (((previousValue != value) 
+							|| (this._LOAI_XE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LOAI_XE.Entity = null;
+						previousValue.XEs.Remove(this);
+					}
+					this._LOAI_XE.Entity = value;
+					if ((value != null))
+					{
+						value.XEs.Add(this);
+						this._MaLoaiXe = value.MaLoaixe;
+					}
+					else
+					{
+						this._MaLoaiXe = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LOAI_XE");
+				}
+			}
+		}
+		
+		[Association(Name="NHAN_VIEN_XE", Storage="_NHAN_VIEN", ThisKey="MaTaiXe", OtherKey="MaNhanVien", IsForeignKey=true)]
+		public NHAN_VIEN NHAN_VIEN
+		{
+			get
+			{
+				return this._NHAN_VIEN.Entity;
+			}
+			set
+			{
+				NHAN_VIEN previousValue = this._NHAN_VIEN.Entity;
+				if (((previousValue != value) 
+							|| (this._NHAN_VIEN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NHAN_VIEN.Entity = null;
+						previousValue.XEs.Remove(this);
+					}
+					this._NHAN_VIEN.Entity = value;
+					if ((value != null))
+					{
+						value.XEs.Add(this);
+						this._MaTaiXe = value.MaNhanVien;
+					}
+					else
+					{
+						this._MaTaiXe = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("NHAN_VIEN");
+				}
+			}
+		}
+		
+		[Association(Name="TINH_TRANG_XE_XE", Storage="_TINH_TRANG_XE", ThisKey="TinhTrang", OtherKey="MaTinhTrangXe", IsForeignKey=true)]
+		public TINH_TRANG_XE TINH_TRANG_XE
+		{
+			get
+			{
+				return this._TINH_TRANG_XE.Entity;
+			}
+			set
+			{
+				TINH_TRANG_XE previousValue = this._TINH_TRANG_XE.Entity;
+				if (((previousValue != value) 
+							|| (this._TINH_TRANG_XE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TINH_TRANG_XE.Entity = null;
+						previousValue.XEs.Remove(this);
+					}
+					this._TINH_TRANG_XE.Entity = value;
+					if ((value != null))
+					{
+						value.XEs.Add(this);
+						this._TinhTrang = value.MaTinhTrangXe;
+					}
+					else
+					{
+						this._TinhTrang = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TINH_TRANG_XE");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1192,7 +1494,7 @@ namespace CTLH_C3
 			}
 		}
 		
-		[Column(Storage="_TenLoai", DbType="NVarChar(50)")]
+		[Column(Storage="_TenLoai", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string TenLoai
 		{
 			get
@@ -1435,9 +1737,11 @@ namespace CTLH_C3
 		
 		private string _DiaChi;
 		
-		private System.Nullable<int> _LoaiNhanVien;
+		private int _LoaiNhanVien;
 		
 		private System.Nullable<double> _LuongTrongThang;
+		
+		private EntitySet<XE> _XEs;
 		
 		private EntitySet<CHUYEN_XE> _CHUYEN_XEs;
 		
@@ -1448,8 +1752,6 @@ namespace CTLH_C3
 		private EntitySet<TIN_TUC> _TIN_TUCs;
 		
 		private EntitySet<TRAM_XE> _TRAM_XEs;
-		
-		private EntitySet<XE> _XEs;
 		
 		private EntityRef<LOAI_NHAN_VIEN> _LOAI_NHAN_VIEN;
 		
@@ -1465,7 +1767,7 @@ namespace CTLH_C3
     partial void OnDienThoaiChanged();
     partial void OnDiaChiChanging(string value);
     partial void OnDiaChiChanged();
-    partial void OnLoaiNhanVienChanging(System.Nullable<int> value);
+    partial void OnLoaiNhanVienChanging(int value);
     partial void OnLoaiNhanVienChanged();
     partial void OnLuongTrongThangChanging(System.Nullable<double> value);
     partial void OnLuongTrongThangChanged();
@@ -1473,12 +1775,12 @@ namespace CTLH_C3
 		
 		public NHAN_VIEN()
 		{
+			this._XEs = new EntitySet<XE>(new Action<XE>(this.attach_XEs), new Action<XE>(this.detach_XEs));
 			this._CHUYEN_XEs = new EntitySet<CHUYEN_XE>(new Action<CHUYEN_XE>(this.attach_CHUYEN_XEs), new Action<CHUYEN_XE>(this.detach_CHUYEN_XEs));
 			this._PHAN_HOIs = new EntitySet<PHAN_HOI>(new Action<PHAN_HOI>(this.attach_PHAN_HOIs), new Action<PHAN_HOI>(this.detach_PHAN_HOIs));
 			this._TAI_KHOANs = new EntitySet<TAI_KHOAN>(new Action<TAI_KHOAN>(this.attach_TAI_KHOANs), new Action<TAI_KHOAN>(this.detach_TAI_KHOANs));
 			this._TIN_TUCs = new EntitySet<TIN_TUC>(new Action<TIN_TUC>(this.attach_TIN_TUCs), new Action<TIN_TUC>(this.detach_TIN_TUCs));
 			this._TRAM_XEs = new EntitySet<TRAM_XE>(new Action<TRAM_XE>(this.attach_TRAM_XEs), new Action<TRAM_XE>(this.detach_TRAM_XEs));
-			this._XEs = new EntitySet<XE>(new Action<XE>(this.attach_XEs), new Action<XE>(this.detach_XEs));
 			this._LOAI_NHAN_VIEN = default(EntityRef<LOAI_NHAN_VIEN>);
 			OnCreated();
 		}
@@ -1503,7 +1805,7 @@ namespace CTLH_C3
 			}
 		}
 		
-		[Column(Storage="_HoTen", DbType="NVarChar(50)")]
+		[Column(Storage="_HoTen", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string HoTen
 		{
 			get
@@ -1563,8 +1865,8 @@ namespace CTLH_C3
 			}
 		}
 		
-		[Column(Storage="_LoaiNhanVien", DbType="Int")]
-		public System.Nullable<int> LoaiNhanVien
+		[Column(Storage="_LoaiNhanVien", DbType="Int NOT NULL")]
+		public int LoaiNhanVien
 		{
 			get
 			{
@@ -1604,6 +1906,19 @@ namespace CTLH_C3
 					this.SendPropertyChanged("LuongTrongThang");
 					this.OnLuongTrongThangChanged();
 				}
+			}
+		}
+		
+		[Association(Name="NHAN_VIEN_XE", Storage="_XEs", ThisKey="MaNhanVien", OtherKey="MaTaiXe")]
+		public EntitySet<XE> XEs
+		{
+			get
+			{
+				return this._XEs;
+			}
+			set
+			{
+				this._XEs.Assign(value);
 			}
 		}
 		
@@ -1672,19 +1987,6 @@ namespace CTLH_C3
 			}
 		}
 		
-		[Association(Name="NHAN_VIEN_XE", Storage="_XEs", ThisKey="MaNhanVien", OtherKey="MaTaiXe")]
-		public EntitySet<XE> XEs
-		{
-			get
-			{
-				return this._XEs;
-			}
-			set
-			{
-				this._XEs.Assign(value);
-			}
-		}
-		
 		[Association(Name="LOAI_NHAN_VIEN_NHAN_VIEN", Storage="_LOAI_NHAN_VIEN", ThisKey="LoaiNhanVien", OtherKey="MaLoaiNhanVien", IsForeignKey=true)]
 		public LOAI_NHAN_VIEN LOAI_NHAN_VIEN
 		{
@@ -1712,7 +2014,7 @@ namespace CTLH_C3
 					}
 					else
 					{
-						this._LoaiNhanVien = default(Nullable<int>);
+						this._LoaiNhanVien = default(int);
 					}
 					this.SendPropertyChanged("LOAI_NHAN_VIEN");
 				}
@@ -1737,6 +2039,18 @@ namespace CTLH_C3
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_XEs(XE entity)
+		{
+			this.SendPropertyChanging();
+			entity.NHAN_VIEN = this;
+		}
+		
+		private void detach_XEs(XE entity)
+		{
+			this.SendPropertyChanging();
+			entity.NHAN_VIEN = null;
 		}
 		
 		private void attach_CHUYEN_XEs(CHUYEN_XE entity)
@@ -1794,18 +2108,6 @@ namespace CTLH_C3
 		}
 		
 		private void detach_TRAM_XEs(TRAM_XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.NHAN_VIEN = null;
-		}
-		
-		private void attach_XEs(XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.NHAN_VIEN = this;
-		}
-		
-		private void detach_XEs(XE entity)
 		{
 			this.SendPropertyChanging();
 			entity.NHAN_VIEN = null;
@@ -3668,286 +3970,91 @@ namespace CTLH_C3
 		}
 	}
 	
-	[Table(Name="dbo.XE")]
-	public partial class XE : INotifyPropertyChanging, INotifyPropertyChanged
+	[Table(Name="dbo.ImageTable")]
+	public partial class ImageTable : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _MaXe;
+		private int _Id;
 		
-		private string _BienSoXe;
+		private System.Data.Linq.Binary _Image;
 		
-		private System.Nullable<int> _MaTaiXe;
-		
-		private System.Nullable<System.DateTime> _NgayNhap;
-		
-		private System.Nullable<int> _MaLoaiXe;
-		
-		private System.Nullable<int> _TinhTrang;
-		
-		private EntityRef<LOAI_XE> _LOAI_XE;
-		
-		private EntityRef<NHAN_VIEN> _NHAN_VIEN;
-		
-		private EntityRef<TINH_TRANG_XE> _TINH_TRANG_XE;
+		private string _Intro;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaXeChanging(int value);
-    partial void OnMaXeChanged();
-    partial void OnBienSoXeChanging(string value);
-    partial void OnBienSoXeChanged();
-    partial void OnMaTaiXeChanging(System.Nullable<int> value);
-    partial void OnMaTaiXeChanged();
-    partial void OnNgayNhapChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayNhapChanged();
-    partial void OnMaLoaiXeChanging(System.Nullable<int> value);
-    partial void OnMaLoaiXeChanged();
-    partial void OnTinhTrangChanging(System.Nullable<int> value);
-    partial void OnTinhTrangChanged();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnImageChanging(System.Data.Linq.Binary value);
+    partial void OnImageChanged();
+    partial void OnIntroChanging(string value);
+    partial void OnIntroChanged();
     #endregion
 		
-		public XE()
+		public ImageTable()
 		{
-			this._LOAI_XE = default(EntityRef<LOAI_XE>);
-			this._NHAN_VIEN = default(EntityRef<NHAN_VIEN>);
-			this._TINH_TRANG_XE = default(EntityRef<TINH_TRANG_XE>);
 			OnCreated();
 		}
 		
-		[Column(Storage="_MaXe", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaXe
+		[Column(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
 		{
 			get
 			{
-				return this._MaXe;
+				return this._Id;
 			}
 			set
 			{
-				if ((this._MaXe != value))
+				if ((this._Id != value))
 				{
-					this.OnMaXeChanging(value);
+					this.OnIdChanging(value);
 					this.SendPropertyChanging();
-					this._MaXe = value;
-					this.SendPropertyChanged("MaXe");
-					this.OnMaXeChanged();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
 		
-		[Column(Storage="_BienSoXe", DbType="NVarChar(50)")]
-		public string BienSoXe
+		[Column(Storage="_Image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Image
 		{
 			get
 			{
-				return this._BienSoXe;
+				return this._Image;
 			}
 			set
 			{
-				if ((this._BienSoXe != value))
+				if ((this._Image != value))
 				{
-					this.OnBienSoXeChanging(value);
+					this.OnImageChanging(value);
 					this.SendPropertyChanging();
-					this._BienSoXe = value;
-					this.SendPropertyChanged("BienSoXe");
-					this.OnBienSoXeChanged();
+					this._Image = value;
+					this.SendPropertyChanged("Image");
+					this.OnImageChanged();
 				}
 			}
 		}
 		
-		[Column(Storage="_MaTaiXe", DbType="Int")]
-		public System.Nullable<int> MaTaiXe
+		[Column(Storage="_Intro", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Intro
 		{
 			get
 			{
-				return this._MaTaiXe;
+				return this._Intro;
 			}
 			set
 			{
-				if ((this._MaTaiXe != value))
+				if ((this._Intro != value))
 				{
-					if (this._NHAN_VIEN.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaTaiXeChanging(value);
+					this.OnIntroChanging(value);
 					this.SendPropertyChanging();
-					this._MaTaiXe = value;
-					this.SendPropertyChanged("MaTaiXe");
-					this.OnMaTaiXeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_NgayNhap", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NgayNhap
-		{
-			get
-			{
-				return this._NgayNhap;
-			}
-			set
-			{
-				if ((this._NgayNhap != value))
-				{
-					this.OnNgayNhapChanging(value);
-					this.SendPropertyChanging();
-					this._NgayNhap = value;
-					this.SendPropertyChanged("NgayNhap");
-					this.OnNgayNhapChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_MaLoaiXe", DbType="Int")]
-		public System.Nullable<int> MaLoaiXe
-		{
-			get
-			{
-				return this._MaLoaiXe;
-			}
-			set
-			{
-				if ((this._MaLoaiXe != value))
-				{
-					if (this._LOAI_XE.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaLoaiXeChanging(value);
-					this.SendPropertyChanging();
-					this._MaLoaiXe = value;
-					this.SendPropertyChanged("MaLoaiXe");
-					this.OnMaLoaiXeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_TinhTrang", DbType="Int")]
-		public System.Nullable<int> TinhTrang
-		{
-			get
-			{
-				return this._TinhTrang;
-			}
-			set
-			{
-				if ((this._TinhTrang != value))
-				{
-					if (this._TINH_TRANG_XE.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTinhTrangChanging(value);
-					this.SendPropertyChanging();
-					this._TinhTrang = value;
-					this.SendPropertyChanged("TinhTrang");
-					this.OnTinhTrangChanged();
-				}
-			}
-		}
-		
-		[Association(Name="LOAI_XE_XE", Storage="_LOAI_XE", ThisKey="MaLoaiXe", OtherKey="MaLoaixe", IsForeignKey=true)]
-		public LOAI_XE LOAI_XE
-		{
-			get
-			{
-				return this._LOAI_XE.Entity;
-			}
-			set
-			{
-				LOAI_XE previousValue = this._LOAI_XE.Entity;
-				if (((previousValue != value) 
-							|| (this._LOAI_XE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._LOAI_XE.Entity = null;
-						previousValue.XEs.Remove(this);
-					}
-					this._LOAI_XE.Entity = value;
-					if ((value != null))
-					{
-						value.XEs.Add(this);
-						this._MaLoaiXe = value.MaLoaixe;
-					}
-					else
-					{
-						this._MaLoaiXe = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("LOAI_XE");
-				}
-			}
-		}
-		
-		[Association(Name="NHAN_VIEN_XE", Storage="_NHAN_VIEN", ThisKey="MaTaiXe", OtherKey="MaNhanVien", IsForeignKey=true)]
-		public NHAN_VIEN NHAN_VIEN
-		{
-			get
-			{
-				return this._NHAN_VIEN.Entity;
-			}
-			set
-			{
-				NHAN_VIEN previousValue = this._NHAN_VIEN.Entity;
-				if (((previousValue != value) 
-							|| (this._NHAN_VIEN.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NHAN_VIEN.Entity = null;
-						previousValue.XEs.Remove(this);
-					}
-					this._NHAN_VIEN.Entity = value;
-					if ((value != null))
-					{
-						value.XEs.Add(this);
-						this._MaTaiXe = value.MaNhanVien;
-					}
-					else
-					{
-						this._MaTaiXe = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("NHAN_VIEN");
-				}
-			}
-		}
-		
-		[Association(Name="TINH_TRANG_XE_XE", Storage="_TINH_TRANG_XE", ThisKey="TinhTrang", OtherKey="MaTinhTrangXe", IsForeignKey=true)]
-		public TINH_TRANG_XE TINH_TRANG_XE
-		{
-			get
-			{
-				return this._TINH_TRANG_XE.Entity;
-			}
-			set
-			{
-				TINH_TRANG_XE previousValue = this._TINH_TRANG_XE.Entity;
-				if (((previousValue != value) 
-							|| (this._TINH_TRANG_XE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TINH_TRANG_XE.Entity = null;
-						previousValue.XEs.Remove(this);
-					}
-					this._TINH_TRANG_XE.Entity = value;
-					if ((value != null))
-					{
-						value.XEs.Add(this);
-						this._TinhTrang = value.MaTinhTrangXe;
-					}
-					else
-					{
-						this._TinhTrang = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TINH_TRANG_XE");
+					this._Intro = value;
+					this.SendPropertyChanged("Intro");
+					this.OnIntroChanged();
 				}
 			}
 		}
@@ -3969,274 +4076,6 @@ namespace CTLH_C3
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	public partial class GetAllNhanViensResult
-	{
-		
-		private int _MaNhanVien;
-		
-		private string _HoTen;
-		
-		private string _DienThoai;
-		
-		private string _DiaChi;
-		
-		private int _LoaiNhanVien;
-		
-		private System.Nullable<double> _LuongTrongThang;
-		
-		public GetAllNhanViensResult()
-		{
-		}
-		
-		[Column(Storage="_MaNhanVien", DbType="Int NOT NULL")]
-		public int MaNhanVien
-		{
-			get
-			{
-				return this._MaNhanVien;
-			}
-			set
-			{
-				if ((this._MaNhanVien != value))
-				{
-					this._MaNhanVien = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_HoTen", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string HoTen
-		{
-			get
-			{
-				return this._HoTen;
-			}
-			set
-			{
-				if ((this._HoTen != value))
-				{
-					this._HoTen = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DienThoai", DbType="NVarChar(50)")]
-		public string DienThoai
-		{
-			get
-			{
-				return this._DienThoai;
-			}
-			set
-			{
-				if ((this._DienThoai != value))
-				{
-					this._DienThoai = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DiaChi", DbType="NVarChar(50)")]
-		public string DiaChi
-		{
-			get
-			{
-				return this._DiaChi;
-			}
-			set
-			{
-				if ((this._DiaChi != value))
-				{
-					this._DiaChi = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_LoaiNhanVien", DbType="Int NOT NULL")]
-		public int LoaiNhanVien
-		{
-			get
-			{
-				return this._LoaiNhanVien;
-			}
-			set
-			{
-				if ((this._LoaiNhanVien != value))
-				{
-					this._LoaiNhanVien = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_LuongTrongThang", DbType="Float")]
-		public System.Nullable<double> LuongTrongThang
-		{
-			get
-			{
-				return this._LuongTrongThang;
-			}
-			set
-			{
-				if ((this._LuongTrongThang != value))
-				{
-					this._LuongTrongThang = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetAllNhanViensAndLoaiNhanVienResult
-	{
-		
-		private int _MaNhanVien;
-		
-		private string _HoTen;
-		
-		private string _DienThoai;
-		
-		private string _DiaChi;
-		
-		private int _LoaiNhanVien;
-		
-		private System.Nullable<double> _LuongTrongThang;
-		
-		private int _MaLoaiNhanVien;
-		
-		private string _TenLoai;
-		
-		public GetAllNhanViensAndLoaiNhanVienResult()
-		{
-		}
-		
-		[Column(Storage="_MaNhanVien", DbType="Int NOT NULL")]
-		public int MaNhanVien
-		{
-			get
-			{
-				return this._MaNhanVien;
-			}
-			set
-			{
-				if ((this._MaNhanVien != value))
-				{
-					this._MaNhanVien = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_HoTen", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string HoTen
-		{
-			get
-			{
-				return this._HoTen;
-			}
-			set
-			{
-				if ((this._HoTen != value))
-				{
-					this._HoTen = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DienThoai", DbType="NVarChar(50)")]
-		public string DienThoai
-		{
-			get
-			{
-				return this._DienThoai;
-			}
-			set
-			{
-				if ((this._DienThoai != value))
-				{
-					this._DienThoai = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DiaChi", DbType="NVarChar(50)")]
-		public string DiaChi
-		{
-			get
-			{
-				return this._DiaChi;
-			}
-			set
-			{
-				if ((this._DiaChi != value))
-				{
-					this._DiaChi = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_LoaiNhanVien", DbType="Int NOT NULL")]
-		public int LoaiNhanVien
-		{
-			get
-			{
-				return this._LoaiNhanVien;
-			}
-			set
-			{
-				if ((this._LoaiNhanVien != value))
-				{
-					this._LoaiNhanVien = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_LuongTrongThang", DbType="Float")]
-		public System.Nullable<double> LuongTrongThang
-		{
-			get
-			{
-				return this._LuongTrongThang;
-			}
-			set
-			{
-				if ((this._LuongTrongThang != value))
-				{
-					this._LuongTrongThang = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_MaLoaiNhanVien", DbType="Int NOT NULL")]
-		public int MaLoaiNhanVien
-		{
-			get
-			{
-				return this._MaLoaiNhanVien;
-			}
-			set
-			{
-				if ((this._MaLoaiNhanVien != value))
-				{
-					this._MaLoaiNhanVien = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_TenLoai", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string TenLoai
-		{
-			get
-			{
-				return this._TenLoai;
-			}
-			set
-			{
-				if ((this._TenLoai != value))
-				{
-					this._TenLoai = value;
-				}
 			}
 		}
 	}

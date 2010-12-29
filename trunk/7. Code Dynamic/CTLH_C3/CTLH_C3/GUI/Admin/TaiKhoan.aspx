@@ -15,10 +15,10 @@
     <%-- 
     <asp:LoginView ID="LoginView1" runat="server">
     </asp:LoginView> 
-    %>
+    --%>
     Hình đại diện <br />
     Tên nhân viên <br />
     <asp:HyperLink ID="HyperLink1" NavigateUrl="~/GUI/Admin/TaiKhoan.aspx" runat="server">Quản lý tài khoản</asp:HyperLink><br />
-    <asp:HyperLink ID="HyperLink2" NavigateUrl="~/GUI/Admin/TaiKhoan.aspx" runat="server">Thông tin công ty</asp:HyperLink> : 5 phản hồi mới<br />
+    <asp:HyperLink ID="HyperLink2" NavigateUrl="~/GUI/Admin/TaiKhoan.aspx" runat="server">Thông tin công ty</asp:HyperLink><br />
     
 </asp:Content>
