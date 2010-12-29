@@ -35,25 +35,31 @@ namespace CTLH_C3
         {
             MemoryStream stream = null;
             TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-            var imageTable = from a in context.ImageTables select a;
+            var imageTable = from i in context.ImageTables select i;
 			// Lấy image từ CSDL ra, nếu chưa có thì dùng ảnh mặc định
-            if (imageTable.Count() == 0 || imageTable.First().Image == null)
+            if (imageTable.Count() == 0)
             {
 				// Nên thay bằng một hình đại diện cho Empty
-                Image image = Image.FromFile(Path.Combine(HttpContext.Current.Request.PhysicalApplicationPath, "images\\Logo.png"));
-                stream = new MemoryStream();
-                image.Save(stream, System.Drawing.Imaging.ImageFormat.Gif);
-                stream = new MemoryStream(stream.ToArray());
+                stream = GetDefaultImageStream();
             }
             else
             {
 				// Hiện tại chỉ hỗ trợ 1 giao diện -> lấy luôn phần tử đầu tiên
 				// Nếu cần hỗ trợ nhiều giao diện thì dùng biến id bên trên để chọn
-                var image = imageTable.First();
-                stream = new MemoryStream(image.Image.ToArray());
-            }                       
-
+                var image = from img in imageTable where img.Id == id select img.Image;
+                if (image.Count() == 0 || image == null)
+                    stream = GetDefaultImageStream();                    
+                else
+                    stream = new MemoryStream(image.First().ToArray());
+            }
             return stream;
+        }
+        public MemoryStream GetDefaultImageStream()
+        {
+            Image image = Image.FromFile(Path.Combine(HttpContext.Current.Request.PhysicalApplicationPath, "images\\Logo.png"));
+            MemoryStream stream = new MemoryStream();
+            image.Save(stream, System.Drawing.Imaging.ImageFormat.Gif);
+            return new MemoryStream(stream.ToArray());
         }
         public bool IsReusable
         {

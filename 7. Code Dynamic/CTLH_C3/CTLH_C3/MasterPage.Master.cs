@@ -19,24 +19,24 @@ namespace CTLH_C3
                 if (Page.User.Identity.IsAuthenticated)
                 {
                     string role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
-                    switch (role)
+                    switch (role.ToLower())
                     {
-                        case "Admin":
+                        case "admin":
                             {
                                 SiteMapDataSourceMenu.SiteMapProvider = "AdminSiteMap";
                                 break;
                             }
-                        case "Tài Xế":
+                        case "tài xế":
                             {
                                 SiteMapDataSourceMenu.SiteMapProvider = "TaiXeSiteMap";
                                 break;
                             }
-                        case "Điều Hành Trạm":
+                        case "điều hành trạm":
                             {
                                 SiteMapDataSourceMenu.SiteMapProvider = "DieuHanhTramSiteMap";
                                 break;
                             }
-                        case "Điều Hành Công Ty":
+                        case "điều hành công ty":
                             {
                                 SiteMapDataSourceMenu.SiteMapProvider = "DieuHanhCongTySiteMap";
                                 break;

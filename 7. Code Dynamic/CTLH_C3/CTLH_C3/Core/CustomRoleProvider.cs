@@ -108,18 +108,15 @@ namespace CTLH_C3.Core
                        select u;
             if (user.Count()==1)
             {
-                TAI_KHOAN tk = user.Single();
-
-               
+                TAI_KHOAN tk = user.Single();               
                 var loaitk = from l in dataContext.LOAI_TAI_KHOANs
                              where l.MaLoaiTaiKhoan == tk.LoaiTaiKhoan
                              select l;
-                    if (loaitk.Count() == 1)
-                    {
-                        LOAI_TAI_KHOAN ltk = loaitk.Single();
-                        return new string[] { ltk.TenLoaiTaiKhoan,tk.MaNhanVien.ToString() }; 
-                    }
-                                                  
+                if (loaitk.Count() == 1)
+                {
+                    LOAI_TAI_KHOAN ltk = loaitk.Single();
+                    return new string[] { ltk.TenLoaiTaiKhoan,tk.MaNhanVien.ToString() }; 
+                }                                                  
             }
             return new string[] {"",""};
         }
