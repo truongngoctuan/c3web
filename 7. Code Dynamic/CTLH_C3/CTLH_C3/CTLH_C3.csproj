@@ -140,6 +140,8 @@
     <Compile Include="Core\CustomMembershipProvider.cs" />
     <Compile Include="Core\CustomMembershipUser.cs" />
     <Compile Include="Core\ImageFormatAttribute.cs" />
+    <Compile Include="Core\ImageTable.cs" />
+    <Compile Include="Core\ThongTinCongTy.cs" />
     <Compile Include="CustomMetadata.cs" />
     <Compile Include="Core\CustomRoleProvider.cs" />
     <Compile Include="Core\Theme.cs" />
@@ -193,6 +195,34 @@
     </Compile>
     <Compile Include="DynamicData\CustomPages\NHAN_VIENs\ListDetails.aspx.designer.cs">
       <DependentUpon>ListDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\TAI_KHOANs\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\TAI_KHOANs\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\TAI_KHOANs\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\TAI_KHOANs\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\TAI_KHOANs\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\TAI_KHOANs\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\TAI_KHOANs\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\TAI_KHOANs\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
     </Compile>
     <Compile Include="DynamicData\CustomPages\TRAM_XEs\Details.aspx.cs">
       <DependentUpon>Details.aspx</DependentUpon>
@@ -278,6 +308,13 @@
     <Compile Include="DynamicData\CustomPages\XEs\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.cs">
+      <DependentUpon>ListDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.designer.cs">
+      <DependentUpon>ListDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DynamicDefault.aspx.cs">
       <DependentUpon>DynamicDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -333,6 +370,9 @@
     </Compile>
     <Compile Include="GUI\Guest\TimKiemChuyen.aspx.designer.cs">
       <DependentUpon>TimKiemChuyen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImageHandler.ashx.cs">
+      <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="TaiXe\NhatKi.aspx.cs">
       <DependentUpon>NhatKi.aspx</DependentUpon>
@@ -606,14 +646,6 @@
     <Compile Include="DynamicData\PageTemplates\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
-    <Content Include="DynamicData\PageTemplates\ListDetails.aspx" />
-    <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.cs">
-      <DependentUpon>ListDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.designer.cs">
-      <DependentUpon>ListDetails.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
     </Compile>
     <Compile Include="Site.master.cs">
@@ -638,17 +670,10 @@
       <DependentUpon>TimKiemChuyen.aspx</DependentUpon>
     </Compile>
     <Compile Include="TRAVEL_WEB.designer.cs">
-      <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="TRAVEL_WEB.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>TRAVEL_WEB.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -680,6 +705,10 @@
     <Content Include="DieuHanhCongTy\Default.aspx" />
     <Content Include="DieuHanhCongTy\QuanLyXe.aspx" />
     <Content Include="DynamicData\CustomPages\NHAN_VIENs\ListDetails.aspx" />
+    <Content Include="DynamicData\CustomPages\TAI_KHOANs\Details.aspx" />
+    <Content Include="DynamicData\CustomPages\TAI_KHOANs\Edit.aspx" />
+    <Content Include="DynamicData\CustomPages\TAI_KHOANs\Insert.aspx" />
+    <Content Include="DynamicData\CustomPages\TAI_KHOANs\List.aspx" />
     <Content Include="DynamicData\CustomPages\TRAM_XEs\Details.aspx" />
     <Content Include="DynamicData\CustomPages\TRAM_XEs\Edit.aspx" />
     <Content Include="DynamicData\CustomPages\TRAM_XEs\Insert.aspx" />
@@ -692,6 +721,7 @@
     <Content Include="DynamicData\CustomPages\XEs\Edit.aspx" />
     <Content Include="DynamicData\CustomPages\XEs\Insert.aspx" />
     <Content Include="DynamicData\CustomPages\XEs\List.aspx" />
+    <Content Include="DynamicData\PageTemplates\ListDetails.aspx" />
     <Content Include="DynamicDefault.aspx" />
     <Content Include="Feedback.aspx" />
     <Content Include="Guest\QuenMatKhau.ascx" />
@@ -738,6 +768,16 @@
     <Content Include="TimKiemChuyen.aspx" />
     <Content Include="DieuHanhCongTy\Default.sitemap" />
     <Content Include="DieuHanhCongTy\MasterPage.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TRAVEL_WEB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TRAVEL_WEB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ImageHandler.ashx" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>

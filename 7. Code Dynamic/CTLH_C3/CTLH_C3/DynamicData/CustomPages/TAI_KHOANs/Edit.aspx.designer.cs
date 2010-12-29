@@ -8,72 +8,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.Admin {
+namespace CTLH_C3.TAI_KHOANs {
     
     
-    public partial class ThayDoiGiaoDien {
+    public partial class Edit {
         
         /// <summary>
-        /// FileUpload1 control.
+        /// DynamicDataManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.DynamicData.DynamicDataManager DynamicDataManager1;
         
         /// <summary>
-        /// UploadButton control.
+        /// ScriptManagerProxy1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UploadButton;
+        protected global::System.Web.UI.ScriptManagerProxy ScriptManagerProxy1;
         
         /// <summary>
-        /// image1 control.
+        /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image image1;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// StatusLabel control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label StatusLabel;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
-        /// pnThayDoiGiaoDien control.
+        /// DetailsViewValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnThayDoiGiaoDien;
+        protected global::System.Web.DynamicData.DynamicValidator DetailsViewValidator;
         
         /// <summary>
-        /// rteGioiThieu control.
+        /// DetailsView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControls.RichTextEditor rteGioiThieu;
+        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
         
         /// <summary>
-        /// user_Login control.
+        /// DetailsDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CTLH_C3.Guest.user_CustomLogin user_Login;
+        protected global::System.Web.UI.WebControls.LinqDataSource DetailsDataSource;
     }
 }

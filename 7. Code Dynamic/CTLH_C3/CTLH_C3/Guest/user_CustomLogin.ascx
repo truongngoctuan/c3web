@@ -10,10 +10,8 @@
                         <div style="width:245px;">
                         <asp:LoginStatus ID="LoginStatus1" runat="server" 
                             LoginText="Đăng nhập"
-                            CssClass="ucloginlogout"
-                            
-                            LogoutText="Đăng xuất" 
-                            
+                            CssClass="ucloginlogout"                            
+                            LogoutText="Đăng xuất"                             
                             LogoutPageUrl="~/Default.aspx"
                             style="float:right;"/>
                         <asp:Image ID="Image1" runat="server" ImageUrl="~/images/HinhDaiDien.jpg"
@@ -26,9 +24,9 @@
                             float:left; clear:both;
                             text-align:center;
                             width:245px"></asp:Label>
-                        <asp:HyperLink ID="HyperLink3" NavigateUrl="~/GUI/Admin/TaiKhoan.aspx" runat="server"
+                        <asp:HyperLink ID="HyperLink3" NavigateUrl="~/TAI_KHOANs/List.aspx" runat="server"
                         style="float:left; clear:both;text-align:center;width:245px;">Quản lý tài khoản</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink2" NavigateUrl="~/GUI/Admin/TaiKhoan.aspx" runat="server"
+                        <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/ThayDoiGiaoDien.aspx" runat="server"
                         style="float:left; clear:both;text-align:center;width:245px;">Thông tin công ty</asp:HyperLink>
                         </div>
                     </ItemTemplate>
@@ -104,27 +102,27 @@
             </ContentTemplate>
         </asp:RoleGroup>
         <asp:RoleGroup Roles="Quản Lý Trạm">
-        <ContentTemplate>
+            <ContentTemplate>
                 Đăng nhập thành công !!!<br />
-        Tên QLT : 
-        <asp:LoginName ID="LoginName1" runat="server" />
-        <br />
-        <asp:LoginStatus ID="LoginStatus1" runat="server" 
-            LoginImageUrl="~/images/login_button.png" 
-            LogoutImageUrl="~/images/logout-button.png"
-            LogoutPageUrl="~/Default.aspx" />   
-            </ContentTemplate>
-        </asp:RoleGroup>
+                Tên QLT : 
+                <asp:LoginName ID="LoginName1" runat="server" />
+                <br />
+                <asp:LoginStatus ID="LoginStatus1" runat="server" 
+                    LoginImageUrl="~/images/login_button.png" 
+                    LogoutImageUrl="~/images/logout-button.png"
+                    LogoutPageUrl="~/Default.aspx" />   
+                    </ContentTemplate>
+                </asp:RoleGroup>
         <asp:RoleGroup Roles="Quản Lý Công Ty">
-        <ContentTemplate>
+            <ContentTemplate>
                 Đăng nhập thành công !!!<br />
-        Tên QLCT : 
-        <asp:LoginName ID="LoginName1" runat="server" />
-        <br />
-        <asp:LoginStatus ID="LoginStatus1" runat="server" 
-            LoginImageUrl="~/images/login_button.png" 
-            LogoutImageUrl="~/images/logout-button.png"
-            LogoutPageUrl="~/Default.aspx" />   
+                Tên QLCT : 
+                <asp:LoginName ID="LoginName1" runat="server" />
+                <br />
+                <asp:LoginStatus ID="LoginStatus1" runat="server" 
+                    LoginImageUrl="~/images/login_button.png" 
+                    LogoutImageUrl="~/images/logout-button.png"
+                    LogoutPageUrl="~/Default.aspx" />   
             </ContentTemplate>
         </asp:RoleGroup>
     </RoleGroups>

@@ -8,72 +8,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.Admin {
+namespace CTLH_C3 {
     
     
-    public partial class ThayDoiGiaoDien {
+    public partial class FileImage_Edit {
         
         /// <summary>
-        /// FileUpload1 control.
+        /// RadioButtonList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
         
         /// <summary>
-        /// UploadButton control.
+        /// PlaceHolderImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UploadButton;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderImage;
         
         /// <summary>
-        /// image1 control.
+        /// ImageEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image image1;
+        protected global::System.Web.UI.WebControls.Image ImageEdit;
         
         /// <summary>
-        /// StatusLabel control.
+        /// FileUploadEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label StatusLabel;
+        protected global::System.Web.UI.WebControls.FileUpload FileUploadEdit;
         
         /// <summary>
-        /// pnThayDoiGiaoDien control.
+        /// CustomValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnThayDoiGiaoDien;
-        
-        /// <summary>
-        /// rteGioiThieu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControls.RichTextEditor rteGioiThieu;
-        
-        /// <summary>
-        /// user_Login control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CTLH_C3.Guest.user_CustomLogin user_Login;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
     }
 }

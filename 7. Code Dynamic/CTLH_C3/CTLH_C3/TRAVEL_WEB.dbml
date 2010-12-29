@@ -8,6 +8,19 @@
       <Association Name="CHO_NGOI_DAT_CHO" Member="DAT_CHOs" ThisKey="MaChoNgoi" OtherKey="MaChoNgoi" Type="DAT_CHO" />
     </Type>
   </Table>
+  <Table Name="dbo.XE" Member="XEs">
+    <Type Name="XE">
+      <Column Name="MaXe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BienSoXe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaTaiXe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaLoaiXe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LOAI_XE_XE" Member="LOAI_XE" ThisKey="MaLoaiXe" OtherKey="MaLoaixe" Type="LOAI_XE" IsForeignKey="true" />
+      <Association Name="NHAN_VIEN_XE" Member="NHAN_VIEN" ThisKey="MaTaiXe" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
+      <Association Name="TINH_TRANG_XE_XE" Member="TINH_TRANG_XE" ThisKey="TinhTrang" OtherKey="MaTinhTrangXe" Type="TINH_TRANG_XE" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.CHUC_NANG" Member="CHUC_NANGs">
     <Type Name="CHUC_NANG">
       <Column Name="MaChucNang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -46,7 +59,7 @@
   <Table Name="dbo.LOAI_NHAN_VIEN" Member="LOAI_NHAN_VIENs">
     <Type Name="LOAI_NHAN_VIEN">
       <Column Name="MaLoaiNhanVien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="LOAI_NHAN_VIEN_NHAN_VIEN" Member="NHAN_VIENs" ThisKey="MaLoaiNhanVien" OtherKey="LoaiNhanVien" Type="NHAN_VIEN" />
       <Association Name="LOAI_NHAN_VIEN_PHAN_QUYEN" Member="PHAN_QUYENs" ThisKey="MaLoaiNhanVien" OtherKey="MaLoaiNhanVien" Type="PHAN_QUYEN" />
     </Type>
@@ -62,17 +75,17 @@
   <Table Name="dbo.NHAN_VIEN" Member="NHAN_VIENs">
     <Type Name="NHAN_VIEN">
       <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LoaiNhanVien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LoaiNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="LuongTrongThang" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="NHAN_VIEN_XE" Member="XEs" ThisKey="MaNhanVien" OtherKey="MaTaiXe" Type="XE" />
       <Association Name="NHAN_VIEN_CHUYEN_XE" Member="CHUYEN_XEs" ThisKey="MaNhanVien" OtherKey="MaTaiXe" Type="CHUYEN_XE" />
       <Association Name="NHAN_VIEN_PHAN_HOI" Member="PHAN_HOIs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="PHAN_HOI" />
       <Association Name="NHAN_VIEN_TAI_KHOAN" Member="TAI_KHOANs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="TAI_KHOAN" />
       <Association Name="NHAN_VIEN_TIN_TUC" Member="TIN_TUCs" ThisKey="MaNhanVien" OtherKey="MaAdminDuyet" Type="TIN_TUC" />
       <Association Name="NHAN_VIEN_TRAM_XE" Member="TRAM_XEs" ThisKey="MaNhanVien" OtherKey="MaTruongTram" Type="TRAM_XE" />
-      <Association Name="NHAN_VIEN_XE" Member="XEs" ThisKey="MaNhanVien" OtherKey="MaTaiXe" Type="XE" />
       <Association Name="LOAI_NHAN_VIEN_NHAN_VIEN" Member="LOAI_NHAN_VIEN" ThisKey="LoaiNhanVien" OtherKey="MaLoaiNhanVien" Type="LOAI_NHAN_VIEN" IsForeignKey="true" />
     </Type>
   </Table>
@@ -167,39 +180,11 @@
       <Association Name="TRAM_XE_TUYEN_XE1" Member="TRAM_XE1" ThisKey="MaTramDi" OtherKey="MaTramXe" Type="TRAM_XE" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.XE" Member="XEs">
-    <Type Name="XE">
-      <Column Name="MaXe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="BienSoXe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaTaiXe" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MaLoaiXe" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="LOAI_XE_XE" Member="LOAI_XE" ThisKey="MaLoaiXe" OtherKey="MaLoaixe" Type="LOAI_XE" IsForeignKey="true" />
-      <Association Name="NHAN_VIEN_XE" Member="NHAN_VIEN" ThisKey="MaTaiXe" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
-      <Association Name="TINH_TRANG_XE_XE" Member="TINH_TRANG_XE" ThisKey="TinhTrang" OtherKey="MaTinhTrangXe" Type="TINH_TRANG_XE" IsForeignKey="true" />
+  <Table Name="dbo.ImageTable" Member="ImageTables">
+    <Type Name="ImageTable">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Intro" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Function Name="dbo.GetAllNhanViens" Method="GetAllNhanViens">
-    <ElementType Name="GetAllNhanViensResult">
-      <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LoaiNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LuongTrongThang" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.GetAllNhanViensAndLoaiNhanVien" Method="GetAllNhanViensAndLoaiNhanVien">
-    <ElementType Name="GetAllNhanViensAndLoaiNhanVienResult">
-      <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LoaiNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LuongTrongThang" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MaLoaiNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
 </Database>
