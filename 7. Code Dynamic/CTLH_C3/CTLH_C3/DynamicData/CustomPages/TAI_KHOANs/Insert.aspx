@@ -1,7 +1,7 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" CodeBehind="Insert.aspx.cs" Inherits="CTLH_C3.TAI_KHOANs.Insert" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" CodeBehind="Insert.aspx.cs" Inherits="CTLH_C3.TAI_KHOANs.Insert" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
     <h2>Add new entry to table <%= table.DisplayName %></h2>

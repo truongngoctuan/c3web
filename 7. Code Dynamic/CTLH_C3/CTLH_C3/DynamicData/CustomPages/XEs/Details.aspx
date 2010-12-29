@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
-    <h2>Entry from table <%= table.DisplayName %></h2>
+    <h2>Chi tiết một đối tượng dữ liệu từ bảng <%= table.DisplayName %></h2>
 
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
 
@@ -23,7 +23,7 @@
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Edit, GetDataItem()) %>'
                                 Text="Sửa" />
                             <asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete" CausesValidation="false"
-                                OnClientClick='return confirm("Are you sure you want to delete this item?");'
+                                OnClientClick='return confirm("Bạn có chắc chắn muốn xóa dữ liệu này không?");'
                                 Text="Xóa" />
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -39,7 +39,7 @@
             <br />
 
             <div class="bottomhyperlink">
-                <asp:HyperLink ID="ListHyperLink" runat="server">Show all items</asp:HyperLink>
+                <asp:HyperLink ID="ListHyperLink" runat="server">Xem tất cả các đối tượng dữ liệu</asp:HyperLink>
             </div>        
         </ContentTemplate>
     </asp:UpdatePanel>

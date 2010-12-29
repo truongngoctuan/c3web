@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
-    <h2>Thay đổi đối tượng dữ liệu của bảng <%= table.DisplayName %></h2>
+    <h2>Edit entry from table <%= table.DisplayName %></h2>
 
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
 
@@ -15,19 +15,8 @@
             <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView1" Display="None" />
 
             <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="DetailsDataSource" DefaultMode="Edit"
-                AutoGenerateEditButton="false" OnItemCommand="DetailsView1_ItemCommand" OnItemUpdated="DetailsView1_ItemUpdated"
+                AutoGenerateEditButton="True" OnItemCommand="DetailsView1_ItemCommand" OnItemUpdated="DetailsView1_ItemUpdated"
                 CssClass="detailstable" FieldHeaderStyle-CssClass="bold">
-                
-                <Fields> 
-                    <asp:TemplateField> 
-                        <ItemTemplate> 
-                                <asp:Button ID="UpdateLinkButton" runat="server" CommandName="Update" CausesValidation="false" 
-                                   Text="Cập nhật" /> 
-                                <asp:Button ID="Button1" runat="server" CommandName="Cancel" CausesValidation="false" 
-                                   Text="Hủy bỏ" /> 
-                        </ItemTemplate> 
-                    </asp:TemplateField> 
-                </Fields> 
             </asp:DetailsView>
 
             <asp:LinqDataSource ID="DetailsDataSource" runat="server" EnableUpdate="true">

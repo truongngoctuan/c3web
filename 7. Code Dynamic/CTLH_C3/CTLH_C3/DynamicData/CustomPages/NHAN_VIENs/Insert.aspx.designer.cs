@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.XEs {
+namespace CTLH_C3.NHAN_VIENs
+{
     
     
-    public partial class Edit {
+    public partial class Insert {
         
         /// <summary>
         /// DynamicDataManager1 control.

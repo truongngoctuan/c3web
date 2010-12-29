@@ -20,13 +20,13 @@ namespace CTLH_C3.Admin
 				
 				// Lấy thông tin ra
                 TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-                var thongtins = from a in context.ImageTables select a;
+                var thongtins = from a in context.ImageStores select a;
                 if (thongtins.Count() == 0)
                     rteGioiThieu.Text = "";
                 else
                 {
-                    var thongtin = thongtins.First();
-                    rteGioiThieu.Text = thongtin.Intro;
+                    //var thongtin = thongtins.First();
+                    //rteGioiThieu.Text = thongtin.Intro;
                 }
             }
             else
@@ -36,13 +36,16 @@ namespace CTLH_C3.Admin
                 string strGioiThieu = rteGioiThieu.Text;
                 TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
 
-                var thongtins = from a in context.ImageTables select a;
+                var thongtins = from a in context.ImageStores select a;
                 if (thongtins.Count() == 0)
-                    context.ImageTables.InsertOnSubmit(new ImageTable { Intro = strGioiThieu });
+                {
+
+                    //context.ImageStores.InsertOnSubmit(new ImageTable { Intro = strGioiThieu });
+                }
                 else
                 {
-                    var thongtin = thongtins.First();
-                    thongtin.Intro = strGioiThieu;
+                    //var thongtin = thongtins.First();
+                    //thongtin.Intro = strGioiThieu;
                 }
                 context.SubmitChanges();
 
@@ -66,14 +69,16 @@ namespace CTLH_C3.Admin
                             Binary binaryObj = new Binary(fileByte);                            
 														
                             TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-                            var thongtins = from a in context.ImageTables select a;
+                            var thongtins = from a in context.ImageStores select a;
 							
 							// Đưa vào CSDL, chưa có thì add cái mới
                             if (thongtins.Count() == 0)
-                                context.ImageTables.InsertOnSubmit(new ImageTable { Image = binaryObj});
+                            {
+                                //context.ImageStores.InsertOnSubmit(new ImageTable { Image = binaryObj });
+                            }
                             else
                             {
-								// Đã có thì ghi đè vào
+                                // Đã có thì ghi đè vào
                                 var thongtin = thongtins.First();
                                 thongtin.Image = binaryObj;
                             }                               
