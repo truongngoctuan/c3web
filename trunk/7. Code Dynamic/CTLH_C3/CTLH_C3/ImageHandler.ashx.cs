@@ -15,6 +15,7 @@ namespace CTLH_C3
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class ImageHandler : IHttpHandler
     {
+		// Tự động được gọi
         public void ProcessRequest(HttpContext context)
         {
             int id = int.Parse(context.Request.QueryString["Id"]);
@@ -24,6 +25,7 @@ namespace CTLH_C3
             int byteSeq = strm.Read(buffer, 0, 4096);
             while (byteSeq > 0)
             {
+				// Ghi dữ liệu của Image vào responce
                 context.Response.OutputStream.Write(buffer, 0, byteSeq);
                 byteSeq = strm.Read(buffer, 0, 4096);
             }
@@ -33,10 +35,11 @@ namespace CTLH_C3
         {
             MemoryStream stream = null;
             TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-            var imageTable = from a in context.ImageTables
-                       select a;
+            var imageTable = from a in context.ImageTables select a;
+			// Lấy image từ CSDL ra, nếu chưa có thì dùng ảnh mặc định
             if (imageTable.Count() == 0 || imageTable.First().Image == null)
             {
+				// Nên thay bằng một hình đại diện cho Empty
                 Image image = Image.FromFile(Path.Combine(HttpContext.Current.Request.PhysicalApplicationPath, "images\\Logo.png"));
                 stream = new MemoryStream();
                 image.Save(stream, System.Drawing.Imaging.ImageFormat.Gif);
@@ -44,6 +47,8 @@ namespace CTLH_C3
             }
             else
             {
+				// Hiện tại chỉ hỗ trợ 1 giao diện -> lấy luôn phần tử đầu tiên
+				// Nếu cần hỗ trợ nhiều giao diện thì dùng biến id bên trên để chọn
                 var image = imageTable.First();
                 stream = new MemoryStream(image.Image.ToArray());
             }                       

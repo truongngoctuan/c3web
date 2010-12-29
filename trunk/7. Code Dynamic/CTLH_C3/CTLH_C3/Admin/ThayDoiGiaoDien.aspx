@@ -11,7 +11,6 @@
     </script>
 <asp:Literal runat="server">Banner :</asp:Literal> 
 <asp:FileUpload ID="FileUpload1" runat="server" />
-<asp:Button runat="server" id="UploadButton" text="Upload" onclick="UploadButton_Click" />
 <asp:Image runat="server" ID="image1" />
 <br />
 <asp:Label runat="server" id="StatusLabel" text=" " />
