@@ -32,7 +32,9 @@
             </ul>
         </FooterTemplate>
     </asp:Repeater>
-    <asp:LinqDataSource ID="ldsTram" runat="server" ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext" TableName="TRAM_XEs">
+    <asp:LinqDataSource ID="ldsTram" runat="server" 
+        ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext" TableName="TRAM_XEs" 
+        onselecting="ldsTram_Selecting">
     </asp:LinqDataSource>    
 </asp:Content>
 
