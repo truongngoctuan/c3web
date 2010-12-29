@@ -21,9 +21,9 @@
       <Column Name="SoLuongMuaVe" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="CHUYEN_XE_DAT_CHO" Member="DAT_CHOs" ThisKey="MaChuyenXe" OtherKey="MaChuyenXe" Type="DAT_CHO" />
       <Association Name="CHUYEN_XE_PHAN_HOI" Member="PHAN_HOIs" ThisKey="MaChuyenXe" OtherKey="MaChuyen" Type="PHAN_HOI" />
+      <Association Name="NHAN_VIEN_CHUYEN_XE" Member="NHAN_VIEN" ThisKey="MaTaiXe" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
       <Association Name="TINH_TRANG_CHUYEN_XE_CHUYEN_XE" Member="TINH_TRANG_CHUYEN_XE" ThisKey="TinhTrang" OtherKey="MaTinhTrangChuyen" Type="TINH_TRANG_CHUYEN_XE" IsForeignKey="true" />
       <Association Name="TUYEN_XE_CHUYEN_XE" Member="TUYEN_XE" ThisKey="MaTuyenXe" OtherKey="MaTuyenXe" Type="TUYEN_XE" IsForeignKey="true" />
-      <Association Name="NHAN_VIEN_CHUYEN_XE" Member="NHAN_VIEN" ThisKey="MaTaiXe" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DAT_CHO" Member="DAT_CHOs">
@@ -42,6 +42,10 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Intro" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="ImageTable_LOAI_XE" Member="LOAI_XEs" ThisKey="Id" OtherKey="HinhAnh" Type="LOAI_XE" />
+      <Association Name="ImageTable_NHAN_VIEN" Member="NHAN_VIENs" ThisKey="Id" OtherKey="HinhAnh" Type="NHAN_VIEN" />
+      <Association Name="ImageTable_THONG_TIN_CONG_TY" Member="THONG_TIN_CONG_Ties" ThisKey="Id" OtherKey="Banner" Type="THONG_TIN_CONG_TY" />
+      <Association Name="ImageTable_TRAM_XE" Member="TRAM_XEs" ThisKey="Id" OtherKey="HinhAnh" Type="TRAM_XE" />
     </Type>
   </Table>
   <Table Name="dbo.LOAI_TAI_KHOAN" Member="LOAI_TAI_KHOANs">
@@ -54,10 +58,28 @@
   <Table Name="dbo.LOAI_XE" Member="LOAI_XEs">
     <Type Name="LOAI_XE">
       <Column Name="MaLoaixe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="HinhAnh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HinhAnh" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="HangSanXuat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SoCho" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="LOAI_XE_XE" Member="XEs" ThisKey="MaLoaixe" OtherKey="MaLoaiXe" Type="XE" />
+      <Association Name="ImageTable_LOAI_XE" Member="ImageTable" ThisKey="HinhAnh" OtherKey="Id" Type="ImageTable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHAN_VIEN" Member="NHAN_VIENs">
+    <Type Name="NHAN_VIEN">
+      <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LuongTrongThang" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="NHAN_VIEN_CHUYEN_XE" Member="CHUYEN_XEs" ThisKey="MaNhanVien" OtherKey="MaTaiXe" Type="CHUYEN_XE" />
+      <Association Name="NHAN_VIEN_PHAN_HOI" Member="PHAN_HOIs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="PHAN_HOI" />
+      <Association Name="NHAN_VIEN_TAI_KHOAN" Member="TAI_KHOANs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="TAI_KHOAN" />
+      <Association Name="NHAN_VIEN_THONG_TIN_CONG_TY" Member="THONG_TIN_CONG_Ties" ThisKey="MaNhanVien" OtherKey="MaAdmin" Type="THONG_TIN_CONG_TY" />
+      <Association Name="NHAN_VIEN_TRAM_XE" Member="TRAM_XEs" ThisKey="MaNhanVien" OtherKey="MaTruongTram" Type="TRAM_XE" />
+      <Association Name="NHAN_VIEN_XE" Member="XEs" ThisKey="MaNhanVien" OtherKey="MaTaiXe" Type="XE" />
+      <Association Name="ImageTable_NHAN_VIEN" Member="ImageTable" ThisKey="HinhAnh" OtherKey="Id" Type="ImageTable" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PHAN_HOI" Member="PHAN_HOIs">
@@ -67,8 +89,8 @@
       <Column Name="MaPhanHoiKhach" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaNhanVien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="CHUYEN_XE_PHAN_HOI" Member="CHUYEN_XE" ThisKey="MaChuyen" OtherKey="MaChuyenXe" Type="CHUYEN_XE" IsForeignKey="true" />
-      <Association Name="PHAN_HOI_KHACH_HANG_PHAN_HOI" Member="PHAN_HOI_KHACH_HANG" ThisKey="MaPhanHoiKhach" OtherKey="MaPhanHoi" Type="PHAN_HOI_KHACH_HANG" IsForeignKey="true" />
       <Association Name="NHAN_VIEN_PHAN_HOI" Member="NHAN_VIEN" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
+      <Association Name="PHAN_HOI_KHACH_HANG_PHAN_HOI" Member="PHAN_HOI_KHACH_HANG" ThisKey="MaPhanHoiKhach" OtherKey="MaPhanHoi" Type="PHAN_HOI_KHACH_HANG" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PHAN_HOI_KHACH_HANG" Member="PHAN_HOI_KHACH_HANGs">
@@ -96,10 +118,11 @@
   <Table Name="dbo.THONG_TIN_CONG_TY" Member="THONG_TIN_CONG_Ties">
     <Type Name="THONG_TIN_CONG_TY">
       <Column Name="MaThongTinCongTy" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Banner" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Banner" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Slogan" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="TinTucGioiThieu" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TinTucGioiThieu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="MaAdmin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ImageTable_THONG_TIN_CONG_TY" Member="ImageTable" ThisKey="Banner" OtherKey="Id" Type="ImageTable" IsForeignKey="true" />
       <Association Name="NHAN_VIEN_THONG_TIN_CONG_TY" Member="NHAN_VIEN" ThisKey="MaAdmin" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
     </Type>
   </Table>
@@ -129,11 +152,12 @@
       <Column Name="MaTramXe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenTramXe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="HinhAnh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HinhAnh" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaTruongTram" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TRAM_XE_TUYEN_XE" Member="TUYEN_XEs" ThisKey="MaTramXe" OtherKey="MaTramDi" Type="TUYEN_XE" />
       <Association Name="TRAM_XE_TUYEN_XE1" Member="TUYEN_XEs1" ThisKey="MaTramXe" OtherKey="MaTramDen" Type="TUYEN_XE" />
       <Association Name="TRAM_XE_XE" Member="XEs" ThisKey="MaTramXe" OtherKey="TramXeLuuTru" Type="XE" />
+      <Association Name="ImageTable_TRAM_XE" Member="ImageTable" ThisKey="HinhAnh" OtherKey="Id" Type="ImageTable" IsForeignKey="true" />
       <Association Name="NHAN_VIEN_TRAM_XE" Member="NHAN_VIEN" ThisKey="MaTruongTram" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
     </Type>
   </Table>
@@ -163,24 +187,9 @@
       <Column Name="TinhTrangXe" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TramXeLuuTru" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="LOAI_XE_XE" Member="LOAI_XE" ThisKey="MaLoaiXe" OtherKey="MaLoaixe" Type="LOAI_XE" IsForeignKey="true" />
+      <Association Name="NHAN_VIEN_XE" Member="NHAN_VIEN" ThisKey="MaTaiXe" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
       <Association Name="TINH_TRANG_XE_XE" Member="TINH_TRANG_XE" ThisKey="TinhTrangXe" OtherKey="MaTinhTrangXe" Type="TINH_TRANG_XE" IsForeignKey="true" />
       <Association Name="TRAM_XE_XE" Member="TRAM_XE" ThisKey="TramXeLuuTru" OtherKey="MaTramXe" Type="TRAM_XE" IsForeignKey="true" />
-      <Association Name="NHAN_VIEN_XE" Member="NHAN_VIEN" ThisKey="MaTaiXe" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.NHAN_VIEN" Member="NHAN_VIENs">
-    <Type Name="NHAN_VIEN">
-      <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LuongTrongThang" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="NHAN_VIEN_CHUYEN_XE" Member="CHUYEN_XEs" ThisKey="MaNhanVien" OtherKey="MaTaiXe" Type="CHUYEN_XE" />
-      <Association Name="NHAN_VIEN_PHAN_HOI" Member="PHAN_HOIs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="PHAN_HOI" />
-      <Association Name="NHAN_VIEN_TAI_KHOAN" Member="TAI_KHOANs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="TAI_KHOAN" />
-      <Association Name="NHAN_VIEN_THONG_TIN_CONG_TY" Member="THONG_TIN_CONG_Ties" ThisKey="MaNhanVien" OtherKey="MaAdmin" Type="THONG_TIN_CONG_TY" />
-      <Association Name="NHAN_VIEN_TRAM_XE" Member="TRAM_XEs" ThisKey="MaNhanVien" OtherKey="MaTruongTram" Type="TRAM_XE" />
-      <Association Name="NHAN_VIEN_XE" Member="XEs" ThisKey="MaNhanVien" OtherKey="MaTaiXe" Type="XE" />
     </Type>
   </Table>
 </Database>
