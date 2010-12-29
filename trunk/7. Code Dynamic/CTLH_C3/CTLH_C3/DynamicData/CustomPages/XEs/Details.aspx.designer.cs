@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.XEs
-{
+namespace CTLH_C3.XEs {
     
     
     public partial class Details {

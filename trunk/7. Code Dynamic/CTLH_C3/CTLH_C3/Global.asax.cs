@@ -31,21 +31,21 @@ namespace CTLH_C3
             // The following statement supports separate-page mode, where the List, Detail, Insert, and 
             // Update tasks are performed by using separate pages. To enable this mode, uncomment the following 
             // route definition, and comment out the route definitions in the combined-page mode section that follows.
-            routes.Add(new DynamicDataRoute("NHAN_VIENs/ListDetails.aspx")
-            {
-                Action = PageAction.List,
-                ViewName = "ListDetails",
-                Model = model,
-                Table = "NHAN_VIENs"
-            });
+            //routes.Add(new DynamicDataRoute("NHAN_VIENs/ListDetails.aspx")
+            //{
+            //    Action = PageAction.List,
+            //    ViewName = "ListDetails",
+            //    Model = model,
+            //    Table = "NHAN_VIENs"
+            //});
 
-            routes.Add(new DynamicDataRoute("NHAN_VIENs/ListDetails.aspx")
-            {
-                Action = PageAction.Details,
-                ViewName = "ListDetails",
-                Model = model,
-                Table = "NHAN_VIENs"
-            });
+            //routes.Add(new DynamicDataRoute("NHAN_VIENs/ListDetails.aspx")
+            //{
+            //    Action = PageAction.Details,
+            //    ViewName = "ListDetails",
+            //    Model = model,
+            //    Table = "NHAN_VIENs"
+            //});
 
             routes.Add(new DynamicDataRoute("{table}/{action}.aspx")
             {

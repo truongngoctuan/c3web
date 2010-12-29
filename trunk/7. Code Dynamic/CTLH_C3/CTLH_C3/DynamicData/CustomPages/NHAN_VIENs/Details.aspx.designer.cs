@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.XEs {
+namespace CTLH_C3.NHAN_VIENs
+{
     
     
-    public partial class Edit {
+    public partial class Details {
         
         /// <summary>
         /// DynamicDataManager1 control.
@@ -75,5 +76,14 @@ namespace CTLH_C3.XEs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource DetailsDataSource;
+        
+        /// <summary>
+        /// ListHyperLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink ListHyperLink;
     }
 }

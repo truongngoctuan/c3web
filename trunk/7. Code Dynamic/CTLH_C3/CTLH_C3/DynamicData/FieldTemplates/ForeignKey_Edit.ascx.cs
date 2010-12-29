@@ -23,7 +23,7 @@ namespace CTLH_C3
             {
                 if (!Column.IsRequired)
                 {
-                    DropDownList1.Items.Add(new ListItem("[Not Set]", ""));
+                    DropDownList1.Items.Add(new ListItem("[Dữ liệu rỗng]", ""));
                 }
 
                 PopulateListControl(DropDownList1);

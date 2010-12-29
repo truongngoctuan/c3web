@@ -11,6 +11,9 @@ namespace CTLH_C3
 #region Tuyen xe
     public class TUYEN_XE_Metadata
     {
+        [ScaffoldColumn(false)]
+        public object MaTuyenXe { get; set; }
+
         [DisplayName("Tên tuyến xe")]
         public object TenTuyenXe { get; set; }
 
@@ -39,6 +42,7 @@ namespace CTLH_C3
         [DisplayName("Lương tài xế")]
         public object LuongTaiXe { get; set; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Các chuyến")]
         public object CHUYEN_XEs { set; get; }
     }
@@ -261,23 +265,34 @@ namespace CTLH_C3
         [DisplayName("Địa chỉ")]
         public object DiaChi { set; get; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Lương trong tháng")]
         public object LuongTrongThang { set; get; }
 
+        //[ScaffoldColumn(false)]
         [DisplayName("Tài khoản")]
         public object TAI_KHOANs { set; get; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Xe")]
         public object XEs { set; get; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Trạm")]
         public object TRAM_XEs { set; get; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Chuyến")]
         public object CHUYEN_XEs { set; get; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Phản hồi")]
         public object PHAN_HOIs { set; get; }
+
+
+        [ScaffoldColumn(false)]
+        [DisplayName("Thông tin công ty")]
+        public object THONG_TIN_CONG_Ties { set; get; }
     }
 
     [MetadataType(typeof(NHAN_VIEN_Metadata))]
@@ -386,9 +401,10 @@ namespace CTLH_C3
 
 
         [DisplayName("Loại")]
+        
         public object LOAI_XE { set; get; }
 
-        [DisplayName("Tình trạng")]
+        [DisplayName("Tình trạng xe")]
         public object TINH_TRANG_XE { set; get; }
     }
 
