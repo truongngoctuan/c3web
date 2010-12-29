@@ -23,7 +23,7 @@ namespace CTLH_C3
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            /*if (!IsPostBack)
             {
                 if (Page.User.Identity.IsAuthenticated)
                 {
@@ -36,7 +36,7 @@ namespace CTLH_C3
                 {
                     Response.Redirect("/Default.aspx");
                 }
-            }
+            }*/
         }
 
         protected void Page_Init(object sender, EventArgs e)
