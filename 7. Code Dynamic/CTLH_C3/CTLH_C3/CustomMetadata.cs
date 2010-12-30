@@ -114,6 +114,9 @@ namespace CTLH_C3
 
         [DisplayName("Là trạm đi của")]
         public object TUYEN_XEs1 { set; get; }
+
+        [ScaffoldColumn(false)]
+        public object XEs { set; get; }
     }
 
     [MetadataType(typeof(TRAM_XE_Metadata))]
