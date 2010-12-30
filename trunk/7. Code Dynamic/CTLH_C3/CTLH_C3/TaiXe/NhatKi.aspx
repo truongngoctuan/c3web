@@ -50,7 +50,6 @@
                         <asp:BoundField DataField="TramDi" HeaderText="Trạm đi" />
                         <asp:BoundField DataField="TramDen" HeaderText="Trạm đến"/>
                         <asp:BoundField DataField="KhoiHanh" HeaderText="Khởi hành"/>
-                        <asp:BoundField DataField="DuKienDen" HeaderText="Giờ đến dự kiến"/>
                         <asp:BoundField DataField="ThoiDiemDenTram" HeaderText="Đã đến trạm lúc"/>
                         <asp:BoundField DataField="Luong" HeaderText="Lương" />
                     </Columns>
