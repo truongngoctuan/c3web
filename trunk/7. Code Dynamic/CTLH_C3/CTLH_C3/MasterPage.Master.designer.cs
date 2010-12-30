@@ -50,6 +50,15 @@ namespace CTLH_C3 {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
+        /// imgBanner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgBanner;
+        
+        /// <summary>
         /// Menu1 control.
         /// </summary>
         /// <remarks>
@@ -57,6 +66,24 @@ namespace CTLH_C3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Menu Menu1;
+        
+        /// <summary>
+        /// imgLogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgLogo;
+        
+        /// <summary>
+        /// imgSlogan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgSlogan;
         
         /// <summary>
         /// ThemeDataSource control.

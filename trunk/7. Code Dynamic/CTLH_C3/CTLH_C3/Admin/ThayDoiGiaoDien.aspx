@@ -9,15 +9,17 @@
             editor.value = richeditor.toHtmlString();  
         }
     </script>
-<asp:Literal runat="server">Banner :</asp:Literal> 
+Banner: 
 <asp:FileUpload ID="uploadBanner" runat="server" />
 <asp:Image runat="server" ID="imgBanner" />
 <asp:Label runat="server" id="sttBanner" text=" " />
-
+<br/>
+Slogan: 
 <asp:FileUpload ID="uploadSlogan" runat="server" />
 <asp:Image runat="server" ID="imgSlogan" />
 <asp:Label runat="server" id="sttSlogan" text=" " />
-
+<br/>
+Logo: 
 <asp:FileUpload ID="uploadLogo" runat="server" />
 <asp:Image runat="server" ID="imgLogo" />
 <asp:Label runat="server" id="sttLogo" text=" " />
