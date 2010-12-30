@@ -51,18 +51,6 @@
       <Association Name="TINH_TRANG_DAT_CHO_DAT_CHO" Member="TINH_TRANG_DAT_CHO" ThisKey="TinhTrang" OtherKey="MaTinhTrangDatCho" Type="TINH_TRANG_DAT_CHO" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ImageStore" Member="ImageStores">
-    <Type Name="ImageStore">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Association Name="ImageStore_LOAI_XE" Member="LOAI_XEs" ThisKey="Id" OtherKey="HinhAnh" Type="LOAI_XE" />
-      <Association Name="ImageStore_NHAN_VIEN" Member="NHAN_VIENs" ThisKey="Id" OtherKey="HinhAnh" Type="NHAN_VIEN" />
-      <Association Name="ImageStore_THONG_TIN_CONG_TY" Member="THONG_TIN_CONG_Ties" ThisKey="Id" OtherKey="Banner" Type="THONG_TIN_CONG_TY" />
-      <Association Name="ImageStore_THONG_TIN_CONG_TY1" Member="THONG_TIN_CONG_Ties1" ThisKey="Id" OtherKey="Slogan" Type="THONG_TIN_CONG_TY" />
-      <Association Name="ImageStore_THONG_TIN_CONG_TY2" Member="THONG_TIN_CONG_Ties2" ThisKey="Id" OtherKey="Logo" Type="THONG_TIN_CONG_TY" />
-      <Association Name="ImageStore_TRAM_XE" Member="TRAM_XEs" ThisKey="Id" OtherKey="HinhAnh" Type="TRAM_XE" />
-    </Type>
-  </Table>
   <Table Name="dbo.LOAI_TAI_KHOAN" Member="LOAI_TAI_KHOANs">
     <Type Name="LOAI_TAI_KHOAN">
       <Column Name="MaLoaiTaiKhoan" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -77,7 +65,7 @@
       <Column Name="HangSanXuat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SoCho" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="LOAI_XE_XE" Member="XEs" ThisKey="MaLoaixe" OtherKey="MaLoaiXe" Type="XE" />
-      <Association Name="ImageStore_LOAI_XE" Member="ImageStore" ThisKey="HinhAnh" OtherKey="Id" Type="ImageStore" IsForeignKey="true" />
+      <Association Name="IMAGE_STORE_LOAI_XE" Member="IMAGE_STORE" ThisKey="HinhAnh" OtherKey="Id" Type="IMAGE_STORE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.NHAN_VIEN" Member="NHAN_VIENs">
@@ -94,7 +82,7 @@
       <Association Name="NHAN_VIEN_TAI_KHOAN" Member="TAI_KHOANs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="TAI_KHOAN" />
       <Association Name="NHAN_VIEN_THONG_TIN_CONG_TY" Member="THONG_TIN_CONG_Ties" ThisKey="MaNhanVien" OtherKey="MaAdmin" Type="THONG_TIN_CONG_TY" />
       <Association Name="NHAN_VIEN_TRAM_XE" Member="TRAM_XEs" ThisKey="MaNhanVien" OtherKey="MaTruongTram" Type="TRAM_XE" />
-      <Association Name="ImageStore_NHAN_VIEN" Member="ImageStore" ThisKey="HinhAnh" OtherKey="Id" Type="ImageStore" IsForeignKey="true" />
+      <Association Name="IMAGE_STORE_NHAN_VIEN" Member="IMAGE_STORE" ThisKey="HinhAnh" OtherKey="Id" Type="IMAGE_STORE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PHAN_HOI" Member="PHAN_HOIs">
@@ -138,10 +126,10 @@
       <Column Name="Logo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TinTucGioiThieu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="MaAdmin" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="ImageStore_THONG_TIN_CONG_TY" Member="ImageStore" ThisKey="Banner" OtherKey="Id" Type="ImageStore" IsForeignKey="true" />
-      <Association Name="ImageStore_THONG_TIN_CONG_TY1" Member="ImageStore1" ThisKey="Slogan" OtherKey="Id" Type="ImageStore" IsForeignKey="true" />
-      <Association Name="ImageStore_THONG_TIN_CONG_TY2" Member="ImageStore2" ThisKey="Logo" OtherKey="Id" Type="ImageStore" IsForeignKey="true" />
       <Association Name="NHAN_VIEN_THONG_TIN_CONG_TY" Member="NHAN_VIEN" ThisKey="MaAdmin" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
+      <Association Name="IMAGE_STORE_THONG_TIN_CONG_TY" Member="IMAGE_STORE" ThisKey="Banner" OtherKey="Id" Type="IMAGE_STORE" IsForeignKey="true" />
+      <Association Name="IMAGE_STORE_THONG_TIN_CONG_TY1" Member="IMAGE_STORE1" ThisKey="Slogan" OtherKey="Id" Type="IMAGE_STORE" IsForeignKey="true" />
+      <Association Name="IMAGE_STORE_THONG_TIN_CONG_TY2" Member="IMAGE_STORE2" ThisKey="Logo" OtherKey="Id" Type="IMAGE_STORE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TINH_TRANG_CHUYEN_XE" Member="TINH_TRANG_CHUYEN_XEs">
@@ -175,8 +163,8 @@
       <Association Name="TRAM_XE_XE" Member="XEs" ThisKey="MaTramXe" OtherKey="TramXeLuuTru" Type="XE" />
       <Association Name="TRAM_XE_TUYEN_XE" Member="TUYEN_XEs" ThisKey="MaTramXe" OtherKey="MaTramDi" Type="TUYEN_XE" />
       <Association Name="TRAM_XE_TUYEN_XE1" Member="TUYEN_XEs1" ThisKey="MaTramXe" OtherKey="MaTramDen" Type="TUYEN_XE" />
-      <Association Name="ImageStore_TRAM_XE" Member="ImageStore" ThisKey="HinhAnh" OtherKey="Id" Type="ImageStore" IsForeignKey="true" />
       <Association Name="NHAN_VIEN_TRAM_XE" Member="NHAN_VIEN" ThisKey="MaTruongTram" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
+      <Association Name="IMAGE_STORE_TRAM_XE" Member="IMAGE_STORE" ThisKey="HinhAnh" OtherKey="Id" Type="IMAGE_STORE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TUYEN_XE" Member="TUYEN_XEs">
@@ -194,6 +182,18 @@
       <Association Name="TUYEN_XE_CHUYEN_XE" Member="CHUYEN_XEs" ThisKey="MaTuyenXe" OtherKey="MaTuyenXe" Type="CHUYEN_XE" />
       <Association Name="TRAM_XE_TUYEN_XE" Member="TRAM_XE" ThisKey="MaTramDi" OtherKey="MaTramXe" Type="TRAM_XE" IsForeignKey="true" />
       <Association Name="TRAM_XE_TUYEN_XE1" Member="TRAM_XE1" ThisKey="MaTramDen" OtherKey="MaTramXe" Type="TRAM_XE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IMAGE_STORE" Member="IMAGE_STOREs">
+    <Type Name="IMAGE_STORE">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="IMAGE_STORE_LOAI_XE" Member="LOAI_XEs" ThisKey="Id" OtherKey="HinhAnh" Type="LOAI_XE" />
+      <Association Name="IMAGE_STORE_NHAN_VIEN" Member="NHAN_VIENs" ThisKey="Id" OtherKey="HinhAnh" Type="NHAN_VIEN" />
+      <Association Name="IMAGE_STORE_THONG_TIN_CONG_TY" Member="THONG_TIN_CONG_Ties" ThisKey="Id" OtherKey="Banner" Type="THONG_TIN_CONG_TY" />
+      <Association Name="IMAGE_STORE_THONG_TIN_CONG_TY1" Member="THONG_TIN_CONG_Ties1" ThisKey="Id" OtherKey="Slogan" Type="THONG_TIN_CONG_TY" />
+      <Association Name="IMAGE_STORE_THONG_TIN_CONG_TY2" Member="THONG_TIN_CONG_Ties2" ThisKey="Id" OtherKey="Logo" Type="THONG_TIN_CONG_TY" />
+      <Association Name="IMAGE_STORE_TRAM_XE" Member="TRAM_XEs" ThisKey="Id" OtherKey="HinhAnh" Type="TRAM_XE" />
     </Type>
   </Table>
 </Database>

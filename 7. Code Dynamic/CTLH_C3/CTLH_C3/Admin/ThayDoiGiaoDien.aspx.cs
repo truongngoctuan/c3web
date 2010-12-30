@@ -102,16 +102,16 @@ namespace CTLH_C3.Admin
         protected void updateImage(Binary imageData, int id)
         {
             TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-            var img = (from i in context.ImageStores where i.Id == id select i).Single();
+            var img = (from i in context.IMAGE_STOREs where i.Id == id select i).Single();
             img.Image = imageData;
             context.SubmitChanges();
         }
         protected int insertImage(Binary imageData)
         {
             TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-            ImageStore img = new ImageStore();
+            IMAGE_STORE img = new IMAGE_STORE();
             img.Image = imageData;
-            context.ImageStores.InsertOnSubmit(img);
+            context.IMAGE_STOREs.InsertOnSubmit(img);
             context.SubmitChanges();
             return img.Id;
         }
