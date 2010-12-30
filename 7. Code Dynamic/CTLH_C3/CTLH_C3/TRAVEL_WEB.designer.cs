@@ -33,12 +33,18 @@ namespace CTLH_C3
     partial void InsertCHO_NGOI(CHO_NGOI instance);
     partial void UpdateCHO_NGOI(CHO_NGOI instance);
     partial void DeleteCHO_NGOI(CHO_NGOI instance);
+    partial void InsertXE(XE instance);
+    partial void UpdateXE(XE instance);
+    partial void DeleteXE(XE instance);
     partial void InsertCHUYEN_XE(CHUYEN_XE instance);
     partial void UpdateCHUYEN_XE(CHUYEN_XE instance);
     partial void DeleteCHUYEN_XE(CHUYEN_XE instance);
     partial void InsertDAT_CHO(DAT_CHO instance);
     partial void UpdateDAT_CHO(DAT_CHO instance);
     partial void DeleteDAT_CHO(DAT_CHO instance);
+    partial void InsertImageStore(ImageStore instance);
+    partial void UpdateImageStore(ImageStore instance);
+    partial void DeleteImageStore(ImageStore instance);
     partial void InsertLOAI_TAI_KHOAN(LOAI_TAI_KHOAN instance);
     partial void UpdateLOAI_TAI_KHOAN(LOAI_TAI_KHOAN instance);
     partial void DeleteLOAI_TAI_KHOAN(LOAI_TAI_KHOAN instance);
@@ -57,6 +63,9 @@ namespace CTLH_C3
     partial void InsertTAI_KHOAN(TAI_KHOAN instance);
     partial void UpdateTAI_KHOAN(TAI_KHOAN instance);
     partial void DeleteTAI_KHOAN(TAI_KHOAN instance);
+    partial void InsertTHONG_TIN_CONG_TY(THONG_TIN_CONG_TY instance);
+    partial void UpdateTHONG_TIN_CONG_TY(THONG_TIN_CONG_TY instance);
+    partial void DeleteTHONG_TIN_CONG_TY(THONG_TIN_CONG_TY instance);
     partial void InsertTINH_TRANG_CHUYEN_XE(TINH_TRANG_CHUYEN_XE instance);
     partial void UpdateTINH_TRANG_CHUYEN_XE(TINH_TRANG_CHUYEN_XE instance);
     partial void DeleteTINH_TRANG_CHUYEN_XE(TINH_TRANG_CHUYEN_XE instance);
@@ -72,15 +81,6 @@ namespace CTLH_C3
     partial void InsertTUYEN_XE(TUYEN_XE instance);
     partial void UpdateTUYEN_XE(TUYEN_XE instance);
     partial void DeleteTUYEN_XE(TUYEN_XE instance);
-    partial void InsertXE(XE instance);
-    partial void UpdateXE(XE instance);
-    partial void DeleteXE(XE instance);
-    partial void InsertImageStore(ImageStore instance);
-    partial void UpdateImageStore(ImageStore instance);
-    partial void DeleteImageStore(ImageStore instance);
-    partial void InsertTHONG_TIN_CONG_TY(THONG_TIN_CONG_TY instance);
-    partial void UpdateTHONG_TIN_CONG_TY(THONG_TIN_CONG_TY instance);
-    partial void DeleteTHONG_TIN_CONG_TY(THONG_TIN_CONG_TY instance);
     #endregion
 		
 		public TRAVEL_WEBDataContext() : 
@@ -121,6 +121,14 @@ namespace CTLH_C3
 			}
 		}
 		
+		public System.Data.Linq.Table<XE> XEs
+		{
+			get
+			{
+				return this.GetTable<XE>();
+			}
+		}
+		
 		public System.Data.Linq.Table<CHUYEN_XE> CHUYEN_XEs
 		{
 			get
@@ -134,6 +142,14 @@ namespace CTLH_C3
 			get
 			{
 				return this.GetTable<DAT_CHO>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ImageStore> ImageStores
+		{
+			get
+			{
+				return this.GetTable<ImageStore>();
 			}
 		}
 		
@@ -185,6 +201,14 @@ namespace CTLH_C3
 			}
 		}
 		
+		public System.Data.Linq.Table<THONG_TIN_CONG_TY> THONG_TIN_CONG_Ties
+		{
+			get
+			{
+				return this.GetTable<THONG_TIN_CONG_TY>();
+			}
+		}
+		
 		public System.Data.Linq.Table<TINH_TRANG_CHUYEN_XE> TINH_TRANG_CHUYEN_XEs
 		{
 			get
@@ -222,30 +246,6 @@ namespace CTLH_C3
 			get
 			{
 				return this.GetTable<TUYEN_XE>();
-			}
-		}
-		
-		public System.Data.Linq.Table<XE> XEs
-		{
-			get
-			{
-				return this.GetTable<XE>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ImageStore> ImageStores
-		{
-			get
-			{
-				return this.GetTable<ImageStore>();
-			}
-		}
-		
-		public System.Data.Linq.Table<THONG_TIN_CONG_TY> THONG_TIN_CONG_Ties
-		{
-			get
-			{
-				return this.GetTable<THONG_TIN_CONG_TY>();
 			}
 		}
 	}
@@ -361,6 +361,352 @@ namespace CTLH_C3
 		{
 			this.SendPropertyChanging();
 			entity.CHO_NGOI = null;
+		}
+	}
+	
+	[Table(Name="dbo.XE")]
+	public partial class XE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaXe;
+		
+		private string _BienSoXe;
+		
+		private System.Nullable<int> _MaTaiXe;
+		
+		private System.Nullable<int> _MaLoaiXe;
+		
+		private System.Nullable<int> _TinhTrangXe;
+		
+		private System.Nullable<int> _TramXeLuuTru;
+		
+		private EntityRef<LOAI_XE> _LOAI_XE;
+		
+		private EntityRef<NHAN_VIEN> _NHAN_VIEN;
+		
+		private EntityRef<TINH_TRANG_XE> _TINH_TRANG_XE;
+		
+		private EntityRef<TRAM_XE> _TRAM_XE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaXeChanging(int value);
+    partial void OnMaXeChanged();
+    partial void OnBienSoXeChanging(string value);
+    partial void OnBienSoXeChanged();
+    partial void OnMaTaiXeChanging(System.Nullable<int> value);
+    partial void OnMaTaiXeChanged();
+    partial void OnMaLoaiXeChanging(System.Nullable<int> value);
+    partial void OnMaLoaiXeChanged();
+    partial void OnTinhTrangXeChanging(System.Nullable<int> value);
+    partial void OnTinhTrangXeChanged();
+    partial void OnTramXeLuuTruChanging(System.Nullable<int> value);
+    partial void OnTramXeLuuTruChanged();
+    #endregion
+		
+		public XE()
+		{
+			this._LOAI_XE = default(EntityRef<LOAI_XE>);
+			this._NHAN_VIEN = default(EntityRef<NHAN_VIEN>);
+			this._TINH_TRANG_XE = default(EntityRef<TINH_TRANG_XE>);
+			this._TRAM_XE = default(EntityRef<TRAM_XE>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_MaXe", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaXe
+		{
+			get
+			{
+				return this._MaXe;
+			}
+			set
+			{
+				if ((this._MaXe != value))
+				{
+					this.OnMaXeChanging(value);
+					this.SendPropertyChanging();
+					this._MaXe = value;
+					this.SendPropertyChanged("MaXe");
+					this.OnMaXeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_BienSoXe", DbType="NVarChar(50)")]
+		public string BienSoXe
+		{
+			get
+			{
+				return this._BienSoXe;
+			}
+			set
+			{
+				if ((this._BienSoXe != value))
+				{
+					this.OnBienSoXeChanging(value);
+					this.SendPropertyChanging();
+					this._BienSoXe = value;
+					this.SendPropertyChanged("BienSoXe");
+					this.OnBienSoXeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaTaiXe", DbType="Int")]
+		public System.Nullable<int> MaTaiXe
+		{
+			get
+			{
+				return this._MaTaiXe;
+			}
+			set
+			{
+				if ((this._MaTaiXe != value))
+				{
+					if (this._NHAN_VIEN.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaTaiXeChanging(value);
+					this.SendPropertyChanging();
+					this._MaTaiXe = value;
+					this.SendPropertyChanged("MaTaiXe");
+					this.OnMaTaiXeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaLoaiXe", DbType="Int")]
+		public System.Nullable<int> MaLoaiXe
+		{
+			get
+			{
+				return this._MaLoaiXe;
+			}
+			set
+			{
+				if ((this._MaLoaiXe != value))
+				{
+					if (this._LOAI_XE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaLoaiXeChanging(value);
+					this.SendPropertyChanging();
+					this._MaLoaiXe = value;
+					this.SendPropertyChanged("MaLoaiXe");
+					this.OnMaLoaiXeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_TinhTrangXe", DbType="Int")]
+		public System.Nullable<int> TinhTrangXe
+		{
+			get
+			{
+				return this._TinhTrangXe;
+			}
+			set
+			{
+				if ((this._TinhTrangXe != value))
+				{
+					if (this._TINH_TRANG_XE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTinhTrangXeChanging(value);
+					this.SendPropertyChanging();
+					this._TinhTrangXe = value;
+					this.SendPropertyChanged("TinhTrangXe");
+					this.OnTinhTrangXeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_TramXeLuuTru", DbType="Int")]
+		public System.Nullable<int> TramXeLuuTru
+		{
+			get
+			{
+				return this._TramXeLuuTru;
+			}
+			set
+			{
+				if ((this._TramXeLuuTru != value))
+				{
+					if (this._TRAM_XE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTramXeLuuTruChanging(value);
+					this.SendPropertyChanging();
+					this._TramXeLuuTru = value;
+					this.SendPropertyChanged("TramXeLuuTru");
+					this.OnTramXeLuuTruChanged();
+				}
+			}
+		}
+		
+		[Association(Name="LOAI_XE_XE", Storage="_LOAI_XE", ThisKey="MaLoaiXe", OtherKey="MaLoaixe", IsForeignKey=true)]
+		public LOAI_XE LOAI_XE
+		{
+			get
+			{
+				return this._LOAI_XE.Entity;
+			}
+			set
+			{
+				LOAI_XE previousValue = this._LOAI_XE.Entity;
+				if (((previousValue != value) 
+							|| (this._LOAI_XE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LOAI_XE.Entity = null;
+						previousValue.XEs.Remove(this);
+					}
+					this._LOAI_XE.Entity = value;
+					if ((value != null))
+					{
+						value.XEs.Add(this);
+						this._MaLoaiXe = value.MaLoaixe;
+					}
+					else
+					{
+						this._MaLoaiXe = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LOAI_XE");
+				}
+			}
+		}
+		
+		[Association(Name="NHAN_VIEN_XE", Storage="_NHAN_VIEN", ThisKey="MaTaiXe", OtherKey="MaNhanVien", IsForeignKey=true)]
+		public NHAN_VIEN NHAN_VIEN
+		{
+			get
+			{
+				return this._NHAN_VIEN.Entity;
+			}
+			set
+			{
+				NHAN_VIEN previousValue = this._NHAN_VIEN.Entity;
+				if (((previousValue != value) 
+							|| (this._NHAN_VIEN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NHAN_VIEN.Entity = null;
+						previousValue.XEs.Remove(this);
+					}
+					this._NHAN_VIEN.Entity = value;
+					if ((value != null))
+					{
+						value.XEs.Add(this);
+						this._MaTaiXe = value.MaNhanVien;
+					}
+					else
+					{
+						this._MaTaiXe = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("NHAN_VIEN");
+				}
+			}
+		}
+		
+		[Association(Name="TINH_TRANG_XE_XE", Storage="_TINH_TRANG_XE", ThisKey="TinhTrangXe", OtherKey="MaTinhTrangXe", IsForeignKey=true)]
+		public TINH_TRANG_XE TINH_TRANG_XE
+		{
+			get
+			{
+				return this._TINH_TRANG_XE.Entity;
+			}
+			set
+			{
+				TINH_TRANG_XE previousValue = this._TINH_TRANG_XE.Entity;
+				if (((previousValue != value) 
+							|| (this._TINH_TRANG_XE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TINH_TRANG_XE.Entity = null;
+						previousValue.XEs.Remove(this);
+					}
+					this._TINH_TRANG_XE.Entity = value;
+					if ((value != null))
+					{
+						value.XEs.Add(this);
+						this._TinhTrangXe = value.MaTinhTrangXe;
+					}
+					else
+					{
+						this._TinhTrangXe = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TINH_TRANG_XE");
+				}
+			}
+		}
+		
+		[Association(Name="TRAM_XE_XE", Storage="_TRAM_XE", ThisKey="TramXeLuuTru", OtherKey="MaTramXe", IsForeignKey=true)]
+		public TRAM_XE TRAM_XE
+		{
+			get
+			{
+				return this._TRAM_XE.Entity;
+			}
+			set
+			{
+				TRAM_XE previousValue = this._TRAM_XE.Entity;
+				if (((previousValue != value) 
+							|| (this._TRAM_XE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TRAM_XE.Entity = null;
+						previousValue.XEs.Remove(this);
+					}
+					this._TRAM_XE.Entity = value;
+					if ((value != null))
+					{
+						value.XEs.Add(this);
+						this._TramXeLuuTru = value.MaTramXe;
+					}
+					else
+					{
+						this._TramXeLuuTru = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TRAM_XE");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1054,6 +1400,260 @@ namespace CTLH_C3
 		}
 	}
 	
+	[Table(Name="dbo.ImageStore")]
+	public partial class ImageStore : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Data.Linq.Binary _Image;
+		
+		private EntitySet<LOAI_XE> _LOAI_XEs;
+		
+		private EntitySet<NHAN_VIEN> _NHAN_VIENs;
+		
+		private EntitySet<THONG_TIN_CONG_TY> _THONG_TIN_CONG_Ties;
+		
+		private EntitySet<THONG_TIN_CONG_TY> _THONG_TIN_CONG_Ties1;
+		
+		private EntitySet<THONG_TIN_CONG_TY> _THONG_TIN_CONG_Ties2;
+		
+		private EntitySet<TRAM_XE> _TRAM_XEs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnImageChanging(System.Data.Linq.Binary value);
+    partial void OnImageChanged();
+    #endregion
+		
+		public ImageStore()
+		{
+			this._LOAI_XEs = new EntitySet<LOAI_XE>(new Action<LOAI_XE>(this.attach_LOAI_XEs), new Action<LOAI_XE>(this.detach_LOAI_XEs));
+			this._NHAN_VIENs = new EntitySet<NHAN_VIEN>(new Action<NHAN_VIEN>(this.attach_NHAN_VIENs), new Action<NHAN_VIEN>(this.detach_NHAN_VIENs));
+			this._THONG_TIN_CONG_Ties = new EntitySet<THONG_TIN_CONG_TY>(new Action<THONG_TIN_CONG_TY>(this.attach_THONG_TIN_CONG_Ties), new Action<THONG_TIN_CONG_TY>(this.detach_THONG_TIN_CONG_Ties));
+			this._THONG_TIN_CONG_Ties1 = new EntitySet<THONG_TIN_CONG_TY>(new Action<THONG_TIN_CONG_TY>(this.attach_THONG_TIN_CONG_Ties1), new Action<THONG_TIN_CONG_TY>(this.detach_THONG_TIN_CONG_Ties1));
+			this._THONG_TIN_CONG_Ties2 = new EntitySet<THONG_TIN_CONG_TY>(new Action<THONG_TIN_CONG_TY>(this.attach_THONG_TIN_CONG_Ties2), new Action<THONG_TIN_CONG_TY>(this.detach_THONG_TIN_CONG_Ties2));
+			this._TRAM_XEs = new EntitySet<TRAM_XE>(new Action<TRAM_XE>(this.attach_TRAM_XEs), new Action<TRAM_XE>(this.detach_TRAM_XEs));
+			OnCreated();
+		}
+		
+		[Column(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Image", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Image
+		{
+			get
+			{
+				return this._Image;
+			}
+			set
+			{
+				if ((this._Image != value))
+				{
+					this.OnImageChanging(value);
+					this.SendPropertyChanging();
+					this._Image = value;
+					this.SendPropertyChanged("Image");
+					this.OnImageChanged();
+				}
+			}
+		}
+		
+		[Association(Name="ImageStore_LOAI_XE", Storage="_LOAI_XEs", ThisKey="Id", OtherKey="HinhAnh")]
+		public EntitySet<LOAI_XE> LOAI_XEs
+		{
+			get
+			{
+				return this._LOAI_XEs;
+			}
+			set
+			{
+				this._LOAI_XEs.Assign(value);
+			}
+		}
+		
+		[Association(Name="ImageStore_NHAN_VIEN", Storage="_NHAN_VIENs", ThisKey="Id", OtherKey="HinhAnh")]
+		public EntitySet<NHAN_VIEN> NHAN_VIENs
+		{
+			get
+			{
+				return this._NHAN_VIENs;
+			}
+			set
+			{
+				this._NHAN_VIENs.Assign(value);
+			}
+		}
+		
+		[Association(Name="ImageStore_THONG_TIN_CONG_TY", Storage="_THONG_TIN_CONG_Ties", ThisKey="Id", OtherKey="Banner")]
+		public EntitySet<THONG_TIN_CONG_TY> THONG_TIN_CONG_Ties
+		{
+			get
+			{
+				return this._THONG_TIN_CONG_Ties;
+			}
+			set
+			{
+				this._THONG_TIN_CONG_Ties.Assign(value);
+			}
+		}
+		
+		[Association(Name="ImageStore_THONG_TIN_CONG_TY1", Storage="_THONG_TIN_CONG_Ties1", ThisKey="Id", OtherKey="Slogan")]
+		public EntitySet<THONG_TIN_CONG_TY> THONG_TIN_CONG_Ties1
+		{
+			get
+			{
+				return this._THONG_TIN_CONG_Ties1;
+			}
+			set
+			{
+				this._THONG_TIN_CONG_Ties1.Assign(value);
+			}
+		}
+		
+		[Association(Name="ImageStore_THONG_TIN_CONG_TY2", Storage="_THONG_TIN_CONG_Ties2", ThisKey="Id", OtherKey="Logo")]
+		public EntitySet<THONG_TIN_CONG_TY> THONG_TIN_CONG_Ties2
+		{
+			get
+			{
+				return this._THONG_TIN_CONG_Ties2;
+			}
+			set
+			{
+				this._THONG_TIN_CONG_Ties2.Assign(value);
+			}
+		}
+		
+		[Association(Name="ImageStore_TRAM_XE", Storage="_TRAM_XEs", ThisKey="Id", OtherKey="HinhAnh")]
+		public EntitySet<TRAM_XE> TRAM_XEs
+		{
+			get
+			{
+				return this._TRAM_XEs;
+			}
+			set
+			{
+				this._TRAM_XEs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_LOAI_XEs(LOAI_XE entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore = this;
+		}
+		
+		private void detach_LOAI_XEs(LOAI_XE entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore = null;
+		}
+		
+		private void attach_NHAN_VIENs(NHAN_VIEN entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore = this;
+		}
+		
+		private void detach_NHAN_VIENs(NHAN_VIEN entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore = null;
+		}
+		
+		private void attach_THONG_TIN_CONG_Ties(THONG_TIN_CONG_TY entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore = this;
+		}
+		
+		private void detach_THONG_TIN_CONG_Ties(THONG_TIN_CONG_TY entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore = null;
+		}
+		
+		private void attach_THONG_TIN_CONG_Ties1(THONG_TIN_CONG_TY entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore1 = this;
+		}
+		
+		private void detach_THONG_TIN_CONG_Ties1(THONG_TIN_CONG_TY entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore1 = null;
+		}
+		
+		private void attach_THONG_TIN_CONG_Ties2(THONG_TIN_CONG_TY entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore2 = this;
+		}
+		
+		private void detach_THONG_TIN_CONG_Ties2(THONG_TIN_CONG_TY entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore2 = null;
+		}
+		
+		private void attach_TRAM_XEs(TRAM_XE entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore = this;
+		}
+		
+		private void detach_TRAM_XEs(TRAM_XE entity)
+		{
+			this.SendPropertyChanging();
+			entity.ImageStore = null;
+		}
+	}
+	
 	[Table(Name="dbo.LOAI_TAI_KHOAN")]
 	public partial class LOAI_TAI_KHOAN : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1389,17 +1989,17 @@ namespace CTLH_C3
 		
 		private System.Nullable<double> _LuongTrongThang;
 		
+		private EntitySet<XE> _XEs;
+		
 		private EntitySet<CHUYEN_XE> _CHUYEN_XEs;
 		
 		private EntitySet<PHAN_HOI> _PHAN_HOIs;
 		
 		private EntitySet<TAI_KHOAN> _TAI_KHOANs;
 		
-		private EntitySet<TRAM_XE> _TRAM_XEs;
-		
-		private EntitySet<XE> _XEs;
-		
 		private EntitySet<THONG_TIN_CONG_TY> _THONG_TIN_CONG_Ties;
+		
+		private EntitySet<TRAM_XE> _TRAM_XEs;
 		
 		private EntityRef<ImageStore> _ImageStore;
 		
@@ -1423,12 +2023,12 @@ namespace CTLH_C3
 		
 		public NHAN_VIEN()
 		{
+			this._XEs = new EntitySet<XE>(new Action<XE>(this.attach_XEs), new Action<XE>(this.detach_XEs));
 			this._CHUYEN_XEs = new EntitySet<CHUYEN_XE>(new Action<CHUYEN_XE>(this.attach_CHUYEN_XEs), new Action<CHUYEN_XE>(this.detach_CHUYEN_XEs));
 			this._PHAN_HOIs = new EntitySet<PHAN_HOI>(new Action<PHAN_HOI>(this.attach_PHAN_HOIs), new Action<PHAN_HOI>(this.detach_PHAN_HOIs));
 			this._TAI_KHOANs = new EntitySet<TAI_KHOAN>(new Action<TAI_KHOAN>(this.attach_TAI_KHOANs), new Action<TAI_KHOAN>(this.detach_TAI_KHOANs));
-			this._TRAM_XEs = new EntitySet<TRAM_XE>(new Action<TRAM_XE>(this.attach_TRAM_XEs), new Action<TRAM_XE>(this.detach_TRAM_XEs));
-			this._XEs = new EntitySet<XE>(new Action<XE>(this.attach_XEs), new Action<XE>(this.detach_XEs));
 			this._THONG_TIN_CONG_Ties = new EntitySet<THONG_TIN_CONG_TY>(new Action<THONG_TIN_CONG_TY>(this.attach_THONG_TIN_CONG_Ties), new Action<THONG_TIN_CONG_TY>(this.detach_THONG_TIN_CONG_Ties));
+			this._TRAM_XEs = new EntitySet<TRAM_XE>(new Action<TRAM_XE>(this.attach_TRAM_XEs), new Action<TRAM_XE>(this.detach_TRAM_XEs));
 			this._ImageStore = default(EntityRef<ImageStore>);
 			OnCreated();
 		}
@@ -1557,6 +2157,19 @@ namespace CTLH_C3
 			}
 		}
 		
+		[Association(Name="NHAN_VIEN_XE", Storage="_XEs", ThisKey="MaNhanVien", OtherKey="MaTaiXe")]
+		public EntitySet<XE> XEs
+		{
+			get
+			{
+				return this._XEs;
+			}
+			set
+			{
+				this._XEs.Assign(value);
+			}
+		}
+		
 		[Association(Name="NHAN_VIEN_CHUYEN_XE", Storage="_CHUYEN_XEs", ThisKey="MaNhanVien", OtherKey="MaTaiXe")]
 		public EntitySet<CHUYEN_XE> CHUYEN_XEs
 		{
@@ -1596,32 +2209,6 @@ namespace CTLH_C3
 			}
 		}
 		
-		[Association(Name="NHAN_VIEN_TRAM_XE", Storage="_TRAM_XEs", ThisKey="MaNhanVien", OtherKey="MaTruongTram")]
-		public EntitySet<TRAM_XE> TRAM_XEs
-		{
-			get
-			{
-				return this._TRAM_XEs;
-			}
-			set
-			{
-				this._TRAM_XEs.Assign(value);
-			}
-		}
-		
-		[Association(Name="NHAN_VIEN_XE", Storage="_XEs", ThisKey="MaNhanVien", OtherKey="MaTaiXe")]
-		public EntitySet<XE> XEs
-		{
-			get
-			{
-				return this._XEs;
-			}
-			set
-			{
-				this._XEs.Assign(value);
-			}
-		}
-		
 		[Association(Name="NHAN_VIEN_THONG_TIN_CONG_TY", Storage="_THONG_TIN_CONG_Ties", ThisKey="MaNhanVien", OtherKey="MaAdmin")]
 		public EntitySet<THONG_TIN_CONG_TY> THONG_TIN_CONG_Ties
 		{
@@ -1632,6 +2219,19 @@ namespace CTLH_C3
 			set
 			{
 				this._THONG_TIN_CONG_Ties.Assign(value);
+			}
+		}
+		
+		[Association(Name="NHAN_VIEN_TRAM_XE", Storage="_TRAM_XEs", ThisKey="MaNhanVien", OtherKey="MaTruongTram")]
+		public EntitySet<TRAM_XE> TRAM_XEs
+		{
+			get
+			{
+				return this._TRAM_XEs;
+			}
+			set
+			{
+				this._TRAM_XEs.Assign(value);
 			}
 		}
 		
@@ -1689,6 +2289,18 @@ namespace CTLH_C3
 			}
 		}
 		
+		private void attach_XEs(XE entity)
+		{
+			this.SendPropertyChanging();
+			entity.NHAN_VIEN = this;
+		}
+		
+		private void detach_XEs(XE entity)
+		{
+			this.SendPropertyChanging();
+			entity.NHAN_VIEN = null;
+		}
+		
 		private void attach_CHUYEN_XEs(CHUYEN_XE entity)
 		{
 			this.SendPropertyChanging();
@@ -1725,30 +2337,6 @@ namespace CTLH_C3
 			entity.NHAN_VIEN = null;
 		}
 		
-		private void attach_TRAM_XEs(TRAM_XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.NHAN_VIEN = this;
-		}
-		
-		private void detach_TRAM_XEs(TRAM_XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.NHAN_VIEN = null;
-		}
-		
-		private void attach_XEs(XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.NHAN_VIEN = this;
-		}
-		
-		private void detach_XEs(XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.NHAN_VIEN = null;
-		}
-		
 		private void attach_THONG_TIN_CONG_Ties(THONG_TIN_CONG_TY entity)
 		{
 			this.SendPropertyChanging();
@@ -1756,6 +2344,18 @@ namespace CTLH_C3
 		}
 		
 		private void detach_THONG_TIN_CONG_Ties(THONG_TIN_CONG_TY entity)
+		{
+			this.SendPropertyChanging();
+			entity.NHAN_VIEN = null;
+		}
+		
+		private void attach_TRAM_XEs(TRAM_XE entity)
+		{
+			this.SendPropertyChanging();
+			entity.NHAN_VIEN = this;
+		}
+		
+		private void detach_TRAM_XEs(TRAM_XE entity)
 		{
 			this.SendPropertyChanging();
 			entity.NHAN_VIEN = null;
@@ -2469,6 +3069,352 @@ namespace CTLH_C3
 		}
 	}
 	
+	[Table(Name="dbo.THONG_TIN_CONG_TY")]
+	public partial class THONG_TIN_CONG_TY : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaThongTinCongTy;
+		
+		private System.Nullable<int> _Banner;
+		
+		private System.Nullable<int> _Slogan;
+		
+		private System.Nullable<int> _Logo;
+		
+		private string _TinTucGioiThieu;
+		
+		private System.Nullable<int> _MaAdmin;
+		
+		private EntityRef<ImageStore> _ImageStore;
+		
+		private EntityRef<ImageStore> _ImageStore1;
+		
+		private EntityRef<ImageStore> _ImageStore2;
+		
+		private EntityRef<NHAN_VIEN> _NHAN_VIEN;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaThongTinCongTyChanging(int value);
+    partial void OnMaThongTinCongTyChanged();
+    partial void OnBannerChanging(System.Nullable<int> value);
+    partial void OnBannerChanged();
+    partial void OnSloganChanging(System.Nullable<int> value);
+    partial void OnSloganChanged();
+    partial void OnLogoChanging(System.Nullable<int> value);
+    partial void OnLogoChanged();
+    partial void OnTinTucGioiThieuChanging(string value);
+    partial void OnTinTucGioiThieuChanged();
+    partial void OnMaAdminChanging(System.Nullable<int> value);
+    partial void OnMaAdminChanged();
+    #endregion
+		
+		public THONG_TIN_CONG_TY()
+		{
+			this._ImageStore = default(EntityRef<ImageStore>);
+			this._ImageStore1 = default(EntityRef<ImageStore>);
+			this._ImageStore2 = default(EntityRef<ImageStore>);
+			this._NHAN_VIEN = default(EntityRef<NHAN_VIEN>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_MaThongTinCongTy", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaThongTinCongTy
+		{
+			get
+			{
+				return this._MaThongTinCongTy;
+			}
+			set
+			{
+				if ((this._MaThongTinCongTy != value))
+				{
+					this.OnMaThongTinCongTyChanging(value);
+					this.SendPropertyChanging();
+					this._MaThongTinCongTy = value;
+					this.SendPropertyChanged("MaThongTinCongTy");
+					this.OnMaThongTinCongTyChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Banner", DbType="Int")]
+		public System.Nullable<int> Banner
+		{
+			get
+			{
+				return this._Banner;
+			}
+			set
+			{
+				if ((this._Banner != value))
+				{
+					if (this._ImageStore.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBannerChanging(value);
+					this.SendPropertyChanging();
+					this._Banner = value;
+					this.SendPropertyChanged("Banner");
+					this.OnBannerChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Slogan", DbType="Int")]
+		public System.Nullable<int> Slogan
+		{
+			get
+			{
+				return this._Slogan;
+			}
+			set
+			{
+				if ((this._Slogan != value))
+				{
+					if (this._ImageStore1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSloganChanging(value);
+					this.SendPropertyChanging();
+					this._Slogan = value;
+					this.SendPropertyChanged("Slogan");
+					this.OnSloganChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Logo", DbType="Int")]
+		public System.Nullable<int> Logo
+		{
+			get
+			{
+				return this._Logo;
+			}
+			set
+			{
+				if ((this._Logo != value))
+				{
+					if (this._ImageStore2.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLogoChanging(value);
+					this.SendPropertyChanging();
+					this._Logo = value;
+					this.SendPropertyChanged("Logo");
+					this.OnLogoChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_TinTucGioiThieu", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string TinTucGioiThieu
+		{
+			get
+			{
+				return this._TinTucGioiThieu;
+			}
+			set
+			{
+				if ((this._TinTucGioiThieu != value))
+				{
+					this.OnTinTucGioiThieuChanging(value);
+					this.SendPropertyChanging();
+					this._TinTucGioiThieu = value;
+					this.SendPropertyChanged("TinTucGioiThieu");
+					this.OnTinTucGioiThieuChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaAdmin", DbType="Int")]
+		public System.Nullable<int> MaAdmin
+		{
+			get
+			{
+				return this._MaAdmin;
+			}
+			set
+			{
+				if ((this._MaAdmin != value))
+				{
+					if (this._NHAN_VIEN.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaAdminChanging(value);
+					this.SendPropertyChanging();
+					this._MaAdmin = value;
+					this.SendPropertyChanged("MaAdmin");
+					this.OnMaAdminChanged();
+				}
+			}
+		}
+		
+		[Association(Name="ImageStore_THONG_TIN_CONG_TY", Storage="_ImageStore", ThisKey="Banner", OtherKey="Id", IsForeignKey=true)]
+		public ImageStore ImageStore
+		{
+			get
+			{
+				return this._ImageStore.Entity;
+			}
+			set
+			{
+				ImageStore previousValue = this._ImageStore.Entity;
+				if (((previousValue != value) 
+							|| (this._ImageStore.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ImageStore.Entity = null;
+						previousValue.THONG_TIN_CONG_Ties.Remove(this);
+					}
+					this._ImageStore.Entity = value;
+					if ((value != null))
+					{
+						value.THONG_TIN_CONG_Ties.Add(this);
+						this._Banner = value.Id;
+					}
+					else
+					{
+						this._Banner = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("ImageStore");
+				}
+			}
+		}
+		
+		[Association(Name="ImageStore_THONG_TIN_CONG_TY1", Storage="_ImageStore1", ThisKey="Slogan", OtherKey="Id", IsForeignKey=true)]
+		public ImageStore ImageStore1
+		{
+			get
+			{
+				return this._ImageStore1.Entity;
+			}
+			set
+			{
+				ImageStore previousValue = this._ImageStore1.Entity;
+				if (((previousValue != value) 
+							|| (this._ImageStore1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ImageStore1.Entity = null;
+						previousValue.THONG_TIN_CONG_Ties1.Remove(this);
+					}
+					this._ImageStore1.Entity = value;
+					if ((value != null))
+					{
+						value.THONG_TIN_CONG_Ties1.Add(this);
+						this._Slogan = value.Id;
+					}
+					else
+					{
+						this._Slogan = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("ImageStore1");
+				}
+			}
+		}
+		
+		[Association(Name="ImageStore_THONG_TIN_CONG_TY2", Storage="_ImageStore2", ThisKey="Logo", OtherKey="Id", IsForeignKey=true)]
+		public ImageStore ImageStore2
+		{
+			get
+			{
+				return this._ImageStore2.Entity;
+			}
+			set
+			{
+				ImageStore previousValue = this._ImageStore2.Entity;
+				if (((previousValue != value) 
+							|| (this._ImageStore2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ImageStore2.Entity = null;
+						previousValue.THONG_TIN_CONG_Ties2.Remove(this);
+					}
+					this._ImageStore2.Entity = value;
+					if ((value != null))
+					{
+						value.THONG_TIN_CONG_Ties2.Add(this);
+						this._Logo = value.Id;
+					}
+					else
+					{
+						this._Logo = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("ImageStore2");
+				}
+			}
+		}
+		
+		[Association(Name="NHAN_VIEN_THONG_TIN_CONG_TY", Storage="_NHAN_VIEN", ThisKey="MaAdmin", OtherKey="MaNhanVien", IsForeignKey=true)]
+		public NHAN_VIEN NHAN_VIEN
+		{
+			get
+			{
+				return this._NHAN_VIEN.Entity;
+			}
+			set
+			{
+				NHAN_VIEN previousValue = this._NHAN_VIEN.Entity;
+				if (((previousValue != value) 
+							|| (this._NHAN_VIEN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NHAN_VIEN.Entity = null;
+						previousValue.THONG_TIN_CONG_Ties.Remove(this);
+					}
+					this._NHAN_VIEN.Entity = value;
+					if ((value != null))
+					{
+						value.THONG_TIN_CONG_Ties.Add(this);
+						this._MaAdmin = value.MaNhanVien;
+					}
+					else
+					{
+						this._MaAdmin = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("NHAN_VIEN");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[Table(Name="dbo.TINH_TRANG_CHUYEN_XE")]
 	public partial class TINH_TRANG_CHUYEN_XE : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2827,15 +3773,15 @@ namespace CTLH_C3
 		
 		private System.Nullable<int> _MaTruongTram;
 		
+		private EntitySet<XE> _XEs;
+		
 		private EntitySet<TUYEN_XE> _TUYEN_XEs;
 		
 		private EntitySet<TUYEN_XE> _TUYEN_XEs1;
 		
-		private EntitySet<XE> _XEs;
+		private EntityRef<ImageStore> _ImageStore;
 		
 		private EntityRef<NHAN_VIEN> _NHAN_VIEN;
-		
-		private EntityRef<ImageStore> _ImageStore;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2855,11 +3801,11 @@ namespace CTLH_C3
 		
 		public TRAM_XE()
 		{
+			this._XEs = new EntitySet<XE>(new Action<XE>(this.attach_XEs), new Action<XE>(this.detach_XEs));
 			this._TUYEN_XEs = new EntitySet<TUYEN_XE>(new Action<TUYEN_XE>(this.attach_TUYEN_XEs), new Action<TUYEN_XE>(this.detach_TUYEN_XEs));
 			this._TUYEN_XEs1 = new EntitySet<TUYEN_XE>(new Action<TUYEN_XE>(this.attach_TUYEN_XEs1), new Action<TUYEN_XE>(this.detach_TUYEN_XEs1));
-			this._XEs = new EntitySet<XE>(new Action<XE>(this.attach_XEs), new Action<XE>(this.detach_XEs));
-			this._NHAN_VIEN = default(EntityRef<NHAN_VIEN>);
 			this._ImageStore = default(EntityRef<ImageStore>);
+			this._NHAN_VIEN = default(EntityRef<NHAN_VIEN>);
 			OnCreated();
 		}
 		
@@ -2971,6 +3917,19 @@ namespace CTLH_C3
 			}
 		}
 		
+		[Association(Name="TRAM_XE_XE", Storage="_XEs", ThisKey="MaTramXe", OtherKey="TramXeLuuTru")]
+		public EntitySet<XE> XEs
+		{
+			get
+			{
+				return this._XEs;
+			}
+			set
+			{
+				this._XEs.Assign(value);
+			}
+		}
+		
 		[Association(Name="TRAM_XE_TUYEN_XE", Storage="_TUYEN_XEs", ThisKey="MaTramXe", OtherKey="MaTramDi")]
 		public EntitySet<TUYEN_XE> TUYEN_XEs
 		{
@@ -2994,53 +3953,6 @@ namespace CTLH_C3
 			set
 			{
 				this._TUYEN_XEs1.Assign(value);
-			}
-		}
-		
-		[Association(Name="TRAM_XE_XE", Storage="_XEs", ThisKey="MaTramXe", OtherKey="TramXeLuuTru")]
-		public EntitySet<XE> XEs
-		{
-			get
-			{
-				return this._XEs;
-			}
-			set
-			{
-				this._XEs.Assign(value);
-			}
-		}
-		
-		[Association(Name="NHAN_VIEN_TRAM_XE", Storage="_NHAN_VIEN", ThisKey="MaTruongTram", OtherKey="MaNhanVien", IsForeignKey=true)]
-		public NHAN_VIEN NHAN_VIEN
-		{
-			get
-			{
-				return this._NHAN_VIEN.Entity;
-			}
-			set
-			{
-				NHAN_VIEN previousValue = this._NHAN_VIEN.Entity;
-				if (((previousValue != value) 
-							|| (this._NHAN_VIEN.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NHAN_VIEN.Entity = null;
-						previousValue.TRAM_XEs.Remove(this);
-					}
-					this._NHAN_VIEN.Entity = value;
-					if ((value != null))
-					{
-						value.TRAM_XEs.Add(this);
-						this._MaTruongTram = value.MaNhanVien;
-					}
-					else
-					{
-						this._MaTruongTram = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("NHAN_VIEN");
-				}
 			}
 		}
 		
@@ -3078,6 +3990,40 @@ namespace CTLH_C3
 			}
 		}
 		
+		[Association(Name="NHAN_VIEN_TRAM_XE", Storage="_NHAN_VIEN", ThisKey="MaTruongTram", OtherKey="MaNhanVien", IsForeignKey=true)]
+		public NHAN_VIEN NHAN_VIEN
+		{
+			get
+			{
+				return this._NHAN_VIEN.Entity;
+			}
+			set
+			{
+				NHAN_VIEN previousValue = this._NHAN_VIEN.Entity;
+				if (((previousValue != value) 
+							|| (this._NHAN_VIEN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NHAN_VIEN.Entity = null;
+						previousValue.TRAM_XEs.Remove(this);
+					}
+					this._NHAN_VIEN.Entity = value;
+					if ((value != null))
+					{
+						value.TRAM_XEs.Add(this);
+						this._MaTruongTram = value.MaNhanVien;
+					}
+					else
+					{
+						this._MaTruongTram = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("NHAN_VIEN");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3096,6 +4042,18 @@ namespace CTLH_C3
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_XEs(XE entity)
+		{
+			this.SendPropertyChanging();
+			entity.TRAM_XE = this;
+		}
+		
+		private void detach_XEs(XE entity)
+		{
+			this.SendPropertyChanging();
+			entity.TRAM_XE = null;
 		}
 		
 		private void attach_TUYEN_XEs(TUYEN_XE entity)
@@ -3120,18 +4078,6 @@ namespace CTLH_C3
 		{
 			this.SendPropertyChanging();
 			entity.TRAM_XE1 = null;
-		}
-		
-		private void attach_XEs(XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TRAM_XE = this;
-		}
-		
-		private void detach_XEs(XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TRAM_XE = null;
 		}
 	}
 	
@@ -3520,952 +4466,6 @@ namespace CTLH_C3
 		{
 			this.SendPropertyChanging();
 			entity.TUYEN_XE = null;
-		}
-	}
-	
-	[Table(Name="dbo.XE")]
-	public partial class XE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaXe;
-		
-		private string _BienSoXe;
-		
-		private System.Nullable<int> _MaTaiXe;
-		
-		private System.Nullable<int> _MaLoaiXe;
-		
-		private System.Nullable<int> _TinhTrangXe;
-		
-		private System.Nullable<int> _TramXeLuuTru;
-		
-		private EntityRef<LOAI_XE> _LOAI_XE;
-		
-		private EntityRef<NHAN_VIEN> _NHAN_VIEN;
-		
-		private EntityRef<TINH_TRANG_XE> _TINH_TRANG_XE;
-		
-		private EntityRef<TRAM_XE> _TRAM_XE;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaXeChanging(int value);
-    partial void OnMaXeChanged();
-    partial void OnBienSoXeChanging(string value);
-    partial void OnBienSoXeChanged();
-    partial void OnMaTaiXeChanging(System.Nullable<int> value);
-    partial void OnMaTaiXeChanged();
-    partial void OnMaLoaiXeChanging(System.Nullable<int> value);
-    partial void OnMaLoaiXeChanged();
-    partial void OnTinhTrangXeChanging(System.Nullable<int> value);
-    partial void OnTinhTrangXeChanged();
-    partial void OnTramXeLuuTruChanging(System.Nullable<int> value);
-    partial void OnTramXeLuuTruChanged();
-    #endregion
-		
-		public XE()
-		{
-			this._LOAI_XE = default(EntityRef<LOAI_XE>);
-			this._NHAN_VIEN = default(EntityRef<NHAN_VIEN>);
-			this._TINH_TRANG_XE = default(EntityRef<TINH_TRANG_XE>);
-			this._TRAM_XE = default(EntityRef<TRAM_XE>);
-			OnCreated();
-		}
-		
-		[Column(Storage="_MaXe", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaXe
-		{
-			get
-			{
-				return this._MaXe;
-			}
-			set
-			{
-				if ((this._MaXe != value))
-				{
-					this.OnMaXeChanging(value);
-					this.SendPropertyChanging();
-					this._MaXe = value;
-					this.SendPropertyChanged("MaXe");
-					this.OnMaXeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_BienSoXe", DbType="NVarChar(50)")]
-		public string BienSoXe
-		{
-			get
-			{
-				return this._BienSoXe;
-			}
-			set
-			{
-				if ((this._BienSoXe != value))
-				{
-					this.OnBienSoXeChanging(value);
-					this.SendPropertyChanging();
-					this._BienSoXe = value;
-					this.SendPropertyChanged("BienSoXe");
-					this.OnBienSoXeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_MaTaiXe", DbType="Int")]
-		public System.Nullable<int> MaTaiXe
-		{
-			get
-			{
-				return this._MaTaiXe;
-			}
-			set
-			{
-				if ((this._MaTaiXe != value))
-				{
-					if (this._NHAN_VIEN.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaTaiXeChanging(value);
-					this.SendPropertyChanging();
-					this._MaTaiXe = value;
-					this.SendPropertyChanged("MaTaiXe");
-					this.OnMaTaiXeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_MaLoaiXe", DbType="Int")]
-		public System.Nullable<int> MaLoaiXe
-		{
-			get
-			{
-				return this._MaLoaiXe;
-			}
-			set
-			{
-				if ((this._MaLoaiXe != value))
-				{
-					if (this._LOAI_XE.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaLoaiXeChanging(value);
-					this.SendPropertyChanging();
-					this._MaLoaiXe = value;
-					this.SendPropertyChanged("MaLoaiXe");
-					this.OnMaLoaiXeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_TinhTrangXe", DbType="Int")]
-		public System.Nullable<int> TinhTrangXe
-		{
-			get
-			{
-				return this._TinhTrangXe;
-			}
-			set
-			{
-				if ((this._TinhTrangXe != value))
-				{
-					if (this._TINH_TRANG_XE.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTinhTrangXeChanging(value);
-					this.SendPropertyChanging();
-					this._TinhTrangXe = value;
-					this.SendPropertyChanged("TinhTrangXe");
-					this.OnTinhTrangXeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_TramXeLuuTru", DbType="Int")]
-		public System.Nullable<int> TramXeLuuTru
-		{
-			get
-			{
-				return this._TramXeLuuTru;
-			}
-			set
-			{
-				if ((this._TramXeLuuTru != value))
-				{
-					if (this._TRAM_XE.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTramXeLuuTruChanging(value);
-					this.SendPropertyChanging();
-					this._TramXeLuuTru = value;
-					this.SendPropertyChanged("TramXeLuuTru");
-					this.OnTramXeLuuTruChanged();
-				}
-			}
-		}
-		
-		[Association(Name="LOAI_XE_XE", Storage="_LOAI_XE", ThisKey="MaLoaiXe", OtherKey="MaLoaixe", IsForeignKey=true)]
-		public LOAI_XE LOAI_XE
-		{
-			get
-			{
-				return this._LOAI_XE.Entity;
-			}
-			set
-			{
-				LOAI_XE previousValue = this._LOAI_XE.Entity;
-				if (((previousValue != value) 
-							|| (this._LOAI_XE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._LOAI_XE.Entity = null;
-						previousValue.XEs.Remove(this);
-					}
-					this._LOAI_XE.Entity = value;
-					if ((value != null))
-					{
-						value.XEs.Add(this);
-						this._MaLoaiXe = value.MaLoaixe;
-					}
-					else
-					{
-						this._MaLoaiXe = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("LOAI_XE");
-				}
-			}
-		}
-		
-		[Association(Name="NHAN_VIEN_XE", Storage="_NHAN_VIEN", ThisKey="MaTaiXe", OtherKey="MaNhanVien", IsForeignKey=true)]
-		public NHAN_VIEN NHAN_VIEN
-		{
-			get
-			{
-				return this._NHAN_VIEN.Entity;
-			}
-			set
-			{
-				NHAN_VIEN previousValue = this._NHAN_VIEN.Entity;
-				if (((previousValue != value) 
-							|| (this._NHAN_VIEN.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NHAN_VIEN.Entity = null;
-						previousValue.XEs.Remove(this);
-					}
-					this._NHAN_VIEN.Entity = value;
-					if ((value != null))
-					{
-						value.XEs.Add(this);
-						this._MaTaiXe = value.MaNhanVien;
-					}
-					else
-					{
-						this._MaTaiXe = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("NHAN_VIEN");
-				}
-			}
-		}
-		
-		[Association(Name="TINH_TRANG_XE_XE", Storage="_TINH_TRANG_XE", ThisKey="TinhTrangXe", OtherKey="MaTinhTrangXe", IsForeignKey=true)]
-		public TINH_TRANG_XE TINH_TRANG_XE
-		{
-			get
-			{
-				return this._TINH_TRANG_XE.Entity;
-			}
-			set
-			{
-				TINH_TRANG_XE previousValue = this._TINH_TRANG_XE.Entity;
-				if (((previousValue != value) 
-							|| (this._TINH_TRANG_XE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TINH_TRANG_XE.Entity = null;
-						previousValue.XEs.Remove(this);
-					}
-					this._TINH_TRANG_XE.Entity = value;
-					if ((value != null))
-					{
-						value.XEs.Add(this);
-						this._TinhTrangXe = value.MaTinhTrangXe;
-					}
-					else
-					{
-						this._TinhTrangXe = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TINH_TRANG_XE");
-				}
-			}
-		}
-		
-		[Association(Name="TRAM_XE_XE", Storage="_TRAM_XE", ThisKey="TramXeLuuTru", OtherKey="MaTramXe", IsForeignKey=true)]
-		public TRAM_XE TRAM_XE
-		{
-			get
-			{
-				return this._TRAM_XE.Entity;
-			}
-			set
-			{
-				TRAM_XE previousValue = this._TRAM_XE.Entity;
-				if (((previousValue != value) 
-							|| (this._TRAM_XE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TRAM_XE.Entity = null;
-						previousValue.XEs.Remove(this);
-					}
-					this._TRAM_XE.Entity = value;
-					if ((value != null))
-					{
-						value.XEs.Add(this);
-						this._TramXeLuuTru = value.MaTramXe;
-					}
-					else
-					{
-						this._TramXeLuuTru = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TRAM_XE");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.ImageStore")]
-	public partial class ImageStore : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private System.Data.Linq.Binary _Image;
-		
-		private EntitySet<LOAI_XE> _LOAI_XEs;
-		
-		private EntitySet<NHAN_VIEN> _NHAN_VIENs;
-		
-		private EntitySet<TRAM_XE> _TRAM_XEs;
-		
-		private EntitySet<THONG_TIN_CONG_TY> _THONG_TIN_CONG_Ties;
-		
-		private EntitySet<THONG_TIN_CONG_TY> _THONG_TIN_CONG_Ties1;
-		
-		private EntitySet<THONG_TIN_CONG_TY> _THONG_TIN_CONG_Ties2;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnImageChanging(System.Data.Linq.Binary value);
-    partial void OnImageChanged();
-    #endregion
-		
-		public ImageStore()
-		{
-			this._LOAI_XEs = new EntitySet<LOAI_XE>(new Action<LOAI_XE>(this.attach_LOAI_XEs), new Action<LOAI_XE>(this.detach_LOAI_XEs));
-			this._NHAN_VIENs = new EntitySet<NHAN_VIEN>(new Action<NHAN_VIEN>(this.attach_NHAN_VIENs), new Action<NHAN_VIEN>(this.detach_NHAN_VIENs));
-			this._TRAM_XEs = new EntitySet<TRAM_XE>(new Action<TRAM_XE>(this.attach_TRAM_XEs), new Action<TRAM_XE>(this.detach_TRAM_XEs));
-			this._THONG_TIN_CONG_Ties = new EntitySet<THONG_TIN_CONG_TY>(new Action<THONG_TIN_CONG_TY>(this.attach_THONG_TIN_CONG_Ties), new Action<THONG_TIN_CONG_TY>(this.detach_THONG_TIN_CONG_Ties));
-			this._THONG_TIN_CONG_Ties1 = new EntitySet<THONG_TIN_CONG_TY>(new Action<THONG_TIN_CONG_TY>(this.attach_THONG_TIN_CONG_Ties1), new Action<THONG_TIN_CONG_TY>(this.detach_THONG_TIN_CONG_Ties1));
-			this._THONG_TIN_CONG_Ties2 = new EntitySet<THONG_TIN_CONG_TY>(new Action<THONG_TIN_CONG_TY>(this.attach_THONG_TIN_CONG_Ties2), new Action<THONG_TIN_CONG_TY>(this.detach_THONG_TIN_CONG_Ties2));
-			OnCreated();
-		}
-		
-		[Column(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Image", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Image
-		{
-			get
-			{
-				return this._Image;
-			}
-			set
-			{
-				if ((this._Image != value))
-				{
-					this.OnImageChanging(value);
-					this.SendPropertyChanging();
-					this._Image = value;
-					this.SendPropertyChanged("Image");
-					this.OnImageChanged();
-				}
-			}
-		}
-		
-		[Association(Name="ImageStore_LOAI_XE", Storage="_LOAI_XEs", ThisKey="Id", OtherKey="HinhAnh")]
-		public EntitySet<LOAI_XE> LOAI_XEs
-		{
-			get
-			{
-				return this._LOAI_XEs;
-			}
-			set
-			{
-				this._LOAI_XEs.Assign(value);
-			}
-		}
-		
-		[Association(Name="ImageStore_NHAN_VIEN", Storage="_NHAN_VIENs", ThisKey="Id", OtherKey="HinhAnh")]
-		public EntitySet<NHAN_VIEN> NHAN_VIENs
-		{
-			get
-			{
-				return this._NHAN_VIENs;
-			}
-			set
-			{
-				this._NHAN_VIENs.Assign(value);
-			}
-		}
-		
-		[Association(Name="ImageStore_TRAM_XE", Storage="_TRAM_XEs", ThisKey="Id", OtherKey="HinhAnh")]
-		public EntitySet<TRAM_XE> TRAM_XEs
-		{
-			get
-			{
-				return this._TRAM_XEs;
-			}
-			set
-			{
-				this._TRAM_XEs.Assign(value);
-			}
-		}
-		
-		[Association(Name="ImageStore_THONG_TIN_CONG_TY", Storage="_THONG_TIN_CONG_Ties", ThisKey="Id", OtherKey="Banner")]
-		public EntitySet<THONG_TIN_CONG_TY> THONG_TIN_CONG_Ties
-		{
-			get
-			{
-				return this._THONG_TIN_CONG_Ties;
-			}
-			set
-			{
-				this._THONG_TIN_CONG_Ties.Assign(value);
-			}
-		}
-		
-		[Association(Name="ImageStore_THONG_TIN_CONG_TY1", Storage="_THONG_TIN_CONG_Ties1", ThisKey="Id", OtherKey="Slogan")]
-		public EntitySet<THONG_TIN_CONG_TY> THONG_TIN_CONG_Ties1
-		{
-			get
-			{
-				return this._THONG_TIN_CONG_Ties1;
-			}
-			set
-			{
-				this._THONG_TIN_CONG_Ties1.Assign(value);
-			}
-		}
-		
-		[Association(Name="ImageStore_THONG_TIN_CONG_TY2", Storage="_THONG_TIN_CONG_Ties2", ThisKey="Id", OtherKey="Logo")]
-		public EntitySet<THONG_TIN_CONG_TY> THONG_TIN_CONG_Ties2
-		{
-			get
-			{
-				return this._THONG_TIN_CONG_Ties2;
-			}
-			set
-			{
-				this._THONG_TIN_CONG_Ties2.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_LOAI_XEs(LOAI_XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore = this;
-		}
-		
-		private void detach_LOAI_XEs(LOAI_XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore = null;
-		}
-		
-		private void attach_NHAN_VIENs(NHAN_VIEN entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore = this;
-		}
-		
-		private void detach_NHAN_VIENs(NHAN_VIEN entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore = null;
-		}
-		
-		private void attach_TRAM_XEs(TRAM_XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore = this;
-		}
-		
-		private void detach_TRAM_XEs(TRAM_XE entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore = null;
-		}
-		
-		private void attach_THONG_TIN_CONG_Ties(THONG_TIN_CONG_TY entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore = this;
-		}
-		
-		private void detach_THONG_TIN_CONG_Ties(THONG_TIN_CONG_TY entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore = null;
-		}
-		
-		private void attach_THONG_TIN_CONG_Ties1(THONG_TIN_CONG_TY entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore1 = this;
-		}
-		
-		private void detach_THONG_TIN_CONG_Ties1(THONG_TIN_CONG_TY entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore1 = null;
-		}
-		
-		private void attach_THONG_TIN_CONG_Ties2(THONG_TIN_CONG_TY entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore2 = this;
-		}
-		
-		private void detach_THONG_TIN_CONG_Ties2(THONG_TIN_CONG_TY entity)
-		{
-			this.SendPropertyChanging();
-			entity.ImageStore2 = null;
-		}
-	}
-	
-	[Table(Name="dbo.THONG_TIN_CONG_TY")]
-	public partial class THONG_TIN_CONG_TY : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaThongTinCongTy;
-		
-		private System.Nullable<int> _Banner;
-		
-		private System.Nullable<int> _Slogan;
-		
-		private System.Nullable<int> _Logo;
-		
-		private string _TinTucGioiThieu;
-		
-		private System.Nullable<int> _MaAdmin;
-		
-		private EntityRef<ImageStore> _ImageStore;
-		
-		private EntityRef<ImageStore> _ImageStore1;
-		
-		private EntityRef<ImageStore> _ImageStore2;
-		
-		private EntityRef<NHAN_VIEN> _NHAN_VIEN;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaThongTinCongTyChanging(int value);
-    partial void OnMaThongTinCongTyChanged();
-    partial void OnBannerChanging(System.Nullable<int> value);
-    partial void OnBannerChanged();
-    partial void OnSloganChanging(System.Nullable<int> value);
-    partial void OnSloganChanged();
-    partial void OnLogoChanging(System.Nullable<int> value);
-    partial void OnLogoChanged();
-    partial void OnTinTucGioiThieuChanging(string value);
-    partial void OnTinTucGioiThieuChanged();
-    partial void OnMaAdminChanging(System.Nullable<int> value);
-    partial void OnMaAdminChanged();
-    #endregion
-		
-		public THONG_TIN_CONG_TY()
-		{
-			this._ImageStore = default(EntityRef<ImageStore>);
-			this._ImageStore1 = default(EntityRef<ImageStore>);
-			this._ImageStore2 = default(EntityRef<ImageStore>);
-			this._NHAN_VIEN = default(EntityRef<NHAN_VIEN>);
-			OnCreated();
-		}
-		
-		[Column(Storage="_MaThongTinCongTy", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaThongTinCongTy
-		{
-			get
-			{
-				return this._MaThongTinCongTy;
-			}
-			set
-			{
-				if ((this._MaThongTinCongTy != value))
-				{
-					this.OnMaThongTinCongTyChanging(value);
-					this.SendPropertyChanging();
-					this._MaThongTinCongTy = value;
-					this.SendPropertyChanged("MaThongTinCongTy");
-					this.OnMaThongTinCongTyChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Banner", DbType="Int")]
-		public System.Nullable<int> Banner
-		{
-			get
-			{
-				return this._Banner;
-			}
-			set
-			{
-				if ((this._Banner != value))
-				{
-					if (this._ImageStore.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnBannerChanging(value);
-					this.SendPropertyChanging();
-					this._Banner = value;
-					this.SendPropertyChanged("Banner");
-					this.OnBannerChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Slogan", DbType="Int")]
-		public System.Nullable<int> Slogan
-		{
-			get
-			{
-				return this._Slogan;
-			}
-			set
-			{
-				if ((this._Slogan != value))
-				{
-					if (this._ImageStore1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSloganChanging(value);
-					this.SendPropertyChanging();
-					this._Slogan = value;
-					this.SendPropertyChanged("Slogan");
-					this.OnSloganChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Logo", DbType="Int")]
-		public System.Nullable<int> Logo
-		{
-			get
-			{
-				return this._Logo;
-			}
-			set
-			{
-				if ((this._Logo != value))
-				{
-					if (this._ImageStore2.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnLogoChanging(value);
-					this.SendPropertyChanging();
-					this._Logo = value;
-					this.SendPropertyChanged("Logo");
-					this.OnLogoChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_TinTucGioiThieu", DbType="NText", UpdateCheck=UpdateCheck.Never)]
-		public string TinTucGioiThieu
-		{
-			get
-			{
-				return this._TinTucGioiThieu;
-			}
-			set
-			{
-				if ((this._TinTucGioiThieu != value))
-				{
-					this.OnTinTucGioiThieuChanging(value);
-					this.SendPropertyChanging();
-					this._TinTucGioiThieu = value;
-					this.SendPropertyChanged("TinTucGioiThieu");
-					this.OnTinTucGioiThieuChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_MaAdmin", DbType="Int")]
-		public System.Nullable<int> MaAdmin
-		{
-			get
-			{
-				return this._MaAdmin;
-			}
-			set
-			{
-				if ((this._MaAdmin != value))
-				{
-					if (this._NHAN_VIEN.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaAdminChanging(value);
-					this.SendPropertyChanging();
-					this._MaAdmin = value;
-					this.SendPropertyChanged("MaAdmin");
-					this.OnMaAdminChanged();
-				}
-			}
-		}
-		
-		[Association(Name="ImageStore_THONG_TIN_CONG_TY", Storage="_ImageStore", ThisKey="Banner", OtherKey="Id", IsForeignKey=true)]
-		public ImageStore ImageStore
-		{
-			get
-			{
-				return this._ImageStore.Entity;
-			}
-			set
-			{
-				ImageStore previousValue = this._ImageStore.Entity;
-				if (((previousValue != value) 
-							|| (this._ImageStore.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ImageStore.Entity = null;
-						previousValue.THONG_TIN_CONG_Ties.Remove(this);
-					}
-					this._ImageStore.Entity = value;
-					if ((value != null))
-					{
-						value.THONG_TIN_CONG_Ties.Add(this);
-						this._Banner = value.Id;
-					}
-					else
-					{
-						this._Banner = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("ImageStore");
-				}
-			}
-		}
-		
-		[Association(Name="ImageStore_THONG_TIN_CONG_TY1", Storage="_ImageStore1", ThisKey="Slogan", OtherKey="Id", IsForeignKey=true)]
-		public ImageStore ImageStore1
-		{
-			get
-			{
-				return this._ImageStore1.Entity;
-			}
-			set
-			{
-				ImageStore previousValue = this._ImageStore1.Entity;
-				if (((previousValue != value) 
-							|| (this._ImageStore1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ImageStore1.Entity = null;
-						previousValue.THONG_TIN_CONG_Ties1.Remove(this);
-					}
-					this._ImageStore1.Entity = value;
-					if ((value != null))
-					{
-						value.THONG_TIN_CONG_Ties1.Add(this);
-						this._Slogan = value.Id;
-					}
-					else
-					{
-						this._Slogan = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("ImageStore1");
-				}
-			}
-		}
-		
-		[Association(Name="ImageStore_THONG_TIN_CONG_TY2", Storage="_ImageStore2", ThisKey="Logo", OtherKey="Id", IsForeignKey=true)]
-		public ImageStore ImageStore2
-		{
-			get
-			{
-				return this._ImageStore2.Entity;
-			}
-			set
-			{
-				ImageStore previousValue = this._ImageStore2.Entity;
-				if (((previousValue != value) 
-							|| (this._ImageStore2.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ImageStore2.Entity = null;
-						previousValue.THONG_TIN_CONG_Ties2.Remove(this);
-					}
-					this._ImageStore2.Entity = value;
-					if ((value != null))
-					{
-						value.THONG_TIN_CONG_Ties2.Add(this);
-						this._Logo = value.Id;
-					}
-					else
-					{
-						this._Logo = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("ImageStore2");
-				}
-			}
-		}
-		
-		[Association(Name="NHAN_VIEN_THONG_TIN_CONG_TY", Storage="_NHAN_VIEN", ThisKey="MaAdmin", OtherKey="MaNhanVien", IsForeignKey=true)]
-		public NHAN_VIEN NHAN_VIEN
-		{
-			get
-			{
-				return this._NHAN_VIEN.Entity;
-			}
-			set
-			{
-				NHAN_VIEN previousValue = this._NHAN_VIEN.Entity;
-				if (((previousValue != value) 
-							|| (this._NHAN_VIEN.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NHAN_VIEN.Entity = null;
-						previousValue.THONG_TIN_CONG_Ties.Remove(this);
-					}
-					this._NHAN_VIEN.Entity = value;
-					if ((value != null))
-					{
-						value.THONG_TIN_CONG_Ties.Add(this);
-						this._MaAdmin = value.MaNhanVien;
-					}
-					else
-					{
-						this._MaAdmin = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("NHAN_VIEN");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }
