@@ -11,94 +11,143 @@ namespace CTLH_C3.Admin
 {
     public partial class ThayDoiGiaoDien : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void getThongTin(out int banner, out int slogan, out int logo, out string gioithieu)
         {
-            if (!IsPostBack)
-            {
-				// Hiện tại chỉ hỗ trợ 1 giao diện -> lấy luôn cái phần tử đầu tiên
-                image1.ImageUrl = "~/ImageHandler.ashx?Id=1";
-				
-				// Lấy thông tin ra
-                TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-                var thongtins = from a in context.ImageStores select a;
-                if (thongtins.Count() == 0)
-                    rteGioiThieu.Text = "";
-                else
-                {
-                    //var thongtin = thongtins.First();
-                    //rteGioiThieu.Text = thongtin.Intro;
-                }
-            }
-            else
+            gioithieu = "";
+            banner = slogan = logo = -1;
+            TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
+            var thongtincongtys = from t in context.THONG_TIN_CONG_Ties select t;
+            var thongtincongty = new THONG_TIN_CONG_TY();
+            if (thongtincongtys.Count() > 0)            
+                thongtincongty = thongtincongtys.First();
+
+            if (thongtincongty.Banner != null)
+                banner = (int)thongtincongty.Banner;
+            if (thongtincongty.Slogan != null)
+                slogan = (int)thongtincongty.Slogan;
+            if (thongtincongty.Logo != null)
+                logo = (int)thongtincongty.Logo;
+            if (thongtincongty.TinTucGioiThieu != null)
+                gioithieu = thongtincongty.TinTucGioiThieu;
+        }
+        protected string getImageURL(int id)
+        {
+            if (id == -1)
+                return "~/images/upload.png";
+            return "~/ImageHandler.ashx?Id=" + id;
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {                
+            if(IsPostBack)
             {
 				// Postback : được hiểu là khi user click vào Upload hoặc Submit
 				// Vấn đề là button Submit : có handler là javascript (bắt buộc) nên không gọi vào sự kiện Click ở Server được => cần gom lại vào xử lý trong PageLoad luôn
                 string strGioiThieu = rteGioiThieu.Text;
+                Binary banner, slogan, logo;
+                bool bInsertNew = true;
+                banner = getUploadImage(uploadBanner, sttBanner);
+                slogan = getUploadImage(uploadSlogan, sttSlogan);
+                logo = getUploadImage(uploadLogo, sttLogo);
+                // Tương tự cho các hình khác
                 TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-
-                var thongtins = from a in context.ImageStores select a;
-                if (thongtins.Count() == 0)
+                var thongtincongtys = from t in context.THONG_TIN_CONG_Ties select t;
+                var thongtincongty = new THONG_TIN_CONG_TY();
+                if (thongtincongtys.Count() > 0)
                 {
+                    bInsertNew = false;
+                    thongtincongty = thongtincongtys.First();
+                }
 
-                    //context.ImageStores.InsertOnSubmit(new ImageTable { Intro = strGioiThieu });
-                }
-                else
+                
+                if (banner != null)
                 {
-                    //var thongtin = thongtins.First();
-                    //thongtin.Intro = strGioiThieu;
+                    if (thongtincongty.Banner == null)
+                        thongtincongty.Banner = insertImage(banner);
+                    else
+                        updateImage(banner, (int)thongtincongty.Banner);
                 }
+                if (slogan != null)
+                {
+                    if (thongtincongty.Slogan == null)
+                        thongtincongty.Slogan = insertImage(slogan);
+                    else
+                        updateImage(slogan, (int)thongtincongty.Slogan);
+                }
+                if (logo != null)
+                {
+                    if (thongtincongty.Logo == null)
+                        thongtincongty.Logo = insertImage(logo);
+                    else
+                        updateImage(logo, (int)thongtincongty.Logo);
+                }
+
+                if (strGioiThieu != null)
+                    thongtincongty.TinTucGioiThieu = strGioiThieu;
+
+                if (bInsertNew == true)
+                    context.THONG_TIN_CONG_Ties.InsertOnSubmit(thongtincongty);
+
                 context.SubmitChanges();
-
-                UploadImage();
             }
-        }
 
-        protected void UploadImage()
+
+            int bannerId, sloganId, logoId;
+            string gioithieuHTML;
+            getThongTin(out bannerId, out sloganId, out logoId, out gioithieuHTML);
+            imgBanner.ImageUrl = getImageURL(bannerId);
+            imgSlogan.ImageUrl = getImageURL(sloganId);
+            imgLogo.ImageUrl = getImageURL(logoId);
+            rteGioiThieu.Text = gioithieuHTML;
+        }
+        protected void updateImage(Binary imageData, int id)
         {
-            if (FileUpload1.HasFile)
+            TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
+            var img = (from i in context.ImageStores where i.Id == id select i).Single();
+            img.Image = imageData;
+            context.SubmitChanges();
+        }
+        protected int insertImage(Binary imageData)
+        {
+            TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
+            ImageStore img = new ImageStore();
+            img.Image = imageData;
+            context.ImageStores.InsertOnSubmit(img);
+            context.SubmitChanges();
+            return img.Id;
+        }
+        protected Binary getUploadImage(FileUpload fileUpload, Label status)
+        {
+            if (fileUpload.HasFile)
             {
                 try
                 {
-                    if (FileUpload1.PostedFile.ContentType == "image/jpeg")
+                    if (fileUpload.PostedFile.ContentType == "image/jpeg"
+                            || fileUpload.PostedFile.ContentType == "image/jpg"
+                            || fileUpload.PostedFile.ContentType == "image/png"
+                            || fileUpload.PostedFile.ContentType == "image/gif")
                     {
-                        if (FileUpload1.PostedFile.ContentLength < 102400)
+                        if (fileUpload.PostedFile.ContentLength < 102400)
                         {
-                            string filename = Path.GetFileName(FileUpload1.FileName);        
-
-                            byte[] fileByte = FileUpload1.FileBytes;
-                            Binary binaryObj = new Binary(fileByte);                            
-														
-                            TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-                            var thongtins = from a in context.ImageStores select a;
-							
-							// Đưa vào CSDL, chưa có thì add cái mới
-                            if (thongtins.Count() == 0)
-                            {
-                                //context.ImageStores.InsertOnSubmit(new ImageTable { Image = binaryObj });
-                            }
-                            else
-                            {
-                                // Đã có thì ghi đè vào
-                                var thongtin = thongtins.First();
-                                thongtin.Image = binaryObj;
-                            }                               
-                            
-                            context.SubmitChanges(); 
+                            string filename = Path.GetFileName(fileUpload.FileName);
+                            byte[] fileByte = fileUpload.FileBytes;
+                            Binary binaryObj = new Binary(fileByte);
 
                             //FileUpload1.SaveAs(Server.MapPath("~/") + filename);
-                            StatusLabel.Text = "Upload status: File uploaded!";
+                            status.Text = "Upload status: File uploaded!";
+                            return binaryObj;
                         }
                         else
-                            StatusLabel.Text = "Upload status: The file has to be less than 100 kb!";
+                            status.Text = "Upload status: The file has to be less than 100 kb!";
                     }
                     else
-                        StatusLabel.Text = "Upload status: Only JPEG files are accepted!";
+                        status.Text = "Upload status: Only JPEG, JPG, PNG, GIF files are accepted!";
                 }
                 catch (Exception ex)
                 {
-                    StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                    status.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                 }
             }
+            return null;
         }
     }
 }

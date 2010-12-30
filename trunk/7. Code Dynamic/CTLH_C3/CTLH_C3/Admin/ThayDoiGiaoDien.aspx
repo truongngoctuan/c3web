@@ -10,10 +10,18 @@
         }
     </script>
 <asp:Literal runat="server">Banner :</asp:Literal> 
-<asp:FileUpload ID="FileUpload1" runat="server" />
-<asp:Image runat="server" ID="image1" />
-<br />
-<asp:Label runat="server" id="StatusLabel" text=" " />
+<asp:FileUpload ID="uploadBanner" runat="server" />
+<asp:Image runat="server" ID="imgBanner" />
+<asp:Label runat="server" id="sttBanner" text=" " />
+
+<asp:FileUpload ID="uploadSlogan" runat="server" />
+<asp:Image runat="server" ID="imgSlogan" />
+<asp:Label runat="server" id="sttSlogan" text=" " />
+
+<asp:FileUpload ID="uploadLogo" runat="server" />
+<asp:Image runat="server" ID="imgLogo" />
+<asp:Label runat="server" id="sttLogo" text=" " />
+
 <asp:Panel ID="pnThayDoiGiaoDien" runat="server" style="padding:10px" >
     <RichTextEditor:RichTextEditor ID="rteGioiThieu" Theme="Blue" runat="server" />
 </asp:Panel>

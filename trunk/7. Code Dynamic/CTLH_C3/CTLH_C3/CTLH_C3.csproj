@@ -921,6 +921,7 @@
     <Content Include="ImageHandler.ashx" />
     <Content Include="DieuHanhTram\Default.sitemap" />
     <Content Include="DieuHanhTram\MasterPage.Master" />
+    <Content Include="images\upload.png" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>
