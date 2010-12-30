@@ -8,90 +8,100 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3 {
+namespace CTLH_C3.DieuHanhTram
+{
     
     
-    public partial class GridViewPager {
+    public partial class MasterPage {
         
         /// <summary>
-        /// ImageButtonFirst control.
+        /// Head1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonFirst;
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
-        /// ImageButtonPrev control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonPrev;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// LabelPage control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPage;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// TextBoxPage control.
+        /// ThemeDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPage;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ThemeDataSource;
         
         /// <summary>
-        /// LabelNumberOfPages control.
+        /// ThemeList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNumberOfPages;
+        protected global::System.Web.UI.WebControls.RadioButtonList ThemeList;
         
         /// <summary>
-        /// ImageButtonNext control.
+        /// Menu1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonNext;
+        protected global::System.Web.UI.WebControls.Menu Menu1;
         
         /// <summary>
-        /// ImageButtonLast control.
+        /// SiteMapDataSourceMenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonLast;
+        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSourceMenu;
         
         /// <summary>
-        /// LabelRows control.
+        /// LeftContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRows;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder LeftContent;
         
         /// <summary>
-        /// DropDownListPageSize control.
+        /// MainContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListPageSize;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        
+        /// <summary>
+        /// RightContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder RightContent;
     }
 }

@@ -182,6 +182,55 @@
     <Compile Include="DieuHanhCongTy\QuanLyXe.aspx.designer.cs">
       <DependentUpon>QuanLyXe.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DieuHanhTram\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhTram\GhiNhanPhanHoi.aspx.cs">
+      <DependentUpon>GhiNhanPhanHoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\GhiNhanPhanHoi.aspx.designer.cs">
+      <DependentUpon>GhiNhanPhanHoi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhTram\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DynamicData\CustomPages\NHAN_VIENs\Details.aspx.cs">
       <DependentUpon>Details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,6 +257,62 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DynamicData\CustomPages\NHAN_VIENs\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOIs\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOIs\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOIs\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOIs\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOIs\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOIs\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOIs\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOIs\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
     <Compile Include="DynamicData\CustomPages\TAI_KHOANs\Details.aspx.cs">
@@ -795,11 +900,27 @@
     <Content Include="App_Data\CTLH_C3_log.ldf">
       <DependentUpon>CTLH_C3.mdf</DependentUpon>
     </Content>
+    <Content Include="DieuHanhTram\Default.aspx" />
+    <Content Include="DieuHanhTram\GhiNhanPhanHoi.aspx" />
+    <Content Include="DynamicData\CustomPages\CHUYEN_XEs\Details.aspx" />
+    <Content Include="DynamicData\CustomPages\CHUYEN_XEs\Edit.aspx" />
+    <Content Include="DynamicData\CustomPages\CHUYEN_XEs\Insert.aspx" />
+    <Content Include="DynamicData\CustomPages\CHUYEN_XEs\List.aspx" />
     <Content Include="DynamicData\CustomPages\NHAN_VIENs\Details.aspx" />
     <Content Include="DynamicData\CustomPages\NHAN_VIENs\Edit.aspx" />
     <Content Include="DynamicData\CustomPages\NHAN_VIENs\Insert.aspx" />
     <Content Include="DynamicData\CustomPages\NHAN_VIENs\List.aspx" />
+    <Content Include="DynamicData\CustomPages\PHAN_HOIs\Details.aspx" />
+    <Content Include="DynamicData\CustomPages\PHAN_HOIs\Edit.aspx" />
+    <Content Include="DynamicData\CustomPages\PHAN_HOIs\Insert.aspx" />
+    <Content Include="DynamicData\CustomPages\PHAN_HOIs\List.aspx" />
+    <Content Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\Details.aspx" />
+    <Content Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\Edit.aspx" />
+    <Content Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\Insert.aspx" />
+    <Content Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\List.aspx" />
     <Content Include="ImageHandler.ashx" />
+    <Content Include="DieuHanhTram\Default.sitemap" />
+    <Content Include="DieuHanhTram\MasterPage.Master" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>
