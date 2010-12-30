@@ -19,7 +19,9 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"/>
     <!--****************************************************************-->
     <div id="top">
-        <img style="float:left; clear:both;z-index:9;" src="../images/banner.jpg" width="995" height="193" alt=""/>
+        <%--<img style="float:left; clear:both;z-index:9;" src="../images/banner.jpg" width="995" height="193" alt=""/>--%>
+        <asp:Image ID="imgBanner" runat="server" 
+        style="float:left; clear:both;z-index:9;"/>
         <img style="float:left; clear:both;z-index:9;" src="../images/menu_bg.jpg" width="995" height="58" alt=""/>
         <div id="Menu" style="position:absolute; z-index:9;
             left:0px; top:193px;">
@@ -48,8 +50,19 @@
         <img style="float:left; clear:both;z-index:9;" 
         src="../images/menushadowbottom.png" width="995" height="17" alt=""/>
         
-        <div style="position:absolute; left:0px; top:0px; z-index:8;
-        width:995px; height:251px">
+        <div style="position:absolute; z-index:8;
+        width:995px; height:251px; 
+        margin-left:auto; margin-right:auto;">
+            <%--logo--%>
+            <asp:Image ID="imgLogo" runat="server" 
+            style="position:absolute; 
+                left:59px; top:0px;" />
+            
+            <%--slogan--%>
+            <asp:Image ID="imgSlogan" runat="server" 
+            style="position:absolute; 
+                left:0px; top:104px;" />
+            
             <%--truck--%>
             <img style="position:absolute; 
             right:0px; top:0px;" 

@@ -10,12 +10,27 @@ namespace CTLH_C3
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {
+        public enum ImageType { Banner,
+            Logo,
+            Slogan,
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             //http://www.codeproject.com/KB/aspnet/sitemapwithmasterpage.aspx
             //chinh menu co noi dung dong
             if (!IsPostBack)
             {
+                //----------------------------------------------------------------
+                //cap nhat hinh anh/ thong tin tu csdl cho trang master
+                int bannerId, sloganId, logoId;
+                string gioithieuHTML;
+                getThongTin(out bannerId, out sloganId, out logoId, out gioithieuHTML);
+
+                imgBanner.ImageUrl = getImageURL(ImageType.Banner, bannerId);
+                imgSlogan.ImageUrl = getImageURL(ImageType.Slogan, sloganId);
+                imgLogo.ImageUrl = getImageURL(ImageType.Logo, logoId);
+                //----------------------------------------------------------------
+
                 if (Page.User.Identity.IsAuthenticated)
                 {
                     string role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
@@ -89,5 +104,50 @@ namespace CTLH_C3
         {
             SiteMapDataSourceMenu.SiteMapProvider = strSiteMapNameProvider;
         }
+
+        //-------------------------------------------------------------
+        //cap nhat giao dien dong cho masterpage
+        protected void getThongTin(out int banner, out int slogan, out int logo, out string gioithieu)
+        {
+            gioithieu = "";
+            banner = slogan = logo = -1;
+            TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
+            var thongtincongtys = from t in context.THONG_TIN_CONG_Ties select t;
+            var thongtincongty = new THONG_TIN_CONG_TY();
+            if (thongtincongtys.Count() > 0)
+                thongtincongty = thongtincongtys.First();
+
+            if (thongtincongty.Banner != null)
+                banner = (int)thongtincongty.Banner;
+            if (thongtincongty.Slogan != null)
+                slogan = (int)thongtincongty.Slogan;
+            if (thongtincongty.Logo != null)
+                logo = (int)thongtincongty.Logo;
+            if (thongtincongty.TinTucGioiThieu != null)
+                gioithieu = thongtincongty.TinTucGioiThieu;
+        }
+        protected string getImageURL(ImageType type, int id)
+        {
+            if (id == -1)
+            {
+                switch (type)
+                {
+                    case (ImageType.Banner):
+                        {
+                            return "../images/banner.jpg";
+                        }
+                    case (ImageType.Logo):
+                        {
+                            return "../images/logo.png";
+                        }
+                    case (ImageType.Slogan):
+                        {
+                            return "../images/slogan.png";
+                        }
+                }
+            }
+            return "~/ImageHandler.ashx?Id=" + id;
+        }
+        //-------------------------------------------------------------
     }
 }
