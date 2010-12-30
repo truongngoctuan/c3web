@@ -46,10 +46,12 @@ namespace CTLH_C3
             {
                 lblLoaiNhanVien.Text = _role;
 
-                ThongTinDataSource.AutoGenerateWhereClause = false;                
+                ThongTinDataSource.AutoGenerateWhereClause = false;
+                ThongTinDataSource.Select = "new (MaNhanVien, HoTen, DienThoai, DiaChi, LuongTrongThang)";
                 ThongTinDataSource.Where = "MaNhanVien==" + _maNhanVien;
 
                 TaiKhoanDataSource.AutoGenerateWhereClause = false;
+                TaiKhoanDataSource.Select = "new (Username, Password, MaTaiKhoan, Email)";
                 TaiKhoanDataSource.Where = "MaNhanVien==" + _maNhanVien;
             }
         }

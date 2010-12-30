@@ -27,6 +27,7 @@
             
            <%-- Thông tin cá nhân--%>
             <asp:DetailsView ID="DetailsView_ThongTinCaNhan" runat="server" 
+                DefaultMode="ReadOnly"
                 DataSourceID="ThongTinDataSource" AutoGenerateEditButton="True" 
                 CssClass="detailstable" FieldHeaderStyle-CssClass="bold"
                 AutoGenerateRows="False">
@@ -39,16 +40,17 @@
                 </Fields>
             </asp:DetailsView>
             
-           <asp:LinqDataSource ID="ThongTinDataSource" runat="server" 
+           <asp:LinqDataSource ID="ThongTinDataSource" runat="server"
+                EnableUpdate="true"   
                 ContextTypeName = "CTLH_C3.TRAVEL_WEBDataContext"
-                TableName = "NHAN_VIENs" 
-                Select="new (MaNhanVien, HoTen, DienThoai, DiaChi, LuongTrongThang)"> 
+                TableName = "NHAN_VIENs" > 
            </asp:LinqDataSource>
            
            <br />
            
            <%--Thông tin tài khoản--%>
            <asp:DetailsView ID="DetailsView_TaiKhoan" runat="server" 
+                DefaultMode="ReadOnly"
                 DataSourceID="TaiKhoanDataSource" AutoGenerateEditButton="True" 
                 CssClass="detailstable" FieldHeaderStyle-CssClass="bold"
                 AutoGenerateRows="False">
@@ -60,10 +62,10 @@
                 </Fields>
             </asp:DetailsView>
             
-           <asp:LinqDataSource ID="TaiKhoanDataSource" runat="server" 
+           <asp:LinqDataSource ID="TaiKhoanDataSource" runat="server"  
+                EnableUpdate="true"  
                 ContextTypeName = "CTLH_C3.TRAVEL_WEBDataContext"
-                TableName = "TAI_KHOANs" 
-                Select="new (Username, Password, MaTaiKhoan, Email)"> 
+                TableName = "TAI_KHOANs"> 
            </asp:LinqDataSource>
             
         </ContentTemplate>
