@@ -449,6 +449,9 @@ namespace CTLH_C3
         [DisplayName("Banner")]
         public object Banner { set; get; }
 
+        [DisplayName("Truck")]
+        public object Truck { set; get; }
+
         [DisplayName("Slogan")]
         public object Slogan { set; get; }
 
@@ -466,6 +469,13 @@ namespace CTLH_C3
     [MetadataType(typeof(THONG_TIN_CONG_TY_Metadata))]
     [DisplayName("Thông tin công ty")]
     public partial class THONG_TIN_CONG_TY
+    {
+    }
+#endregion
+
+#region ImageStore
+    [DisplayName("Image Store")]
+    public partial class IMAGE_STORE
     {
     }
 #endregion
