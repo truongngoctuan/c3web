@@ -35,7 +35,7 @@ namespace CTLH_C3
         {
             MemoryStream stream = null;
             TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-            var imageList = (from img in context.ImageStores where img.Id == id select img);
+            var imageList = (from img in context.IMAGE_STOREs where img.Id == id select img);
             
 			// Lấy image từ CSDL ra, nếu chưa có thì dùng ảnh mặc định
             if (imageList.Count() == 0)

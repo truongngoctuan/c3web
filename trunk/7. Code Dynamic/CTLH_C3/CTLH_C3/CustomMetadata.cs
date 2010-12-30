@@ -267,6 +267,9 @@ namespace CTLH_C3
 
         [DisplayName("Địa chỉ")]
         public object DiaChi { set; get; }
+		
+		[DisplayName("Hình ảnh")]
+        public object HinhAnh { set; get; }
 
         [ScaffoldColumn(false)]
         [DisplayName("Lương trong tháng")]
@@ -437,25 +440,33 @@ namespace CTLH_C3
     }
 #endregion
 
-#region Loai xe
-    public class LOAI_XE_Metadata
+#region Thong tin cong ty
+    public class THONG_TIN_CONG_TY_Metadata
     {
-        [DisplayName("Hình ảnh")]
-        public object HinhAnh { set; get; }
+        [DisplayName("Mã")]
+        public object MaThongTinCongTy { set; get; }
 
-        [DisplayName("Hãng sản xuất")]
-        public object HangSanXuat { set; get; }
+        [DisplayName("Banner")]
+        public object Banner { set; get; }
 
-        [DisplayName("Xe")]
-        public object XEs { set; get; }
+        [DisplayName("Slogan")]
+        public object Slogan { set; get; }
+
+        [DisplayName("Logo")]
+        public object Logo { set; get; }
+
+        [DisplayName("Giới thiệu")]
+        public object TinTucGioiThieu { set; get; }
+
+        [DisplayName("Mã admin")]
+        public object MaAdmin { set; get; }
+        
     }
 
-    [MetadataType(typeof(LOAI_XE_Metadata))]
-    [DisplayName("Loại xe")]
-    public partial class LOAI_XE
+    [MetadataType(typeof(THONG_TIN_CONG_TY_Metadata))]
+    [DisplayName("Thông tin công ty")]
+    public partial class THONG_TIN_CONG_TY
     {
-
     }
 #endregion
-
 }
