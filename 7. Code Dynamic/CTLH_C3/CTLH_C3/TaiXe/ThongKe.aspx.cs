@@ -18,20 +18,20 @@ namespace CTLH_C3
         // thì không cho vào trang
         protected void Page_PreInit(object sender, EventArgs e)
         {            
-            //if (!IsPostBack)
-            //{
-            //    if (Page.User.Identity.IsAuthenticated)
-            //    {
-            //        _role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
-            //        _maNhanVien = Roles.GetRolesForUser(Page.User.Identity.Name)[1];
-            //        if (!_role.Equals("Tài Xế"))
-            //            Response.Redirect("/Default.aspx");
-            //    }
-            //    else
-            //    {
-            //        Response.Redirect("/Default.aspx");
-            //    }
-            //}
+            if (!IsPostBack)
+            {
+                if (Page.User.Identity.IsAuthenticated)
+                {
+                    _role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
+                    _maNhanVien = Roles.GetRolesForUser(Page.User.Identity.Name)[1];
+                    if (!_role.ToLower().Equals("tài xế"))
+                        Response.Redirect("/Default.aspx");
+                }
+                else
+                {
+                    Response.Redirect("/Default.aspx");
+                }
+            }
         }
 
         protected void Page_Init(object sender, EventArgs e)
@@ -67,7 +67,6 @@ namespace CTLH_C3
                                  TramDi = t.TRAM_XE1.TenTramXe,
                                  TramDen = t.TRAM_XE.TenTramXe,
                                  KhoiHanh = c.KhoiHanh,
-                               
                                  ThoiDiemDenTram = c.ThoiGianDenTram,
                                  Luong = c.LuongTaiXe
                              }).Distinct();
@@ -93,9 +92,9 @@ namespace CTLH_C3
                               select n).Single();
                 lblHeSo.Text = query_NhanVien.LuongTrongThang.ToString();
                 float temp=0;
-                for (int i = 0; i < query_DaChay.Count(); i++)
+                foreach (var chuyen in query_DaChay)
                 {
-                    temp += float.Parse(grdDaChay.Rows[i].Cells[grdDaChay.Columns.Count-1].Text);
+                    temp += (float)chuyen.Luong.Value;
                 }
                 lblLuongChuyen.Text = temp.ToString();
                 lblTongCong.Text = (temp * query_NhanVien.LuongTrongThang).ToString();

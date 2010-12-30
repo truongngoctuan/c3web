@@ -42,7 +42,7 @@
            <asp:LinqDataSource ID="ThongTinDataSource" runat="server" 
                 ContextTypeName = "CTLH_C3.TRAVEL_WEBDataContext"
                 TableName = "NHAN_VIENs" 
-                Select="new (MaNhanVien, HoTen, DienThoai, DiaChi, LuongTrongThang, LoaiNhanVien, LOAI_NHAN_VIEN)"> 
+                Select="new (MaNhanVien, HoTen, DienThoai, DiaChi, LuongTrongThang)"> 
            </asp:LinqDataSource>
            
            <br />

@@ -29,7 +29,7 @@ namespace CTLH_C3
                 {
                     _role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
                     _maNhanVien = Roles.GetRolesForUser(Page.User.Identity.Name)[1];
-                    if (!_role.Equals("Tài Xế"))
+                    if (!_role.ToLower().Equals("tài xế"))
                         Response.Redirect("/Default.aspx");
                 }
                 else
