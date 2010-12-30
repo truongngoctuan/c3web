@@ -40,33 +40,13 @@
 
 <%--Cột nội dung giữa: danh sách tuyến--%>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
+    <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
+    
     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-        <ContentTemplate>        
-            <%--Phần bên trái: chọn trạm--%>                    
-            <div style="width: 200px; float: left;">
-                <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
-                <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
-                
-                <asp:FilterRepeater ID="FilterRepeater" runat="server" ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext"
-                    TableName="TUYEN_XEs">
-                    <ItemTemplate>
-                        <div>
-                            <div style="text-align:right;width:35%;float:left;">
-                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("DisplayName") %>' AssociatedControlID="DynamicFilter$DropDownList1" />
-                            </div>
-                            <div style="text-align:center;width:60%; float:right;">
-                                <asp:DynamicFilter runat="server" ID="DynamicFilter" OnSelectedIndexChanged="OnFilterSelectedIndexChanged" />
-                            </div>
-                        </div>
-                    </ItemTemplate>
-                    <SeparatorTemplate>
-                        <div style="height:15px;"></div>
-                    </SeparatorTemplate>
-                </asp:FilterRepeater>
-            </div>
-            
-            <%--Phần bên phải: trình bày dữ liệu--%>
-            <div style="width: 445px; float: left">
+        <ContentTemplate>             
+            <%--Phần : trình bày dữ liệu--%>
+            <div style="width: 580px; float: left">
             
                 <%--Giới thiệu--%>
                 <webUC:user_GioiThieu ID="user_GioiThieu1" runat="server" />
@@ -82,7 +62,22 @@
                 
                 <div><b>Các tuyến</b></div>
                 
+                <%--Chọn trạm--%>
+                <div>
+                    <asp:FilterRepeater ID="FilterRepeater" runat="server" ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext"
+                        TableName="TUYEN_XEs">
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("DisplayName") %>' AssociatedControlID="DynamicFilter$DropDownList1" />
+                            <asp:DynamicFilter runat="server" ID="DynamicFilter" OnSelectedIndexChanged="OnFilterSelectedIndexChanged" />
+                        </ItemTemplate>
+                        <SeparatorTemplate>
+                            <div style="height:5px;"></div>
+                        </SeparatorTemplate>
+                    </asp:FilterRepeater>
+                </div>
+                
                 <%--Trình bày dữ liệu: tuyến--%> 
+                
                 <asp:GridView ID="GridView1" runat="server" DataSourceID="GridDataSource" AllowPaging="True"
                     AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" 
                     onselectedindexchanged="GridView1_SelectedIndexChanged">
@@ -119,7 +114,6 @@
                     <Columns>
                         <asp:DynamicField DataField="MaChuyenXe" HeaderText="Mã chuyến" />
                         <asp:DynamicField DataField="KhoiHanh" />
-                        <asp:DynamicField DataField="DuKienDen" />
                         <asp:DynamicField DataField="GiaVe" />
                     </Columns>
                     <PagerStyle CssClass="footer" />
@@ -133,7 +127,7 @@
                 
                 <%--Nguồn dữ liệu cho chuyến--%>
                 <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext"
-                    Select="new (MaChuyenXe, KhoiHanh, DuKienDen, MaTuyenXe, GiaVe)"
+                    Select="new (MaChuyenXe, KhoiHanh, MaTuyenXe, GiaVe)"
                     TableName="CHUYEN_XEs">
                     <WhereParameters>
                         <asp:DynamicControlParameter ControlID="GridView1" Name="MaTuyenXe"/>
