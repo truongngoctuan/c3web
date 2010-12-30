@@ -62,12 +62,6 @@
         <elementListCompartment Id="dd3adf1d-acc7-4e83-b79e-165dd857a0ee" absoluteBounds="9.265, 12.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b176ddf2-e608-4036-af20-8a31d6736447" absoluteBounds="9.25, 9.25, 2, 1.9631982421874987">
-      <DataClassMoniker Name="/TRAVEL_WEBDataContext/THONG_TIN_CONG_TY" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d9e6cde6-9293-4ea8-b73a-34b6f9e44cee" absoluteBounds="9.265, 9.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="027785bc-af09-4387-9ea6-2adb04e85647" absoluteBounds="6.5, 6, 2, 1.1939925130208344">
       <DataClassMoniker Name="/TRAVEL_WEBDataContext/TINH_TRANG_CHUYEN_XE" />
       <nestedChildShapes>
@@ -98,7 +92,7 @@
         <elementListCompartment Id="f9d3fb37-3608-4a78-a2e6-10ee65a312f7" absoluteBounds="9.015, 16.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.25 : 3.72199625651042); (13 : 3.72199625651042); (13 : 5.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11.25 : 3.72199625651042); (12.3854141666667 : 3.72199625651042 : JumpStart); (12.5520808333333 : 3.72199625651042 : JumpEnd); (13 : 3.72199625651042); (13 : 5.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TRAVEL_WEBDataContext/CHO_NGOI/CHO_NGOI_DAT_CHO" />
       <nodes>
         <classShapeMoniker Id="0980d76a-90da-4d45-a452-d7a6e2394402" />
@@ -112,42 +106,42 @@
         <classShapeMoniker Id="712b60f3-088b-429d-acae-77682d736604" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 8.72679768880208); (6.25 : 8.72679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 8.72679768880208); (6.25 : 8.72679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TRAVEL_WEBDataContext/LOAI_XE/LOAI_XE_XE" />
       <nodes>
         <classShapeMoniker Id="b9c82494-e53c-4e30-850c-0888a8f7b0f6" />
         <classShapeMoniker Id="508beb74-3c94-463a-8490-a1644cd17b19" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 10.0440991210937); (6.25 : 10.0440991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 10.0440991210937); (6.25 : 10.0440991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TRAVEL_WEBDataContext/NHAN_VIEN/NHAN_VIEN_XE" />
       <nodes>
         <classShapeMoniker Id="9e5d4e35-052f-4332-801b-757edcf7eb74" />
         <classShapeMoniker Id="508beb74-3c94-463a-8490-a1644cd17b19" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 10.8786461816406); (6.15104166666667 : 10.8786461816406 : JumpStart); (6.31770833333333 : 10.8786461816406 : JumpEnd); (7.16666666666667 : 10.8786461816406 : JumpStart); (7.33333333333333 : 10.8786461816406 : JumpEnd); (8.79166666666667 : 10.8786461816406 : JumpStart); (8.95833333333333 : 10.8786461816406 : JumpEnd); (9 : 10.8786461816406); (9 : 9); (10.25 : 9); (10.25 : 7.9151025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 10.9190991210937); (5.66666666666667 : 10.9190991210937 : JumpStart); (5.83333333333333 : 10.9190991210937 : JumpEnd); (6.04166666666667 : 10.9190991210937 : JumpStart); (6.20833333333333 : 10.9190991210937 : JumpEnd); (7.16666666666667 : 10.9190991210937 : JumpStart); (7.33333333333333 : 10.9190991210937 : JumpEnd); (8.79166666666667 : 10.9190991210937 : JumpStart); (8.95833333333333 : 10.9190991210937 : JumpEnd); (10.35937775 : 10.9190991210937); (10.35937775 : 7.9151025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TRAVEL_WEBDataContext/NHAN_VIEN/NHAN_VIEN_CHUYEN_XE" />
       <nodes>
         <classShapeMoniker Id="9e5d4e35-052f-4332-801b-757edcf7eb74" />
         <classShapeMoniker Id="dea4d587-0ec1-4e46-84a4-c37f10555edd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 7.9151025390625); (11.625 : 8.2901025390625); (11.625 : 9.53929768880208); (12 : 9.53929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(9.5312525 : 7.9151025390625); (9.5312525 : 9.1875); (10.2760444166667 : 9.1875 : JumpStart); (10.4427110833333 : 9.1875 : JumpEnd); (10.7916666666667 : 9.1875 : JumpStart); (10.9583333333333 : 9.1875 : JumpEnd); (12 : 9.1875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TRAVEL_WEBDataContext/CHUYEN_XE/CHUYEN_XE_PHAN_HOI" />
       <nodes>
         <classShapeMoniker Id="dea4d587-0ec1-4e46-84a4-c37f10555edd" />
         <classShapeMoniker Id="6567df69-efca-4b09-a729-a5381b0c3956" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 11.2940991210937); (8.79166666666667 : 11.2940991210937 : JumpStart); (8.95833333333333 : 11.2940991210937 : JumpEnd); (12.3854141666667 : 11.2940991210937 : JumpStart); (12.5520808333333 : 11.2940991210937 : JumpEnd); (13 : 11.2940991210937); (13 : 10.3285953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 10.6911461816406); (7.16666666666667 : 10.6911461816406 : JumpStart); (7.33333333333333 : 10.6911461816406 : JumpEnd); (8.79166666666667 : 10.6911461816406 : JumpStart); (8.95833333333333 : 10.6911461816406 : JumpEnd); (10.2760444166667 : 10.6911461816406 : JumpStart); (10.4427110833333 : 10.6911461816406 : JumpEnd); (10.875 : 10.6911461816406); (10.875 : 8.5); (13 : 8.5); (13 : 8.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TRAVEL_WEBDataContext/NHAN_VIEN/NHAN_VIEN_PHAN_HOI" />
       <nodes>
         <classShapeMoniker Id="9e5d4e35-052f-4332-801b-757edcf7eb74" />
         <classShapeMoniker Id="6567df69-efca-4b09-a729-a5381b0c3956" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 20.5392976888021); (12.4687475 : 20.5392976888021); (12.4687475 : 10.3285953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11.25 : 20.5392976888021); (13.59375 : 20.5392976888021); (13.59375 : 10.3285953776042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TRAVEL_WEBDataContext/PHAN_HOI_KHACH_HANG/PHAN_HOI_KHACH_HANG_PHAN_HOI" />
       <nodes>
         <classShapeMoniker Id="14ebe815-51f2-4821-9bc5-25c07d506db6" />
@@ -166,13 +160,6 @@
       <nodes>
         <classShapeMoniker Id="9e5d4e35-052f-4332-801b-757edcf7eb74" />
         <classShapeMoniker Id="8a549c98-aaac-49c3-b9df-4a99fb891f83" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 10.6396722119141); (6.15104166666667 : 10.6396722119141 : JumpStart); (6.31770833333333 : 10.6396722119141 : JumpEnd); (7.16666666666667 : 10.6396722119141 : JumpStart); (7.33333333333333 : 10.6396722119141 : JumpEnd); (8.79166666666667 : 10.6396722119141 : JumpStart); (9.08333333333333 : 10.6396722119141 : JumpEnd); (9.25 : 10.6396722119141)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/TRAVEL_WEBDataContext/NHAN_VIEN/NHAN_VIEN_THONG_TIN_CONG_TY" />
-      <nodes>
-        <classShapeMoniker Id="9e5d4e35-052f-4332-801b-757edcf7eb74" />
-        <classShapeMoniker Id="b176ddf2-e608-4036-af20-8a31d6736447" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.5 : 6.59699625651042); (9.25 : 6.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
@@ -237,46 +224,59 @@
         <elementListCompartment Id="ba5a39f9-3999-42f7-9d00-da999837b1cd" absoluteBounds="2.765, 9.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.125 : 9); (4.125 : 8.95359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.125 : 9); (4.125 : 8.95359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TRAVEL_WEBDataContext/IMAGE_STORE/IMAGE_STORE_LOAI_XE" />
       <nodes>
         <classShapeMoniker Id="b46e2cfc-000f-43f5-8cce-99b05f05a5bf" />
         <classShapeMoniker Id="b9c82494-e53c-4e30-850c-0888a8f7b0f6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.59699625651042); (2.5 : 9.59699625651042); (2.5 : 10.6065991210937); (3.01041666666667 : 10.6065991210937 : JumpStart); (3.17708333333333 : 10.6065991210937 : JumpEnd); (3.5 : 10.6065991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 9.77885050080128); (2.625 : 9.77885050080128); (2.625 : 10.6065991210937); (3.01041666666667 : 10.6065991210937 : JumpStart); (3.17708333333333 : 10.6065991210937 : JumpEnd); (3.5 : 10.6065991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TRAVEL_WEBDataContext/IMAGE_STORE/IMAGE_STORE_NHAN_VIEN" />
       <nodes>
         <classShapeMoniker Id="b46e2cfc-000f-43f5-8cce-99b05f05a5bf" />
         <classShapeMoniker Id="9e5d4e35-052f-4332-801b-757edcf7eb74" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.75 : 9.2812505); (6.234375 : 9.2812505); (6.234375 : 11.2288232421875); (7.16666666666667 : 11.2288232421875 : JumpStart); (7.33333333333333 : 11.2288232421875 : JumpEnd); (8.79166666666667 : 11.2288232421875 : JumpStart); (8.95833333333333 : 11.2288232421875 : JumpEnd); (10.25 : 11.2288232421875); (10.25 : 11.2131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/TRAVEL_WEBDataContext/IMAGE_STORE/IMAGE_STORE_THONG_TIN_CONG_TY" />
-      <nodes>
-        <classShapeMoniker Id="b46e2cfc-000f-43f5-8cce-99b05f05a5bf" />
-        <classShapeMoniker Id="b176ddf2-e608-4036-af20-8a31d6736447" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(4.4374995 : 9); (4.4374995 : 8.984375); (6.21875 : 8.984375); (6.21875 : 10.4788232421875); (8.79166666666667 : 10.4788232421875 : JumpStart); (9.08333333333333 : 10.4788232421875 : JumpEnd); (9.2265625 : 10.4788232421875); (9.2265625 : 9.94483660595703); (9.25 : 9.94483660595703)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/TRAVEL_WEBDataContext/IMAGE_STORE/IMAGE_STORE_THONG_TIN_CONG_TY1" />
-      <nodes>
-        <classShapeMoniker Id="b46e2cfc-000f-43f5-8cce-99b05f05a5bf" />
-        <classShapeMoniker Id="b176ddf2-e608-4036-af20-8a31d6736447" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(4.59374925 : 9); (4.59374925 : 8.984375); (6.203125 : 8.984375); (6.203125 : 10.4788232421875); (8.79166666666667 : 10.4788232421875 : JumpStart); (9.08333333333333 : 10.4788232421875 : JumpEnd); (9.2109375 : 10.4788232421875); (9.2109375 : 9.59741880297851); (9.25 : 9.59741880297851)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/TRAVEL_WEBDataContext/IMAGE_STORE/IMAGE_STORE_THONG_TIN_CONG_TY2" />
-      <nodes>
-        <classShapeMoniker Id="b46e2cfc-000f-43f5-8cce-99b05f05a5bf" />
-        <classShapeMoniker Id="b176ddf2-e608-4036-af20-8a31d6736447" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(3.09375 : 10.1939925130208); (3.09375 : 12.1957714550781); (4.41666666666667 : 12.1957714550781 : JumpStart); (4.58333333333333 : 12.1957714550781 : JumpEnd); (4.94791916666667 : 12.1957714550781 : JumpStart); (5.11458583333333 : 12.1957714550781 : JumpEnd); (6.25 : 12.1957714550781)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.09375 : 10.1939925130208); (3.09375 : 12.1957714550781); (4.41666666666667 : 12.1957714550781 : JumpStart); (4.58333333333333 : 12.1957714550781 : JumpEnd); (4.94791916666667 : 12.1957714550781 : JumpStart); (5.11458583333333 : 12.1957714550781 : JumpEnd); (6.25 : 12.1957714550781)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TRAVEL_WEBDataContext/IMAGE_STORE/IMAGE_STORE_TRAM_XE" />
       <nodes>
         <classShapeMoniker Id="b46e2cfc-000f-43f5-8cce-99b05f05a5bf" />
         <classShapeMoniker Id="1c075b7f-1a8d-4f67-867f-fe8a32a988b3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="890cbb45-3b24-4fec-bd44-a2d451c098d5" absoluteBounds="11.125, 10, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/TRAVEL_WEBDataContext/THONG_TIN_CONG_TY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="23bf37d9-cfe0-4980-9629-2bc26233915f" absoluteBounds="11.14, 10.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 9.59699625651042); (2.58333333333333 : 9.59699625651042 : JumpStart); (2.41666666666667 : 9.59699625651042 : JumpEnd); (2.375 : 9.59699625651042); (2.375 : 11.8381982421875); (3.01041666666667 : 11.8381982421875 : JumpStart); (3.17708333333333 : 11.8381982421875 : JumpEnd); (4.41666666666667 : 11.8381982421875 : JumpStart); (4.58333333333333 : 11.8381982421875 : JumpEnd); (4.94791916666667 : 11.8381982421875 : JumpStart); (5.11458583333333 : 11.8381982421875 : JumpEnd); (5.66666666666667 : 11.8381982421875 : JumpStart); (5.83333333333333 : 11.8381982421875 : JumpEnd); (6 : 11.8381982421875); (6 : 11.1157995605469); (6.04166666666667 : 11.1157995605469 : JumpStart); (6.20833333333333 : 11.1157995605469 : JumpEnd); (7.16666666666667 : 11.1157995605469 : JumpStart); (7.33333333333333 : 11.1157995605469 : JumpEnd); (8.79166666666667 : 11.1157995605469 : JumpStart); (8.95833333333333 : 11.1157995605469 : JumpEnd); (11.125 : 11.1157995605469)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TRAVEL_WEBDataContext/IMAGE_STORE/IMAGE_STORE_THONG_TIN_CONG_TY" />
+      <nodes>
+        <classShapeMoniker Id="b46e2cfc-000f-43f5-8cce-99b05f05a5bf" />
+        <classShapeMoniker Id="890cbb45-3b24-4fec-bd44-a2d451c098d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.92674638476563); (2.70833333333333 : 9.92674638476562 : JumpStart); (2.29166666666667 : 9.92674638476563 : JumpEnd); (2.125 : 9.92674638476563); (2.125 : 11.9631982421875); (3.01041666666667 : 11.9631982421875 : JumpStart); (3.17708333333333 : 11.9631982421875 : JumpEnd); (4.41666666666667 : 11.9631982421875 : JumpStart); (4.58333333333333 : 11.9631982421875 : JumpEnd); (4.94791916666667 : 11.9631982421875 : JumpStart); (5.11458583333333 : 11.9631982421875 : JumpEnd); (5.75 : 11.9631982421875); (5.75 : 10.8051226513672); (6.04166666666667 : 10.8051226513672 : JumpStart); (6.20833333333333 : 10.8051226513672 : JumpEnd); (7.16666666666667 : 10.8051226513672 : JumpStart); (7.33333333333333 : 10.8051226513672 : JumpEnd); (8.79166666666667 : 10.8051226513672 : JumpStart); (8.95833333333333 : 10.8051226513672 : JumpEnd); (10.2760444166667 : 10.8051226513672 : JumpStart); (10.4427110833333 : 10.8051226513672 : JumpEnd); (11.125 : 10.8051226513672)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TRAVEL_WEBDataContext/IMAGE_STORE/IMAGE_STORE_THONG_TIN_CONG_TY1" />
+      <nodes>
+        <classShapeMoniker Id="b46e2cfc-000f-43f5-8cce-99b05f05a5bf" />
+        <classShapeMoniker Id="890cbb45-3b24-4fec-bd44-a2d451c098d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.26724612825521); (2.5 : 9.26724612825521); (2.5 : 11.7131982421875); (3.01041666666667 : 11.7131982421875 : JumpStart); (3.17708333333333 : 11.7131982421875 : JumpEnd); (4.41666666666667 : 11.7131982421875 : JumpStart); (4.58333333333333 : 11.7131982421875 : JumpEnd); (4.94791916666667 : 11.7131982421875 : JumpStart); (5.11458583333333 : 11.7131982421875 : JumpEnd); (5.66666666666667 : 11.7131982421875 : JumpStart); (5.83333333333333 : 11.7131982421875 : JumpEnd); (5.91666666666667 : 11.7131982421875 : JumpStart); (6.08333333333333 : 11.7131982421875 : JumpEnd); (6.125 : 11.7131982421875); (6.125 : 10.6084222119141); (7.16666666666667 : 10.6084222119141 : JumpStart); (7.33333333333333 : 10.6084222119141 : JumpEnd); (8.79166666666667 : 10.6084222119141 : JumpStart); (8.95833333333333 : 10.6084222119141 : JumpEnd); (10.2760444166667 : 10.6084222119141 : JumpStart); (10.4427110833333 : 10.6084222119141 : JumpEnd); (11.125 : 10.6084222119141)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TRAVEL_WEBDataContext/IMAGE_STORE/IMAGE_STORE_THONG_TIN_CONG_TY2" />
+      <nodes>
+        <classShapeMoniker Id="b46e2cfc-000f-43f5-8cce-99b05f05a5bf" />
+        <classShapeMoniker Id="890cbb45-3b24-4fec-bd44-a2d451c098d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 11.2766497802734); (5.66666666666667 : 11.2766497802734 : JumpStart); (5.83333333333333 : 11.2766497802734 : JumpEnd); (5.91666666666667 : 11.2766497802734 : JumpStart); (6.20833333333333 : 11.2766497802734 : JumpEnd); (7.16666666666667 : 11.2766497802734 : JumpStart); (7.33333333333333 : 11.2766497802734 : JumpEnd); (8.79166666666667 : 11.2766497802734 : JumpStart); (8.95833333333333 : 11.2766497802734 : JumpEnd); (11.125 : 11.2766497802734)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TRAVEL_WEBDataContext/NHAN_VIEN/NHAN_VIEN_THONG_TIN_CONG_TY" />
+      <nodes>
+        <classShapeMoniker Id="9e5d4e35-052f-4332-801b-757edcf7eb74" />
+        <classShapeMoniker Id="890cbb45-3b24-4fec-bd44-a2d451c098d5" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
