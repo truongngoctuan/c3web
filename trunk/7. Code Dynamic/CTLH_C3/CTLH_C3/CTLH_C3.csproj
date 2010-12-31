@@ -204,6 +204,13 @@
     <Compile Include="DieuHanhTram\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DieuHanhTram\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="DieuHanhTram\GhiNhanPhanHoi.aspx.cs">
       <DependentUpon>GhiNhanPhanHoi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,12 +218,12 @@
     <Compile Include="DieuHanhTram\GhiNhanPhanHoi.aspx.designer.cs">
       <DependentUpon>GhiNhanPhanHoi.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DieuHanhTram\MasterPage.Master.cs">
-      <DependentUpon>MasterPage.Master</DependentUpon>
+    <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\PhanHoi.aspx.cs">
+      <DependentUpon>PhanHoi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DieuHanhTram\MasterPage.Master.designer.cs">
-      <DependentUpon>MasterPage.Master</DependentUpon>
+    <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\PhanHoi.aspx.designer.cs">
+      <DependentUpon>PhanHoi.aspx</DependentUpon>
     </Compile>
     <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\Details.aspx.cs">
       <DependentUpon>Details.aspx</DependentUpon>
@@ -244,6 +251,34 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\DAT_CHOs\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\DAT_CHOs\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\DAT_CHOs\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\DAT_CHOs\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\DAT_CHOs\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\DAT_CHOs\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\DAT_CHOs\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\DAT_CHOs\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
     <Compile Include="DynamicData\CustomPages\NHAN_VIENs\Details.aspx.cs">
@@ -919,10 +954,15 @@
     <Content Include="Authenticated\DoiMatKhau.aspx" />
     <Content Include="DieuHanhTram\Default.aspx" />
     <Content Include="DieuHanhTram\GhiNhanPhanHoi.aspx" />
+    <Content Include="DynamicData\CustomPages\CHUYEN_XEs\PhanHoi.aspx" />
     <Content Include="DynamicData\CustomPages\CHUYEN_XEs\Details.aspx" />
     <Content Include="DynamicData\CustomPages\CHUYEN_XEs\Edit.aspx" />
     <Content Include="DynamicData\CustomPages\CHUYEN_XEs\Insert.aspx" />
     <Content Include="DynamicData\CustomPages\CHUYEN_XEs\List.aspx" />
+    <Content Include="DynamicData\CustomPages\DAT_CHOs\Details.aspx" />
+    <Content Include="DynamicData\CustomPages\DAT_CHOs\Edit.aspx" />
+    <Content Include="DynamicData\CustomPages\DAT_CHOs\Insert.aspx" />
+    <Content Include="DynamicData\CustomPages\DAT_CHOs\List.aspx" />
     <Content Include="DynamicData\CustomPages\NHAN_VIENs\Details.aspx" />
     <Content Include="DynamicData\CustomPages\NHAN_VIENs\Edit.aspx" />
     <Content Include="DynamicData\CustomPages\NHAN_VIENs\Insert.aspx" />

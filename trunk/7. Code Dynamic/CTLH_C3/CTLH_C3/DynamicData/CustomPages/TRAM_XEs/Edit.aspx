@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" CodeBehind="Edit.aspx.cs" Inherits="CTLH_C3.Edit" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" CodeBehind="Edit.aspx.cs" Inherits="CTLH_C3.TRAM_XEs.Edit" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">

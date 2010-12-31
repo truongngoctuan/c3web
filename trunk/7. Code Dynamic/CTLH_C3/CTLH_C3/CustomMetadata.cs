@@ -58,7 +58,9 @@ namespace CTLH_C3
 #region Chuyen xe
     public class CHUYEN_XE_Metadata
     {
+        
         [DisplayName("Giờ khởi hành")]
+        //[Filte(DateTime)]
         public object KhoiHanh { set; get; }
 
         [DisplayName("Tuyến xe")]
@@ -90,6 +92,7 @@ namespace CTLH_C3
     [DisplayName("Chuyến xe")]
     public partial class CHUYEN_XE
     {
+      
 
     }
 #endregion
@@ -187,12 +190,17 @@ namespace CTLH_C3
 #region Phan hoi khach hang
     public class PHAN_HOI_KHACH_HANG_Metadata
     {
+        
         [DisplayName("Nội dung")]
         public object NoiDung { set; get; }
 
         [DisplayName("Ngày đăng")]
         public object NgayDang { set; get; }
 
+        [DisplayName("Tình trạng duyệt")]
+        public object TINH_TRANG_DUYET { set; get; }
+
+        [ScaffoldColumn(false)]
         [DisplayName("Nằm trong")]
         public object PHAN_HOIs { set; get; }
     }

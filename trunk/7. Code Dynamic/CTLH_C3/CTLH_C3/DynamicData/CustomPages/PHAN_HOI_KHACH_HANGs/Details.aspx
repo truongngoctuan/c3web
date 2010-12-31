@@ -1,10 +1,13 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" CodeBehind="Details.aspx.cs" Inherits="CTLH_C3.Details" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" CodeBehind="Details.aspx.cs" Inherits="CTLH_C3.PHAN_HOI_KHACH_HANGs.Details" %>
+
+<%@ Register src="~/DynamicData/Content/GridViewPager.ascx" tagname="GridViewPager" tagprefix="asp" %>
+<%@ Register src="~/DynamicData/Content/FilterUserControl.ascx" tagname="DynamicFilter" tagprefix="asp" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
-    <h2>Chi tiết một đối tượng dữ liệu từ bảng <%= table.DisplayName %></h2>
+    <h2>Duyệt phản hồi của khách hàng</h2>
 
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
 
@@ -14,32 +17,70 @@
                 HeaderText="Danh sách lỗi" />
             <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView1" Display="None" />
 
-            <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="DetailsDataSource" OnItemDeleted="DetailsView1_ItemDeleted"
-                CssClass="detailstable" FieldHeaderStyle-CssClass="bold" >
+            <asp:DetailsView ID="DetailsView1" runat="server" 
+                DataSourceID="DetailsDataSource" OnItemDeleted="DetailsView1_ItemDeleted"
+                CssClass="detailstable" FieldHeaderStyle-CssClass="bold" 
+                onpageindexchanging="DetailsView1_PageIndexChanging" >
                 <Fields>
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:HyperLink ID="EditHyperLink" runat="server"
-                                NavigateUrl='<%# table.GetActionPath(PageAction.Edit, GetDataItem()) %>'
-                                Text="Sửa" />
-                            <asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete" CausesValidation="false"
-                                OnClientClick='return confirm("Bạn có chắc chắn muốn xóa dữ liệu này không?");'
-                                Text="Xóa" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    
                 </Fields>
             </asp:DetailsView>
 
             <asp:LinqDataSource ID="DetailsDataSource" runat="server" EnableDelete="true">
-                <WhereParameters>
-                    <asp:DynamicQueryStringParameter />
+                
+            </asp:LinqDataSource>
+            
+            <br />
+             
+             
+            
+            <asp:Label ID="Label2" runat="server" Text="Ngày khởi hành"></asp:Label>
+            <asp:DropDownList ID="DropDownList1" runat="server" 
+                DataSourceID="LinqDataSource1" DataTextField="KhoiHanh" 
+                DataValueField="KhoiHanh" autopostback = "true">
+            </asp:DropDownList>
+            <asp:LinqDataSource ID="LinqDataSource1" runat="server" 
+                ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext"
+                TableName="CHUYEN_XEs" onselecting="LinqDataSource1_Selecting">
+            </asp:LinqDataSource>
+            
+           
+            
+             <asp:GridView ID="GridView1" runat="server" DataSourceID="GridDataSource"
+                AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
+                CssClass="gridview" onrowcommand="GridView1_RowCommand" onselectedindexchanged="GridView1_SelectedIndexChanged" 
+                
+                >
+               
+               <Columns>
+                    <asp:ButtonField CommandName="SelectItem" Text="Chọn" HeaderText="Chọn chuyến xe"/>
+                    <asp:DynamicField DataField="TUYEN_XE" HeaderText="Tuyến xe" />
+                    <asp:BoundField DataField="KhoiHanh" HeaderText="Khởi hành" />
+                    <asp:DynamicField DataField="NHAN_VIEN" HeaderText="Tài xế" />
+                    <asp:BoundField DataField="MaChuyenXe" HeaderText="Mã chuyến xe" />
+                </Columns>
+                  
+
+                <PagerStyle CssClass="footer"/>        
+                <PagerTemplate>
+                    <asp:GridViewPager ID="GridViewPager1" runat="server" />
+                </PagerTemplate>
+                
+            </asp:GridView>
+
+            <asp:LinqDataSource ID="GridDataSource" runat="server" 
+                ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext" 
+                Select="new (MaChuyenXe, KhoiHanh, NHAN_VIEN, TUYEN_XE, MaTuyenXe, MaTaiXe)" 
+                TableName="CHUYEN_XEs" Where="KhoiHanh == @KhoiHanh" 
+                onselecting="GridDataSource_Selecting">
+               <WhereParameters>
+                    <asp:ControlParameter Name = "KhoiHanh" ControlID="DropDownList1" PropertyName="SelectedValue" Type="Datetime"/>    
                 </WhereParameters>
             </asp:LinqDataSource>
 
-            <br />
-
             <div class="bottomhyperlink">
-                <asp:HyperLink ID="ListHyperLink" runat="server">Xem tất cả các đối tượng dữ liệu</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="ListHyperLink" runat="server">Quay về duyệt tiếp</asp:HyperLink>
             </div>        
         </ContentTemplate>
     </asp:UpdatePanel>

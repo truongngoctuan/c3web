@@ -12,9 +12,9 @@ using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
 using System.Web.DynamicData;
 
-namespace CTLH_C3.CHUYEN_XEs
+namespace CTLH_C3.DAT_CHOs
 {
-    public partial class Insert : System.Web.UI.Page
+    public partial class Edit : System.Web.UI.Page
     {
         protected MetaTable table;
 
@@ -27,6 +27,7 @@ namespace CTLH_C3.CHUYEN_XEs
         {
             table = DetailsDataSource.GetTable();
             Title = table.DisplayName;
+
         }
 
         protected void DetailsView1_ItemCommand(object sender, DetailsViewCommandEventArgs e)
@@ -35,13 +36,9 @@ namespace CTLH_C3.CHUYEN_XEs
             {
                 Response.Redirect(table.ListActionPath);
             }
-            if (e.CommandName == DataControlCommands.InsertCommandName)
-            {
-               
-            }
         }
 
-        protected void DetailsView1_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
+        protected void DetailsView1_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)
         {
             if (e.Exception == null || e.ExceptionHandled)
             {

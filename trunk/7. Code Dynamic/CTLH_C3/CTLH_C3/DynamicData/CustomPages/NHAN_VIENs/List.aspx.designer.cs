@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.NHAN_VIENs
-{
+namespace CTLH_C3.NHAN_VIENs {
     
     
     public partial class List {

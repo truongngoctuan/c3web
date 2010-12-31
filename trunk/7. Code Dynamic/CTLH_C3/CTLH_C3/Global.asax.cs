@@ -39,13 +39,13 @@ namespace CTLH_C3
             //    Table = "NHAN_VIENs"
             //});
 
-            //routes.Add(new DynamicDataRoute("NHAN_VIENs/ListDetails.aspx")
-            //{
-            //    Action = PageAction.Details,
-            //    ViewName = "ListDetails",
-            //    Model = model,
-            //    Table = "NHAN_VIENs"
-            //});
+            routes.Add(new DynamicDataRoute("CHUYEN_XEs/PhanHoi.aspx")
+            {
+                Action = "PhanHoi",
+                ViewName = "PhanHoi",
+                Model = model,
+                Table = "CHUYEN_XEs"
+            });
 
             routes.Add(new DynamicDataRoute("{table}/{action}.aspx")
             {

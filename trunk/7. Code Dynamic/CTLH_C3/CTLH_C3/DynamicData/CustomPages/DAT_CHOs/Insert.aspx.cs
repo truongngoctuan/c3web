@@ -12,7 +12,7 @@ using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
 using System.Web.DynamicData;
 
-namespace CTLH_C3.CHUYEN_XEs
+namespace CTLH_C3.DAT_CHOs
 {
     public partial class Insert : System.Web.UI.Page
     {
@@ -34,10 +34,6 @@ namespace CTLH_C3.CHUYEN_XEs
             if (e.CommandName == DataControlCommands.CancelCommandName)
             {
                 Response.Redirect(table.ListActionPath);
-            }
-            if (e.CommandName == DataControlCommands.InsertCommandName)
-            {
-               
             }
         }
 

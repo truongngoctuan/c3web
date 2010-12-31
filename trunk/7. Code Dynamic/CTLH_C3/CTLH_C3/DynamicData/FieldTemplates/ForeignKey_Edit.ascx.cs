@@ -62,5 +62,10 @@ namespace CTLH_C3
                 return DropDownList1;
             }
         }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.TRAM_XEs
-{
+namespace CTLH_C3.TRAM_XEs {
     
     
     public partial class Edit {

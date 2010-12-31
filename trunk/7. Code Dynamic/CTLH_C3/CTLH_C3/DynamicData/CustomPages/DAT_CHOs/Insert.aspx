@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" CodeBehind="Insert.aspx.cs" Inherits="CTLH_C3.TUYEN_XEs.Insert" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" CodeBehind="Insert.aspx.cs" Inherits="CTLH_C3.DAT_CHOs.Insert" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
