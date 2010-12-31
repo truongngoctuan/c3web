@@ -28,13 +28,12 @@ namespace CTLH_C3.PHAN_HOI_KHACH_HANGs
             table = GridDataSource.GetTable();
             Title = table.DisplayName;
 
-            InsertHyperLink.NavigateUrl = table.GetActionPath(PageAction.Insert);
-
+            
             // Disable various options if the table is readonly
             if (table.IsReadOnly)
             {
                 GridView1.Columns[0].Visible = false;
-                InsertHyperLink.Visible = false;
+               
             }
         }
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" CodeBehind="List.aspx.cs" Inherits="CTLH_C3.PHAN_HOIs.List" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" CodeBehind="List.aspx.cs" Inherits="CTLH_C3.DAT_CHOs.List" %>
 
 <%@ Register src="~/DynamicData/Content/GridViewPager.ascx" tagname="GridViewPager" tagprefix="asp" %>
 <%@ Register src="~/DynamicData/Content/FilterUserControl.ascx" tagname="DynamicFilter" tagprefix="asp" %>
@@ -46,7 +46,7 @@
                     <asp:GridViewPager runat="server" />
                 </PagerTemplate>
                 <EmptyDataTemplate>
-                    Không có dữ liệu trong cơ sở dữ liệu!
+                    There are currently no items in this table.
                 </EmptyDataTemplate>
             </asp:GridView>
 
@@ -59,7 +59,7 @@
             <br />
 
             <div class="bottomhyperlink">
-                <asp:HyperLink ID="InsertHyperLink" runat="server"><img runat="server" src="~/DynamicData/Content/Images/plus.gif" alt="Insert new item" />Thêm mới một đối tượng dữ liệu</asp:HyperLink>
+                <asp:HyperLink ID="InsertHyperLink" runat="server"><img runat="server" src="~/DynamicData/Content/Images/plus.gif" alt="Insert new item" />Insert new item</asp:HyperLink>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

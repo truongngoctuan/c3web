@@ -12,7 +12,7 @@ using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
 using System.Web.DynamicData;
 
-namespace CTLH_C3
+namespace CTLH_C3.DAT_CHOs
 {
     public partial class List : System.Web.UI.Page
     {
@@ -28,13 +28,13 @@ namespace CTLH_C3
             table = GridDataSource.GetTable();
             Title = table.DisplayName;
 
-          
+            InsertHyperLink.NavigateUrl = table.GetActionPath(PageAction.Insert);
 
             // Disable various options if the table is readonly
             if (table.IsReadOnly)
             {
                 GridView1.Columns[0].Visible = false;
-                
+                InsertHyperLink.Visible = false;
             }
         }
 

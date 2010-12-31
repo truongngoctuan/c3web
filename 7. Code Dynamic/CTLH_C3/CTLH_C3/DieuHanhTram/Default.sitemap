@@ -5,10 +5,10 @@
     <siteMapNode  url="~/CHUYEN_XEs/List.aspx" title="Quản lý chuyến"  description="Quản lý chuyến">
     </siteMapNode>
     <siteMapNode  title="Quản lý phản hồi"  description="Quản lý phản hồi">
-      <siteMapNode url="DieuHanhCongTy/GhiNhanPhanHoi.aspx" title="Ghi nhận phản hồi"  description="Ghi nhận phản hồin" />
+      <siteMapNode url="~/CHUYEN_XEs/PhanHoi.aspx" title="Ghi nhận phản hồi"  description="Ghi nhận phản hồin" />
       <siteMapNode url="~/PHAN_HOI_KHACH_HANGs/List.aspx" title="Duyệt phản hồi"  description="Duyệt phản hồi" />
     </siteMapNode>
-    <siteMapNode  title="Quản lý ghế/vé"  description="Quản lý ghế/vé">
+    <siteMapNode  url="~/DAT_CHOs/List.aspx" title="Quản lý ghế/vé"  description="Quản lý ghế/vé">
     </siteMapNode>
    </siteMapNode>
 </siteMap>

@@ -12,35 +12,31 @@ using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
 using System.Web.DynamicData;
 
-namespace CTLH_C3
+namespace CTLH_C3.DAT_CHOs
 {
-    public partial class List : System.Web.UI.Page
+    public partial class Details : System.Web.UI.Page
     {
         protected MetaTable table;
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            DynamicDataManager1.RegisterControl(GridView1, true /*setSelectionFromUrl*/);
+            DynamicDataManager1.RegisterControl(DetailsView1);
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            table = GridDataSource.GetTable();
+            table = DetailsDataSource.GetTable();
             Title = table.DisplayName;
 
-          
-
-            // Disable various options if the table is readonly
-            if (table.IsReadOnly)
-            {
-                GridView1.Columns[0].Visible = false;
-                
-            }
+            ListHyperLink.NavigateUrl = table.ListActionPath;
         }
 
-        protected void OnFilterSelectedIndexChanged(object sender, EventArgs e)
+        protected void DetailsView1_ItemDeleted(object sender, DetailsViewDeletedEventArgs e)
         {
-            GridView1.PageIndex = 0;
+            if (e.Exception == null || e.ExceptionHandled)
+            {
+                Response.Redirect(table.ListActionPath);
+            }
         }
     }
 }

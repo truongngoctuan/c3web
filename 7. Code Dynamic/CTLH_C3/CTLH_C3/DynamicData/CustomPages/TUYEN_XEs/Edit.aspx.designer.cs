@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.TUYEN_XEs
-{
+namespace CTLH_C3.TUYEN_XEs {
     
     
     public partial class Edit {

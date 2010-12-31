@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" CodeBehind="ForeignKey_Edit.ascx.cs" Inherits="CTLH_C3.ForeignKey_EditField" %>
 
-<asp:DropDownList ID="DropDownList1" runat="server" CssClass="droplist">
+<asp:DropDownList ID="DropDownList1" runat="server" CssClass="droplist" 
+    onselectedindexchanged="DropDownList1_SelectedIndexChanged">
 </asp:DropDownList>

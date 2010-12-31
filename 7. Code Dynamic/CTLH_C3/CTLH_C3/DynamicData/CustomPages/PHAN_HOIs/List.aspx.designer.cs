@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.PHAN_HOIs
-{
+namespace CTLH_C3.PHAN_HOIs {
     
     
     public partial class List {

@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.PHAN_HOI_KHACH_HANGs
-{
+namespace CTLH_C3.PHAN_HOI_KHACH_HANGs {
     
     
     public partial class List {
@@ -60,15 +59,6 @@ namespace CTLH_C3.PHAN_HOI_KHACH_HANGs
         protected global::System.Web.DynamicData.DynamicValidator GridViewValidator;
         
         /// <summary>
-        /// FilterRepeater control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.DynamicData.FilterRepeater FilterRepeater;
-        
-        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>
@@ -85,14 +75,5 @@ namespace CTLH_C3.PHAN_HOI_KHACH_HANGs
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource GridDataSource;
-        
-        /// <summary>
-        /// InsertHyperLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink InsertHyperLink;
     }
 }
