@@ -110,6 +110,34 @@ thay đổi back ground*/
     background-position: 0px -56px;
 }
 
+/*ucLeftContentButton-----------------------------------------------------------*/
+.ucLeftContentButton
+{    
+    color:#090d37;
+    vertical-align:middle;
+    background-color:Transparent;
+    background-image: url(images/btLeftContent.jpg);
+    
+    border-width:0px;
+    border-style:none;
+    
+    font-family:Verdana;
+    font-size:14px;
+    font-weight:bold;
+    height:101px;
+    width:226px;
+    margin: 5px auto;
+}
+
+.ucLeftContentButton:hover
+{
+    color:Maroon;
+}
+.ucLeftContentButton:active
+{
+    color:Navy;
+}
+
 /*ucTextbox-----------------------------------------------------------*/
 
 .ucTextbox
@@ -197,7 +225,7 @@ thay đổi back ground*/
     font-weight:bold;
     height:20px;
     
-    padding: 0px 5px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 .ucloginlogout:hover

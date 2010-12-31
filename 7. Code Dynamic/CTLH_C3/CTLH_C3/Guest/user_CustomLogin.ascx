@@ -7,16 +7,15 @@
                  <asp:FormView ID="FormView1" runat="server" DataSourceID="ldsTenNhanVien"
                         Width="245px">
                         <ItemTemplate>
-                        <div style="width:245px;">
+                        <div style="width:245px; text-align:center;">
                         <asp:LoginStatus ID="LoginStatus1" runat="server" 
                             LoginText="Đăng nhập"
                             CssClass="ucloginlogout"                            
                             LogoutText="Đăng xuất"                             
                             LogoutPageUrl="~/Default.aspx"
-                            style="float:right;"/>
+                            style="float:right;clear:both;"/>
                         <asp:Image ID="Image1" runat="server" ImageUrl="~/images/HinhDaiDien.jpg"
-                            style="
-                            margin-left:49px;"/>
+                        style="float:left; clear:both; margin-left:50px; margin-bottom:5px;"/>
                         
                         <asp:Label ID="lbHoTen" runat="server" 
                         Text='<%#Bind("HoTen")%>' 
@@ -24,10 +23,11 @@
                             float:left; clear:both;
                             text-align:center;
                             width:245px"></asp:Label>
-                        <asp:HyperLink ID="HyperLink3" NavigateUrl="~/TAI_KHOANs/List.aspx" runat="server"
-                        style="float:left; clear:both;text-align:center;width:245px;">Quản lý tài khoản</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/ThayDoiGiaoDien.aspx" runat="server"
-                        style="float:left; clear:both;text-align:center;width:245px;">Thông tin công ty</asp:HyperLink>
+
+                            <asp:Button ID="Button1" runat="server" Text="Quản lý tài khoản" 
+                            PostBackUrl="~/TAI_KHOANs/List.aspx" SkinID="LeftContent"/>
+                            <asp:Button ID="Button2" runat="server" Text="Thông tin công ty" 
+                            PostBackUrl="~/Admin/ThayDoiGiaoDien.aspx" SkinID="LeftContent"/>
                         </div>
                     </ItemTemplate>
                 </asp:FormView>   
@@ -70,14 +70,21 @@
                             <asp:Literal ID="Label1" runat="server" 
                         Text=" <%#Bind('LuongTrongThang')%>"></asp:Literal> VNĐ</div>
                         
-                    
+                    <asp:Button ID="Button1" runat="server" Text="Xem chuyến kế tiếp" 
+                            PostBackUrl="~/TaiXe/TaiXe_Default.aspx" SkinID="LeftContent"/>
+                            <asp:Button ID="Button2" runat="server" Text="Xem nhật kí" 
+                            PostBackUrl="~/TaiXe/NhatKi.aspx" SkinID="LeftContent"/>
+                            <asp:Button ID="Button3" runat="server" Text="Xem phản hồi" 
+                            PostBackUrl="~/TaiXe/XemPhanHoi.aspx" SkinID="LeftContent"/>
+<%--                            
+                            
                         <asp:HyperLink ID="HyperLink1" NavigateUrl="~/TaiXe/TaiXe_Default.aspx" runat="server"
                         style="float:left; clear:both;text-align:center;width:245px;">Xem chuyến kế tiếp</asp:HyperLink><br />
                         <asp:HyperLink ID="HyperLink5" NavigateUrl="~/TaiXe/NhatKi.aspx" runat="server"
                         style="float:left; clear:both;text-align:center;width:245px;">Xem nhật kí</asp:HyperLink><br />
                         
                         <asp:HyperLink ID="HyperLink4" NavigateUrl="~/TaiXe/XemPhanHoi.aspx" runat="server"
-                        style="float:left; clear:both;text-align:center;width:245px;">Xem phản hồi</asp:HyperLink>
+                        style="float:left; clear:both;text-align:center;width:245px;">Xem phản hồi</asp:HyperLink>--%>
                         Phản hồi gần nhất:<br />
                         <asp:GridView ID="GridView1" runat="server" DataSourceID="ldsDanhSachPhanHoi"
                         style="float:left; clear:both; width:240px;" AutoGenerateColumns="False"

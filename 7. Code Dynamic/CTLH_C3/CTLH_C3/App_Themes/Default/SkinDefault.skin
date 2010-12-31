@@ -68,3 +68,12 @@ Default skin template. The following skins are provided as examples only.
 
 <asp:GridView runat="server"
     CssClass="gridview"/>
+    
+<asp:ImageButton runat="server" 
+    CssClass="ucImageButton" 
+    ImageUrl="images/LinkButtonBackground.png"/>
+    
+<asp:Button runat="server" 
+    Cssclass="ucLeftContentButton"
+    SkinID="LeftContent"
+/>
