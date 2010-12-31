@@ -14,15 +14,6 @@ namespace CTLH_C3.Admin {
     public partial class ThayDoiGiaoDien {
         
         /// <summary>
-        /// uploadBanner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload uploadBanner;
-        
-        /// <summary>
         /// sttBanner control.
         /// </summary>
         /// <remarks>
@@ -32,13 +23,13 @@ namespace CTLH_C3.Admin {
         protected global::System.Web.UI.WebControls.Label sttBanner;
         
         /// <summary>
-        /// uploadSlogan control.
+        /// uploadBanner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload uploadSlogan;
+        protected global::System.Web.UI.WebControls.FileUpload uploadBanner;
         
         /// <summary>
         /// sttSlogan control.
@@ -50,13 +41,13 @@ namespace CTLH_C3.Admin {
         protected global::System.Web.UI.WebControls.Label sttSlogan;
         
         /// <summary>
-        /// uploadLogo control.
+        /// uploadSlogan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload uploadLogo;
+        protected global::System.Web.UI.WebControls.FileUpload uploadSlogan;
         
         /// <summary>
         /// sttLogo control.
@@ -68,31 +59,13 @@ namespace CTLH_C3.Admin {
         protected global::System.Web.UI.WebControls.Label sttLogo;
         
         /// <summary>
-        /// Panel1 control.
+        /// uploadLogo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
-        
-        /// <summary>
-        /// tbMenuColor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbMenuColor;
-        
-        /// <summary>
-        /// cpeMenuColor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ColorPickerExtender cpeMenuColor;
+        protected global::System.Web.UI.WebControls.FileUpload uploadLogo;
         
         /// <summary>
         /// pnThayDoiGiaoDien control.

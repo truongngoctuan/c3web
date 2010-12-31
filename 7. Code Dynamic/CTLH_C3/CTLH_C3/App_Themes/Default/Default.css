@@ -212,7 +212,7 @@ thay đổi back ground*/
 /*fileupload------------------------------------------------------*/
 /*http://www.quirksmode.org/dom/inputfile.html*/
 div.fileinputs {
-	position: relative;
+	position:relative;
 }
 
 div.fakefile {
@@ -223,7 +223,9 @@ div.fakefile {
 }
 
 input.file {
-	position: relative;
+	position: absolute;
+	top: 15px;
+	left: 0px;
 	text-align: right;
 	-moz-opacity:0 ;
 	filter:alpha(opacity: 0);
@@ -231,6 +233,32 @@ input.file {
 	z-index: 2;
 }
 
+.fakeinput 
+{
+    position: absolute;
+	top: 15px;
+	left: 0px;
+	
+	vertical-align:baseline;
+    background-color:Transparent;
+    background-image: url(images/tbBackgroundGradient.jpg);
+    /*http://vinasupport.com/blog/2010/08/tao-goc-bo-tron-rounded-corner-voi-css3/*/
+    /*for chrome, safari*/
+    -webkit-border-radius: 4px;
+    /*for firefox*/
+    -moz-border-radius: 4px;
+    
+    border-width:1px;
+    border-color:#3a92ff;
+    color:#090d37;
+    font-family:Verdana;
+    font-size:11px;
+    height:20px;
+}
+
 .fakefileimg
 {
+    position:absolute;
+    left:120px;
+    top:5px;
 }
