@@ -17,27 +17,23 @@ namespace CTLH_C3
         // Nếu người dùng chưa đăng nhập với vai trò "Tài Xế" 
         // thì không cho vào trang
         protected void Page_PreInit(object sender, EventArgs e)
-        {            
-            if (!IsPostBack)
+        {          
+            if (Page.User.Identity.IsAuthenticated)
             {
-                if (Page.User.Identity.IsAuthenticated)
-                {
-                    _role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
-                    _maNhanVien = Roles.GetRolesForUser(Page.User.Identity.Name)[1];
-                    if (!_role.ToLower().Equals("tài xế"))
-                        Response.Redirect("/Default.aspx");
-                }
-                else
-                {
+                _role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
+                _maNhanVien = Roles.GetRolesForUser(Page.User.Identity.Name)[1];
+                if (!_role.ToLower().Equals("tài xế"))
                     Response.Redirect("/Default.aspx");
-                }
+            }
+            else
+            {
+                Response.Redirect("/Default.aspx");
             }
         }
 
         protected void Page_Init(object sender, EventArgs e)
         {
             DynamicDataManager1.RegisterControl(DetailsView_ThongTinCaNhan);
-            DynamicDataManager1.RegisterControl(DetailsView_TaiKhoan);
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -49,10 +45,6 @@ namespace CTLH_C3
                 ThongTinDataSource.AutoGenerateWhereClause = false;
                 ThongTinDataSource.Select = "new (MaNhanVien, HoTen, DienThoai, DiaChi, LuongTrongThang)";
                 ThongTinDataSource.Where = "MaNhanVien==" + _maNhanVien;
-
-                TaiKhoanDataSource.AutoGenerateWhereClause = false;
-                TaiKhoanDataSource.Select = "new (Username, Password, MaTaiKhoan, Email)";
-                TaiKhoanDataSource.Where = "MaNhanVien==" + _maNhanVien;
             }
         }
     }

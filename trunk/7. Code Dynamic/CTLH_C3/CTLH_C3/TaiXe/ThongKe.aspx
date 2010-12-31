@@ -6,8 +6,9 @@
 <%@ Register Src="~/DynamicData/Content/FilterUserControl.ascx" TagName="DynamicFilter"
     TagPrefix="asp" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    Tài xế - Thay đổi thông tin cá nhân
+    Tài xế - Thống kê
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
@@ -25,21 +26,39 @@
                 HeaderText="Danh sách lỗi" />
             <asp:DynamicValidator runat="server" ID="GridViewValidator" ControlToValidate="grdSapChay"
                 Display="None" />
-            
+                      
             <br />
+            <div><b>Lịch chạy</b>
+                <br />
+                <br />
                 <b>Tháng:</b>
-                <asp:Label ID="lblThang" runat="server"></asp:Label>
+                <asp:DropDownList ID="dlstThang_SapChay" runat="server" AutoPostBack="True" 
+                    onselectedindexchanged="dlstThang_SapChay_SelectedIndexChanged">
+                    <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                    <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                    <asp:ListItem Text="4" Value="4"></asp:ListItem>
+                    <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                    <asp:ListItem Text="6" Value="6"></asp:ListItem>
+                    <asp:ListItem Text="7" Value="7"></asp:ListItem>
+                    <asp:ListItem Text="8" Value="8"></asp:ListItem>
+                    <asp:ListItem Text="9" Value="9"></asp:ListItem>
+                    <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                    <asp:ListItem Text="11" Value="11"></asp:ListItem>
+                    <asp:ListItem Text="12" Value="12"></asp:ListItem>
+                </asp:DropDownList>
                 <b>Năm:</b>
-                <asp:Label ID="lblNam" runat="server"></asp:Label>
-            <br />
-           
-            <br />
-            <div><b>Lịch chạy</b></div>
-            <br />
+                <asp:DropDownList ID="dlstNam_SapChay" runat="server" AutoPostBack="True" 
+                    onselectedindexchanged="dlstNam_SapChay_SelectedIndexChanged"></asp:DropDownList>
+                <br />
+                <br />
+            </div>
             
             <%--Các chuyến sắp chạy --%>      
             <asp:GridView ID="grdSapChay" runat="server" AllowPaging="True"
-                AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" >
+                AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" 
+                onpageindexchanging="grdSapChay_PageIndexChanging" 
+                ondatabinding="grdSapChay_DataBinding">
                 <Columns>
                     <asp:BoundField DataField="MaChuyen" HeaderText="Mã chuyến" />
                     <asp:BoundField DataField="TramDi" HeaderText="Trạm đi" />
@@ -62,12 +81,38 @@
                 Display="None" />
                 
             <br />
-            <div><b>Các chuyến đã phục vụ:</b></div>   
-            <br /> 
+            <div><b>Các chuyến đã phục vụ:</b>
+                <br />
+                <br />
+                <b>Tháng:</b>
+                <asp:DropDownList ID="dlstThang_DaChay" runat="server" AutoPostBack="True" 
+                    onselectedindexchanged="dlstThang_DaChay_SelectedIndexChanged">
+                    <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                    <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                    <asp:ListItem Text="4" Value="4"></asp:ListItem>
+                    <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                    <asp:ListItem Text="6" Value="6"></asp:ListItem>
+                    <asp:ListItem Text="7" Value="7"></asp:ListItem>
+                    <asp:ListItem Text="8" Value="8"></asp:ListItem>
+                    <asp:ListItem Text="9" Value="9"></asp:ListItem>
+                    <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                    <asp:ListItem Text="11" Value="11"></asp:ListItem>
+                    <asp:ListItem Text="12" Value="12"></asp:ListItem>
+                </asp:DropDownList>
+                <b>Năm:</b>
+                <asp:DropDownList ID="dlstNam_DaChay" runat="server" AutoPostBack="True" 
+                    onselectedindexchanged="dlstNam_DaChay_SelectedIndexChanged"></asp:DropDownList>
+                <br />
+                <br />
+            </div>   
+           
             
             <%--Các chuyến đã chạy --%>      
             <asp:GridView ID="grdDaChay" runat="server" AllowPaging="True"
-                AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" >
+                AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" 
+                onpageindexchanging="grdDaChay_PageIndexChanging" 
+                ondatabinding="grdDaChay_DataBinding" >
                 <Columns>
                     <asp:BoundField DataField="MaChuyen" HeaderText="Mã chuyến" />
                     <asp:BoundField DataField="TramDi" HeaderText="Trạm đi" />
