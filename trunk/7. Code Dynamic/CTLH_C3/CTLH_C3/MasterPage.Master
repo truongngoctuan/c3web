@@ -78,59 +78,25 @@
             <img style="position:absolute; 
             right:0px; top:0px;" 
             src="../images/truck.png" width="374" height="277" alt=""/>
+            
+            <%--chứa các radio button cho chọn theme--%>
+            <div id="header_right"
+            style="position:absolute; right:0px; top:0px;
+            width:200px; height:50px;
+            background-color:Silver;
+            border-bottom-width:1px;
+            border-color:Gray;">
+                <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
+                    TypeName="ThemeManager"></asp:ObjectDataSource>
+                <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" DataSourceID="ThemeDataSource"
+                    DataTextField="Name" DataValueField="Name" RepeatDirection="Horizontal" OnDataBound="ThemeList_DataBound"
+                    OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
+                </asp:RadioButtonList>
+            </div> 
         </div>
-        <%--chứa các radio button cho chọn theme--%>
-        <div id="header_right"
-        style="position:absolute; right:0px; top:0px; z-index:10;
-        width:200px; height:100px">
-            <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
-                TypeName="ThemeManager"></asp:ObjectDataSource>
-            <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" DataSourceID="ThemeDataSource"
-                DataTextField="Name" DataValueField="Name" RepeatDirection="Horizontal" OnDataBound="ThemeList_DataBound"
-                OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
-            </asp:RadioButtonList>
-        </div> 
-         
-          
-          
-        <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server"/>
         
-        <%-- code cũ ----------------------------------------------------------
-        <img style="float:left" src="../images/header_bg_left.gif" width="270" height="193" alt="" />
-        <img style="float:left" src="../images/header_bg_mid.gif" width="412" height="193" alt="" />
-        <div id="header_right">
-            <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
-                TypeName="ThemeManager"></asp:ObjectDataSource>
-            <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" DataSourceID="ThemeDataSource"
-                DataTextField="Name" DataValueField="Name" RepeatDirection="Horizontal" OnDataBound="ThemeList_DataBound"
-                OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
-            </asp:RadioButtonList>
-        </div>  
-              
-        <div id="Menu">
-            <asp:Menu runat="server" DataSourceID="SiteMapDataSourceMenu"
-                            Orientation="Horizontal" 
-                            staticdisplaylevels="2" 
-                            DynamicHorizontalOffset="1"
-                            staticsubmenuindent="1px" 
-                            MaximumDynamicDisplayLevels="5"
-                            Height="59px">
-            
-            <StaticMenuItemStyle CssClass="staticMenuItemStyle"/>
-            <StaticHoverStyle CssClass="staticHoverStyle" />
-            <StaticSelectedStyle CssClass="staticMenuItemSelectedStyle"/> 
-            
-            <DynamicMenuItemStyle CssClass="dynamicMenuItemStyle" />      
-            <DynamicHoverStyle CssClass="dynamicMenuItemHover" />
-            <DynamicMenuStyle CssClass="dynamicMenuStyle" />
-            <DynamicSelectedStyle CssClass="dynamicMenuItemSelectedStyle" />
-            </asp:Menu>          
-        </div>   
-          
+
         <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server"/>
-    
-        <div id="header_bg_right2"></div>
-        <img style="float:left;" src="../images/menu_bg_bottom.gif" width="995" height="22" alt="" />--%>
     </div>
     <!--****************************************************************-->
     <div id="page">

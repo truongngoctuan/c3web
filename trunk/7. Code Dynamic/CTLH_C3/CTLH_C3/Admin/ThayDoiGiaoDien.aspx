@@ -17,48 +17,66 @@
 //		});
 //	};
     </script>
-Banner: 
-<div class="fileinputs">
-<asp:FileUpload ID="uploadBanner" runat="server" CssClass="file"/>
-<%--	<input type="file" class="file" />--%>
-	<div class="fakefile">
-		<input />
-		<img class="fakefileimg" src="../images/logout-button.png" alt=""/>
-	</div>
-</div>
-<%--<asp:FileUpload ID="uploadBanner" runat="server" />--%>
-<asp:Label runat="server" id="sttBanner" text=" " />
-<br/>
+    <div style="float:left; clear:both; margin-bottom:75px;">
+        Banner: <asp:Label runat="server" id="sttBanner" text=" " style="margin-bottom:15px;"/>
+        <div class="fileinputs">
+        <asp:FileUpload ID="uploadBanner" runat="server" CssClass="file"/>
+	        <div class="fakefile">
+		        <input class="fakeinput"/>
+		        <img class="fakefileimg" src="../images/uploadfilebutton.png" alt=""/>
+	        </div>
+        </div>
+        
+    </div>
 
-Slogan: 
-<asp:FileUpload ID="uploadSlogan" runat="server" />
-<asp:Label runat="server" id="sttSlogan" text=" " />
-<br/>
+    <div style="float:left; clear:both; margin-bottom:75px;">
+        Slogan: <asp:Label runat="server" id="sttSlogan" text=" " style="margin-bottom:15px;"/>
+        <div class="fileinputs">
+        <asp:FileUpload ID="uploadSlogan" runat="server" CssClass="file"/>
+	        <div class="fakefile">
+		        <input class="fakeinput"/>
+		        <img class="fakefileimg" src="../images/uploadfilebutton.png" alt=""/>
+	        </div>
+        </div>
+        
+    </div>
 
-Logo: 
-<asp:FileUpload ID="uploadLogo" runat="server" />
-<asp:Label runat="server" id="sttLogo" text=" " />
-<br/>
-<asp:Panel ID="Panel1" runat="server">
+    <div style="float:left; clear:both; margin-bottom:75px;">
+        Logo: <asp:Label runat="server" id="sttLogo" text=" " style="margin-bottom:15px;"/>
+        <div class="fileinputs">
+        <asp:FileUpload ID="uploadLogo" runat="server" CssClass="file"/>
+	        <div class="fakefile">
+		        <input class="fakeinput"/>
+		        <img class="fakefileimg" src="../images/uploadfilebutton.png" alt=""/>
+	        </div>
+        </div>
+        
+    </div>
+
+<%--<asp:Panel ID="Panel1" runat="server">
     MenuBackgroundColor: 
     <asp:TextBox ID="tbMenuColor" runat="server"></asp:TextBox>
     <asp:ColorPickerExtender ID="cpeMenuColor" runat="server"
     TargetControlID="tbMenuColor" >
     </asp:ColorPickerExtender>
     <br/>
-</asp:Panel>
+</asp:Panel>--%>
 
     
-<asp:Panel ID="pnThayDoiGiaoDien" runat="server">
+<asp:Panel ID="pnThayDoiGiaoDien" runat="server" style="float:left; clear:both;">
     <RichTextEditor:RichTextEditor ID="rteGioiThieu" Theme="Blue" runat="server" />
 </asp:Panel>
 
 
 <%--<input type="submit" id="Button1" value="Submit" onclick="javascript:OnTextView();CopyText();" />--%>
-    <asp:Button ID="Button2" runat="server" Text="Đồng ý cập nhật" 
-onclick="Button2_Click" OnClientClick="javascript:OnTextView();CopyText();"/>
+<div style="float:left; clear:both; width:700px; text-align:center;
+margin:10px auto;">
+<asp:Button ID="Button2" runat="server" Text="Đồng ý cập nhật" 
+        onclick="Button2_Click" OnClientClick="javascript:OnTextView();CopyText();"
+        />
+</div>
+
 </asp:Content>
-    
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
     <webUC:user_Login ID="user_Login" runat="server" />
 </asp:Content>
