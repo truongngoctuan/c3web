@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="CTLH_C3.MasterPage" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -19,12 +21,18 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"/>
     <!--****************************************************************-->
     <div id="top">
-        <%--<img style="float:left; clear:both;z-index:9;" src="../images/banner.jpg" width="995" height="193" alt=""/>--%>
         <asp:Image ID="imgBanner" runat="server" 
-        style="float:left; clear:both;z-index:9;"/>
-        <img style="float:left; clear:both;z-index:9;" src="../images/menu_bg.jpg" width="995" height="58" alt=""/>
-        <div id="Menu" style="position:absolute; z-index:9;
-            left:0px; top:193px;">
+        style="float:left; clear:both;z-index:1;"/>
+
+        <%--menu and dynamic colorbackground--%>
+        <div id="MenuBackground" style="float:left; clear:both;z-index:1;
+            background-color: #c9e6ff; 
+            width: 995px; height:58px; 
+            margin-bottom:25px;"> 
+        </div> 
+        <div id="Menu" style="position:absolute; z-index:10;
+            margin-left:auto; margin-right:auto; top:193px;
+            background-image: url(../images/MenuBackgroundTransparent.png); ">
             <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSourceMenu"
                             Orientation="Horizontal" 
                             staticdisplaylevels="2" 
@@ -41,14 +49,17 @@
             <DynamicHoverStyle CssClass="dynamicMenuItemHover" />
             <DynamicMenuStyle CssClass="dynamicMenuStyle" />
             <DynamicSelectedStyle CssClass="dynamicMenuItemSelectedStyle" />
-            </asp:Menu>          
-        </div> 
+            </asp:Menu>
+         </div> 
         <%--menu shadow--%>
-        <img style="position:absolute; 
-        left:0px; top:181px;z-index:9;" 
-        src="../images/menushadowtop.png" width="995" height="12" alt=""/>
-        <img style="float:left; clear:both;z-index:9;" 
-        src="../images/menushadowbottom.png" width="995" height="17" alt=""/>
+        <div style="position:absolute; 
+            margin-left:auto; margin-right:auto; top:181px;z-index:5;">
+            <img style="float:left; clear:both;" 
+            src="../images/menushadowtop.png" width="995" height="12" alt=""/>
+            <img style="float:left; clear:both;z-index:5; margin-top:58px;" 
+            src="../images/menushadowbottom.png" width="995" height="17" alt=""/>
+        </div>
+        
         
         <div style="position:absolute; z-index:8;
         width:995px; height:251px; 
@@ -67,11 +78,6 @@
             <img style="position:absolute; 
             right:0px; top:0px;" 
             src="../images/truck.png" width="374" height="277" alt=""/>
-            
-            <%--transparent menu above truck--%>
-            <img style="position:absolute; 
-            right:0px; top:192px;" 
-            src="../images/menu_transparent.png" width="374" height="59" alt=""/>
         </div>
         <%--chứa các radio button cho chọn theme--%>
         <div id="header_right"
