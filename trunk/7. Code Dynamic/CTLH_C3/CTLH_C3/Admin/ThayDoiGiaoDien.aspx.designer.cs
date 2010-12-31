@@ -23,15 +23,6 @@ namespace CTLH_C3.Admin {
         protected global::System.Web.UI.WebControls.FileUpload uploadBanner;
         
         /// <summary>
-        /// imgBanner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgBanner;
-        
-        /// <summary>
         /// sttBanner control.
         /// </summary>
         /// <remarks>
@@ -48,15 +39,6 @@ namespace CTLH_C3.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload uploadSlogan;
-        
-        /// <summary>
-        /// imgSlogan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgSlogan;
         
         /// <summary>
         /// sttSlogan control.
@@ -77,15 +59,6 @@ namespace CTLH_C3.Admin {
         protected global::System.Web.UI.WebControls.FileUpload uploadLogo;
         
         /// <summary>
-        /// imgLogo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgLogo;
-        
-        /// <summary>
         /// sttLogo control.
         /// </summary>
         /// <remarks>
@@ -93,6 +66,33 @@ namespace CTLH_C3.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label sttLogo;
+        
+        /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+        
+        /// <summary>
+        /// tbMenuColor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbMenuColor;
+        
+        /// <summary>
+        /// cpeMenuColor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ColorPickerExtender cpeMenuColor;
         
         /// <summary>
         /// pnThayDoiGiaoDien control.
@@ -111,6 +111,15 @@ namespace CTLH_C3.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControls.RichTextEditor rteGioiThieu;
+        
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
         /// user_Login control.

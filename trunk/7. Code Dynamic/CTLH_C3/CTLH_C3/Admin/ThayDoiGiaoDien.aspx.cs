@@ -6,10 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 using System.Data.Linq;
+using CTLH_C3.Core;
 
 namespace CTLH_C3.Admin
 {
-    public partial class ThayDoiGiaoDien : System.Web.UI.Page
+    public partial class ThayDoiGiaoDien : BasePage
     {
         protected void getThongTin(out int banner, out int slogan, out int logo, out string gioithieu)
         {
@@ -37,67 +38,69 @@ namespace CTLH_C3.Admin
             return "~/ImageHandler.ashx?Id=" + id;
         }
         protected void Page_Load(object sender, EventArgs e)
-        {                
-            if(IsPostBack)
+        {
+            //if (IsPostBack)
+            //{
+            //    // Postback : được hiểu là khi user click vào Upload hoặc Submit
+            //    // Vấn đề là button Submit : có handler là javascript (bắt buộc) nên không gọi vào sự kiện Click ở Server được => cần gom lại vào xử lý trong PageLoad luôn
+            //    string strGioiThieu = rteGioiThieu.Text;
+            //    Binary banner, slogan, logo;
+            //    bool bInsertNew = true;
+            //    banner = getUploadImage(uploadBanner, sttBanner);
+            //    slogan = getUploadImage(uploadSlogan, sttSlogan);
+            //    logo = getUploadImage(uploadLogo, sttLogo);
+            //    // Tương tự cho các hình khác
+            //    TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
+            //    var thongtincongtys = from t in context.THONG_TIN_CONG_Ties select t;
+            //    var thongtincongty = new THONG_TIN_CONG_TY();
+            //    if (thongtincongtys.Count() > 0)
+            //    {
+            //        bInsertNew = false;
+            //        thongtincongty = thongtincongtys.First();
+            //    }
+
+
+            //    if (banner != null)
+            //    {
+            //        if (thongtincongty.Banner == null)
+            //            thongtincongty.Banner = insertImage(banner);
+            //        else
+            //            updateImage(banner, (int)thongtincongty.Banner);
+            //    }
+            //    if (slogan != null)
+            //    {
+            //        if (thongtincongty.Slogan == null)
+            //            thongtincongty.Slogan = insertImage(slogan);
+            //        else
+            //            updateImage(slogan, (int)thongtincongty.Slogan);
+            //    }
+            //    if (logo != null)
+            //    {
+            //        if (thongtincongty.Logo == null)
+            //            thongtincongty.Logo = insertImage(logo);
+            //        else
+            //            updateImage(logo, (int)thongtincongty.Logo);
+            //    }
+
+            //    if (strGioiThieu != null)
+            //        thongtincongty.TinTucGioiThieu = strGioiThieu;
+
+            //    if (bInsertNew == true)
+            //        context.THONG_TIN_CONG_Ties.InsertOnSubmit(thongtincongty);
+
+            //    context.SubmitChanges();
+            //}
+
+            if (!IsPostBack)
             {
-				// Postback : được hiểu là khi user click vào Upload hoặc Submit
-				// Vấn đề là button Submit : có handler là javascript (bắt buộc) nên không gọi vào sự kiện Click ở Server được => cần gom lại vào xử lý trong PageLoad luôn
-                string strGioiThieu = rteGioiThieu.Text;
-                Binary banner, slogan, logo;
-                bool bInsertNew = true;
-                banner = getUploadImage(uploadBanner, sttBanner);
-                slogan = getUploadImage(uploadSlogan, sttSlogan);
-                logo = getUploadImage(uploadLogo, sttLogo);
-                // Tương tự cho các hình khác
-                TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
-                var thongtincongtys = from t in context.THONG_TIN_CONG_Ties select t;
-                var thongtincongty = new THONG_TIN_CONG_TY();
-                if (thongtincongtys.Count() > 0)
-                {
-                    bInsertNew = false;
-                    thongtincongty = thongtincongtys.First();
-                }
-
-                
-                if (banner != null)
-                {
-                    if (thongtincongty.Banner == null)
-                        thongtincongty.Banner = insertImage(banner);
-                    else
-                        updateImage(banner, (int)thongtincongty.Banner);
-                }
-                if (slogan != null)
-                {
-                    if (thongtincongty.Slogan == null)
-                        thongtincongty.Slogan = insertImage(slogan);
-                    else
-                        updateImage(slogan, (int)thongtincongty.Slogan);
-                }
-                if (logo != null)
-                {
-                    if (thongtincongty.Logo == null)
-                        thongtincongty.Logo = insertImage(logo);
-                    else
-                        updateImage(logo, (int)thongtincongty.Logo);
-                }
-
-                if (strGioiThieu != null)
-                    thongtincongty.TinTucGioiThieu = strGioiThieu;
-
-                if (bInsertNew == true)
-                    context.THONG_TIN_CONG_Ties.InsertOnSubmit(thongtincongty);
-
-                context.SubmitChanges();
+                int bannerId, sloganId, logoId;
+                string gioithieuHTML;
+                getThongTin(out bannerId, out sloganId, out logoId, out gioithieuHTML);
+                //imgBanner.ImageUrl = getImageURL(bannerId);
+                //imgSlogan.ImageUrl = getImageURL(sloganId);
+                //imgLogo.ImageUrl = getImageURL(logoId);
+                rteGioiThieu.Text = gioithieuHTML;
             }
-
-
-            int bannerId, sloganId, logoId;
-            string gioithieuHTML;
-            getThongTin(out bannerId, out sloganId, out logoId, out gioithieuHTML);
-            imgBanner.ImageUrl = getImageURL(bannerId);
-            imgSlogan.ImageUrl = getImageURL(sloganId);
-            imgLogo.ImageUrl = getImageURL(logoId);
-            rteGioiThieu.Text = gioithieuHTML;
         }
         protected void updateImage(Binary imageData, int id)
         {
@@ -148,6 +151,70 @@ namespace CTLH_C3.Admin
                 }
             }
             return null;
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            //if (IsPostBack)
+            {
+                // Postback : được hiểu là khi user click vào Upload hoặc Submit
+                // Vấn đề là button Submit : có handler là javascript (bắt buộc) nên không gọi vào sự kiện Click ở Server được => cần gom lại vào xử lý trong PageLoad luôn
+                string strGioiThieu = rteGioiThieu.Text;
+                Binary banner, slogan, logo;
+                bool bInsertNew = true;
+                banner = getUploadImage(uploadBanner, sttBanner);
+                slogan = getUploadImage(uploadSlogan, sttSlogan);
+                logo = getUploadImage(uploadLogo, sttLogo);
+                // Tương tự cho các hình khác
+                TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
+                var thongtincongtys = from t in context.THONG_TIN_CONG_Ties select t;
+                var thongtincongty = new THONG_TIN_CONG_TY();
+                if (thongtincongtys.Count() > 0)
+                {
+                    bInsertNew = false;
+                    thongtincongty = thongtincongtys.First();
+                }
+
+
+                if (banner != null)
+                {
+                    if (thongtincongty.Banner == null)
+                        thongtincongty.Banner = insertImage(banner);
+                    else
+                        updateImage(banner, (int)thongtincongty.Banner);
+                }
+                if (slogan != null)
+                {
+                    if (thongtincongty.Slogan == null)
+                        thongtincongty.Slogan = insertImage(slogan);
+                    else
+                        updateImage(slogan, (int)thongtincongty.Slogan);
+                }
+                if (logo != null)
+                {
+                    if (thongtincongty.Logo == null)
+                        thongtincongty.Logo = insertImage(logo);
+                    else
+                        updateImage(logo, (int)thongtincongty.Logo);
+                }
+
+                if (strGioiThieu != null)
+                    thongtincongty.TinTucGioiThieu = strGioiThieu;
+
+                if (bInsertNew == true)
+                    context.THONG_TIN_CONG_Ties.InsertOnSubmit(thongtincongty);
+
+                context.SubmitChanges();
+            }
+
+
+            int bannerId, sloganId, logoId;
+            string gioithieuHTML;
+            getThongTin(out bannerId, out sloganId, out logoId, out gioithieuHTML);
+            //imgBanner.ImageUrl = getImageURL(bannerId);
+            //imgSlogan.ImageUrl = getImageURL(sloganId);
+            //imgLogo.ImageUrl = getImageURL(logoId);
+            rteGioiThieu.Text = gioithieuHTML;
         }
     }
 }
