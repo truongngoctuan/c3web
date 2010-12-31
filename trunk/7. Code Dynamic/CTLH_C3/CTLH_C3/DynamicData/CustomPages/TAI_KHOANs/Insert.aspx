@@ -14,9 +14,11 @@
                 HeaderText="Danh sách lỗi" />
             <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView1" Display="None" />
 
-            <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="DetailsDataSource" DefaultMode="Insert"
+            <asp:DetailsView ID="DetailsView1" runat="server" 
+                DataSourceID="DetailsDataSource" DefaultMode="Insert"
                 AutoGenerateInsertButton="True" OnItemCommand="DetailsView1_ItemCommand" OnItemInserted="DetailsView1_ItemInserted"
-                CssClass="detailstable" FieldHeaderStyle-CssClass="bold">
+                CssClass="detailstable" FieldHeaderStyle-CssClass="bold" 
+                oniteminserting="DetailsView1_ItemInserting">
             </asp:DetailsView>
 
             <asp:LinqDataSource ID="DetailsDataSource" runat="server" EnableInsert="true">

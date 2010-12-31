@@ -128,10 +128,25 @@
     <Compile Include="Admin\XoaTaiKhoan.aspx.designer.cs">
       <DependentUpon>XoaTaiKhoan.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Authenticated\Controls\ucDoiMatKhau.ascx.cs">
+      <DependentUpon>ucDoiMatKhau.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authenticated\Controls\ucDoiMatKhau.ascx.designer.cs">
+      <DependentUpon>ucDoiMatKhau.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Authenticated\DoiMatKhau.aspx.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authenticated\DoiMatKhau.aspx.designer.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Core\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Core\ConfigHelper.cs" />
+    <Compile Include="Core\CryptographicHelper.cs" />
     <Compile Include="Core\CustomMembershipProvider.cs" />
     <Compile Include="Core\CustomMembershipUser.cs" />
     <Compile Include="Core\ThongTinCongTy.cs" />
@@ -900,6 +915,8 @@
     <Content Include="App_Data\CTLH_C3_log.ldf">
       <DependentUpon>CTLH_C3.mdf</DependentUpon>
     </Content>
+    <Content Include="Authenticated\Controls\ucDoiMatKhau.ascx" />
+    <Content Include="Authenticated\DoiMatKhau.aspx" />
     <Content Include="DieuHanhTram\Default.aspx" />
     <Content Include="DieuHanhTram\GhiNhanPhanHoi.aspx" />
     <Content Include="DynamicData\CustomPages\CHUYEN_XEs\Details.aspx" />
@@ -922,6 +939,10 @@
     <Content Include="DieuHanhTram\Default.sitemap" />
     <Content Include="DieuHanhTram\MasterPage.Master" />
     <Content Include="images\upload.png" />
+    <Content Include="DieuHanhCongTy\web.config" />
+    <Content Include="DieuHanhTram\web.config" />
+    <Content Include="TaiXe\web.config" />
+    <Content Include="Authenticated\web.config" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>

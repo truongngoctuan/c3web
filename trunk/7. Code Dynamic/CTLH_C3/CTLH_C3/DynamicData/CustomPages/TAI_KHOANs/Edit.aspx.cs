@@ -11,6 +11,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
 using System.Web.DynamicData;
+using CTLH_C3.Core;
 
 namespace CTLH_C3.TAI_KHOANs
 {
@@ -44,6 +45,14 @@ namespace CTLH_C3.TAI_KHOANs
             {
                 Response.Redirect(table.ListActionPath);
             }
+        }
+
+        protected void DetailsView1_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
+        {
+            if (!(e.NewValues["Salt"].Equals(e.OldValues["Salt"])))
+                e.Cancel = true;
+            else
+                e.NewValues["Password"] = CryptographicHelper.CreatePasswordHash((string)e.NewValues["Password"], (string)e.OldValues["Salt"]);
         }
     }
 }

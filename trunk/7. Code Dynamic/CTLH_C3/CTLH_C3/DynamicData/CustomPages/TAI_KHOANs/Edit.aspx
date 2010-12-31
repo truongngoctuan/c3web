@@ -14,9 +14,11 @@
                 HeaderText="Danh sách lỗi" />
             <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView1" Display="None" />
 
-            <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="DetailsDataSource" DefaultMode="Edit"
+            <asp:DetailsView ID="DetailsView1" runat="server" 
+                DataSourceID="DetailsDataSource" DefaultMode="Edit"
                 AutoGenerateEditButton="True" OnItemCommand="DetailsView1_ItemCommand" OnItemUpdated="DetailsView1_ItemUpdated"
-                CssClass="detailstable" FieldHeaderStyle-CssClass="bold">
+                CssClass="detailstable" FieldHeaderStyle-CssClass="bold" 
+                onitemupdating="DetailsView1_ItemUpdating">
             </asp:DetailsView>
 
             <asp:LinqDataSource ID="DetailsDataSource" runat="server" EnableUpdate="true">

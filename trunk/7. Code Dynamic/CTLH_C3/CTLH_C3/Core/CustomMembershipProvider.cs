@@ -6,9 +6,11 @@ using System.Web.Security;
 using CTLH_C3.Core;
 using System.Text.RegularExpressions;
 using System.Configuration.Provider;
+using System.Security.Cryptography;
 
 namespace CTLH_C3.Core
 {
+    // Reference : http://theintegrity.co.uk/2010/12/asp-net-mvc-2-custom-membership-provider-tutorial-part-3/
     public class CustomMembershipProvider : MembershipProvider
     {
         private bool _EnablePasswordRetrieval;
@@ -49,7 +51,6 @@ namespace CTLH_C3.Core
                 }
             }
         }
-
 
         public override void Initialize(string name, System.Collections.Specialized.NameValueCollection config)
         {
@@ -176,6 +177,8 @@ namespace CTLH_C3.Core
             if (user.Count() == 1)
             {
                 TAI_KHOAN tk = user.Single();
+                oldPassword = CryptographicHelper.CreatePasswordHash(oldPassword, tk.Salt);
+                newPassword = CryptographicHelper.CreatePasswordHash(newPassword, tk.Salt);
                 if(oldPassword == tk.Password && oldPassword != newPassword)
                 {
                     tk.Password = newPassword;
@@ -188,12 +191,21 @@ namespace CTLH_C3.Core
 
         public override bool ChangePasswordQuestionAndAnswer(string username, string password, string newPasswordQuestion, string newPasswordAnswer)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public override MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out MembershipCreateStatus status)
         {
             throw new NotImplementedException();
+            /*TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
+            TAI_KHOAN tk = new TAI_KHOAN();
+            tk.Username = username;
+            tk.Salt = CreateSalt();
+            tk.Password = CreatePasswordHash(password, tk.Salt);
+            tk.NgayKichHoat = DateTime.Now;
+            
+            return new CustomMembershipUser(username, userID, email, isLockedOut);
+            */
         }
 
         public override bool DeleteUser(string username, bool deleteAllRelatedData)
@@ -256,7 +268,21 @@ namespace CTLH_C3.Core
 
         public override string ResetPassword(string username, string answer)
         {
-            throw new NotImplementedException();
+            string newPassword = "";
+            TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
+            var user = from u in dataContext.TAI_KHOANs
+                       where u.Username == username
+                       select u;
+
+            if (user.Count() == 1)
+            {
+                //newPassword = CryptographicHelper.GenerateKey();
+                newPassword = Membership.GeneratePassword(10, 3);
+                TAI_KHOAN tk = user.Single();
+                tk.Password = CryptographicHelper.CreatePasswordHash(newPassword, tk.Salt);
+                dataContext.SubmitChanges();
+            }
+            return newPassword;
         }
 
         public override bool UnlockUser(string userName)
@@ -279,11 +305,10 @@ namespace CTLH_C3.Core
             if (user.Count() == 1)
             {
                 TAI_KHOAN tk = user.Single();
-                if (tk.Password.Equals(password))
+                if (tk.Password.Equals(CryptographicHelper.CreatePasswordHash(password, tk.Salt)))
                     return true;
-            }
-            
+            }            
             return false;            
         }
-    }
+    } 
 }

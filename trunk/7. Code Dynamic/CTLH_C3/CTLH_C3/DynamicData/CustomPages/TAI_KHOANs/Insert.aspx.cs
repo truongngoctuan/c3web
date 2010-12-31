@@ -11,6 +11,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
 using System.Web.DynamicData;
+using CTLH_C3.Core;
 
 namespace CTLH_C3.TAI_KHOANs
 {
@@ -43,6 +44,12 @@ namespace CTLH_C3.TAI_KHOANs
             {
                 Response.Redirect(table.ListActionPath);
             }
+        }
+
+        protected void DetailsView1_ItemInserting(object sender, DetailsViewInsertEventArgs e)
+        {
+            e.Values["Salt"] = CryptographicHelper.CreateSalt();
+            e.Values["Password"] = CryptographicHelper.CreatePasswordHash((string)e.Values["Password"], (string)e.Values["Salt"]);
         }
     }
 }

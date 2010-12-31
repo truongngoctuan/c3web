@@ -43,7 +43,7 @@
             <ContentTemplate>
             <asp:FormView ID="FormView2" runat="server" DataSourceID="ldsTenLuongNhanVien"
                         Width="245px">
-                        <ItemTemplate>
+                    <ItemTemplate>
                         <div style="width:245px;">
                         <asp:LoginStatus ID="LoginStatus1" runat="server" 
                             LoginText="Đăng nhập"
