@@ -62,7 +62,7 @@ namespace CTLH_C3.CHUYEN_XEs
                 PHAN_HOI_KHACH_HANG phkh = new PHAN_HOI_KHACH_HANG();
                 phkh.NgayDang = DateTime.Now;
                 phkh.NoiDung = tbThongTinPhanHoi.Text;
-                phkh.Duyet = 2;
+                //phkh.Duyet = 2;
                 db.PHAN_HOI_KHACH_HANGs.InsertOnSubmit(phkh);
                 db.SubmitChanges();
 
