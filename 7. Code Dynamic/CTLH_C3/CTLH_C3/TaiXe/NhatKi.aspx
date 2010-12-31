@@ -6,7 +6,7 @@
     TagPrefix="asp" %>
     
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    Nhật kí
+    Tài xế - Nhật kí
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
@@ -35,16 +35,33 @@
                     <br />
                     <br />
                     <b>Tháng:</b>
-                    <asp:Label ID="lblThang" runat="server"></asp:Label>
+                    <asp:DropDownList ID="dlstThang" runat="server" AutoPostBack="True" 
+                        onselectedindexchanged="dlstThang_SelectedIndexChanged">
+                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                        <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                        <asp:ListItem Text="4" Value="4"></asp:ListItem>
+                        <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                        <asp:ListItem Text="6" Value="6"></asp:ListItem>
+                        <asp:ListItem Text="7" Value="7"></asp:ListItem>
+                        <asp:ListItem Text="8" Value="8"></asp:ListItem>
+                        <asp:ListItem Text="9" Value="9"></asp:ListItem>
+                        <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                        <asp:ListItem Text="11" Value="11"></asp:ListItem>
+                        <asp:ListItem Text="12" Value="12"></asp:ListItem>
+                    </asp:DropDownList>
                     <b>Năm:</b>
-                    <asp:Label ID="lblNam" runat="server"></asp:Label>
+                    <asp:DropDownList ID="dlstNam" runat="server" AutoPostBack="True" 
+                        onselectedindexchanged="dlstNam_SelectedIndexChanged"></asp:DropDownList>
                     <br />
                     <br />
                 </div>
                 
                 <%--Các chuyến đã chạy --%>      
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True"
-                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" >
+                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" 
+                    ondatabinding="GridView1_DataBinding" 
+                    onpageindexchanging="GridView1_PageIndexChanging">
                     <Columns>
                         <asp:BoundField DataField="MaChuyen" HeaderText="Mã chuyến" />
                         <asp:BoundField DataField="TramDi" HeaderText="Trạm đi" />

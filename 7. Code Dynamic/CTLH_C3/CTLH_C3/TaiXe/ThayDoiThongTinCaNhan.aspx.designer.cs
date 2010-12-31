@@ -68,15 +68,6 @@ namespace CTLH_C3 {
         protected global::System.Web.DynamicData.DynamicValidator DetailsViewValidator;
         
         /// <summary>
-        /// DetailsViewValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.DynamicData.DynamicValidator DetailsViewValidator2;
-        
-        /// <summary>
         /// DetailsView_ThongTinCaNhan control.
         /// </summary>
         /// <remarks>
@@ -93,23 +84,5 @@ namespace CTLH_C3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource ThongTinDataSource;
-        
-        /// <summary>
-        /// DetailsView_TaiKhoan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView_TaiKhoan;
-        
-        /// <summary>
-        /// TaiKhoanDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinqDataSource TaiKhoanDataSource;
     }
 }

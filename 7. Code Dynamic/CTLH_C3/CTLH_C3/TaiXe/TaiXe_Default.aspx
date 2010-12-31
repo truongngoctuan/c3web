@@ -6,7 +6,7 @@
     TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    Lịch chạy
+    Tài xế - Lịch chạy
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
@@ -42,7 +42,9 @@
                 
                 <%--Các chuyến sắp chạy --%>      
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True"
-                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" >
+                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" 
+                    ondatabinding="GridView1_DataBinding" 
+                    onpageindexchanging="GridView1_PageIndexChanging" >
                     <Columns>
                         <asp:BoundField DataField="MaChuyen" HeaderText="Mã chuyến" />
                         <asp:BoundField DataField="TramDi" HeaderText="Trạm đi" />

@@ -18,19 +18,16 @@ namespace CTLH_C3
         // thì không cho vào trang
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Page.User.Identity.IsAuthenticated)
             {
-                if (Page.User.Identity.IsAuthenticated)
-                {
-                    _role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
-                    _maNhanVien = Roles.GetRolesForUser(Page.User.Identity.Name)[1];
-                    if (!_role.ToLower().Equals("tài xế"))
-                        Response.Redirect("/Default.aspx");
-                }
-                else
-                {
+                _role = Roles.GetRolesForUser(Page.User.Identity.Name)[0];
+                _maNhanVien = Roles.GetRolesForUser(Page.User.Identity.Name)[1];
+                if (!_role.ToLower().Equals("tài xế"))
                     Response.Redirect("/Default.aspx");
-                }
+            }
+            else
+            {
+                Response.Redirect("/Default.aspx");
             }
         }
 
@@ -46,24 +43,46 @@ namespace CTLH_C3
                 int month = DateTime.Now.Month;
                 int year = DateTime.Now.Year;
 
-                // Khởi tạo 2 label tháng và năm
+                // Khởi tạo 2 droplist tháng và năm
                 lblThang.Text = month.ToString();
                 lblNam.Text = year.ToString();
-
-                // Chọn các chuyến mà tài xế này sẽ phục vụ
-                // (Các chuyến chưa đến nơi)
-                TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
-                var query = (from c in dataContext.CHUYEN_XEs
-                             join t in dataContext.TUYEN_XEs on c.MaTuyenXe equals t.MaTuyenXe
-                             where (c.MaTaiXe.Equals(_maNhanVien) 
-                                    && c.ThoiGianDenTram==null
-                                    && c.KhoiHanh.Value.Month == month
-                                    && c.KhoiHanh.Value.Year == year)
-                             select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe, KhoiHanh = c.KhoiHanh }).Distinct();
-                GridView1.DataSource = query;
-                //GridView1.DataKeyNames = new string[] { "MaChuyen" };
+                
                 GridView1.DataBind();
             }
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            try
+            {
+                GridView1.PageIndex = e.NewPageIndex;
+                GridView1.DataBind();
+            }
+            catch
+            {
+
+            }
+        }
+
+        //*** DataSource nằm trong DataBind là để dùng Dynamicdata Gridviewpager ***//
+        // -nếu không Gridviewpager không nhận được datasource
+
+        // Chọn các chuyến mà tài xế này sẽ phục vụ
+        // (Các chuyến chưa đến nơi)
+        protected void GridView1_DataBinding(object sender, EventArgs e)
+        {
+            int month = DateTime.Now.Month;
+            int year = DateTime.Now.Year;
+
+            TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
+            var query = (from c in dataContext.CHUYEN_XEs
+                         join t in dataContext.TUYEN_XEs on c.MaTuyenXe equals t.MaTuyenXe
+                         where (c.MaTaiXe.Equals(_maNhanVien)
+                                && c.ThoiGianDenTram == null
+                                && c.KhoiHanh.Value.Month == month
+                                && c.KhoiHanh.Value.Year == year)
+                         select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe, KhoiHanh = c.KhoiHanh }).Distinct();
+            GridView1.DataSource = query;
         }
     }
 }

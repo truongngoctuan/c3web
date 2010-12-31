@@ -22,8 +22,6 @@
                 HeaderText="List of validation errors" />
             <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView_ThongTinCaNhan"
                 Display="None" />
-            <asp:DynamicValidator runat="server" ID="DetailsViewValidator2" ControlToValidate="DetailsView_TaiKhoan"
-            Display="None" />
             
            <%-- Thông tin cá nhân--%>
             <asp:DetailsView ID="DetailsView_ThongTinCaNhan" runat="server" 
@@ -46,27 +44,7 @@
                 TableName = "NHAN_VIENs" > 
            </asp:LinqDataSource>
            
-           <br />
-           
            <%--Thông tin tài khoản--%>
-           <asp:DetailsView ID="DetailsView_TaiKhoan" runat="server" 
-                DefaultMode="ReadOnly"
-                DataSourceID="TaiKhoanDataSource" AutoGenerateEditButton="True" 
-                CssClass="detailstable" FieldHeaderStyle-CssClass="bold"
-                AutoGenerateRows="False">
-                <FieldHeaderStyle CssClass="bold" />
-                <Fields>
-                    <asp:BoundField DataField="Username" HeaderText="Tên tài khoản" ReadOnly="true"/>
-                    <asp:DynamicField DataField="Password" />
-                    <asp:BoundField DataField="Email" HeaderText="Email" ReadOnly="true"/>
-                </Fields>
-            </asp:DetailsView>
-            
-           <asp:LinqDataSource ID="TaiKhoanDataSource" runat="server"  
-                EnableUpdate="true"  
-                ContextTypeName = "CTLH_C3.TRAVEL_WEBDataContext"
-                TableName = "TAI_KHOANs"> 
-           </asp:LinqDataSource>
             
         </ContentTemplate>
     </asp:UpdatePanel>

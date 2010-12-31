@@ -3,6 +3,7 @@
   <siteMapNode>
     <siteMapNode url="/Default.aspx" title="Trang chủ"  description="Trang chủ"/>
     <siteMapNode url="TaiXe/TaiXe_Default.aspx" title="Lịch chạy"  description="Lịch chạy"/>
+    <siteMapNode url="TaiXe/NhatKi.aspx" title="Nhật ký"  description="Nhật ký"/>
     <siteMapNode title="Xem thông tin"  description="Xem thông tin">
       <siteMapNode url="TaiXe/XemPhanHoi.aspx" title="Xem phản hồi"  description="Xem phản hồi" />
       <siteMapNode url="TaiXe/ThongKe.aspx" title="Xem thống kê"  description="Xem thống kê" />

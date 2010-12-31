@@ -59,22 +59,22 @@ namespace CTLH_C3 {
         protected global::System.Web.DynamicData.DynamicValidator GridViewValidator;
         
         /// <summary>
-        /// lblThang control.
+        /// dlstThang_SapChay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblThang;
+        protected global::System.Web.UI.WebControls.DropDownList dlstThang_SapChay;
         
         /// <summary>
-        /// lblNam control.
+        /// dlstNam_SapChay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNam;
+        protected global::System.Web.UI.WebControls.DropDownList dlstNam_SapChay;
         
         /// <summary>
         /// grdSapChay control.
@@ -102,6 +102,24 @@ namespace CTLH_C3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.DynamicData.DynamicValidator DynamicValidator1;
+        
+        /// <summary>
+        /// dlstThang_DaChay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dlstThang_DaChay;
+        
+        /// <summary>
+        /// dlstNam_DaChay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dlstNam_DaChay;
         
         /// <summary>
         /// grdDaChay control.

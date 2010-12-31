@@ -5,7 +5,7 @@
     TagPrefix="asp" %>
     
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    Xem Phản Hồi
+    Tài xế - Xem Phản Hồi
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
@@ -30,13 +30,39 @@
                     Display="None" />
                 
                 <br />
-                <div><b>Các chuyến</b></div>
+                <div><b>Các chuyến</b>
                 <br />
+                    <br />
+                    <b>Tháng:</b>
+                    <asp:DropDownList ID="dlstThang" runat="server" AutoPostBack="True" 
+                        onselectedindexchanged="dlstThang_SelectedIndexChanged">
+                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                        <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                        <asp:ListItem Text="4" Value="4"></asp:ListItem>
+                        <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                        <asp:ListItem Text="6" Value="6"></asp:ListItem>
+                        <asp:ListItem Text="7" Value="7"></asp:ListItem>
+                        <asp:ListItem Text="8" Value="8"></asp:ListItem>
+                        <asp:ListItem Text="9" Value="9"></asp:ListItem>
+                        <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                        <asp:ListItem Text="11" Value="11"></asp:ListItem>
+                        <asp:ListItem Text="12" Value="12"></asp:ListItem>
+                    </asp:DropDownList>
+                    <b>Năm:</b>
+                    <asp:DropDownList ID="dlstNam" runat="server" AutoPostBack="True" 
+                        onselectedindexchanged="dlstNam_SelectedIndexChanged"></asp:DropDownList>
+                    <br />
+                    <br />
+                </div>
+
                 
                 <%--Trình bày dữ liệu: các chuyến do nhân viên này làm tài xế--%> 
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True"
                     AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" 
-                    onselectedindexchanged="GridView1_SelectedIndexChanged">
+                    onselectedindexchanged="GridView1_SelectedIndexChanged" 
+                    ondatabinding="GridView1_DataBinding" 
+                    onpageindexchanging="GridView1_PageIndexChanging">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="MaChuyen" HeaderText="Mã chuyến" />
@@ -53,7 +79,7 @@
                 </asp:GridView>
                 
                 <br />
-                <div><b>Phản hồi:</b></div>
+                <div><b>Phản hồi:</b></div>                  
                 <br />
                 
                 <%--Các phản hồi của chuyến --%>      
