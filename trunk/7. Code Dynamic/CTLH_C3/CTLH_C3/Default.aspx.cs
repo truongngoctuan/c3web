@@ -30,7 +30,7 @@ namespace CTLH_C3
                 throw new InvalidOperationException("There are no accessible tables. Make sure that at least one data model is registered in Global.asax and scaffolding is enabled or implement custom pages.");
             }
 
-            GridView2.Visible = false;            
+            GridView2.Visible = false;
         }
 
         protected override void OnPreInit(EventArgs e)

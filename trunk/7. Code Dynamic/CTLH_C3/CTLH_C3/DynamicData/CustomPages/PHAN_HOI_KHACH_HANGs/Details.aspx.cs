@@ -69,7 +69,7 @@ namespace CTLH_C3.PHAN_HOI_KHACH_HANGs
                 int iMaChuyenXe = Convert.ToInt32(row.Cells[4].Text);
 
                 var x = (from y in db.PHAN_HOI_KHACH_HANGs where y.MaPhanHoi == DetailsView1.PageIndex select y).Single();
-                x.Duyet = 2;
+                //x.Duyet = 2;
                 db.SubmitChanges();
 
                 PHAN_HOI ph = new PHAN_HOI();

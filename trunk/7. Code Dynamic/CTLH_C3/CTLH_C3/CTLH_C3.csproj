@@ -477,6 +477,20 @@
     <Compile Include="DynamicData\CustomPages\XEs\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password_Edit.ascx.cs">
+      <DependentUpon>Password_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password_Edit.ascx.designer.cs">
+      <DependentUpon>Password_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password.ascx.cs">
+      <DependentUpon>Password.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password.ascx.designer.cs">
+      <DependentUpon>Password.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.cs">
       <DependentUpon>ListDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -975,6 +989,8 @@
     <Content Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\Edit.aspx" />
     <Content Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\Insert.aspx" />
     <Content Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\List.aspx" />
+    <Content Include="DynamicData\FieldTemplates\Password_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Password.ascx" />
     <Content Include="ImageHandler.ashx" />
     <Content Include="DieuHanhTram\Default.sitemap" />
     <Content Include="DieuHanhTram\MasterPage.Master" />

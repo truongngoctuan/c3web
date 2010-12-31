@@ -198,7 +198,7 @@ namespace CTLH_C3
         public object NgayDang { set; get; }
 
         [DisplayName("Tình trạng duyệt")]
-        public object TINH_TRANG_DUYET { set; get; }
+        public object Duyet { set; get; }
 
         [ScaffoldColumn(false)]
         [DisplayName("Nằm trong")]
@@ -283,6 +283,9 @@ namespace CTLH_C3
         [DisplayName("Lương trong tháng")]
         public object LuongTrongThang { set; get; }
 
+        [DisplayName("Hình ảnh")]
+        public object IMAGE_STORE { set; get; }
+
         //[ScaffoldColumn(false)]
         [DisplayName("Tài khoản")]
         public object TAI_KHOANs { set; get; }
@@ -302,7 +305,6 @@ namespace CTLH_C3
         [ScaffoldColumn(false)]
         [DisplayName("Phản hồi")]
         public object PHAN_HOIs { set; get; }
-
 
         [ScaffoldColumn(false)]
         [DisplayName("Thông tin công ty")]
@@ -381,7 +383,11 @@ namespace CTLH_C3
         public object Username { set; get; }
 
         [DisplayName("Password")]
+        [UIHint("Password")]
         public object Password { set; get; }
+
+        [DisplayName("Salt")]
+        public object Salt { set; get; }
 
         [DisplayName("Email")]
         public object Email { set; get; }

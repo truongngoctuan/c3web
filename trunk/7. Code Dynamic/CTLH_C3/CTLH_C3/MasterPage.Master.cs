@@ -134,15 +134,15 @@ namespace CTLH_C3
                 {
                     case (ImageType.Banner):
                         {
-                            return "../images/banner.jpg";
+                            return "~/images/banner.jpg";
                         }
                     case (ImageType.Logo):
                         {
-                            return "../images/logo.png";
+                            return "~/images/logo.png";
                         }
                     case (ImageType.Slogan):
                         {
-                            return "../images/slogan.png";
+                            return "!/images/slogan.png";
                         }
                 }
             }
