@@ -74,7 +74,10 @@ thay đổi back ground*/
     color:#090d37;
     vertical-align:middle;
     background-color:Transparent;
-    background-image: url(images/btBackgroundGradientNormal.jpg);
+    background-image: url(images/btBackgourndGradient.png);
+    background-repeat:repeat-x;
+    background-position: 0px 0px;
+    
     /*http://vinasupport.com/blog/2010/08/tao-goc-bo-tron-rounded-corner-voi-css3/*/
     /*for chrome, safari*/
     -webkit-border-radius: 4px;
@@ -94,14 +97,16 @@ thay đổi back ground*/
     color:White;
     text-shadow: 0 -1px 0 #4C9021;
     border-color:#235899;
-    background-image: url(images/btBackgroundGradientHover.jpg);
+    /*background-image: url(images/btBackgroundGradientHover.jpg);*/
+    background-position: 0px -28px;
 }
 .ucButton:active
 {
     color:White;
     text-shadow: 0 -1px 0 #4C9021;
     border-color:#235899;
-    background-image: url(images/btBackgroundGradientActive.jpg);
+    /*background-image: url(images/btBackgroundGradientActive.jpg);*/
+    background-position: 0px -56px;
 }
 
 /*ucTextbox-----------------------------------------------------------*/
