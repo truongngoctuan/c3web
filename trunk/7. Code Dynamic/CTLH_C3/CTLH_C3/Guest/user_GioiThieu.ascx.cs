@@ -17,7 +17,16 @@ namespace CTLH_C3.Guest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            TRAVEL_WEBDataContext context = new TRAVEL_WEBDataContext();
+            if (context.THONG_TIN_CONG_Ties.Count() == 0)
+            {
+                divNoiDungGioiThieu.InnerHtml = "không có thông tin giới thiệu";
+            }
+            else
+            {
+                var thongtincongty = context.THONG_TIN_CONG_Ties.First();
+                divNoiDungGioiThieu.InnerHtml = thongtincongty.TinTucGioiThieu;
+            }
         }
     }
 }
