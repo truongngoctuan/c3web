@@ -57,9 +57,6 @@ namespace CTLH_C3
     partial void InsertPHAN_HOI_KHACH_HANG(PHAN_HOI_KHACH_HANG instance);
     partial void UpdatePHAN_HOI_KHACH_HANG(PHAN_HOI_KHACH_HANG instance);
     partial void DeletePHAN_HOI_KHACH_HANG(PHAN_HOI_KHACH_HANG instance);
-    partial void InsertTAI_KHOAN(TAI_KHOAN instance);
-    partial void UpdateTAI_KHOAN(TAI_KHOAN instance);
-    partial void DeleteTAI_KHOAN(TAI_KHOAN instance);
     partial void InsertTINH_TRANG_CHUYEN_XE(TINH_TRANG_CHUYEN_XE instance);
     partial void UpdateTINH_TRANG_CHUYEN_XE(TINH_TRANG_CHUYEN_XE instance);
     partial void DeleteTINH_TRANG_CHUYEN_XE(TINH_TRANG_CHUYEN_XE instance);
@@ -81,6 +78,9 @@ namespace CTLH_C3
     partial void InsertTHONG_TIN_CONG_TY(THONG_TIN_CONG_TY instance);
     partial void UpdateTHONG_TIN_CONG_TY(THONG_TIN_CONG_TY instance);
     partial void DeleteTHONG_TIN_CONG_TY(THONG_TIN_CONG_TY instance);
+    partial void InsertTAI_KHOAN(TAI_KHOAN instance);
+    partial void UpdateTAI_KHOAN(TAI_KHOAN instance);
+    partial void DeleteTAI_KHOAN(TAI_KHOAN instance);
     #endregion
 		
 		public TRAVEL_WEBDataContext() : 
@@ -185,14 +185,6 @@ namespace CTLH_C3
 			}
 		}
 		
-		public System.Data.Linq.Table<TAI_KHOAN> TAI_KHOANs
-		{
-			get
-			{
-				return this.GetTable<TAI_KHOAN>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TINH_TRANG_CHUYEN_XE> TINH_TRANG_CHUYEN_XEs
 		{
 			get
@@ -246,6 +238,14 @@ namespace CTLH_C3
 			get
 			{
 				return this.GetTable<THONG_TIN_CONG_TY>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TAI_KHOAN> TAI_KHOANs
+		{
+			get
+			{
+				return this.GetTable<TAI_KHOAN>();
 			}
 		}
 	}
@@ -1741,11 +1741,11 @@ namespace CTLH_C3
 		
 		private EntitySet<PHAN_HOI> _PHAN_HOIs;
 		
-		private EntitySet<TAI_KHOAN> _TAI_KHOANs;
-		
 		private EntitySet<TRAM_XE> _TRAM_XEs;
 		
 		private EntitySet<THONG_TIN_CONG_TY> _THONG_TIN_CONG_Ties;
+		
+		private EntitySet<TAI_KHOAN> _TAI_KHOANs;
 		
 		private EntityRef<IMAGE_STORE> _IMAGE_STORE;
 		
@@ -1772,9 +1772,9 @@ namespace CTLH_C3
 			this._XEs = new EntitySet<XE>(new Action<XE>(this.attach_XEs), new Action<XE>(this.detach_XEs));
 			this._CHUYEN_XEs = new EntitySet<CHUYEN_XE>(new Action<CHUYEN_XE>(this.attach_CHUYEN_XEs), new Action<CHUYEN_XE>(this.detach_CHUYEN_XEs));
 			this._PHAN_HOIs = new EntitySet<PHAN_HOI>(new Action<PHAN_HOI>(this.attach_PHAN_HOIs), new Action<PHAN_HOI>(this.detach_PHAN_HOIs));
-			this._TAI_KHOANs = new EntitySet<TAI_KHOAN>(new Action<TAI_KHOAN>(this.attach_TAI_KHOANs), new Action<TAI_KHOAN>(this.detach_TAI_KHOANs));
 			this._TRAM_XEs = new EntitySet<TRAM_XE>(new Action<TRAM_XE>(this.attach_TRAM_XEs), new Action<TRAM_XE>(this.detach_TRAM_XEs));
 			this._THONG_TIN_CONG_Ties = new EntitySet<THONG_TIN_CONG_TY>(new Action<THONG_TIN_CONG_TY>(this.attach_THONG_TIN_CONG_Ties), new Action<THONG_TIN_CONG_TY>(this.detach_THONG_TIN_CONG_Ties));
+			this._TAI_KHOANs = new EntitySet<TAI_KHOAN>(new Action<TAI_KHOAN>(this.attach_TAI_KHOANs), new Action<TAI_KHOAN>(this.detach_TAI_KHOANs));
 			this._IMAGE_STORE = default(EntityRef<IMAGE_STORE>);
 			OnCreated();
 		}
@@ -1942,19 +1942,6 @@ namespace CTLH_C3
 			}
 		}
 		
-		[Association(Name="NHAN_VIEN_TAI_KHOAN", Storage="_TAI_KHOANs", ThisKey="MaNhanVien", OtherKey="MaNhanVien")]
-		public EntitySet<TAI_KHOAN> TAI_KHOANs
-		{
-			get
-			{
-				return this._TAI_KHOANs;
-			}
-			set
-			{
-				this._TAI_KHOANs.Assign(value);
-			}
-		}
-		
 		[Association(Name="NHAN_VIEN_TRAM_XE", Storage="_TRAM_XEs", ThisKey="MaNhanVien", OtherKey="MaTruongTram")]
 		public EntitySet<TRAM_XE> TRAM_XEs
 		{
@@ -1978,6 +1965,19 @@ namespace CTLH_C3
 			set
 			{
 				this._THONG_TIN_CONG_Ties.Assign(value);
+			}
+		}
+		
+		[Association(Name="NHAN_VIEN_TAI_KHOAN", Storage="_TAI_KHOANs", ThisKey="MaNhanVien", OtherKey="MaNhanVien")]
+		public EntitySet<TAI_KHOAN> TAI_KHOANs
+		{
+			get
+			{
+				return this._TAI_KHOANs;
+			}
+			set
+			{
+				this._TAI_KHOANs.Assign(value);
 			}
 		}
 		
@@ -2071,18 +2071,6 @@ namespace CTLH_C3
 			entity.NHAN_VIEN = null;
 		}
 		
-		private void attach_TAI_KHOANs(TAI_KHOAN entity)
-		{
-			this.SendPropertyChanging();
-			entity.NHAN_VIEN = this;
-		}
-		
-		private void detach_TAI_KHOANs(TAI_KHOAN entity)
-		{
-			this.SendPropertyChanging();
-			entity.NHAN_VIEN = null;
-		}
-		
 		private void attach_TRAM_XEs(TRAM_XE entity)
 		{
 			this.SendPropertyChanging();
@@ -2102,6 +2090,18 @@ namespace CTLH_C3
 		}
 		
 		private void detach_THONG_TIN_CONG_Ties(THONG_TIN_CONG_TY entity)
+		{
+			this.SendPropertyChanging();
+			entity.NHAN_VIEN = null;
+		}
+		
+		private void attach_TAI_KHOANs(TAI_KHOAN entity)
+		{
+			this.SendPropertyChanging();
+			entity.NHAN_VIEN = this;
+		}
+		
+		private void detach_TAI_KHOANs(TAI_KHOAN entity)
 		{
 			this.SendPropertyChanging();
 			entity.NHAN_VIEN = null;
@@ -2524,294 +2524,6 @@ namespace CTLH_C3
 		{
 			this.SendPropertyChanging();
 			entity.PHAN_HOI_KHACH_HANG = null;
-		}
-	}
-	
-	[Table(Name="dbo.TAI_KHOAN")]
-	public partial class TAI_KHOAN : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaTaiKhoan;
-		
-		private string _Username;
-		
-		private string _Password;
-		
-		private string _Email;
-		
-		private System.Nullable<System.DateTime> _NgayKichHoat;
-		
-		private System.Nullable<int> _MaNhanVien;
-		
-		private System.Nullable<int> _LoaiTaiKhoan;
-		
-		private EntityRef<LOAI_TAI_KHOAN> _LOAI_TAI_KHOAN;
-		
-		private EntityRef<NHAN_VIEN> _NHAN_VIEN;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaTaiKhoanChanging(int value);
-    partial void OnMaTaiKhoanChanged();
-    partial void OnUsernameChanging(string value);
-    partial void OnUsernameChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnNgayKichHoatChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayKichHoatChanged();
-    partial void OnMaNhanVienChanging(System.Nullable<int> value);
-    partial void OnMaNhanVienChanged();
-    partial void OnLoaiTaiKhoanChanging(System.Nullable<int> value);
-    partial void OnLoaiTaiKhoanChanged();
-    #endregion
-		
-		public TAI_KHOAN()
-		{
-			this._LOAI_TAI_KHOAN = default(EntityRef<LOAI_TAI_KHOAN>);
-			this._NHAN_VIEN = default(EntityRef<NHAN_VIEN>);
-			OnCreated();
-		}
-		
-		[Column(Storage="_MaTaiKhoan", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaTaiKhoan
-		{
-			get
-			{
-				return this._MaTaiKhoan;
-			}
-			set
-			{
-				if ((this._MaTaiKhoan != value))
-				{
-					this.OnMaTaiKhoanChanging(value);
-					this.SendPropertyChanging();
-					this._MaTaiKhoan = value;
-					this.SendPropertyChanged("MaTaiKhoan");
-					this.OnMaTaiKhoanChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Username", DbType="NVarChar(50)")]
-		public string Username
-		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this.OnUsernameChanging(value);
-					this.SendPropertyChanging();
-					this._Username = value;
-					this.SendPropertyChanged("Username");
-					this.OnUsernameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Password", DbType="NVarChar(50)")]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Email", DbType="NVarChar(50)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_NgayKichHoat", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NgayKichHoat
-		{
-			get
-			{
-				return this._NgayKichHoat;
-			}
-			set
-			{
-				if ((this._NgayKichHoat != value))
-				{
-					this.OnNgayKichHoatChanging(value);
-					this.SendPropertyChanging();
-					this._NgayKichHoat = value;
-					this.SendPropertyChanged("NgayKichHoat");
-					this.OnNgayKichHoatChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_MaNhanVien", DbType="Int")]
-		public System.Nullable<int> MaNhanVien
-		{
-			get
-			{
-				return this._MaNhanVien;
-			}
-			set
-			{
-				if ((this._MaNhanVien != value))
-				{
-					if (this._NHAN_VIEN.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaNhanVienChanging(value);
-					this.SendPropertyChanging();
-					this._MaNhanVien = value;
-					this.SendPropertyChanged("MaNhanVien");
-					this.OnMaNhanVienChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_LoaiTaiKhoan", DbType="Int")]
-		public System.Nullable<int> LoaiTaiKhoan
-		{
-			get
-			{
-				return this._LoaiTaiKhoan;
-			}
-			set
-			{
-				if ((this._LoaiTaiKhoan != value))
-				{
-					if (this._LOAI_TAI_KHOAN.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnLoaiTaiKhoanChanging(value);
-					this.SendPropertyChanging();
-					this._LoaiTaiKhoan = value;
-					this.SendPropertyChanged("LoaiTaiKhoan");
-					this.OnLoaiTaiKhoanChanged();
-				}
-			}
-		}
-		
-		[Association(Name="LOAI_TAI_KHOAN_TAI_KHOAN", Storage="_LOAI_TAI_KHOAN", ThisKey="LoaiTaiKhoan", OtherKey="MaLoaiTaiKhoan", IsForeignKey=true)]
-		public LOAI_TAI_KHOAN LOAI_TAI_KHOAN
-		{
-			get
-			{
-				return this._LOAI_TAI_KHOAN.Entity;
-			}
-			set
-			{
-				LOAI_TAI_KHOAN previousValue = this._LOAI_TAI_KHOAN.Entity;
-				if (((previousValue != value) 
-							|| (this._LOAI_TAI_KHOAN.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._LOAI_TAI_KHOAN.Entity = null;
-						previousValue.TAI_KHOANs.Remove(this);
-					}
-					this._LOAI_TAI_KHOAN.Entity = value;
-					if ((value != null))
-					{
-						value.TAI_KHOANs.Add(this);
-						this._LoaiTaiKhoan = value.MaLoaiTaiKhoan;
-					}
-					else
-					{
-						this._LoaiTaiKhoan = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("LOAI_TAI_KHOAN");
-				}
-			}
-		}
-		
-		[Association(Name="NHAN_VIEN_TAI_KHOAN", Storage="_NHAN_VIEN", ThisKey="MaNhanVien", OtherKey="MaNhanVien", IsForeignKey=true)]
-		public NHAN_VIEN NHAN_VIEN
-		{
-			get
-			{
-				return this._NHAN_VIEN.Entity;
-			}
-			set
-			{
-				NHAN_VIEN previousValue = this._NHAN_VIEN.Entity;
-				if (((previousValue != value) 
-							|| (this._NHAN_VIEN.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NHAN_VIEN.Entity = null;
-						previousValue.TAI_KHOANs.Remove(this);
-					}
-					this._NHAN_VIEN.Entity = value;
-					if ((value != null))
-					{
-						value.TAI_KHOANs.Add(this);
-						this._MaNhanVien = value.MaNhanVien;
-					}
-					else
-					{
-						this._MaNhanVien = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("NHAN_VIEN");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -4466,6 +4178,318 @@ namespace CTLH_C3
 					else
 					{
 						this._MaAdmin = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("NHAN_VIEN");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.TAI_KHOAN")]
+	public partial class TAI_KHOAN : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaTaiKhoan;
+		
+		private string _Username;
+		
+		private string _Password;
+		
+		private string _Salt;
+		
+		private string _Email;
+		
+		private System.Nullable<System.DateTime> _NgayKichHoat;
+		
+		private System.Nullable<int> _MaNhanVien;
+		
+		private System.Nullable<int> _LoaiTaiKhoan;
+		
+		private EntityRef<LOAI_TAI_KHOAN> _LOAI_TAI_KHOAN;
+		
+		private EntityRef<NHAN_VIEN> _NHAN_VIEN;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTaiKhoanChanging(int value);
+    partial void OnMaTaiKhoanChanged();
+    partial void OnUsernameChanging(string value);
+    partial void OnUsernameChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnSaltChanging(string value);
+    partial void OnSaltChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnNgayKichHoatChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayKichHoatChanged();
+    partial void OnMaNhanVienChanging(System.Nullable<int> value);
+    partial void OnMaNhanVienChanged();
+    partial void OnLoaiTaiKhoanChanging(System.Nullable<int> value);
+    partial void OnLoaiTaiKhoanChanged();
+    #endregion
+		
+		public TAI_KHOAN()
+		{
+			this._LOAI_TAI_KHOAN = default(EntityRef<LOAI_TAI_KHOAN>);
+			this._NHAN_VIEN = default(EntityRef<NHAN_VIEN>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_MaTaiKhoan", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaTaiKhoan
+		{
+			get
+			{
+				return this._MaTaiKhoan;
+			}
+			set
+			{
+				if ((this._MaTaiKhoan != value))
+				{
+					this.OnMaTaiKhoanChanging(value);
+					this.SendPropertyChanging();
+					this._MaTaiKhoan = value;
+					this.SendPropertyChanged("MaTaiKhoan");
+					this.OnMaTaiKhoanChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Username", DbType="NVarChar(50)")]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this.OnUsernameChanging(value);
+					this.SendPropertyChanging();
+					this._Username = value;
+					this.SendPropertyChanged("Username");
+					this.OnUsernameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Password", DbType="NVarChar(128)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Salt", DbType="NVarChar(128)")]
+		public string Salt
+		{
+			get
+			{
+				return this._Salt;
+			}
+			set
+			{
+				if ((this._Salt != value))
+				{
+					this.OnSaltChanging(value);
+					this.SendPropertyChanging();
+					this._Salt = value;
+					this.SendPropertyChanged("Salt");
+					this.OnSaltChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_NgayKichHoat", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayKichHoat
+		{
+			get
+			{
+				return this._NgayKichHoat;
+			}
+			set
+			{
+				if ((this._NgayKichHoat != value))
+				{
+					this.OnNgayKichHoatChanging(value);
+					this.SendPropertyChanging();
+					this._NgayKichHoat = value;
+					this.SendPropertyChanged("NgayKichHoat");
+					this.OnNgayKichHoatChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaNhanVien", DbType="Int")]
+		public System.Nullable<int> MaNhanVien
+		{
+			get
+			{
+				return this._MaNhanVien;
+			}
+			set
+			{
+				if ((this._MaNhanVien != value))
+				{
+					if (this._NHAN_VIEN.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaNhanVienChanging(value);
+					this.SendPropertyChanging();
+					this._MaNhanVien = value;
+					this.SendPropertyChanged("MaNhanVien");
+					this.OnMaNhanVienChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_LoaiTaiKhoan", DbType="Int")]
+		public System.Nullable<int> LoaiTaiKhoan
+		{
+			get
+			{
+				return this._LoaiTaiKhoan;
+			}
+			set
+			{
+				if ((this._LoaiTaiKhoan != value))
+				{
+					if (this._LOAI_TAI_KHOAN.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLoaiTaiKhoanChanging(value);
+					this.SendPropertyChanging();
+					this._LoaiTaiKhoan = value;
+					this.SendPropertyChanged("LoaiTaiKhoan");
+					this.OnLoaiTaiKhoanChanged();
+				}
+			}
+		}
+		
+		[Association(Name="LOAI_TAI_KHOAN_TAI_KHOAN", Storage="_LOAI_TAI_KHOAN", ThisKey="LoaiTaiKhoan", OtherKey="MaLoaiTaiKhoan", IsForeignKey=true)]
+		public LOAI_TAI_KHOAN LOAI_TAI_KHOAN
+		{
+			get
+			{
+				return this._LOAI_TAI_KHOAN.Entity;
+			}
+			set
+			{
+				LOAI_TAI_KHOAN previousValue = this._LOAI_TAI_KHOAN.Entity;
+				if (((previousValue != value) 
+							|| (this._LOAI_TAI_KHOAN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LOAI_TAI_KHOAN.Entity = null;
+						previousValue.TAI_KHOANs.Remove(this);
+					}
+					this._LOAI_TAI_KHOAN.Entity = value;
+					if ((value != null))
+					{
+						value.TAI_KHOANs.Add(this);
+						this._LoaiTaiKhoan = value.MaLoaiTaiKhoan;
+					}
+					else
+					{
+						this._LoaiTaiKhoan = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LOAI_TAI_KHOAN");
+				}
+			}
+		}
+		
+		[Association(Name="NHAN_VIEN_TAI_KHOAN", Storage="_NHAN_VIEN", ThisKey="MaNhanVien", OtherKey="MaNhanVien", IsForeignKey=true)]
+		public NHAN_VIEN NHAN_VIEN
+		{
+			get
+			{
+				return this._NHAN_VIEN.Entity;
+			}
+			set
+			{
+				NHAN_VIEN previousValue = this._NHAN_VIEN.Entity;
+				if (((previousValue != value) 
+							|| (this._NHAN_VIEN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NHAN_VIEN.Entity = null;
+						previousValue.TAI_KHOANs.Remove(this);
+					}
+					this._NHAN_VIEN.Entity = value;
+					if ((value != null))
+					{
+						value.TAI_KHOANs.Add(this);
+						this._MaNhanVien = value.MaNhanVien;
+					}
+					else
+					{
+						this._MaNhanVien = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("NHAN_VIEN");
 				}
