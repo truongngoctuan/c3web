@@ -153,7 +153,7 @@
                 align="center">
                         <tr>
                             <td align="left">
-                                <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
+                                <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Tên đăng nhập:</asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -166,7 +166,7 @@
                         </tr>
                         <tr>
                             <td align="left">
-                                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
+                                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Mật khẩu:</asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -193,7 +193,7 @@
                         </tr>--%>
                         <tr>
                             <td align="center" >
-                                <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" 
+                                <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Đăng nhập" 
                         ValidationGroup="ctl00$Login1" />
                             </td>
                         </tr>
