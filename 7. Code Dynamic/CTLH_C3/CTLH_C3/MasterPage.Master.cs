@@ -142,7 +142,7 @@ namespace CTLH_C3
                         }
                     case (ImageType.Slogan):
                         {
-                            return "!/images/slogan.png";
+                            return "~/images/slogan.png";
                         }
                 }
             }
