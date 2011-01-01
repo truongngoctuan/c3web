@@ -571,6 +571,13 @@
     <Compile Include="GUI\Guest\TimKiemChuyen.aspx.designer.cs">
       <DependentUpon>TimKiemChuyen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HoTro.aspx.cs">
+      <DependentUpon>HoTro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HoTro.aspx.designer.cs">
+      <DependentUpon>HoTro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ImageHandler.ashx.cs">
       <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
@@ -1010,6 +1017,7 @@
     <Content Include="DynamicData\FieldTemplates\Password.ascx" />
     <Content Include="DynamicData\PageTemplates\AnonymousList.aspx" />
     <Content Include="Guest\user_DanhSachTram.ascx" />
+    <Content Include="HoTro.aspx" />
     <Content Include="ImageHandler.ashx" />
     <Content Include="DieuHanhTram\Default.sitemap" />
     <Content Include="DieuHanhTram\MasterPage.Master" />
