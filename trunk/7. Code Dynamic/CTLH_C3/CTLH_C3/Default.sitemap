@@ -3,9 +3,8 @@
 
     <siteMapNode>
         <siteMapNode url="Default.aspx" title="Trang Chủ"  description="Trang Chủ"/>
-        <siteMapNode url="TUYEN_XEs/List.aspx" title="Xem Tuyến"  description="Xem Tuyến"/>
+        <siteMapNode url="Feedback.aspx" title="Nhận Phản Hồi"  description="Nhận Phản Hồi" />
         <siteMapNode url="HoTro.aspx" title="Hỗ Trợ"  description="Hỗ Trợ" />
         <siteMapNode url="LienHe.aspx" title="Liên Hệ"  description="Liên Hệ" />
     </siteMapNode>
-    
 </siteMap>
