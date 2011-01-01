@@ -147,8 +147,11 @@
     </Compile>
     <Compile Include="Core\ConfigHelper.cs" />
     <Compile Include="Core\CryptographicHelper.cs" />
+    <Compile Include="App_Code\CustomDynamicDataRouteHandler.cs" />
     <Compile Include="Core\CustomMembershipProvider.cs" />
     <Compile Include="Core\CustomMembershipUser.cs" />
+    <Compile Include="App_Code\DataModel.cs" />
+    <Compile Include="App_Code\DynamicDataSecurity.cs" />
     <Compile Include="Core\ThongTinCongTy.cs" />
     <Compile Include="CustomMetadata.cs" />
     <Compile Include="Core\CustomRoleProvider.cs" />
@@ -490,6 +493,13 @@
     </Compile>
     <Compile Include="DynamicData\FieldTemplates\Password.ascx.designer.cs">
       <DependentUpon>Password.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\AnonymousList.aspx.cs">
+      <DependentUpon>AnonymousList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\AnonymousList.aspx.designer.cs">
+      <DependentUpon>AnonymousList.aspx</DependentUpon>
     </Compile>
     <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.cs">
       <DependentUpon>ListDetails.aspx</DependentUpon>
@@ -991,6 +1001,7 @@
     <Content Include="DynamicData\CustomPages\PHAN_HOI_KHACH_HANGs\List.aspx" />
     <Content Include="DynamicData\FieldTemplates\Password_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Password.ascx" />
+    <Content Include="DynamicData\PageTemplates\AnonymousList.aspx" />
     <Content Include="ImageHandler.ashx" />
     <Content Include="DieuHanhTram\Default.sitemap" />
     <Content Include="DieuHanhTram\MasterPage.Master" />

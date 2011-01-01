@@ -28,5 +28,37 @@ namespace CTLH_C3
             Menu1.DataBind();
         }
 
+        // It obtains the action path for a custom or standard view.
+        // Note the following:
+        // a) You must define the related custom view (template) in the
+        // DynamicData/PageTemplpates folder.
+        // b) You must also define the route in the Gloab.asax file.
+        // c) You must apply the SecurityAttribute to the tables you
+        // want to display.
+        // Inline syntax: 
+        // NavigateUrl='<%# ((MetaTable)Page.GetDataItem()).GetActionPath    
+        //   "AnonymousList") %>'>
+        protected string GetActionPath(string view)
+        {
+            string actionPath = String.Empty;
+
+            // Instantiate the SecurityInformation 
+            // utility object.
+            DynamicDataSecurity secInfo =
+              new DynamicDataSecurity();
+
+            if (secInfo.IsUserInAdmimistrativeRole() ||
+              secInfo.IsUserInAuthenticatedRole())
+                actionPath =
+                 ((MetaTable)Page.GetDataItem()).GetActionPath(
+                 PageAction.List);
+            else
+                // For non authenticated users allow limited
+                // functionality as defined in Global.asax.
+                actionPath =
+                 ((MetaTable)Page.GetDataItem()).GetActionPath(view);
+
+            return actionPath;
+        }
     }
 }

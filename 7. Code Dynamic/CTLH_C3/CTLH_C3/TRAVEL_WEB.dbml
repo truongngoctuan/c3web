@@ -16,10 +16,10 @@
       <Column Name="MaLoaiXe" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TinhTrangXe" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TramXeLuuTru" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="LOAI_XE_XE" Member="LOAI_XE" ThisKey="MaLoaiXe" OtherKey="MaLoaixe" Type="LOAI_XE" IsForeignKey="true" />
       <Association Name="NHAN_VIEN_XE" Member="NHAN_VIEN" ThisKey="MaTaiXe" OtherKey="MaNhanVien" Type="NHAN_VIEN" IsForeignKey="true" />
       <Association Name="TINH_TRANG_XE_XE" Member="TINH_TRANG_XE" ThisKey="TinhTrangXe" OtherKey="MaTinhTrangXe" Type="TINH_TRANG_XE" IsForeignKey="true" />
       <Association Name="TRAM_XE_XE" Member="TRAM_XE" ThisKey="TramXeLuuTru" OtherKey="MaTramXe" Type="TRAM_XE" IsForeignKey="true" />
+      <Association Name="LOAI_XE_XE" Member="LOAI_XE" ThisKey="MaLoaiXe" OtherKey="MaLoaiXe" Type="LOAI_XE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CHUYEN_XE" Member="CHUYEN_XEs">
@@ -55,13 +55,13 @@
     <Type Name="IMAGE_STORE">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Association Name="IMAGE_STORE_LOAI_XE" Member="LOAI_XEs" ThisKey="Id" OtherKey="HinhAnh" Type="LOAI_XE" />
       <Association Name="IMAGE_STORE_NHAN_VIEN" Member="NHAN_VIENs" ThisKey="Id" OtherKey="HinhAnh" Type="NHAN_VIEN" />
       <Association Name="IMAGE_STORE_THONG_TIN_CONG_TY" Member="THONG_TIN_CONG_Ties" ThisKey="Id" OtherKey="Truck" Type="THONG_TIN_CONG_TY" />
       <Association Name="IMAGE_STORE_THONG_TIN_CONG_TY1" Member="THONG_TIN_CONG_Ties1" ThisKey="Id" OtherKey="Banner" Type="THONG_TIN_CONG_TY" />
       <Association Name="IMAGE_STORE_THONG_TIN_CONG_TY2" Member="THONG_TIN_CONG_Ties2" ThisKey="Id" OtherKey="Slogan" Type="THONG_TIN_CONG_TY" />
       <Association Name="IMAGE_STORE_THONG_TIN_CONG_TY3" Member="THONG_TIN_CONG_Ties3" ThisKey="Id" OtherKey="Logo" Type="THONG_TIN_CONG_TY" />
       <Association Name="IMAGE_STORE_TRAM_XE" Member="TRAM_XEs" ThisKey="Id" OtherKey="HinhAnh" Type="TRAM_XE" />
+      <Association Name="IMAGE_STORE_LOAI_XE" Member="LOAI_XEs" ThisKey="Id" OtherKey="HinhAnh" Type="LOAI_XE" />
     </Type>
   </Table>
   <Table Name="dbo.LOAI_TAI_KHOAN" Member="LOAI_TAI_KHOANs">
@@ -69,16 +69,6 @@
       <Column Name="MaLoaiTaiKhoan" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenLoaiTaiKhoan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="LOAI_TAI_KHOAN_TAI_KHOAN" Member="TAI_KHOANs" ThisKey="MaLoaiTaiKhoan" OtherKey="LoaiTaiKhoan" Type="TAI_KHOAN" />
-    </Type>
-  </Table>
-  <Table Name="dbo.LOAI_XE" Member="LOAI_XEs">
-    <Type Name="LOAI_XE">
-      <Column Name="MaLoaixe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="HinhAnh" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HangSanXuat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SoCho" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="LOAI_XE_XE" Member="XEs" ThisKey="MaLoaixe" OtherKey="MaLoaiXe" Type="XE" />
-      <Association Name="IMAGE_STORE_LOAI_XE" Member="IMAGE_STORE" ThisKey="HinhAnh" OtherKey="Id" Type="IMAGE_STORE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.NHAN_VIEN" Member="NHAN_VIENs">
@@ -206,6 +196,16 @@
       <Association Name="TUYEN_XE_CHUYEN_XE" Member="CHUYEN_XEs" ThisKey="MaTuyenXe" OtherKey="MaTuyenXe" Type="CHUYEN_XE" />
       <Association Name="TRAM_XE_TUYEN_XE" Member="TRAM_XE" ThisKey="MaTramDi" OtherKey="MaTramXe" Type="TRAM_XE" IsForeignKey="true" />
       <Association Name="TRAM_XE_TUYEN_XE1" Member="TRAM_XE1" ThisKey="MaTramDen" OtherKey="MaTramXe" Type="TRAM_XE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAI_XE" Member="LOAI_XEs">
+    <Type Name="LOAI_XE">
+      <Column Name="MaLoaiXe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HinhAnh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HangSanXuat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoCho" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LOAI_XE_XE" Member="XEs" ThisKey="MaLoaiXe" OtherKey="MaLoaiXe" Type="XE" />
+      <Association Name="IMAGE_STORE_LOAI_XE" Member="IMAGE_STORE" ThisKey="HinhAnh" OtherKey="Id" Type="IMAGE_STORE" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

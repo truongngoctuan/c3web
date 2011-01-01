@@ -31,10 +31,12 @@
                         <ItemTemplate>
                             <asp:HyperLink ID="EditHyperLink" runat="server"
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Edit, GetDataItem()) %>'
-                            Text="Sửa" />&nbsp;<asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete"
+                            Text="Sửa" />&nbsp;
+                            <asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete"
                                 CausesValidation="false" Text="Xóa"
                                 OnClientClick='return confirm("Are you sure you want to delete this item?");'
-                            />&nbsp;<asp:HyperLink ID="DetailsHyperLink" runat="server"
+                            />&nbsp;
+                            <asp:HyperLink ID="DetailsHyperLink" runat="server"
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Details, GetDataItem()) %>'
                                 Text="Chi tiết" />
                         </ItemTemplate>
