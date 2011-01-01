@@ -13,12 +13,17 @@
 <div style="float:left; width:550px; padding-left:5px; display:block;"> 
     <h1>Thông Tin Chi Tiết Chuyến Xe</h1>    
     <asp:DetailsView ID="dtvChuyenXe" runat="server" DataSourceID="ldsChuyenXe"
-        AutoGenerateRows="false" FieldHeaderStyle-CssClass="bold" >
+        AutoGenerateRows="False" FieldHeaderStyle-CssClass="bold" >
+<FieldHeaderStyle CssClass="bold"></FieldHeaderStyle>
         <Fields>
             <asp:BoundField DataField="MaChuyenXe" HeaderText="Mã chuyến xe" ReadOnly="True" 
                 SortExpression="MaChuyenXe" />
-            <asp:BoundField DataField="HinhAnhXe" HeaderText="Hình ảnh xe" ReadOnly="True" 
-                SortExpression="HinhAnhXe" />
+            <asp:TemplateField HeaderText="Hình ảnh xe" SortExpression="HinhAnhXe">
+                <ItemTemplate>
+                    <asp:Image ID="Image1" runat="server" 
+                        ImageUrl='<%# "~/ImageHandler.ashx?id="+ Eval("HinhAnhXe") %>' />
+                </ItemTemplate>                
+            </asp:TemplateField>
             <asp:BoundField DataField="MaTaiXe" HeaderText="Mã tài xế" ReadOnly="True" 
                 SortExpression="MaTaiXe" />
             <asp:BoundField DataField="TenTaiXe" HeaderText="Tên tài xế" ReadOnly="True" 

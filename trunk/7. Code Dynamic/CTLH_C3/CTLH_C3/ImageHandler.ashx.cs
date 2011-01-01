@@ -18,9 +18,17 @@ namespace CTLH_C3
 		// Tự động được gọi
         public void ProcessRequest(HttpContext context)
         {
-            int id = int.Parse(context.Request.QueryString["Id"]);
+            int id = -1;
             context.Response.ContentType = "image/jpeg";
-            Stream strm = ShowEmpImage(id);
+            Stream strm = null;
+            if(!String.IsNullOrEmpty(context.Request.QueryString["Id"]))
+            {
+                id = int.Parse(context.Request.QueryString["Id"]);
+                strm = ShowEmpImage(id);
+            }
+            else
+                strm = GetDefaultImageStream();
+            
             byte[] buffer = new byte[4096];
             int byteSeq = strm.Read(buffer, 0, 4096);
             while (byteSeq > 0)
