@@ -11,24 +11,24 @@
 namespace CTLH_C3 {
     
     
-    public partial class ThongTinChiTietChuyenXe {
+    public partial class HoTro {
         
         /// <summary>
-        /// user_Guest_TimKiemTuyenXe1 control.
+        /// user_DanhSachTram1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CTLH_C3.Guest.user_Guest_TimKiemTuyenXe user_Guest_TimKiemTuyenXe1;
+        protected global::CTLH_C3.Guest.user_DanhSachTram user_DanhSachTram1;
         
         /// <summary>
-        /// user_Guest_XemThongTinChuyenXe1 control.
+        /// user_Login1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CTLH_C3.Guest.user_Guest_XemThongTinChuyenXe user_Guest_XemThongTinChuyenXe1;
+        protected global::CTLH_C3.Guest.user_CustomLogin user_Login1;
     }
 }
