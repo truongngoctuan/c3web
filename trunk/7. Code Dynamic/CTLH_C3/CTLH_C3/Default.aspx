@@ -20,12 +20,33 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
     <asp:Repeater ID="rptTram" runat="server" DataSourceID="ldsTram">
         <HeaderTemplate>
-            <ul>
+        <div style="background-image: url(images/LeftPanelHeader.jpg);
+                    width:179px; height:42px; 
+                    display:block;
+                    margin-left:5px;
+                    margin-right:5px;"></div>
+            <ul style="list-style:none; padding: 0px 0px; margin: 0px 0px;
+                margin: 5px 5px; margin-top:0px;
+                padding-top:5px;
+                background-color: #EEFBFF;
+                border: solid 1px #5672C5;
+                border-top-width:0px;
+                width:177px;">
         </HeaderTemplate>
         <ItemTemplate>
             <li>
-            <a href="TimKiemChuyen.aspx?MaTramDi=<%# DataBinder.Eval(Container.DataItem, "MaTramXe")%>">
-              <%# DataBinder.Eval(Container.DataItem, "TenTramXe") %></a>                    
+                <a href="TimKiemChuyen.aspx?MaTramDi=<%# DataBinder.Eval(Container.DataItem, "MaTramXe")%>"
+                style="width:140px; height:28px; display:block;
+                background-image: url(images/LeftPanelItem.jpg);
+                background-repeat:no-repeat;
+                background-color: #EEFBFF;
+                padding-left:32px;
+                padding-top:8px;
+                margin-left:5px;
+                text-decoration:none; color:Navy;" 
+                class"LeftContentItemLink">
+                  <%# DataBinder.Eval(Container.DataItem, "TenTramXe") %></a>   
+                             
             </li>
         </ItemTemplate>
         <FooterTemplate>
