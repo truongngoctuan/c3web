@@ -59,11 +59,12 @@ namespace CTLH_C3
     }
     [Security(Role = "Anonymous", Action = "AnonymousList")]
     [Security(Role = "Điều hành công ty", Action = "All")]
+    [Security(Role = "Admin", Action = "All")]
     public partial class LOAI_TAI_KHOAN
     {
     }
     [Security(Role = "Anonymous", Action = "AnonymousList")]
-    [Security(Role = "Admin", Action = "List")]
+    [Security(Role = "Admin", Action = "All")]
     public partial class TAI_KHOAN
     {
     }
