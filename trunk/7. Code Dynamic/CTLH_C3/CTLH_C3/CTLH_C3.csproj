@@ -142,6 +142,13 @@
     <Compile Include="Authenticated\DoiMatKhau.aspx.designer.cs">
       <DependentUpon>DoiMatKhau.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ThongTinChiTietChuyenXe.aspx.cs">
+      <DependentUpon>ThongTinChiTietChuyenXe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinChiTietChuyenXe.aspx.designer.cs">
+      <DependentUpon>ThongTinChiTietChuyenXe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Core\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -163,13 +170,6 @@
     </Compile>
     <Compile Include="DangNhap.aspx.designer.cs">
       <DependentUpon>DangNhap.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DanhSachCacChuyen.aspx.cs">
-      <DependentUpon>DanhSachCacChuyen.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DanhSachCacChuyen.aspx.designer.cs">
-      <DependentUpon>DanhSachCacChuyen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -869,13 +869,6 @@
     <Compile Include="Site.master.designer.cs">
       <DependentUpon>Site.master</DependentUpon>
     </Compile>
-    <Compile Include="ThongTinChiTietChuyenXe.aspx.cs">
-      <DependentUpon>ThongTinChiTietChuyenXe.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ThongTinChiTietChuyenXe.aspx.designer.cs">
-      <DependentUpon>ThongTinChiTietChuyenXe.aspx</DependentUpon>
-    </Compile>
     <Compile Include="TimKiemChuyen.aspx.cs">
       <DependentUpon>TimKiemChuyen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -914,7 +907,6 @@
     <Content Include="App_Themes\Default\images\tbBackgroundGradient.jpg" />
     <Content Include="App_Themes\Default\jsUserControl.js" />
     <Content Include="DangNhap.aspx" />
-    <Content Include="DanhSachCacChuyen.aspx" />
     <Content Include="Default.sitemap" />
     <Content Include="DieuHanhCongTy\Default.aspx" />
     <Content Include="DieuHanhCongTy\QuanLyXe.aspx" />
@@ -975,7 +967,6 @@
     <Content Include="Admin\MasterPage.Master" />
     <Content Include="Admin\web.config" />
     <Content Include="QuenMatKhau.aspx" />
-    <Content Include="ThongTinChiTietChuyenXe.aspx" />
     <Content Include="Site.master" />
     <Content Include="TaiXe\Default.sitemap" />
     <Content Include="TimKiemChuyen.aspx" />
@@ -997,6 +988,7 @@
     </Content>
     <Content Include="Authenticated\Controls\ucDoiMatKhau.ascx" />
     <Content Include="Authenticated\DoiMatKhau.aspx" />
+    <Content Include="ThongTinChiTietChuyenXe.aspx" />
     <Content Include="DieuHanhTram\Default.aspx" />
     <Content Include="DieuHanhTram\GhiNhanPhanHoi.aspx" />
     <Content Include="DynamicData\CustomPages\CHUYEN_XEs\PhanHoi.aspx" />

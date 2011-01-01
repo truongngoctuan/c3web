@@ -58,7 +58,6 @@ namespace CTLH_C3
     #region Chuyen xe
     public class CHUYEN_XE_Metadata
     {
-
         [DisplayName("Giờ khởi hành")]
         //[Filte(DateTime)]
         public object KhoiHanh { set; get; }

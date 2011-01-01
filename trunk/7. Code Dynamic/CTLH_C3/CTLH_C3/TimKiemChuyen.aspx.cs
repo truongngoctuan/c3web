@@ -40,7 +40,7 @@ namespace CTLH_C3
             try
             {
                 hour = int.Parse(part[0]);
-                minute = int.Parse(part[2]);
+                minute = int.Parse(part[1]);
             }
             catch (FormatException ex)
             {
@@ -68,7 +68,7 @@ namespace CTLH_C3
 				chuyenXeQuery = chuyenXeQuery.Where(
                                 c => c.TUYEN_XE.MaTramDen.ToString() == ddlTramDen.SelectedValue);
 			}
-            /*bool bAdvanceSearch = (bool)Session["AdvanceSearch"];
+            bool bAdvanceSearch = (bool)Session["AdvanceSearch"];
             if (bAdvanceSearch)
             {
                 DateTime khoiHanhMin = getTimeToday(tbKhoiHanhMin.Text);
@@ -89,7 +89,7 @@ namespace CTLH_C3
                         c => c.KhoiHanh >= khoiHanhMin && c.KhoiHanh <= khoiHanhMax
                             && c.DAT_CHOs.Count > soChoTrongMin);
                 }
-            }*/
+            }
             var chuyenXes = from chuyenXe in chuyenXeQuery
                             select new
                             {

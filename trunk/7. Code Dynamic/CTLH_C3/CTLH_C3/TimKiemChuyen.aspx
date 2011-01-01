@@ -48,9 +48,10 @@
         onclick="btAdvanceSearch_Click" />
         </div>
     <asp:GridView ID="gvChuyenXe" DataSourceID="ldsChuyenXe" runat="server" 
-        AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" 
-        >
+        AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" >
         <Columns>
+            <%--<asp:HyperLinkField DataTextField="GiaVe" DataNavigateUrlFields="MaChuyenXe" DataNavigateUrlFormatString="~/ThongTinChiTietChuyenXe.aspx?MaChuyenXe={0}"/>--%>
+            <asp:HyperLinkField Text="Chi tiết" DataNavigateUrlFields="MaChuyenXe" DataNavigateUrlFormatString="~/ThongTinChiTietChuyenXe.aspx?MaChuyenXe={0}"/>
             <asp:BoundField DataField="MaChuyenXe" HeaderText="Mã chuyến xe" ReadOnly="True" 
                 SortExpression="MaChuyenXe" />
             <asp:BoundField DataField="KhoiHanh" HeaderText="Khởi hành" ReadOnly="True" 
