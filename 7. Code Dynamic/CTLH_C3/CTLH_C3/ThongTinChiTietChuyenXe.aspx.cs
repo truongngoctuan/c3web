@@ -32,7 +32,7 @@ namespace CTLH_C3
                             select new
                             {
                                 MaChuyenXe = chuyenXe.MaChuyenXe,
-                                HinhAnhXe = chuyenXe.NHAN_VIEN.XEs.Single().LOAI_XE.IMAGE_STORE.Image,
+                                HinhAnhXe = chuyenXe.NHAN_VIEN.XEs.Single().LOAI_XE.HinhAnh,
                                 MaTaiXe = chuyenXe.MaTaiXe,
                                 TenTaiXe = chuyenXe.NHAN_VIEN.HoTen,
                                 KhoiHanh = chuyenXe.KhoiHanh,

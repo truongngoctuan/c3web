@@ -988,6 +988,12 @@
     </Content>
     <Content Include="Authenticated\Controls\ucDoiMatKhau.ascx" />
     <Content Include="Authenticated\DoiMatKhau.aspx" />
+    <Content Include="images\0712164.jpg" />
+    <Content Include="images\0712167.jpg" />
+    <Content Include="images\0712244.jpg" />
+    <Content Include="images\0712273.jpg" />
+    <Content Include="images\0712281.jpg" />
+    <Content Include="images\0712494.jpg" />
     <Content Include="ThongTinChiTietChuyenXe.aspx" />
     <Content Include="DieuHanhTram\Default.aspx" />
     <Content Include="DieuHanhTram\GhiNhanPhanHoi.aspx" />
