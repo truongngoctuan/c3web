@@ -290,3 +290,18 @@ input.file {
     left:120px;
     top:5px;
 }
+
+/*a---------------------------------*/
+a 
+{
+    color: Navy;
+    text-decoration:none;
+}
+a:hover 
+{
+    color:Maroon;
+}
+a:visited
+{
+    color:Olive;
+}
