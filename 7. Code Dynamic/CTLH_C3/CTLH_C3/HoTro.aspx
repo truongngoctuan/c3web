@@ -4,7 +4,7 @@
 <%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    Hỗ trợ
+    <title>Hỗ trợ</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
     <webUC:user_DanhSachTram ID="user_DanhSachTram1" runat="server" />

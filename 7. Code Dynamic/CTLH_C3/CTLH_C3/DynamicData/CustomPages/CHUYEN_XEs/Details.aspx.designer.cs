@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTLH_C3.CHUYEN_XEs
-{
+namespace CTLH_C3.CHUYEN_XEs {
     
     
     public partial class Details {

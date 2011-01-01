@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CTLH_C3.Feedback" %>
 <%@ Register src="~/Guest/user_Feedback.ascx" tagname="user_Feedback" tagprefix="webUC" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    Phản hồi
+    <title>Phản hồi</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
     &nbsp;
