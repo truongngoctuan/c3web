@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
+﻿<%@ Page Language="C#" MasterPageFile="TX_MasterPage.Master" AutoEventWireup="true"
     CodeBehind="ThayDoiThongTinCaNhan.aspx.cs" Inherits="CTLH_C3.ThayDoiThongTinCaNhan" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -6,7 +6,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    <div style="width:250px;" ></div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
@@ -15,7 +14,7 @@
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            
+            <div style="width: 520px; margin-left:250px;">
             <h1><asp:Label runat="server" ID="lblLoaiNhanVien"></asp:Label></h1>
         
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
@@ -45,7 +44,7 @@
            </asp:LinqDataSource>
            
            <%--Thông tin tài khoản--%>
-            
+           </div> 
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>

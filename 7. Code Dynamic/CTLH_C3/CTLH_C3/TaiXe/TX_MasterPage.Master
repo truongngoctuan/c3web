@@ -1,0 +1,132 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TX_MasterPage.Master.cs" Inherits="CTLH_C3.TX_MasterPage" %>
+
+<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>--%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head id="Head1" runat="server">
+    <title>
+    <asp:ContentPlaceHolder ID="head" runat="server">        
+    </asp:ContentPlaceHolder>
+    </title>
+    <link href="Master.css" rel="stylesheet" type="text/css" />
+	<link href="~/Site.css" rel="stylesheet" type="text/css" />
+    <script src="/jquery-1.4.4.js" type="text/javascript"></script>
+</head>
+
+<body>    
+    <form id="form1" runat="server"> 
+    <div id="site">   
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"/>
+    <!--****************************************************************-->
+    <div id="top">
+        <asp:Image ID="imgBanner" runat="server" 
+        style="float:left; clear:both;z-index:1;"/>
+
+        <%--menu and dynamic colorbackground--%>
+        <div id="MenuBackground" style="float:left; clear:both;z-index:1;
+            background-color: #c9e6ff; 
+            width: 995px; height:58px; 
+            margin-bottom:25px;"> 
+        </div> 
+        <div id="Menu" style="position:absolute; z-index:10;
+            margin-left:auto; margin-right:auto; top:193px;
+            background-image: url(../images/MenuBackgroundTransparent.png); ">
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSourceMenu"
+                            Orientation="Horizontal" 
+                            staticdisplaylevels="2" 
+                            DynamicHorizontalOffset="1"
+                            staticsubmenuindent="1px" 
+                            MaximumDynamicDisplayLevels="5"
+                            Height="59px">
+            
+            <StaticMenuItemStyle CssClass="staticMenuItemStyle"/>
+            <StaticHoverStyle CssClass="staticHoverStyle" />
+            <StaticSelectedStyle CssClass="staticMenuItemSelectedStyle"/> 
+            
+            <DynamicMenuItemStyle CssClass="dynamicMenuItemStyle" />      
+            <DynamicHoverStyle CssClass="dynamicMenuItemHover" />
+            <DynamicMenuStyle CssClass="dynamicMenuStyle" />
+            <DynamicSelectedStyle CssClass="dynamicMenuItemSelectedStyle" />
+            </asp:Menu>
+         </div> 
+        <%--menu shadow--%>
+        <div style="position:absolute; 
+            margin-left:auto; margin-right:auto; top:181px;z-index:5;">
+            <img style="float:left; clear:both;" 
+            src="/images/menushadowtop.png" width="995" height="12" alt=""/>
+            <img style="float:left; clear:both;z-index:5; margin-top:58px;" 
+            src="/images/menushadowbottom.png" width="995" height="17" alt=""/>
+        </div>
+        
+        
+        <div style="position:absolute; z-index:8;
+        width:995px; height:251px; 
+        margin-left:auto; margin-right:auto;">
+            <%--logo--%>
+            <asp:Image ID="imgLogo" runat="server" 
+            style="position:absolute; 
+                left:59px; top:0px;" />
+            
+            <%--slogan--%>
+            <asp:Image ID="imgSlogan" runat="server" 
+            style="position:absolute; 
+                left:0px; top:104px;" />
+            
+            <%--truck--%>
+            <img style="position:absolute; 
+            right:0px; top:0px;" 
+            src="/images/truck.png" width="374" height="277" alt=""/>
+            
+            <%--chứa các radio button cho chọn theme--%>
+            <div id="header_right"
+            style="position:absolute; right:0px; top:0px;
+            width:200px; height:50px;
+            background-color:Silver;
+            border-bottom-width:1px;
+            border-color:Gray;">
+                <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
+                    TypeName="ThemeManager"></asp:ObjectDataSource>
+                <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" DataSourceID="ThemeDataSource"
+                    DataTextField="Name" DataValueField="Name" RepeatDirection="Horizontal" OnDataBound="ThemeList_DataBound"
+                    OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
+                </asp:RadioButtonList>
+            </div> 
+        </div>
+        
+
+        <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server"/>
+    </div>
+    <!--****************************************************************-->
+    <div id="page">
+     <!--****************************************************************-->
+         <div id="left">
+            <asp:ContentPlaceHolder ID="LeftContent" runat="server">
+                &nbsp;
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--****************************************************************-->
+        <div id="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"> 
+                &nbsp;         
+            </asp:ContentPlaceHolder>
+        </div>
+  
+        <!--****************************************************************-->
+        <div id="right">
+            <asp:ContentPlaceHolder ID="RightContent" runat="server"> 
+                &nbsp;           
+            </asp:ContentPlaceHolder>
+        </div>    
+    <!--****************************************************************-->
+    </div>
+    <!--****************************************************************-->
+    <div id="bottom">
+        <img src="../images/footer_bg.gif" width="995" height="101" alt=""/>
+    </div>
+    <!--****************************************************************-->
+    </div>
+    </form>    
+</body>
+</html>

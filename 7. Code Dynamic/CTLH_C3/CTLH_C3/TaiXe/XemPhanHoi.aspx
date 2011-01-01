@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="XemPhanHoi.aspx.cs" Inherits="CTLH_C3.XemPhanHoi" %>
+﻿<%@ Page Language="C#" MasterPageFile="TX_MasterPage.Master" AutoEventWireup="true" CodeBehind="XemPhanHoi.aspx.cs" Inherits="CTLH_C3.XemPhanHoi" %>
 <%@ Register Src="~/DynamicData/Content/GridViewPager.ascx" TagName="GridViewPager"
     TagPrefix="asp" %>
 <%@ Register Src="~/DynamicData/Content/FilterUserControl.ascx" TagName="DynamicFilter"
@@ -20,7 +20,7 @@
             <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
             
             <%--Phần bên phải: trình bày dữ liệu--%>
-            <div style="width: 520px; float: left">
+            <div style="width: 520px; margin-left:250px;">
                 <h1>Danh sách phản hồi</h1>
                
                 <%--Báo lỗi--%>
