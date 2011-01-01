@@ -14,6 +14,15 @@ namespace CTLH_C3 {
     public partial class TimKiemChuyen {
         
         /// <summary>
+        /// user_DanhSachTram1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CTLH_C3.Guest.user_DanhSachTram user_DanhSachTram1;
+        
+        /// <summary>
         /// ddlTramDi control.
         /// </summary>
         /// <remarks>
@@ -111,5 +120,14 @@ namespace CTLH_C3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource ldsChuyenXe;
+        
+        /// <summary>
+        /// user_Login1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CTLH_C3.Guest.user_CustomLogin user_Login1;
     }
 }

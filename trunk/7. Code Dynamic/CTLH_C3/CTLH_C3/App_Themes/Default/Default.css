@@ -4,6 +4,7 @@
     color:#345086;
     font-family:Verdana;
     font-size:12px;
+    line-height:140%;
 }
 /*hình ảnh cho header-----------------------------------------------------------*/
 #header_bg_right2 {
@@ -304,4 +305,43 @@ a:hover
 a:visited
 {
     color:Olive;
+}
+
+/*LeftContentDanhSachTram---------------------------------*/
+.LeftContentDanhSachTram div
+{
+    background-image: url(images/LeftPanelHeader.jpg);
+    width:179px; 
+    height:42px; 
+    display:block;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.LeftContentDanhSachTram ul
+{
+    list-style:none; 
+    padding: 0px 0px; 
+    margin: 5px 5px;
+    margin-top:0px;
+    padding-top:5px;
+    background-color: #EEFBFF;
+    border: solid 1px #5672C5;
+    border-top-width:0px;
+    width:177px;
+}
+
+.LeftContentDanhSachTram a
+{
+    width:140px; 
+    height:28px; 
+    display:block;
+    background-image: url(images/LeftPanelItem.jpg);
+    background-repeat:no-repeat;
+    background-color: #EEFBFF;
+    padding-left:32px;
+    padding-top:8px;
+    margin-left:5px;
+    text-decoration:none; 
+    color:Navy;
 }

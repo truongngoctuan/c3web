@@ -14,22 +14,13 @@ namespace CTLH_C3 {
     public partial class Default {
         
         /// <summary>
-        /// rptTram control.
+        /// user_DanhSachTram1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTram;
-        
-        /// <summary>
-        /// ldsTram control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinqDataSource ldsTram;
+        protected global::CTLH_C3.Guest.user_DanhSachTram user_DanhSachTram1;
         
         /// <summary>
         /// DynamicDataManager1 control.
