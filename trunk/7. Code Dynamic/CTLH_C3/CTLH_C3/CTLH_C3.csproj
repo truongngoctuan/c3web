@@ -581,6 +581,13 @@
     <Compile Include="ImageHandler.ashx.cs">
       <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="TaiXe\TX_MasterPage.Master.cs">
+      <DependentUpon>TX_MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaiXe\TX_MasterPage.Master.designer.cs">
+      <DependentUpon>TX_MasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="TaiXe\NhatKi.aspx.cs">
       <DependentUpon>NhatKi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1024,8 +1031,10 @@
     <Content Include="images\upload.png" />
     <Content Include="DieuHanhCongTy\web.config" />
     <Content Include="DieuHanhTram\web.config" />
+    <Content Include="TaiXe\Master.css" />
     <Content Include="TaiXe\web.config" />
     <Content Include="Authenticated\web.config" />
+    <Content Include="TaiXe\TX_MasterPage.Master" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>
@@ -1048,7 +1057,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50506</DevelopmentServerPort>
+          <DevelopmentServerPort>3342</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
