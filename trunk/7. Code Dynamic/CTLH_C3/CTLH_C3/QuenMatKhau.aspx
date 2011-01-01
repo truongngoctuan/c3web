@@ -5,7 +5,7 @@
 <%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <asp:Literal runat="server">Quên Mật Khẩu</asp:Literal> 
+    <title>Quên Mật Khẩu</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">

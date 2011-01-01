@@ -2,7 +2,7 @@
 
 <%@ Register src="~/Guest/user_CustomLogin.ascx" tagname="user_Login" tagprefix="webUC" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    Đăng Nhập
+    <title>Đăng Nhập</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
     &nbsp;

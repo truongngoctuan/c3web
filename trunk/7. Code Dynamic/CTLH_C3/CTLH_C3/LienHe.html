@@ -1,19 +1,46 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="LienHe.aspx.cs" Inherits="CTLH_C3.LienHe" %>
-
-<%@ Register src="~/Guest/user_HotLine.ascx" tagname="user_HotLine" tagprefix="webUC" %>
-<%@ Register src="~/Guest/user_LienHe.ascx" tagname="user_LienHe" tagprefix="webUC" %>
-
-<%@ Register Src="~/Guest/user_DanhSachTram.ascx" TagName="user_DanhSachTram" TagPrefix="webUC" %>
-<%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+﻿<html>
+<head>
+<title>Công ty lữ hành C3HCMUS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
 	<link rel="stylesheet" type="text/css" href="lienhestyle.css" />
-	<title>Liên Hệ</title>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    <webUC:user_DanhSachTram ID="user_DanhSachTram1" runat="server" />
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-<div style="width: 550px; float: right; margin-left:5px;">
+</head>
+<body>
+<!-- Save for Web Slices (markup homepage template 4.psd) -->
+<table class="layout-table">
+	<tr>
+		<td colspan="3">
+			<img src="images/header_bg_left.gif" width="270" height="193" alt=""></td>
+		<td colspan="2">
+			<img src="images/header_bg_mid.gif" width="412" height="193" alt=""></td>
+		<td colspan="4">
+			<img src="images/header_bg_right.gif" width="313" height="193" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="193" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="5">
+			<!--<img src="images/menu_bg.gif" width="682" height="59" alt="">-->
+            <ul class="menu_ngang">
+                <li><a id="menu_ngang_item_current_page" href="TrangChu.html">Trang chủ</a></li>
+                <li><a href="LienHe.html">Xem tuyến</a></li>
+                <li><a href="LienHe.html">Hỗ trợ</a></li> 
+                <li><a href="LienHe.html">Liên hệ</a></li>
+     	 	</ul>
+		</td>
+		<td colspan="4">
+			<img src="images/header_bg_right2.gif" width="313" height="59" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="59" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="9">
+			<img src="images/menu_bg_bottom.gif" width="995" height="22" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="9" id="creator_content">
 			<table>
 				<tr>
 					<td width="400" height="130">
@@ -88,14 +115,16 @@
 					</td>					
 				</tr>
 			</table>
-    </div>
-    
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
-    <div style="width: 245px; float: right;">
-        <%--<webUC:user_HotLine ID="user_HotLine1" runat="server" />--%>
-        <div style="height: 256px">
-            <webUC:user_Login ID="user_Login1" runat="server" />
-        </div>
-    </div>
-</asp:Content>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="9">
+			<img src="images/footer_bg.gif" width="995" height="101" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="101" alt=""></td>
+	</tr>
+	
+</table>
+<!-- End Save for Web Slices -->
+</body>
+</html>

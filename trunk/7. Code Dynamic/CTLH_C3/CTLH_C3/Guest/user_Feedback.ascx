@@ -22,7 +22,8 @@
             Thông tin phản hồi :
         </td>
         <td width="350">
-            <asp:TextBox runat="server" ID="tbThongTinPhanHoi" Rows="5" TextMode="MultiLine" Width="350" />
+            <asp:TextBox runat="server" ID="tbThongTinPhanHoi" Rows="5" TextMode="MultiLine" Width="350"   
+            style="height:350px;"/>            
         </td>
     </tr>
 </table>

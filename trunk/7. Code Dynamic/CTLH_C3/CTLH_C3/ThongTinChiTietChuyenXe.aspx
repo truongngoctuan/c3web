@@ -4,11 +4,9 @@
 <%@ Register src="Guest/user_Guest_TimKiemTuyenXe.ascx" tagname="user_Guest_TimKiemTuyenXe" tagprefix="uc2" %>
 
 <asp:Content ID="Content2" runat="server" contentplaceholderid="LeftContent">
-
-          <div style="width:225px;float:left">   
-            <uc2:user_Guest_TimKiemTuyenXe ID="user_Guest_TimKiemTuyenXe1" 
-        runat="server" />
-        </div>
+    <div style="width:225px;float:left">   
+        <uc2:user_Guest_TimKiemTuyenXe ID="user_Guest_TimKiemTuyenXe1" runat="server" />
+    </div>
     <br />
 
 </asp:Content>
