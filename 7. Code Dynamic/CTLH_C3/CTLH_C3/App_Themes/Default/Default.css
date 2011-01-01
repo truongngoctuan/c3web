@@ -70,8 +70,8 @@ thay đổi back ground*/
 .ucListBox
 {
 }
-/*ucButton-----------------------------------------------------------*/
-.ucButton
+/*ucButton, ucPasswordSubmitButton (của guest - quên mật khẩu)-------------------*/
+.ucButton, .ucPasswordSubmitButton
 {    
     color:#090d37;
     vertical-align:middle;
@@ -92,11 +92,13 @@ thay đổi back ground*/
     font-size:11px;
     font-weight:bold;
     height:28px;
-    
+}
+.ucButton 
+{
     margin: 5px 5px;
 }
 
-.ucButton:hover
+.ucButton:hover, .ucPasswordSubmitButton:hover
 {
     color:White;
     text-shadow: 0 -1px 0 #4C9021;
@@ -104,7 +106,7 @@ thay đổi back ground*/
     /*background-image: url(images/btBackgroundGradientHover.jpg);*/
     background-position: 0px -28px;
 }
-.ucButton:active
+.ucButton:active, .ucPasswordSubmitButton:active
 {
     color:White;
     text-shadow: 0 -1px 0 #4C9021;

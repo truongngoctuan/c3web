@@ -5,6 +5,7 @@
 <%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="gueststyle.css" />
     <title>Quên Mật Khẩu</title>
 </asp:Content>
 
@@ -13,16 +14,12 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="float:left; width:550px; padding-left:5px; display:block;">
+    <div class="CanhGiua" style="width:450px;">
+    <h1>Quên Mật Khẩu</h1>
         <webUC:QuenMatKhau ID="QuenMatKhau1" runat="server" />
     </div>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
-    <div style="width: 245px; float: right;">
-        <%--<webUC:user_HotLine ID="user_HotLine1" runat="server" />--%>
-        <div style="height: 256px">
-            <webUC:user_Login ID="user_Login1" runat="server" />
-        </div>
-    </div>
+    <webUC:user_Login ID="user_Login1" runat="server" />
 </asp:Content>

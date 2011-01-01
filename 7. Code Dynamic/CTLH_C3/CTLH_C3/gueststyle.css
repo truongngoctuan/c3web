@@ -1,0 +1,32 @@
+﻿div#left
+{
+}
+
+div#content
+{
+   width:550px;
+   padding-left:5px;
+}
+
+div#right
+{
+}
+
+.CanhGiua
+{
+    margin:0px auto;
+    display:block;
+}
+
+h1
+{
+    text-align:center;
+}
+
+.ucPasswordSubmitButton 
+{
+    margin:5px auto;
+    display:block;
+    width:200px;
+    float:none;
+}
