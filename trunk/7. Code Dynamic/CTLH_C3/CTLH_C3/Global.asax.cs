@@ -39,18 +39,31 @@ namespace CTLH_C3
             //    Table = "NHAN_VIENs"
             //});
 
-            //routes.Add(new DynamicDataRoute("CHUYEN_XEs/PhanHoi.aspx")
+            routes.Add(new DynamicDataRoute("CHUYEN_XEs/PhanHoi.aspx")
+            {
+                Action = "PhanHoi",
+                ViewName = "PhanHoi",
+                Model = model,
+                Table = "CHUYEN_XEs"
+            });
+
+            routes.Add(new DynamicDataRoute("{table}/AnonymousList.aspx")
+            {
+                Action = "AnonymousList",
+                Model = model
+            });
+
+            //routes.Add(new DynamicDataRoute("{table}/{action}.aspx")
             //{
-            //    Action = "PhanHoi",
-            //    ViewName = "PhanHoi",
-            //    Model = model,
-            //    Table = "CHUYEN_XEs"
+            //    Constraints = new RouteValueDictionary(new { action = "List|Details|Edit|Insert" }),
+            //    Model = model
             //});
 
             routes.Add(new DynamicDataRoute("{table}/{action}.aspx")
             {
                 Constraints = new RouteValueDictionary(new { action = "List|Details|Edit|Insert" }),
-                Model = model
+                Model = model,
+                RouteHandler = new CustomDynamicDataRouteHandler()
             });
 
             // The following statements support combined-page mode, where the List, Detail, Insert, and

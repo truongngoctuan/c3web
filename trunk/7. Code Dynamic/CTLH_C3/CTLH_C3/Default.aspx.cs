@@ -24,7 +24,6 @@ namespace CTLH_C3
         {
             // Load dữ liệu cho cho toàn site
             System.Collections.IList visibleTables = MetaModel.Default.VisibleTables;
-
             if (visibleTables.Count == 0)
             {
                 throw new InvalidOperationException("There are no accessible tables. Make sure that at least one data model is registered in Global.asax and scaffolding is enabled or implement custom pages.");

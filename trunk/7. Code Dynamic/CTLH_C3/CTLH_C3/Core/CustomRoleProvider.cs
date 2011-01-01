@@ -96,7 +96,10 @@ namespace CTLH_C3.Core
 
         public override string[] GetAllRoles()
         {
-            throw new NotImplementedException();
+            TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
+            var roles = from role in dataContext.LOAI_TAI_KHOANs
+                        select role.TenLoaiTaiKhoan;
+            return roles.ToArray();
         }
 
         //Trả về vai trò và mã nhân viên
@@ -108,7 +111,7 @@ namespace CTLH_C3.Core
                        select u;
             if (user.Count()==1)
             {
-                TAI_KHOAN tk = user.Single();               
+                TAI_KHOAN tk = user.Single();
                 var loaitk = from l in dataContext.LOAI_TAI_KHOANs
                              where l.MaLoaiTaiKhoan == tk.LoaiTaiKhoan
                              select l;
@@ -128,7 +131,13 @@ namespace CTLH_C3.Core
 
         public override bool IsUserInRole(string username, string roleName)
         {
-            throw new NotImplementedException();
+            string[] roles = GetRolesForUser(username);
+            foreach(string role in roles)
+            {
+                if (role == roleName)
+                    return true;
+            }
+            return false;
         }
 
         public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)

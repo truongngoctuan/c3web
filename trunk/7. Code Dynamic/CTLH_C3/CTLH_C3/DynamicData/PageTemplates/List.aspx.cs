@@ -28,19 +28,59 @@ namespace CTLH_C3
             table = GridDataSource.GetTable();
             Title = table.DisplayName;
 
-          
+            InsertHyperLink.NavigateUrl = table.GetActionPath(PageAction.Insert);
 
             // Disable various options if the table is readonly
             if (table.IsReadOnly)
             {
                 GridView1.Columns[0].Visible = false;
-                
+                InsertHyperLink.Visible = false;
             }
+            // Add handler to manage delete button based on role.
+            //GridView1.PreRender += new EventHandler(GridView1_PreRender);
         }
 
         protected void OnFilterSelectedIndexChanged(object sender, EventArgs e)
         {
             GridView1.PageIndex = 0;
+        }
+
+        void GridView1_PreRender(object sender, EventArgs e)
+        {
+            int rowCount = GridView1.Rows.Count;
+            for (int row = 0; row < GridView1.Rows.Count; row++)
+            {
+                SetDelete(GridView1.Rows[row]);
+            }
+        }
+
+        // Enable delete button only to allowed users.
+        private void SetDelete(TableRow row)
+        {
+            // Instantiate the SecurityInformation 
+            // utility object.
+            DynamicDataSecurity secInfo =
+              new DynamicDataSecurity();
+
+            foreach (Control c in row.Cells[0].Controls)
+            {
+                // Deny delete capability to users that are 
+                // not administrators
+                if (!secInfo.IsUserInAdmimistrativeRole() &&
+                  secInfo.IsUserInAuthenticatedRole())
+                {
+                    // Do not allow delete.
+                    LinkButton btn = c as LinkButton;
+                    if (btn != null &&
+                        btn.CommandName ==
+                        DataControlCommands.DeleteCommandName)
+                    {
+                        btn.Visible = false;
+                        btn.OnClientClick = null;
+                        btn.Enabled = false;
+                    }
+                }
+            }
         }
     }
 }
