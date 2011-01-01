@@ -67,7 +67,7 @@
     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
         <ContentTemplate>             
             <%--Phần : trình bày dữ liệu--%>
-            <div style="width: 580px; float: left">
+            <div style="float:left; width:560px;">
             
                 <%--Giới thiệu--%>
                 <webUC:user_GioiThieu ID="user_GioiThieu1" runat="server" />
