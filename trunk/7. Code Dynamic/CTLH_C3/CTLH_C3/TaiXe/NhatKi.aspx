@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="NhatKi.aspx.cs" Inherits="CTLH_C3.NhatKi" %>
+﻿<%@ Page Language="C#" MasterPageFile="TX_MasterPage.Master" AutoEventWireup="true" CodeBehind="NhatKi.aspx.cs" Inherits="CTLH_C3.NhatKi" %>
 
 <%@ Register Src="~/DynamicData/Content/GridViewPager.ascx" TagName="GridViewPager"
     TagPrefix="asp" %>
@@ -10,11 +10,10 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    <div style="width:250px;" ></div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             
 
@@ -22,8 +21,8 @@
             <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
 
             
-            <%--Phần bên phải: trình bày dữ liệu--%>
-            <div style="width: 520px; float: left">
+            <%--Trình bày dữ liệu--%>
+            <div style="width: 520px; margin-left:250px;">
                
                 <%--Báo lỗi--%>
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
@@ -81,7 +80,7 @@
                                               
             </div>
         </ContentTemplate>
-    </asp:UpdatePanel>    
+    </asp:UpdatePanel>  
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">

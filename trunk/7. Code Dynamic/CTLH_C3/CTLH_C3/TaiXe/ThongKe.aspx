@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
+﻿<%@ Page Language="C#" MasterPageFile="TX_MasterPage.Master" AutoEventWireup="true"
     CodeBehind="ThongKe.aspx.cs" Inherits="CTLH_C3.ThongKe" %>
     
 <%@ Register Src="~/DynamicData/Content/GridViewPager.ascx" TagName="GridViewPager"
@@ -12,7 +12,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    <div style="width:250px;" ></div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
@@ -21,6 +20,7 @@
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
+        <div style="width: 520px; margin-left:250px;">
             <%--Báo lỗi--%>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
                 HeaderText="Danh sách lỗi" />
@@ -136,6 +136,7 @@
             <div><b>Thực nhận:<asp:Label runat="server" ID="lblTongCong"></asp:Label></b></div>   
             <br />            
             
+            </div>
         </ContentTemplate>
     </asp:UpdatePanel>
     

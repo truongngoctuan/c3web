@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="TaiXe_Default.aspx.cs" Inherits="CTLH_C3.TaiXe_Default" %>
+﻿<%@ Page Language="C#" MasterPageFile="TX_MasterPage.Master" AutoEventWireup="true" CodeBehind="TaiXe_Default.aspx.cs" Inherits="CTLH_C3.TaiXe_Default" %>
 
 <%@ Register Src="~/DynamicData/Content/GridViewPager.ascx" TagName="GridViewPager"
     TagPrefix="asp" %>
@@ -10,7 +10,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    <div style="width:250px;" ></div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
@@ -21,7 +20,7 @@
             <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
             
             <%--Phần bên phải: trình bày dữ liệu--%>
-            <div style="width: 520px; float: left">
+            <div style="width: 520px; margin-left:250px;">
                
                 <%--Báo lỗi--%>
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
