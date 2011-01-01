@@ -543,6 +543,13 @@
     <Compile Include="Guest\user_CustomLogin.ascx.designer.cs">
       <DependentUpon>user_CustomLogin.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Guest\user_DanhSachTram.ascx.cs">
+      <DependentUpon>user_DanhSachTram.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\user_DanhSachTram.ascx.designer.cs">
+      <DependentUpon>user_DanhSachTram.ascx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Admin\TaiKhoan.aspx.cs">
       <DependentUpon>TaiKhoan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1002,6 +1009,7 @@
     <Content Include="DynamicData\FieldTemplates\Password_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Password.ascx" />
     <Content Include="DynamicData\PageTemplates\AnonymousList.aspx" />
+    <Content Include="Guest\user_DanhSachTram.ascx" />
     <Content Include="ImageHandler.ashx" />
     <Content Include="DieuHanhTram\Default.sitemap" />
     <Content Include="DieuHanhTram\MasterPage.Master" />
