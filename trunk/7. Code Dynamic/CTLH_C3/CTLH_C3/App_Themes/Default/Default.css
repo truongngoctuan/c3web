@@ -359,3 +359,9 @@ a:visited
 {
     border-style:none;
 }
+
+/*gridviewemtycontent---------------------------------*/
+table.gridview th 
+{
+    font-weight:bold;
+}

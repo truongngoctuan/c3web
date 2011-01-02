@@ -6,18 +6,31 @@
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
     Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
+<%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="/dieuhanhcongtystyle.css" />
+    <title>Thống Kê Doanh Thu Theo Các Tháng</title>
+</asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Thống kê doanh thu các tháng theo năm</h2>
+    <h1>Thống Kê Doanh Thu Theo Các Tháng</h1>
+    <div class="CanhGiua" style="width:275px;">
     <asp:Label ID="Label1" runat="server" Text="Chọn năm"></asp:Label>
     <asp:DropDownList ID="DropDownList_Nam" runat="server" AutoPostBack="True" 
         onprerender="DropDownList_Nam_PreRender" 
         onselectedindexchanged="DropDownList_Nam_SelectedIndexChanged">
     </asp:DropDownList>
-    <asp:Table ID="table" runat="server" Width="406px">
-        <asp:TableRow runat="server" BorderColor="Black" BorderStyle="Dotted">
+    <asp:Table ID="table" runat="server" CssClass="gridview">
+        <asp:TableRow runat="server" Font-Bold="true">
             <asp:TableCell runat="server">Tháng</asp:TableCell>
             <asp:TableCell runat="server">Doanh thu</asp:TableCell>
         </asp:TableRow>
     </asp:Table>
-    </asp:Content>
+    </div>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
+    <webUC:user_Login ID="user_Login1" runat="server" />
+</asp:Content>
 
