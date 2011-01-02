@@ -191,6 +191,55 @@
     <Compile Include="DieuHanhCongTy\SoLuongKhach\Thang.aspx.designer.cs">
       <DependentUpon>Thang.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DieuHanhTram\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhTram\DuyetPhanHoi.aspx.cs">
+      <DependentUpon>DuyetPhanHoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\DuyetPhanHoi.aspx.designer.cs">
+      <DependentUpon>DuyetPhanHoi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhTram\GhiNhanPhanHoi.aspx.cs">
+      <DependentUpon>GhiNhanPhanHoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\GhiNhanPhanHoi.aspx.designer.cs">
+      <DependentUpon>GhiNhanPhanHoi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhTram\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhTram\PhanCongChuyen.aspx.cs">
+      <DependentUpon>PhanCongChuyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\PhanCongChuyen.aspx.designer.cs">
+      <DependentUpon>PhanCongChuyen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhTram\PhatSinhChuyenTuDong.aspx.cs">
+      <DependentUpon>PhatSinhChuyenTuDong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\PhatSinhChuyenTuDong.aspx.designer.cs">
+      <DependentUpon>PhatSinhChuyenTuDong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhTram\QuanLyVe.aspx.cs">
+      <DependentUpon>QuanLyVe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\QuanLyVe.aspx.designer.cs">
+      <DependentUpon>QuanLyVe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DynamicData\CustomPages\TAI_KHOANs\ListDetails.aspx.cs">
       <DependentUpon>ListDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -297,27 +346,6 @@
     </Compile>
     <Compile Include="DieuHanhCongTy\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="DieuHanhTram\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DieuHanhTram\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DieuHanhTram\MasterPage.Master.cs">
-      <DependentUpon>MasterPage.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DieuHanhTram\MasterPage.Master.designer.cs">
-      <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="DieuHanhTram\GhiNhanPhanHoi.aspx.cs">
-      <DependentUpon>GhiNhanPhanHoi.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DieuHanhTram\GhiNhanPhanHoi.aspx.designer.cs">
-      <DependentUpon>GhiNhanPhanHoi.aspx</DependentUpon>
     </Compile>
     <Compile Include="DynamicData\CustomPages\CHUYEN_XEs\PhanHoi.aspx.cs">
       <DependentUpon>PhanHoi.aspx</DependentUpon>
@@ -1087,6 +1115,12 @@
     <Content Include="DieuHanhCongTy\SoLuongKhach\Nam.aspx" />
     <Content Include="DieuHanhCongTy\SoLuongKhach\Quy.aspx" />
     <Content Include="DieuHanhCongTy\SoLuongKhach\Thang.aspx" />
+    <Content Include="DieuHanhTram\Default.aspx" />
+    <Content Include="DieuHanhTram\DuyetPhanHoi.aspx" />
+    <Content Include="DieuHanhTram\GhiNhanPhanHoi.aspx" />
+    <Content Include="DieuHanhTram\PhanCongChuyen.aspx" />
+    <Content Include="DieuHanhTram\PhatSinhChuyenTuDong.aspx" />
+    <Content Include="DieuHanhTram\QuanLyVe.aspx" />
     <Content Include="DynamicData\CustomPages\TAI_KHOANs\ListDetails.aspx" />
     <Content Include="DynamicData\FieldTemplates\DateTime_ReadOnly.ascx" />
     <Content Include="DynamicData\FieldTemplates\DateTime_ReadOnly_Edit.ascx" />
@@ -1103,8 +1137,6 @@
     <Content Include="images\0712494.jpg" />
     <Content Include="taixestyle.css" />
     <Content Include="ThongTinChiTietChuyenXe.aspx" />
-    <Content Include="DieuHanhTram\Default.aspx" />
-    <Content Include="DieuHanhTram\GhiNhanPhanHoi.aspx" />
     <Content Include="DynamicData\CustomPages\CHUYEN_XEs\PhanHoi.aspx" />
     <Content Include="DynamicData\CustomPages\CHUYEN_XEs\Details.aspx" />
     <Content Include="DynamicData\CustomPages\CHUYEN_XEs\Edit.aspx" />
@@ -1132,16 +1164,16 @@
     <Content Include="Guest\user_DanhSachTram.ascx" />
     <Content Include="HoTro.aspx" />
     <Content Include="ImageHandler.ashx" />
-    <Content Include="DieuHanhTram\Default.sitemap" />
-    <Content Include="DieuHanhTram\MasterPage.Master" />
     <Content Include="images\upload.png" />
     <Content Include="DieuHanhCongTy\web.config" />
-    <Content Include="DieuHanhTram\web.config" />
     <Content Include="lienhestyle.css" />
     <Content Include="TaiXe\Master.css" />
     <Content Include="TaiXe\web.config" />
     <Content Include="Authenticated\web.config" />
     <Content Include="TaiXe\MasterPage.Master" />
+    <Content Include="DieuHanhTram\Default.sitemap" />
+    <Content Include="DieuHanhTram\MasterPage.Master" />
+    <Content Include="DieuHanhTram\web.config" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>
