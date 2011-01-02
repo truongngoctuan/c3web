@@ -10,104 +10,225 @@ namespace CTLH_C3.DieuHanhCongTy.SoLuongKhach
     public partial class Quy : System.Web.UI.Page
     {
         TRAVEL_WEBDataContext db = new TRAVEL_WEBDataContext();
+        protected static int iSoLuongTuyen;
+        protected static int iSoLuongNam;
+        protected static int iSoLuongQuy = 4;
+        protected static int[,] mangSoLuong;
+        protected static int iNamMin;
+        protected static int iNamSelect;
         protected void Page_Load(object sender, EventArgs e)
         {
            
-           
-            
+
+        }
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            TableRow row;
+            TableCell cell;
+
             DateTime min = Convert.ToDateTime((from x in db.CHUYEN_XEs where x.TinhTrang == 3 select x.KhoiHanh).Min());
             int namMin = min.Year;
             int namMax;
             var cxMax = (from x in db.CHUYEN_XEs where x.TinhTrang == 3 select x.KhoiHanh).Max();
             namMax = Convert.ToDateTime(cxMax).Year;
+            var tuyenxe = (from tx in db.TUYEN_XEs
+                           select tx);
 
-            int i;
-            for (i = 0; i < (namMax - namMin + 1); i++)
-            {
-                
-                DropDownList_Nam.Items.Add((namMin+i).ToString());
-            }
-
+            iSoLuongNam = namMax - namMin + 1;
+            iSoLuongTuyen = tuyenxe.Count<TUYEN_XE>();
+            iNamMin = namMin;
            
-        }
+            int i;
+            for (i = 0; i < iSoLuongNam; i++)
+            {
 
+                cell = new TableCell();
+                cell.Text = (namMin + i).ToString();
+               
+                table.Rows[0].Cells.Add(cell);
+                DropDownList_Nam.Items.Add((namMin + i).ToString());
+            }
+            i = 1;
+            foreach (TUYEN_XE tx in tuyenxe)
+            {
+                row = new TableRow();
+                table.Rows.Add(row);
+
+                cell = new TableCell();
+                cell.Text = tx.TenTuyenXe;
+               
+                table.Rows[i].Cells.Add(cell);
+                DropDownList_TuyenXe.Items.Add(tx.TenTuyenXe);
+                
+                i++;
+            }
+          
+            // Tinh so luong khach cho tat ca
+            
+        }
         protected void DropDownList_Nam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TinhDoanhSo();
+            iNamSelect = Convert.ToInt32(DropDownList_Nam.SelectedValue);
+            mangSoLuong = new int[iSoLuongTuyen, iSoLuongQuy];
+            TinhSoLuongKhach();
+            HienThi();
         }
-
+        protected void DropDownList_TuyenXe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //HienThi();
+        }
+        protected void DropDownList_TuyenXe_PreRender(object sender, EventArgs e)
+        {
+           
+        }
         protected void DropDownList_Nam_PreRender(object sender, EventArgs e)
         {
-            TinhDoanhSo();
+            iNamSelect = Convert.ToInt32(DropDownList_Nam.Items[0].Text);
+            mangSoLuong = new int[iSoLuongTuyen, iSoLuongQuy];
+            TinhSoLuongKhach();
+            HienThi();
         }
-        public void TinhDoanhSo()
+        protected void RowHeader()
         {
-            TableRow row;
             TableCell cell;
+            TableRow rowHeader;
             int i;
-            int year = 0;
-            int month = 0;
-            int yearSelected = Convert.ToInt32(DropDownList_Nam.SelectedItem.Text);
-            double doanhthuChuyenXe = 0;
-            List<double> listDoanhThu = new List<double>(0);
-            for (i = 0; i <4; i++)
+            // Row tieu de
+            rowHeader = new TableRow();
+            cell = new TableCell();
+            cell.Text = "Tên tuyến xe";
+            rowHeader.Cells.Add(cell);
+
+            for (i = 0; i < iSoLuongQuy; i++)
             {
-                listDoanhThu.Add(0);
+
+                cell = new TableCell();
+                cell.Text = "Quý " + (i+1).ToString();
+                rowHeader.Cells.Add(cell);
+
             }
+            table.Rows.Add(rowHeader);
+        }
+        protected void HienThi()
+        {
+            TableCell cell;
+            TableRow row;
+            TableRow rowHeader;
+            table.Rows.Clear();
+            RowHeader();
+            int i;
+            int j;
+            int iNam = DropDownList_Nam.SelectedIndex;
+            int iTuyen = DropDownList_TuyenXe.SelectedIndex;
+            
+          
+           if(iTuyen == 0)
+                {
+                    iTuyen = iSoLuongTuyen;
+                    for (j = 0; j < iTuyen; j++)
+                    {
+                        row = new TableRow();
+                        // ten tuyen xe
+                        cell = new TableCell();
+                        cell.Text = DropDownList_TuyenXe.Items[j + 1].Text;
+                        row.Cells.Add(cell);
+
+                        for (i = 0; i < iSoLuongQuy; i++)
+                        {
+                            cell = new TableCell();
+                            cell.Text = mangSoLuong[j, i].ToString();
+                            row.Cells.Add(cell);
+                        }
+
+
+                        table.Rows.Add(row);
+                    }
+                    
+                }
+                else
+                {
+                    j = iTuyen - 1;
+                    row = new TableRow();
+                    // ten tuyen xe
+                    cell = new TableCell();
+                    cell.Text = DropDownList_TuyenXe.Items[iTuyen].Text;
+                    row.Cells.Add(cell);
+
+                    for (i = 0; i < iSoLuongQuy; i++)
+                    {
+                        cell = new TableCell();
+                        cell.Text = mangSoLuong[j, i].ToString();
+                        row.Cells.Add(cell);
+                    }
+
+                    table.Rows.Add(row);
+                }
+            
+        }
+    
+        
+        public void TinhSoLuongKhach()
+        {
+            
+            int i;
+            int j;
+            TableCell cell;
+            for(i = 0; i < iSoLuongTuyen; i++)
+            {
+                for (j = 0; j < iSoLuongQuy; j++ )
+                {
+                    cell = new TableCell();
+                    
+                    table.Rows[i + 1].Cells.Add(cell);
+                    mangSoLuong[i,j] = 0;
+                    
+                }
+            }
+ 
+            int maTuyen;
+            int year;
+           int month;
+         
             var listChuyenxe = (from x in db.CHUYEN_XEs where x.TinhTrang == 3 select x);
             foreach (CHUYEN_XE cx in listChuyenxe)
             {
+                maTuyen = Convert.ToInt32(cx.MaTuyenXe);
                 year = Convert.ToDateTime(cx.KhoiHanh).Year;
-                if (year == yearSelected)
+                if (year == iNamSelect)
                 {
                     month = Convert.ToDateTime(cx.KhoiHanh).Month;
-                    doanhthuChuyenXe = (double)(cx.SoLuongMuaVe * cx.GiaVe);
-                    if (month >= 1 && month <= 3)
-                    {
-                        // quy I
-                        listDoanhThu[0] = listDoanhThu[0] + doanhthuChuyenXe;
-                    }
+                    if (month <= 3)
+                        mangSoLuong[maTuyen - 1, 0] = mangSoLuong[maTuyen - 1, 0] + (int)cx.SoLuongMuaVe;
                     else
                     {
                         if (month <= 6)
-                        {
-                            // quy II
-                            listDoanhThu[1] = listDoanhThu[1] + doanhthuChuyenXe;
-                        }
+                            mangSoLuong[maTuyen - 1, 1] = mangSoLuong[maTuyen - 1, 1] + (int)cx.SoLuongMuaVe;
                         else
                         {
                             if (month <= 9)
-                            {
-                                // quy III
-                               listDoanhThu[2] = listDoanhThu[2] + doanhthuChuyenXe;
-                            }
+                                mangSoLuong[maTuyen - 1, 2] = mangSoLuong[maTuyen - 1, 2] + (int)cx.SoLuongMuaVe;
                             else
-                            {
-                                // quy IV
-                                listDoanhThu[3] = listDoanhThu[3] + doanhthuChuyenXe;
-                            }
+                                mangSoLuong[maTuyen - 1, 3] = mangSoLuong[maTuyen - 1, 3] + (int)cx.SoLuongMuaVe;
                         }
                     }
                     
                 }
+                
             }
 
-            for (i = 0; i < listDoanhThu.Count; i++)
+            for (i = 0; i < iSoLuongTuyen; i++)
             {
-                row = new TableRow();
-                cell = new TableCell();
-                cell.Text = (i + 1).ToString();
-                row.Cells.Add(cell);
+                for (j = 0; j < iSoLuongQuy; j++)
+                {
+                    cell = new TableCell();
 
-                cell = new TableCell();
-                cell.Text = String.Format("{0:c}", listDoanhThu[i].ToString());
-                row.Cells.Add(cell);
+                    table.Rows[i + 1].Cells[j + 1].Text = mangSoLuong[i, j].ToString(); ;
+                    
 
-                table.Rows.Add(row);
+                }
             }
-
-
             table.DataBind();
+           
         }
     }
 }

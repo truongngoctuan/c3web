@@ -6,7 +6,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
-    <h2><%= table.DisplayName%></h2>
+    <h2 align="center">Quản lý thông tin xe</h2>
 
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
 
@@ -33,10 +33,7 @@
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Edit, GetDataItem()) %>'
                             Text="Sửa" />&nbsp;<asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete"
                                 CausesValidation="false" Text="Xóa"
-                                OnClientClick='return confirm("Are you sure you want to delete this item?");'
-                            />&nbsp;<asp:HyperLink ID="DetailsHyperLink" runat="server"
-                                NavigateUrl='<%# table.GetActionPath(PageAction.Details, GetDataItem()) %>'
-                                Text="Chi tiết" />
+                                OnClientClick='return confirm("Bạn có chắc muốn xóa xe này không?");'/>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -46,7 +43,7 @@
                     <asp:GridViewPager runat="server" />
                 </PagerTemplate>
                 <EmptyDataTemplate>
-                    Không có dữ liệu trong cơ sở dữ liệu!
+                    Không có xe nào trong cơ sở dữ liệu!
                 </EmptyDataTemplate>
             </asp:GridView>
 

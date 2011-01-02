@@ -24,7 +24,7 @@
                 <FooterTemplate><br /><br /></FooterTemplate>
             </asp:FilterRepeater>
 
-            <asp:GridView ID="GridView1" runat="server" DataSourceID="GridDataSource"
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="GridDataSource" 
                 AllowPaging="True" AllowSorting="True" CssClass="gridview">
                 <Columns>
                     <asp:TemplateField>
@@ -39,8 +39,10 @@
                                 Text="Chi tiết" />
                         </ItemTemplate>
                     </asp:TemplateField>
-                </Columns>
+                   
 
+                </Columns>
+               
                 <PagerStyle CssClass="footer"/>        
                 <PagerTemplate>
                     <asp:GridViewPager runat="server" />

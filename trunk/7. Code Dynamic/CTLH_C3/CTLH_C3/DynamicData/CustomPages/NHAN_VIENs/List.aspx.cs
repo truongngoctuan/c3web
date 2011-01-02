@@ -36,6 +36,7 @@ namespace CTLH_C3.NHAN_VIENs
                 GridView1.Columns[0].Visible = false;
                 InsertHyperLink.Visible = false;
             }
+           
         }
 
         protected void OnFilterSelectedIndexChanged(object sender, EventArgs e)
