@@ -15,6 +15,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+<div class="CanhGiua" style="width:400px;">
 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             
@@ -22,7 +23,7 @@
             <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
             
             <%--Phần bên phải: trình bày dữ liệu--%>
-            <div class="CanhGiua" style="width: 520px;">
+            <div>
                
                 <%--Báo lỗi--%>
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
@@ -31,7 +32,7 @@
                     Display="None" />
                 
                 <h1>Lịch chạy</h1>
-                <div style="margin: 10px auto;">
+                <div style="margin: 10px auto; text-align:center;">
                     Tháng:
                     <asp:Label ID="lblThang" runat="server"></asp:Label>
                     Năm:
@@ -60,6 +61,7 @@
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>  
+    </div>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">

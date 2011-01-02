@@ -352,3 +352,8 @@ a:visited
     text-decoration:none; 
     color:Navy;
 }
+/*gridviewemtycontent---------------------------------*/
+.gridviewemtycontent
+{
+    border-style:none;
+}
