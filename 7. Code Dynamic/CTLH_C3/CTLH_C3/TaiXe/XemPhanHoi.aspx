@@ -1,18 +1,20 @@
-﻿<%@ Page Language="C#" MasterPageFile="TX_MasterPage.Master" AutoEventWireup="true" CodeBehind="XemPhanHoi.aspx.cs" Inherits="CTLH_C3.XemPhanHoi" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="XemPhanHoi.aspx.cs" Inherits="CTLH_C3.XemPhanHoi" %>
 <%@ Register Src="~/DynamicData/Content/GridViewPager.ascx" TagName="GridViewPager"
     TagPrefix="asp" %>
 <%@ Register Src="~/DynamicData/Content/FilterUserControl.ascx" TagName="DynamicFilter"
     TagPrefix="asp" %>
+<%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
     
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    Tài xế - Xem Phản Hồi
+<link rel="stylesheet" type="text/css" href="/taixestyle.css" />
+<title>Xem Phản Hồi</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    <div style="width:250px;" ></div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+<div class="CanhGiua" style="width: 450px;">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             
@@ -20,8 +22,9 @@
             <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />               
             
             <%--Phần bên phải: trình bày dữ liệu--%>
-            <div style="width: 520px; margin-left:250px;">
-                <h1>Danh sách phản hồi</h1>
+            <div>
+                <h1>Xem Phản Hồi</h1>
+                <b>Danh sách phản hồi</b>
                
                 <%--Báo lỗi--%>
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
@@ -33,9 +36,10 @@
                 <div><b>Các chuyến</b>
                 <br />
                     <br />
-                    <b>Tháng:</b>
+                    Tháng:
                     <asp:DropDownList ID="dlstThang" runat="server" AutoPostBack="True" 
-                        onselectedindexchanged="dlstThang_SelectedIndexChanged">
+                        onselectedindexchanged="dlstThang_SelectedIndexChanged"
+                        Width="75px">
                         <asp:ListItem Text="1" Value="1"></asp:ListItem>
                         <asp:ListItem Text="2" Value="2"></asp:ListItem>
                         <asp:ListItem Text="3" Value="3"></asp:ListItem>
@@ -49,9 +53,10 @@
                         <asp:ListItem Text="11" Value="11"></asp:ListItem>
                         <asp:ListItem Text="12" Value="12"></asp:ListItem>
                     </asp:DropDownList>
-                    <b>Năm:</b>
+                    Năm:
                     <asp:DropDownList ID="dlstNam" runat="server" AutoPostBack="True" 
-                        onselectedindexchanged="dlstNam_SelectedIndexChanged"></asp:DropDownList>
+                        onselectedindexchanged="dlstNam_SelectedIndexChanged"
+                        Width="75px"></asp:DropDownList>
                     <br />
                     <br />
                 </div>
@@ -79,7 +84,7 @@
                 </asp:GridView>
                 
                 <br />
-                <div><b>Phản hồi:</b></div>                  
+                <div>Phản hồi:</div>                  
                 <br />
                 
                 <%--Các phản hồi của chuyến --%>      
@@ -107,7 +112,9 @@
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>    
+    </div>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
+    <webUC:user_Login ID="user_Login1" runat="server" />
 </asp:Content>

@@ -16,6 +16,7 @@
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%#GetActionPath("AnonymousList")%>'><%#Eval("DisplayName") %></asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
+            <asp:BoundField DataField="Username" HeaderText="Tên tài khoản" />
         </Columns>
     </asp:GridView>
 </asp:Content>
