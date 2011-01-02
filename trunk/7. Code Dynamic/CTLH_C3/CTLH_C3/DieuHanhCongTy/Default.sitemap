@@ -11,8 +11,16 @@
     <siteMapNode url="~/NHAN_VIENs/List.aspx" title="Quản lý nhân viên"  description="Quản lý nhân viên">
     </siteMapNode>
     <siteMapNode title="Thống kê"  description="Thống kê">
-      <siteMapNode title="Thống kê khách/tuyến"  description="Thống kê khách/tuyến" />
-      <siteMapNode title="Thống kê doanh thu"  description="Thống kê doanh thu" />
+      <siteMapNode title="Thống kê khách/tuyến"  description="Thống kê khách/tuyến" >
+        <siteMapNode url="~/DieuHanhCongTy/SoLuongKhach/Thang.aspx" title="Tháng"  description="Thống kê số lượng khách theo tháng"/>
+        <siteMapNode url="~/DieuHanhCongTy/SoLuongKhach/Quy.aspx" title="Quý"  description="Thống kê số lượng khách theo quý" />
+        <siteMapNode url="~/DieuHanhCongTy/SoLuongKhach/Nam.aspx" title="Năm"  description="Thống kê số lượng khách theo năm" />
+      </siteMapNode>
+      <siteMapNode title="Thống kê doanh thu"  description="Thống kê doanh thu" >
+        <siteMapNode url="~/DieuHanhCongTy/DoanhThu/Thang.aspx" title="Tháng"  description="Thống kê doanh thu theo tháng"/>
+        <siteMapNode url="~/DieuHanhCongTy/DoanhThu/Quy.aspx" title="Quý"  description="Thống kê doanh thu theo quý" />
+        <siteMapNode url="~/DieuHanhCongTy/DoanhThu/Nam.aspx" title="Năm"  description="Thống kê doanh thu theo năm" />
+      </siteMapNode>
     </siteMapNode>
   </siteMapNode>
 </siteMap>
