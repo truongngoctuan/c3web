@@ -284,7 +284,7 @@ namespace CTLH_C3
     public class TAI_KHOAN_Metadata
     {
         [DisplayName("Tên đăng nhập")]
-        [UIHint("Text_ReadOnly")]
+        //[UIHint("Text_ReadOnly")]
         public object Username { set; get; }
 
         [DisplayName("Mật mã")]    

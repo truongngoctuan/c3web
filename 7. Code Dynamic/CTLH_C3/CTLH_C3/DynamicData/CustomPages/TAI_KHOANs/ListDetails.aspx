@@ -70,7 +70,18 @@
                   OnItemInserting="OnDetailsViewItemInserting"
                   AutoGenerateRows="false">
                   <Fields>
-                    <asp:DynamicField DataField="Username"></asp:DynamicField>
+                    <asp:TemplateField HeaderText="Tên đăng nhập">
+                        <ItemTemplate>
+                            <asp:Literal ID="userField" runat="server" Text='<%#Bind("Username")%>'></asp:Literal>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:Literal ID="userFieldEdit" runat="server" Text='<%#Bind("Username")%>'></asp:Literal>
+                        </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:TextBox ID="userFieldInsert" runat="server" Text='<%#Bind("Username")%>'></asp:TextBox>
+                        </InsertItemTemplate>
+                    </asp:TemplateField>
+                    <%--<asp:DynamicField DataField="Username"></asp:DynamicField>--%>
                     <asp:DynamicField DataField="Password"></asp:DynamicField>
                     <%--<asp:DynamicField DataField="Salt" Visible="false"></asp:DynamicField>--%>
                     <asp:DynamicField DataField="Email"></asp:DynamicField>
