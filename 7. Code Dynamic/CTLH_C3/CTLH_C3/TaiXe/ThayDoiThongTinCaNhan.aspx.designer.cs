@@ -77,6 +77,15 @@ namespace CTLH_C3 {
         protected global::System.Web.UI.WebControls.DetailsView DetailsView_ThongTinCaNhan;
         
         /// <summary>
+        /// ucDoiMatKhau1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CTLH_C3.Authenticated.Controls.ucDoiMatKhau ucDoiMatKhau1;
+        
+        /// <summary>
         /// ThongTinDataSource control.
         /// </summary>
         /// <remarks>
