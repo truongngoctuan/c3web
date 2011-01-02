@@ -9,7 +9,7 @@ using CTLH_C3.Core;
 
 namespace CTLH_C3
 {
-    public partial class TimKiemChuyen : BasePage
+    public partial class TimKiem : BasePage
     {
         protected override void OnPreInit(EventArgs e)
         {
@@ -25,13 +25,10 @@ namespace CTLH_C3
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                if (Request.QueryString["MaTramDi"] != null)
-                    ddlTramDi.SelectedValue = Request.QueryString["MaTramDi"];
-                if (Request.QueryString["MaTramDen"] != null)
-                    ddlTramDen.SelectedValue = Request.QueryString["MaTramDen"];
-            }
+            if (Request.QueryString["MaTramDi"] != null)
+                ddlTramDi.SelectedValue = Request.QueryString["MaTramDi"];
+            if (Request.QueryString["MaTramDen"] != null)
+                ddlTramDen.SelectedValue = Request.QueryString["MaTramDen"];
         }
 
         protected DateTime getTimeToday(string str)
@@ -58,9 +55,9 @@ namespace CTLH_C3
         {
             TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
             IQueryable<CHUYEN_XE> chuyenXeQuery = dataContext.CHUYEN_XEs;
-            chuyenXeQuery = chuyenXeQuery.Where(
+            /*chuyenXeQuery = chuyenXeQuery.Where(
                     c => c.KhoiHanh >= DateTime.Today && c.KhoiHanh <= DateTime.Today.AddDays(1)
-                );
+                );*/
             if(ddlTramDi.SelectedItem.Text != "All")
             {
 			    chuyenXeQuery = chuyenXeQuery.Where(
