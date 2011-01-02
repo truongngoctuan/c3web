@@ -2,14 +2,20 @@
 
 <%@ Register src="~/DynamicData/Content/GridViewPager.ascx" tagname="GridViewPager" tagprefix="asp" %>
 <%@ Register src="~/DynamicData/Content/FilterUserControl.ascx" tagname="DynamicFilter" tagprefix="asp" %>
+<%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="/dieuhanhcongtystyle.css" />
+    <title>Xem Danh Sách Đặt Chỗ</title>
+</asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
-    <h2><%= table.DisplayName%></h2>
+    <h1>Xem Danh Sách Đặt Chỗ</h1>
 
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
-
+    <div class="CanhGiua" style="width:300px;">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
@@ -33,7 +39,7 @@
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Edit, GetDataItem()) %>'
                             Text="Sửa" />&nbsp;<asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete"
                                 CausesValidation="false" Text="Xóa"
-                                OnClientClick='return confirm("Are you sure you want to delete this item?");'
+                                OnClientClick='return confirm("Bạn có chắc chắn muốn xóa không?");'
                             />&nbsp;<asp:HyperLink ID="DetailsHyperLink" runat="server"
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Details, GetDataItem()) %>'
                                 Text="Chi tiết" />
@@ -46,7 +52,7 @@
                     <asp:GridViewPager runat="server" />
                 </PagerTemplate>
                 <EmptyDataTemplate>
-                    There are currently no items in this table.
+                    Không có dặt chỗ nào trong cơ sở dữ liệu!
                 </EmptyDataTemplate>
             </asp:GridView>
 
@@ -59,8 +65,13 @@
             <br />
 
             <div class="bottomhyperlink">
-                <asp:HyperLink ID="InsertHyperLink" runat="server"><img runat="server" src="~/DynamicData/Content/Images/plus.gif" alt="Insert new item" />Insert new item</asp:HyperLink>
+                <asp:HyperLink ID="InsertHyperLink" runat="server"><img runat="server" src="~/DynamicData/Content/Images/plus.gif" alt="Insert new item" />Thêm mới</asp:HyperLink>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
+    </div>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
+    <webUC:user_Login ID="user_Login1" runat="server" />
 </asp:Content>
