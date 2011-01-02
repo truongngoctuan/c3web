@@ -8,6 +8,8 @@ using System.ComponentModel;
 
 namespace CTLH_C3
 {
+
+    
     #region Cho ngoi
     public class CHO_NGOI_Metadata
     {
@@ -32,15 +34,17 @@ namespace CTLH_C3
         [DisplayName("Biển số")]
         public object BienSoXe { set; get; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Tài xế")]
         public object NHAN_VIEN { set; get; }
 
+
+        [ScaffoldColumn(false)]
         [DisplayName("Trạm xe xe đang lưu trú")]
         public object TRAM_XE { set; get; }
 
 
         [DisplayName("Loại")]
-
         public object LOAI_XE { set; get; }
 
         [DisplayName("Tình trạng xe")]
@@ -283,6 +287,7 @@ namespace CTLH_C3
         public object Username { set; get; }
 
         [DisplayName("Password")]
+    
         [UIHint("Password")]
         public object Password { set; get; }
 
@@ -460,10 +465,10 @@ namespace CTLH_C3
         public object TenTuyenXe { get; set; }
 
 
-        [DisplayName("Trạm đến")]
+        [DisplayName("Trạm đi")]
         public object TRAM_XE { get; set; }
 
-        [DisplayName("Trạm đi")]
+        [DisplayName("Trạm đến")]
         public object TRAM_XE1 { get; set; }
 
         [DisplayName("Số lượng chuyến")]
@@ -493,6 +498,28 @@ namespace CTLH_C3
     [DisplayName("Tuyến xe")]
     public partial class TUYEN_XE
     {
+        // Kiem tra loi ten tuyen xe
+        partial void OnTenTuyenXeChanging(string value)
+        {
+            if (string.IsNullOrEmpty(this._TenTuyenXe) == true)
+            {
+                throw new ValidationException("Tên tuyến xe phải có");
+            }
+        }
+
+        // Kiem tra loi SoLuongChuyen
+        partial void OnSoLuongChuyenChanging(int? value)
+        {
+           
+            throw new ValidationException("Khong phai so");
+        }
+        partial void OnValidate(System.Data.Linq.ChangeAction action)
+        {
+            if (string.IsNullOrEmpty(this._TenTuyenXe) == true)
+            {
+                throw new ValidationException("Tên tuyến xe phải có");
+            }
+        }
 
     }
 #endregion

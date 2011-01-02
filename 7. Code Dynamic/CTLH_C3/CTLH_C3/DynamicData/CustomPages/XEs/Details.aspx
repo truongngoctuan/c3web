@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
-    <h2>Chi tiết một đối tượng dữ liệu từ bảng <%= table.DisplayName %></h2>
+    <h2>Chi tiết một chiếc xe</h2>
 
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
 
@@ -23,7 +23,7 @@
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Edit, GetDataItem()) %>'
                                 Text="Sửa" />
                             <asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete" CausesValidation="false"
-                                OnClientClick='return confirm("Bạn có chắc chắn muốn xóa dữ liệu này không?");'
+                                OnClientClick='return confirm("Bạn có chắc chắn muốn chiếc xe này không?");'
                                 Text="Xóa" />
                         </ItemTemplate>
                     </asp:TemplateField>

@@ -21,6 +21,7 @@ namespace CTLH_C3.XEs
         protected void Page_Init(object sender, EventArgs e)
         {
             DynamicDataManager1.RegisterControl(GridView1, true /*setSelectionFromUrl*/);
+           
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -36,6 +37,9 @@ namespace CTLH_C3.XEs
                 GridView1.Columns[0].Visible = false;
                 InsertHyperLink.Visible = false;
             }
+            FilterRepeater.Items[0].Visible = false;
+            FilterRepeater.Items[2].Visible = false;
+            
         }
 
         protected void OnFilterSelectedIndexChanged(object sender, EventArgs e)

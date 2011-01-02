@@ -8,7 +8,9 @@
     </siteMapNode>
     <siteMapNode url="~/TRAM_XEs/List.aspx" title="Quản lý trạm"  description="Quản lý trạm">
     </siteMapNode>
-    <siteMapNode url="~/NHAN_VIENs/List.aspx" title="Quản lý nhân viên"  description="Quản lý nhân viên">
+    <siteMapNode title="Quản lý nhân viên"  description="Quản lý nhân viên">
+      <siteMapNode url="~/NHAN_VIENs/List.aspx" title="Nhân viên"  description="Quản lý nhân viên" />
+      <siteMapNode url="~/DieuHanhCongTy/PhanCongXe.aspx" title="Phân công xe"  description="Phân công xe cho tài xế" />
     </siteMapNode>
     <siteMapNode title="Thống kê"  description="Thống kê">
       <siteMapNode title="Thống kê khách/tuyến"  description="Thống kê khách/tuyến" >

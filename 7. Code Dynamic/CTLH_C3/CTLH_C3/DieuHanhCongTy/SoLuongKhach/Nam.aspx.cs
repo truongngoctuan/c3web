@@ -43,7 +43,7 @@ namespace CTLH_C3.DieuHanhCongTy.SoLuongKhach
 
                 cell = new TableCell();
                 cell.Text = (namMin + i).ToString();
-                //cell.Visible = false;
+               
                 table.Rows[0].Cells.Add(cell);
                 DropDownList_Nam.Items.Add((namMin + i).ToString());
             }
@@ -55,7 +55,7 @@ namespace CTLH_C3.DieuHanhCongTy.SoLuongKhach
 
                 cell = new TableCell();
                 cell.Text = tx.TenTuyenXe;
-                //cell.Visible = false;
+               
                 table.Rows[i].Cells.Add(cell);
                 DropDownList_TuyenXe.Items.Add(tx.TenTuyenXe);
                 
@@ -75,55 +75,135 @@ namespace CTLH_C3.DieuHanhCongTy.SoLuongKhach
         }
         protected void DropDownList_TuyenXe_PreRender(object sender, EventArgs e)
         {
-            HienThi();
+            //HienThi();
         }
         protected void DropDownList_Nam_PreRender(object sender, EventArgs e)
         {
+            //HienThi();
+        }
+        protected void RowHeader()
+        {
+            TableCell cell;
+            TableRow rowHeader;
+            int i;
+            // Row tieu de
+            rowHeader = new TableRow();
+            cell = new TableCell();
+            cell.Text = "Tên tuyến xe";
+            rowHeader.Cells.Add(cell);
 
-            HienThi();
+            for (i = 0; i < iSoLuongNam; i++)
+            {
+
+                cell = new TableCell();
+                cell.Text = "Năm " + (iNamMin + i).ToString();
+                rowHeader.Cells.Add(cell);
+
+            }
+            table.Rows.Add(rowHeader);
         }
         protected void HienThi()
         {
+            TableCell cell;
+            TableRow row;
+            TableRow rowHeader;
+            table.Rows.Clear();
+            RowHeader();
             int i;
             int j;
-            // Cho an het
-            for (i = 0; i < iSoLuongTuyen; i++)
+            int iNam = DropDownList_Nam.SelectedIndex;
+            int iTuyen = DropDownList_TuyenXe.SelectedIndex;
+            // Row tieu de
+            rowHeader = new TableRow();
+            cell = new TableCell();
+            cell.Text = "Tên tuyến xe";
+            rowHeader.Cells.Add(cell);
+            if(iNam == 0)// tat ca cac nam
             {
-                for (j = 0; j < iSoLuongNam; j++)
+                iNam = iSoLuongNam;
+                if (iTuyen != 0)// 1 tuyen cu the
                 {
-                    table.Rows[i].Cells[j].Visible = false;
-                }
-            }
-
-            if (DropDownList_Nam.SelectedIndex == 0)// Chon tat ca cac nam
-            {
-                if (DropDownList_TuyenXe.SelectedIndex == 0)// Chon tat ca cac tuyen
-                {
-
-                    for (i = 0; i <= iSoLuongTuyen; i++)// hien thi tat cac cac dong
+                    row = new TableRow();
+                    // ten tuyen xe
+                    cell = new TableCell();
+                    cell.Text = DropDownList_TuyenXe.Items[iTuyen].Text;
+                    row.Cells.Add(cell);
+                    for (i = 0; i < iNam; i++)
                     {
-                        table.Rows[i].Visible = true;
+                        
+
+                        cell = new TableCell();
+                        cell.Text = mangSoLuong[ iTuyen -1 ,i].ToString();
+                        row.Cells.Add(cell);
+
                     }
+                    
+                    table.Rows.Add(row);
+                    return;
                 }
-                else
+                else// tat ca cac tuyen xe
                 {
-                    table.Rows[DropDownList_TuyenXe.SelectedIndex].Visible = true;
+                    iTuyen = iSoLuongTuyen;
+                    for (j = 0; j < iTuyen; j++ )
+                    {
+                        row = new TableRow();
+                        // ten tuyen xe
+                        cell = new TableCell();
+                        cell.Text = DropDownList_TuyenXe.Items[j + 1].Text;
+                        row.Cells.Add(cell);
+                        for (i = 0; i < iNam; i++)
+                        {
+                         
+                            cell = new TableCell();
+                            cell.Text = mangSoLuong[j, i].ToString();
+                            row.Cells.Add(cell);
+                        }
+                        table.Rows.Add(row);
+                    }
+                    return;
                 }
             }
             else
             {
-                if (DropDownList_TuyenXe.SelectedIndex == 0)// Chon tat ca cac tuyen
+                if(iTuyen == 0)
                 {
-                    for (i = 0; i <= iSoLuongTuyen; i++)// hien thi tat cac cac dong
+                    iTuyen = iSoLuongTuyen;
+                    for (j = 0; j < iTuyen; j++)
                     {
-                        table.Rows[i].Cells[DropDownList_Nam.SelectedIndex].Visible = true;
+                        row = new TableRow();
+                        // ten tuyen xe
+                        cell = new TableCell();
+                        cell.Text = DropDownList_TuyenXe.Items[j + 1].Text;
+                        row.Cells.Add(cell);
+
+                        cell = new TableCell();
+                        cell.Text = mangSoLuong[j, iNam - 1].ToString();
+                        row.Cells.Add(cell);
+
+                        table.Rows.Add(row);
                     }
+                    
                 }
                 else
                 {
-                    table.Rows[DropDownList_TuyenXe.SelectedIndex].Cells[DropDownList_Nam.SelectedIndex].Visible = true;
+                    row = new TableRow();
+                    // ten tuyen xe
+                    cell = new TableCell();
+                    cell.Text = DropDownList_TuyenXe.Items[iTuyen].Text;
+                    row.Cells.Add(cell);
+
+                    cell = new TableCell();
+                    cell.Text = mangSoLuong[iTuyen - 1, iNam - 1].ToString();
+                    row.Cells.Add(cell);
+
+                    table.Rows.Add(row);
                 }
             }
+          
+            
+            
+           
+
         }
         public void TinhSoLuongKhach()
         {
@@ -136,17 +216,14 @@ namespace CTLH_C3.DieuHanhCongTy.SoLuongKhach
                 for (j = 0; j < iSoLuongNam; j++ )
                 {
                     cell = new TableCell();
-                    cell.Visible = false;
+                    
                     table.Rows[i + 1].Cells.Add(cell);
                     mangSoLuong[i,j] = 0;
                     
                 }
             }
            
-            if(DropDownList_Nam.SelectedIndex == 0)
-            {
-                return;
-            }
+           
             int maTuyen;
             int year;
            
@@ -159,8 +236,18 @@ namespace CTLH_C3.DieuHanhCongTy.SoLuongKhach
                 mangSoLuong[maTuyen - 1, year - iNamMin] = mangSoLuong[maTuyen - 1, year - iNamMin] + (int)cx.SoLuongMuaVe;
             }
 
-         
+            for (i = 0; i < iSoLuongTuyen; i++)
+            {
+                for (j = 0; j < iSoLuongNam; j++)
+                {
+                    cell = new TableCell();
 
+                    table.Rows[i + 1].Cells[j + 1].Text = mangSoLuong[i, j].ToString(); ;
+                    
+
+                }
+            }
+            table.DataBind();
            
         }
     }

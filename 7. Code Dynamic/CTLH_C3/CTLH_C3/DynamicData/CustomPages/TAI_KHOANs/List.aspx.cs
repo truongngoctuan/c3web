@@ -21,13 +21,14 @@ namespace CTLH_C3.TAI_KHOANs
         protected void Page_Init(object sender, EventArgs e)
         {
             DynamicDataManager1.RegisterControl(GridView1, true /*setSelectionFromUrl*/);
+           
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             table = GridDataSource.GetTable();
             Title = table.DisplayName;
-
+            
             InsertHyperLink.NavigateUrl = table.GetActionPath(PageAction.Insert);
 
             // Disable various options if the table is readonly
