@@ -142,6 +142,13 @@
     <Compile Include="Authenticated\DoiMatKhau.aspx.designer.cs">
       <DependentUpon>DoiMatKhau.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TaiXe\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaiXe\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinChiTietChuyenXe.aspx.cs">
       <DependentUpon>ThongTinChiTietChuyenXe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -581,13 +588,6 @@
     <Compile Include="ImageHandler.ashx.cs">
       <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
-    <Compile Include="TaiXe\TX_MasterPage.Master.cs">
-      <DependentUpon>TX_MasterPage.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TaiXe\TX_MasterPage.Master.designer.cs">
-      <DependentUpon>TX_MasterPage.Master</DependentUpon>
-    </Compile>
     <Compile Include="TaiXe\NhatKi.aspx.cs">
       <DependentUpon>NhatKi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -996,7 +996,7 @@
     <Content Include="images\0712273.jpg" />
     <Content Include="images\0712281.jpg" />
     <Content Include="images\0712494.jpg" />
-    <Content Include="TaiXe\taixestyle.css" />
+    <Content Include="taixestyle.css" />
     <Content Include="ThongTinChiTietChuyenXe.aspx" />
     <Content Include="DieuHanhTram\Default.aspx" />
     <Content Include="DieuHanhTram\GhiNhanPhanHoi.aspx" />
@@ -1036,7 +1036,7 @@
     <Content Include="TaiXe\Master.css" />
     <Content Include="TaiXe\web.config" />
     <Content Include="Authenticated\web.config" />
-    <Content Include="TaiXe\TX_MasterPage.Master" />
+    <Content Include="TaiXe\MasterPage.Master" />
     <None Include="TRAVEL_WEB.dbml.layout">
       <DependentUpon>TRAVEL_WEB.dbml</DependentUpon>
     </None>
