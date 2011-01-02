@@ -92,8 +92,9 @@ div#left
 div#content
 {
    float:left;
+   /*
    border-left: solid 1px #D5D5D5;
-   border-right: solid 1px #D5D5D5;  
+   border-right: solid 1px #D5D5D5;  */
    display:block;
    margin-left:auto;
    margin-right:auto;
