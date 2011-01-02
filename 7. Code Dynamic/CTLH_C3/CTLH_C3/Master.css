@@ -86,6 +86,7 @@ div#page
 div#left
 {
     float:left;
+    min-height:500px;
 }
 
 div#content
@@ -96,16 +97,18 @@ div#content
    display:block;
    margin-left:auto;
    margin-right:auto;
+   min-height:500px;
 }
 
 div#right
 {
     float:right;
+    min-height:500px;
 }
 
 div#bottom
 {
-
+    min-height:15px;
 }
 
 /*static menu------------------------------------------*/

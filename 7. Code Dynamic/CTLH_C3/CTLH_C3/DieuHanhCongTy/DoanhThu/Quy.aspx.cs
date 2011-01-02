@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CTLH_C3.DieuHanhCongTy.DoanhThu
 {
-    public partial class Quy : System.Web.UI.Page
+    public partial class Quy : CTLH_C3.Core.BasePage
     {
         TRAVEL_WEBDataContext db = new TRAVEL_WEBDataContext();
         protected void Page_Load(object sender, EventArgs e)

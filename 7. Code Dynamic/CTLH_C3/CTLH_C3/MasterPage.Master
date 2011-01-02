@@ -8,8 +8,8 @@
 <head id="Head1" runat="server">
     <asp:ContentPlaceHolder ID="head" runat="server">        
     </asp:ContentPlaceHolder>
-    <link href="Master.css" rel="stylesheet" type="text/css" />
-	<link href="~/Site.css" rel="stylesheet" type="text/css" />
+    <link href="/Master.css" rel="stylesheet" type="text/css" />
+	<link href="/Site.css" rel="stylesheet" type="text/css" />
     <script src="jquery-1.4.4.js" type="text/javascript"></script>
     
 </head>
@@ -31,7 +31,7 @@
         </div> 
         <div id="Menu" style="position:absolute; z-index:10;
             margin-left:auto; margin-right:auto; top:193px;
-            background-image: url(../images/MenuBackgroundTransparent.png); ">
+            background-image: url(/images/MenuBackgroundTransparent.png); ">
             <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSourceMenu"
                             Orientation="Horizontal" 
                             staticdisplaylevels="2" 
@@ -54,9 +54,9 @@
         <div style="position:absolute; 
             margin-left:auto; margin-right:auto; top:181px;z-index:5;">
             <img style="float:left; clear:both;" 
-            src="../images/menushadowtop.png" width="995" height="12" alt=""/>
+            src="/images/menushadowtop.png" width="995" height="12" alt=""/>
             <img style="float:left; clear:both;z-index:5; margin-top:58px;" 
-            src="../images/menushadowbottom.png" width="995" height="17" alt=""/>
+            src="/images/menushadowbottom.png" width="995" height="17" alt=""/>
         </div>
         
         
@@ -76,7 +76,7 @@
             <%--truck--%>
             <img style="position:absolute; 
             right:0px; top:0px;" 
-            src="../images/truck.png" width="374" height="277" alt=""/>
+            src="/images/truck.png" width="374" height="277" alt=""/>
             
             <%--chứa các radio button cho chọn theme--%>
             <div id="header_right"
@@ -122,7 +122,7 @@
     </div>
     <!--****************************************************************-->
     <div id="bottom">
-        <img src="../images/footer_bg.gif" width="995" height="101" alt=""/>
+        <img src="/images/footer_bg.gif" width="995" height="101" alt=""/>
     </div>
     <!--****************************************************************-->
     </div>

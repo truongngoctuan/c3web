@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CTLH_C3.DieuHanhCongTy.SoLuongKhach
 {
-    public partial class Nam : System.Web.UI.Page
+    public partial class Nam : CTLH_C3.Core.BasePage
     {
         TRAVEL_WEBDataContext db = new TRAVEL_WEBDataContext();
         protected static int iSoLuongTuyen;
