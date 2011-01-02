@@ -4,7 +4,7 @@
 <%@ Register src="~/Guest/user_CustomLogin.ascx" tagname="user_Login" tagprefix="webUC" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" type="text/css" href="~/adminstyle.css" />
+    <link rel="stylesheet" type="text/css" href="/adminstyle.css" />
     <title>Thay Đổi Giao Diện</title>
 </asp:Content>
 

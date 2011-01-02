@@ -6,10 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.DynamicData;
 using System.Web.Security;
+using CTLH_C3.Core;
 
 namespace CTLH_C3
 {
-    public partial class TaiXe_Default : CTLH_C3.Core.BasePage
+    public partial class TaiXe_Default : BasePage
     {
         private string _role = "";
         private string _maNhanVien = "";
