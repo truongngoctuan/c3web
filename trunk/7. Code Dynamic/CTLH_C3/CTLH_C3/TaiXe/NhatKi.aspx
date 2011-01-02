@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="NhatKi.aspx.cs" Inherits="CTLH_C3.NhatKi" %>
+﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="NhatKi.aspx.cs" Inherits="CTLH_C3.NhatKi" %>
 
 <%@ Register Src="~/DynamicData/Content/GridViewPager.ascx" TagName="GridViewPager"
     TagPrefix="asp" %>
@@ -61,14 +61,14 @@
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True"
                     AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" 
                     ondatabinding="GridView1_DataBinding" 
-                    onpageindexchanging="GridView1_PageIndexChanging">
+                    onpageindexchanging="GridView1_PageIndexChanging"  >
                     <Columns>
                         <asp:BoundField DataField="MaChuyen" HeaderText="Mã chuyến" />
-                        <asp:BoundField DataField="TramDi" HeaderText="Trạm đi" />
-                        <asp:BoundField DataField="TramDen" HeaderText="Trạm đến"/>
-                        <asp:BoundField DataField="KhoiHanh" HeaderText="Khởi hành"/>
-                        <asp:BoundField DataField="ThoiDiemDenTram" HeaderText="Đã đến trạm lúc"/>
-                        <asp:BoundField DataField="Luong" HeaderText="Lương" />
+                        <asp:BoundField DataField="TramDi" HeaderText="Trạm đi"  />
+                        <asp:BoundField DataField="TramDen" HeaderText="Trạm đến" />
+                        <asp:BoundField DataField="KhoiHanh" HeaderText="Khởi hành"  />
+                        <asp:BoundField DataField="ThoiDiemDenTram" HeaderText="Đã đến trạm lúc"  />
+                        <asp:BoundField DataField="Luong" HeaderText="Lương"  />
                     </Columns>
                     <PagerStyle CssClass="footer" />
                     <PagerTemplate>

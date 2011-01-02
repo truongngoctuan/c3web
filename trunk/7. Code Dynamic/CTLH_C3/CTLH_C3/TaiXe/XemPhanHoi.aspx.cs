@@ -43,7 +43,7 @@ namespace CTLH_C3
         protected void Page_Init(object sender, EventArgs e)
         {
             DynamicDataManager1.RegisterControl(GridView1, false);
-            DynamicDataManager1.RegisterControl(GridView2, false);
+            DynamicDataManager1.RegisterControl(grdPhanHoi, false);
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -67,11 +67,12 @@ namespace CTLH_C3
                 dlstNam.SelectedValue = thisYear.ToString();
 
                 GridView1.DataBind();                         
-            } 
+            }
         }
         
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            grdPhanHoi.Visible = true;
             PhanHoiDataSource.AutoGenerateWhereClause = false;
             PhanHoiDataSource.Where = "MaChuyen==" + GridView1.SelectedDataKey.Value;
         }

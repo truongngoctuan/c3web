@@ -55,8 +55,8 @@ namespace CTLH_C3
                 item.Value = thisYear.ToString();
                 dlstNam_SapChay.Items.Add(item);
                 ListItem item2 = new ListItem();
-                item2.Text = (thisYear - 1).ToString();
-                item2.Value = (thisYear - 1).ToString();
+                item2.Text = (thisYear + 1).ToString();
+                item2.Value = (thisYear + 1).ToString();
                 dlstNam_SapChay.Items.Add(item2);
 
                 ListItem item3 = new ListItem();
@@ -127,9 +127,8 @@ namespace CTLH_C3
         //*** DataSource nằm trong DataBind là để dùng Dynamicdata Gridviewpager ***//
         // -nếu không Gridviewpager không nhận được datasource
 
-        // Chọn các chuyến mà tài xế này đã từng phục vụ
-        // (Các chuyến đã đến nơi)
-        // Lấy thời điểm khởi hành của chuyến làm căn cứ chuyến thuộc tháng năm nào
+        // Chọn các chuyến mà tài xế này sẽ phục vụ
+        // (Các chuyến chưa đến nơi)
         protected void grdSapChay_DataBinding(object sender, EventArgs e)
         {
             int month = int.Parse(dlstThang_SapChay.SelectedValue);
@@ -138,15 +137,16 @@ namespace CTLH_C3
             var query_SapChay = (from c in _dataContext.CHUYEN_XEs
                                  join t in _dataContext.TUYEN_XEs on c.MaTuyenXe equals t.MaTuyenXe
                                  where (c.MaTaiXe.Equals(_maNhanVien)
-                                        && c.ThoiGianDenTram == null
+                                        && c.TINH_TRANG_CHUYEN_XE.TenTinhTrangChuyen.ToLower().Equals("chưa khởi hành")
                                         && c.KhoiHanh.Value.Month == month
                                         && c.KhoiHanh.Value.Year == year)
                                  select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe, KhoiHanh = c.KhoiHanh }).Distinct();
             grdSapChay.DataSource = query_SapChay;
         }
 
-        // Chọn các chuyến mà tài xế này sẽ phục vụ
-        // (Các chuyến chưa đến nơi)
+        // Chọn các chuyến mà tài xế này đã từng phục vụ
+        // (Các chuyến đã đến nơi)
+        // Lấy thời điểm khởi hành của chuyến làm căn cứ chuyến thuộc tháng năm nào    
         protected void grdDaChay_DataBinding(object sender, EventArgs e)
         {
             int month = int.Parse(dlstThang_DaChay.SelectedValue);
@@ -155,7 +155,7 @@ namespace CTLH_C3
             var query_DaChay = (from c in _dataContext.CHUYEN_XEs
                                 join t in _dataContext.TUYEN_XEs on c.MaTuyenXe equals t.MaTuyenXe
                                 where (c.MaTaiXe.Equals(_maNhanVien)
-                                       && c.ThoiGianDenTram != null
+                                       && c.TINH_TRANG_CHUYEN_XE.TenTinhTrangChuyen.ToLower().Equals("đã về trạm")
                                        && c.KhoiHanh.Value.Month == month
                                        && c.KhoiHanh.Value.Year == year)
                                 select new
@@ -174,14 +174,14 @@ namespace CTLH_C3
             var query_NhanVien = (from n in _dataContext.NHAN_VIENs
                                   where n.MaNhanVien.Equals(_maNhanVien)
                                   select n).Single();
-            lblHeSo.Text = query_NhanVien.LuongTrongThang.ToString();
+            lblHeSo.Text = " " + query_NhanVien.LuongTrongThang.ToString();
             float temp = 0;
             foreach (var chuyen in query_DaChay)
             {
                 temp += (float)chuyen.Luong.Value;
             }
-            lblLuongChuyen.Text = temp.ToString();
-            lblTongCong.Text = (temp * query_NhanVien.LuongTrongThang).ToString();
+            lblLuongChuyen.Text = string.Format(" {0:0,0.0}",temp);
+            lblTongCong.Text = string.Format(" {0:0,0.0}",(temp * query_NhanVien.LuongTrongThang));
         }
     }
 }

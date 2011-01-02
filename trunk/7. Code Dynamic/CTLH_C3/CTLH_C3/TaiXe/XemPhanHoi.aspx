@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="XemPhanHoi.aspx.cs" Inherits="CTLH_C3.XemPhanHoi" %>
+﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="XemPhanHoi.aspx.cs" Inherits="CTLH_C3.XemPhanHoi" %>
 <%@ Register Src="~/DynamicData/Content/GridViewPager.ascx" TagName="GridViewPager"
     TagPrefix="asp" %>
 <%@ Register Src="~/DynamicData/Content/FilterUserControl.ascx" TagName="DynamicFilter"
@@ -69,7 +69,9 @@
                     ondatabinding="GridView1_DataBinding" 
                     onpageindexchanging="GridView1_PageIndexChanging">
                     <Columns>
-                        <asp:CommandField ShowSelectButton="True" />
+                        <asp:CommandField ShowSelectButton="True" CancelText="Thôi" DeleteText="Xóa" 
+                            EditText="Sửa" InsertText="Chèn" NewText="Thêm mới" SelectText="Chọn" 
+                            UpdateText="Cập nhật" />
                         <asp:BoundField DataField="MaChuyen" HeaderText="Mã chuyến" />
                         <asp:BoundField DataField="TramDi" HeaderText="Trạm đi" />
                         <asp:BoundField DataField="TramDen" HeaderText="Trạm đến"/>
@@ -88,10 +90,9 @@
                 <br />
                 
                 <%--Các phản hồi của chuyến --%>      
-                <asp:GridView ID="GridView2" runat="server" AllowPaging="True" DataSourceID="PhanHoiDataSource"
-                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" >
+                <asp:GridView ID="grdPhanHoi" runat="server" AllowPaging="True" DataSourceID="PhanHoiDataSource"
+                    AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" Visible="False">
                     <Columns>
-                        <asp:DynamicField DataField="MaChuyen" HeaderText="Mã chuyến"/>
                         <asp:DynamicField DataField="PHAN_HOI_KHACH_HANG"/>
                     </Columns>
                     <PagerStyle CssClass="footer" />

@@ -93,7 +93,7 @@ namespace CTLH_C3
             var query = (from c in _dataContext.CHUYEN_XEs
                          join t in _dataContext.TUYEN_XEs on c.MaTuyenXe equals t.MaTuyenXe
                          where (c.MaTaiXe.Equals(_maNhanVien)
-                                && c.ThoiGianDenTram != null
+                                && c.TINH_TRANG_CHUYEN_XE.TenTinhTrangChuyen.ToLower().Equals("đã về trạm")
                                 && c.KhoiHanh.Value.Month == month
                                 && c.KhoiHanh.Value.Year == year)
                          select new
@@ -105,7 +105,6 @@ namespace CTLH_C3
                              ThoiDiemDenTram = c.ThoiGianDenTram,
                              Luong = c.LuongTaiXe
                          }).Distinct();
-
             GridView1.DataSource = query;
         }
 

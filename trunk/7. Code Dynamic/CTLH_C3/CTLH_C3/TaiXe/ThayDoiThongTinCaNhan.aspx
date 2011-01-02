@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
+﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true"
     CodeBehind="ThayDoiThongTinCaNhan.aspx.cs" Inherits="CTLH_C3.ThayDoiThongTinCaNhan" %>
 <%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
 
@@ -28,9 +28,8 @@
             
            <%-- Thông tin cá nhân--%>
            <div class="CanhGiua" style="width:300px;">
-            <asp:DetailsView ID="DetailsView_ThongTinCaNhan" runat="server" 
-                DefaultMode="ReadOnly"
-                DataSourceID="ThongTinDataSource" AutoGenerateEditButton="True" 
+            <asp:DetailsView ID="DetailsView_ThongTinCaNhan" runat="server"
+                DataSourceID="ThongTinDataSource" 
                 CssClass="detailstable" FieldHeaderStyle-CssClass="bold"
                 AutoGenerateRows="False">
                 <FieldHeaderStyle CssClass="bold" />
@@ -39,6 +38,9 @@
                     <asp:DynamicField DataField="DienThoai" />
                     <asp:DynamicField DataField="DiaChi" />
                     <asp:BoundField DataField="LuongTrongThang" HeaderText="Lương căn bản" ReadOnly="true"/>
+                    <asp:CommandField CancelText="Thôi" DeleteText="Xóa" EditText="Sửa" 
+                        InsertText="Chèn" NewText="Thêm mới" SelectText="Chọn" ShowEditButton="True" 
+                        UpdateText="Cập nhật" />
                 </Fields>
             </asp:DetailsView>
             </div>
