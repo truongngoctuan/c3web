@@ -73,7 +73,7 @@
                     </Columns>
                     <PagerStyle CssClass="footer" />
                     <PagerTemplate>
-                        <asp:GridViewPager ID="GridViewPager1" runat="server" />
+                        <asp:GridViewPager ID="GridViewPager1" runat="server" EnableTheming="false" />
                     </PagerTemplate>
                     <EmptyDataTemplate>
                         Không có thông tin.
