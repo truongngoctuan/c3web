@@ -84,10 +84,10 @@
                     <%--<asp:DynamicField DataField="Username"></asp:DynamicField>--%>
                     <asp:DynamicField DataField="Password"></asp:DynamicField>
                     <%--<asp:DynamicField DataField="Salt" Visible="false"></asp:DynamicField>--%>
-                    <asp:DynamicField DataField="Email"></asp:DynamicField>
-                    <asp:DynamicField DataField="NgayKichHoat"></asp:DynamicField>
+                    <asp:DynamicField DataField="Email"></asp:DynamicField>                    
                     <asp:DynamicField DataField="LOAI_TAI_KHOAN"></asp:DynamicField>
                     <asp:DynamicField DataField="NHAN_VIEN"></asp:DynamicField> 
+                    <asp:DynamicField DataField="NgayKichHoat"></asp:DynamicField>
                   </Fields>
               </asp:DetailsView>
               

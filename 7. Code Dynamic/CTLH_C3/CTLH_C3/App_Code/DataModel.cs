@@ -18,7 +18,7 @@ namespace CTLH_C3
     [Security(Role = "Điều hành trạm", Action = "List")]
     [Security(Role = "Điều hành trạm", Action = "Details")]
     [Security(Role = "Điều hành trạm", Action = "Edit")]
-    [Security(Role = "Điều hành trạm", Action = "Insert")]    
+    [Security(Role = "Điều hành trạm", Action = "Insert")]  
     public partial class CHUYEN_XE
     {
     }

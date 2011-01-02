@@ -48,9 +48,9 @@ namespace CTLH_C3.DieuHanhTram
             int iMaTuyenXe = Convert.ToInt32(DropDownList_TuyenXe.SelectedValue);
             
             int iMaTaiXe = Convert.ToInt32(DropDownList_TaiXe.SelectedValue);
-            var cx = db.TimKiemChuyenXe(iMaTuyenXe, iMaTaiXe, KhoiHanh);
+            //var cx = db.TimKiemChuyenXe(iMaTuyenXe, iMaTaiXe, KhoiHanh);
            
-            GridView1.DataSource = cx;
+            //GridView1.DataSource = cx;
             GridView1.DataBind();
         }
 

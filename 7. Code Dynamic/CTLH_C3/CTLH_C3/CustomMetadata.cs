@@ -7,9 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel; 
 
 namespace CTLH_C3
-{
-
-    
+{    
     #region Cho ngoi
     public class CHO_NGOI_Metadata
     {
@@ -204,6 +202,7 @@ namespace CTLH_C3
         public object DiaChi { set; get; }
 
         [DisplayName("Hình ảnh")]
+        [UIHint("Image")]
         public object HinhAnh { set; get; }
 
         [ScaffoldColumn(false)]
@@ -211,6 +210,7 @@ namespace CTLH_C3
         public object LuongTrongThang { set; get; }
 
         [DisplayName("Hình ảnh")]
+        [ScaffoldColumn(false)]
         public object IMAGE_STORE { set; get; }
 
         [ScaffoldColumn(false)]
@@ -440,6 +440,9 @@ namespace CTLH_C3
     #region Tram xe
     public class TRAM_XE_Metadata
     {
+        [DisplayName("Mã trạm xe")]
+        public object MaTramXe { set; get; }
+
         [DisplayName("Tên trạm")]
         public object TenTramXe { set; get; }
 
@@ -447,16 +450,23 @@ namespace CTLH_C3
         public object DiaChi { set; get; }
 
         [DisplayName("Hình ảnh")]
+        [UIHint("Image")]
         public object HinhAnh { set; get; }
 
         [DisplayName("Trưởng trạm")]
         public object NHAN_VIEN { set; get; }
 
         [DisplayName("Là trạm đến của")]
+        [ScaffoldColumn(false)]
         public object TUYEN_XEs { set; get; }
 
         [DisplayName("Là trạm đi của")]
+        [ScaffoldColumn(false)]
         public object TUYEN_XEs1 { set; get; }
+
+        [DisplayName("Hinh ảnh trạm")]
+        [ScaffoldColumn(false)]
+        public object IMAGE_STORE { set; get; }
 
         [ScaffoldColumn(false)]
         public object XEs { set; get; }
@@ -466,7 +476,6 @@ namespace CTLH_C3
     [DisplayName("Trạm xe")]
     public partial class TRAM_XE
     {
-
     }
     #endregion
 

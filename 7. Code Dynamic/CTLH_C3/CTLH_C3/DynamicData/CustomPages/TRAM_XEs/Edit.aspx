@@ -7,40 +7,57 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-    <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
-
     <h1>Điều Chỉnh Thông Tin Một Trạm</h1>
-
-    <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
     <div class="CanhGiua" style="width:300px;">
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
-                HeaderText="Danh sách lỗi" />
-            <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView1" Display="None" />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
+            HeaderText="Danh sách lỗi" />
 
-            <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="DetailsDataSource" DefaultMode="Edit"
-                AutoGenerateEditButton="false" OnItemCommand="DetailsView1_ItemCommand" OnItemUpdated="DetailsView1_ItemUpdated"
-                CssClass="detailstable" FieldHeaderStyle-CssClass="bold">
-                <Fields> 
-                    <asp:TemplateField> 
-                        <ItemTemplate> 
-                                <asp:Button ID="UpdateLinkButton" runat="server" CommandName="Update" CausesValidation="false" 
-                                   Text="Cập nhật" /> 
-                                <asp:Button ID="Button1" runat="server" CommandName="Cancel" CausesValidation="false" 
-                                   Text="Hủy bỏ" /> 
-                        </ItemTemplate> 
-                    </asp:TemplateField> 
-                </Fields> 
-            </asp:DetailsView>
+        <asp:DetailsView ID="DetailsView1" runat="server" 
+            DataSourceID="DetailsDataSource" DefaultMode="Edit"
+            AutoGenerateEditButton="false" OnItemCommand="DetailsView1_ItemCommand" OnItemUpdated="DetailsView1_ItemUpdated"
+            CssClass="detailstable" FieldHeaderStyle-CssClass="bold"
+            OnItemUpdating="DetailsView1_ItemUpdating"
+            AutoGenerateRows="false" DataKeyNames="MaTramXe" 
+            ondatabound="DetailsView1_DataBound">
+            <Fields> 
+                <asp:BoundField DataField="MaTramXe" HeaderText="Mã trạm" 
+                    InsertVisible="False" ReadOnly="True" SortExpression="MaNhanVien" />
+                <asp:BoundField DataField="TenTramXe" HeaderText="Tên trạm" SortExpression="HoTen" />
+                <asp:BoundField DataField="DiaChi" HeaderText="Địa chỉ" 
+                    SortExpression="DiaChi" />
+                <asp:TemplateField HeaderText="Hình ảnh">
+                    <EditItemTemplate>
+                        <div>
+                            <asp:Label runat="server" id="sttImageUpload" text=" " style="margin-bottom:15px;clear:both;color:red"/>
+                        </div>
+                        <asp:FileUpload ID="fileUpload" runat="server" />
+                    </EditItemTemplate>
+                </asp:TemplateField>
+                <%--<asp:BoundField DataField="MaTruongTram" HeaderText="Trưởng trạm" 
+                    SortExpression="MaTruongTram" Visible="false"/>--%>
+                <asp:TemplateField HeaderText="Trưởng trạm">
+                    <EditItemTemplate>
+                        <asp:DropDownList ID="ddlNhanViens" runat="server" DataSourceID="NhanViensDataSource" DataTextField="HoTen" DataValueField="MaNhanVien" ></asp:DropDownList>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField> 
+                    <ItemTemplate> 
+                        <asp:Button ID="UpdateLinkButton" runat="server" CommandName="Update" CausesValidation="false" 
+                           Text="Cập nhật" /> 
+                        <asp:Button ID="Button1" runat="server" CommandName="Cancel" CausesValidation="false" 
+                           Text="Hủy bỏ" /> 
+                    </ItemTemplate> 
+                </asp:TemplateField> 
+            </Fields> 
+        </asp:DetailsView>
 
-            <asp:LinqDataSource ID="DetailsDataSource" runat="server" EnableUpdate="true">
-                <WhereParameters>
-                    <asp:DynamicQueryStringParameter />
-                </WhereParameters>
-            </asp:LinqDataSource>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+        <asp:LinqDataSource ID="DetailsDataSource" runat="server" EnableUpdate="true"
+                ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext" TableName="TRAM_XEs" >
+        </asp:LinqDataSource>
+        <asp:LinqDataSource ID="NhanViensDataSource" runat="server"
+                ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext" TableName="NHAN_VIENs" 
+                Select="new (MaNhanVien, HoTen)" >
+        </asp:LinqDataSource>
     </div>
 </asp:Content>
 
