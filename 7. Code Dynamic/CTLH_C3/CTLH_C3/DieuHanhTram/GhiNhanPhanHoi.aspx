@@ -1,7 +1,12 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="GhiNhanPhanHoi.aspx.cs" Inherits="CTLH_C3.DieuHanhTram.GhiNhanPhanHoi" %>
 
 <%@ Register src="~/DynamicData/Content/GridViewPager.ascx" tagname="GridViewPager" tagprefix="asp" %>
+<%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
 
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="/dieuhanhcongtystyle.css" />
+    <title>Ghi Nhận Phản Hồi</title>
+</asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
@@ -24,6 +29,7 @@
          source.checked = checked;
      }  
     </script>
+    <h1>Ghi Nhận Phản Hồi</h1>
 
     <asp:Label ID="Label4" runat="server" Text="Nội dung phản hồi"></asp:Label>
     <br/>
@@ -106,4 +112,8 @@
         </WhereParameters>
     </asp:LinqDataSource>
 
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
+    <webUC:user_Login ID="user_Login1" runat="server" />
 </asp:Content>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CTLH_C3.DieuHanhTram
 {
-    public partial class GhiNhanPhanHoi : System.Web.UI.Page
+    public partial class GhiNhanPhanHoi : CTLH_C3.Core.BasePage
     {
         protected static TRAVEL_WEBDataContext db = new TRAVEL_WEBDataContext();
         protected static DateTime KhoiHanh;
