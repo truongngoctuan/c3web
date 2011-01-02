@@ -24,25 +24,29 @@
                 <FooterTemplate><br /><br /></FooterTemplate>
             </asp:FilterRepeater>
 
-            <asp:GridView ID="GridView1" runat="server" DataSourceID="GridDataSource" 
-                AllowPaging="True" AllowSorting="True" CssClass="gridview">
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="GridDataSource"
+                AllowPaging="True" AllowSorting="True" CssClass="gridview" AutoGenerateColumns="false">
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:HyperLink ID="EditHyperLink" runat="server"
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Edit, GetDataItem()) %>'
-                            Text="Sửa" />&nbsp;<asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete"
+                            Text="Sửa" />&nbsp;
+                            <asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete"
                                 CausesValidation="false" Text="Xóa"
                                 OnClientClick='return confirm("Are you sure you want to delete this item?");'
-                            />&nbsp;<asp:HyperLink ID="DetailsHyperLink" runat="server"
+                            />&nbsp;
+                            <asp:HyperLink ID="DetailsHyperLink" runat="server"
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Details, GetDataItem()) %>'
                                 Text="Chi tiết" />
                         </ItemTemplate>
                     </asp:TemplateField>
-                   
-
+                    <asp:DynamicField DataField="Username"></asp:DynamicField>
+                    <asp:DynamicField DataField="Email"></asp:DynamicField>
+                    <asp:DynamicField DataField="LOAI_TAI_KHOAN"></asp:DynamicField>
+                    <asp:DynamicField DataField="NHAN_VIEN"></asp:DynamicField>
                 </Columns>
-               
+
                 <PagerStyle CssClass="footer"/>        
                 <PagerTemplate>
                     <asp:GridViewPager runat="server" />
@@ -57,7 +61,7 @@
                     <asp:DynamicControlParameter ControlID="FilterRepeater" />
                 </WhereParameters>
             </asp:LinqDataSource>
-
+            
             <br />
 
             <div class="bottomhyperlink">

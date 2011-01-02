@@ -306,7 +306,9 @@ namespace CTLH_C3.Core
             {
                 TAI_KHOAN tk = user.Single();
                 if (tk.Password.Equals(CryptographicHelper.CreatePasswordHash(password, tk.Salt)))
+                {
                     return true;
+                }
             }            
             return false;            
         }

@@ -15,13 +15,11 @@ using System.Web.DynamicData;
 
 namespace CTLH_C3
 {
-    public partial class PasswordField : FieldTemplateUserControl
+    public partial class Text_ReadOnly_EditField : System.Web.DynamicData.FieldTemplateUserControl
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected override void ExtractValues(IOrderedDictionary dictionary)
         {
-            // add a string of '*' the max length of the field
-            var length = Column.MaxLength > 10 ? 10 : Column.MaxLength;
-            Literal1.Text = new String('●', length);
+            dictionary[Column.Name] = ConvertEditedValue(Literal1.Text);
         }
 
         public override Control DataControl
@@ -32,5 +30,4 @@ namespace CTLH_C3
             }
         }
     }
-
 }

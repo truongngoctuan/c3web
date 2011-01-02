@@ -15,15 +15,8 @@ using System.Web.DynamicData;
 
 namespace CTLH_C3
 {
-    public partial class PasswordField : FieldTemplateUserControl
+    public partial class DateTime_ReadOnly_EditField : System.Web.DynamicData.FieldTemplateUserControl
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            // add a string of '*' the max length of the field
-            var length = Column.MaxLength > 10 ? 10 : Column.MaxLength;
-            Literal1.Text = new String('●', length);
-        }
-
         public override Control DataControl
         {
             get
@@ -32,5 +25,4 @@ namespace CTLH_C3
             }
         }
     }
-
 }

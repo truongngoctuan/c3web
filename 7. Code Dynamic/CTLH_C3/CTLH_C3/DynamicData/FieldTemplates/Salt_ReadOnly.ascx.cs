@@ -15,7 +15,7 @@ using System.Web.DynamicData;
 
 namespace CTLH_C3
 {
-    public partial class PasswordField : FieldTemplateUserControl
+    public partial class Salt_ReadOnlyField : FieldTemplateUserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
