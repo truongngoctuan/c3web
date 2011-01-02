@@ -38,21 +38,30 @@ namespace CTLH_C3
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            DynamicDataManager1.RegisterControl(GridView1, false);
+            DynamicDataManager1.RegisterControl(grdSapChay, false);
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                int month = DateTime.Now.Month;
-                int year = DateTime.Now.Year;
+                int thisMonth = DateTime.Now.Month;
+                int thisYear = DateTime.Now.Year;
 
-                // Khởi tạo 2 droplist tháng và năm
-                lblThang.Text = month.ToString();
-                lblNam.Text = year.ToString();
-                
-                GridView1.DataBind();
+                // Khởi tạo các droplist tháng và năm
+                ListItem item = new ListItem();
+                item.Text = thisYear.ToString();
+                item.Value = thisYear.ToString();
+                dlstNam_SapChay.Items.Add(item);
+                ListItem item2 = new ListItem();
+                item2.Text = (thisYear + 1).ToString();
+                item2.Value = (thisYear + 1).ToString();
+                dlstNam_SapChay.Items.Add(item2);
+
+                dlstThang_SapChay.SelectedValue = thisMonth.ToString();
+                dlstNam_SapChay.SelectedValue = thisYear.ToString();
+
+                grdSapChay.DataBind();
             }
         }
 
@@ -60,8 +69,8 @@ namespace CTLH_C3
         {
             try
             {
-                GridView1.PageIndex = e.NewPageIndex;
-                GridView1.DataBind();
+                grdSapChay.PageIndex = e.NewPageIndex;
+                grdSapChay.DataBind();
             }
             catch
             {
@@ -73,21 +82,31 @@ namespace CTLH_C3
         // -nếu không Gridviewpager không nhận được datasource
 
         // Chọn các chuyến mà tài xế này sẽ phục vụ
-        // (Các chuyến chưa đến nơi)
+        // (Các chuyến chưa khởi hành)
         protected void GridView1_DataBinding(object sender, EventArgs e)
         {
-            int month = DateTime.Now.Month;
-            int year = DateTime.Now.Year;
+            int month = int.Parse(dlstThang_SapChay.SelectedValue);
+            int year = int.Parse(dlstNam_SapChay.SelectedValue);
 
             TRAVEL_WEBDataContext dataContext = new TRAVEL_WEBDataContext();
             var query = (from c in dataContext.CHUYEN_XEs
                          join t in dataContext.TUYEN_XEs on c.MaTuyenXe equals t.MaTuyenXe
                          where (c.MaTaiXe.Equals(_maNhanVien)
-                                && c.ThoiGianDenTram == null
+                                && c.TINH_TRANG_CHUYEN_XE.TenTinhTrangChuyen.ToLower().Equals("chưa khởi hành")
                                 && c.KhoiHanh.Value.Month == month
-                                && c.KhoiHanh.Value.Year == year)
+                                && c.KhoiHanh.Value.Year == year)                         
                          select new { MaChuyen = c.MaChuyenXe, TramDi = t.TRAM_XE1.TenTramXe, TramDen = t.TRAM_XE.TenTramXe, KhoiHanh = c.KhoiHanh }).Distinct();
-            GridView1.DataSource = query;
+            grdSapChay.DataSource = query;
+        }
+
+        protected void dlstThang_SapChay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            grdSapChay.DataBind();
+        }
+
+        protected void dlstNam_SapChay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            grdSapChay.DataBind();
         }
     }
 }

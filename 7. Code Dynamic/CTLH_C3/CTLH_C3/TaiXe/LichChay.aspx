@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="LichChay.aspx.cs" Inherits="CTLH_C3.TaiXe_Default" %>
+﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="LichChay.aspx.cs" Inherits="CTLH_C3.TaiXe_Default" %>
 
 <%@ Register Src="~/DynamicData/Content/GridViewPager.ascx" TagName="GridViewPager"
     TagPrefix="asp" %>
@@ -28,18 +28,40 @@
                 <%--Báo lỗi--%>
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
                     HeaderText="Danh sách lỗi" />
-                <asp:DynamicValidator runat="server" ID="GridViewValidator" ControlToValidate="GridView1"
+                <asp:DynamicValidator runat="server" ID="GridViewValidator" ControlToValidate="grdSapChay"
                     Display="None" />
                 
                 <h1>Lịch chạy</h1>
                 <div style="margin: 10px auto; text-align:center;">
+                    <br />
+                    <br />
                     Tháng:
-                    <asp:Label ID="lblThang" runat="server"></asp:Label>
+                    <asp:DropDownList ID="dlstThang_SapChay" runat="server" AutoPostBack="True" 
+                        onselectedindexchanged="dlstThang_SapChay_SelectedIndexChanged"
+                        Width="75px">
+                        <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                        <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                        <asp:ListItem Text="4" Value="4"></asp:ListItem>
+                        <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                        <asp:ListItem Text="6" Value="6"></asp:ListItem>
+                        <asp:ListItem Text="7" Value="7"></asp:ListItem>
+                        <asp:ListItem Text="8" Value="8"></asp:ListItem>
+                        <asp:ListItem Text="9" Value="9"></asp:ListItem>
+                        <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                        <asp:ListItem Text="11" Value="11"></asp:ListItem>
+                        <asp:ListItem Text="12" Value="12"></asp:ListItem>
+                    </asp:DropDownList>
                     Năm:
-                    <asp:Label ID="lblNam" runat="server"></asp:Label>
+                    <asp:DropDownList ID="dlstNam_SapChay" runat="server" AutoPostBack="True" 
+                        onselectedindexchanged="dlstNam_SapChay_SelectedIndexChanged"
+                        Width="75px"></asp:DropDownList>
+                    <br />
+                    <br />
                 </div>
+                
                 <%--Các chuyến sắp chạy --%>      
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True"
+                <asp:GridView ID="grdSapChay" runat="server" AllowPaging="True"
                     AllowSorting="True" CssClass="gridview" AutoGenerateColumns="False" 
                     ondatabinding="GridView1_DataBinding" 
                     onpageindexchanging="GridView1_PageIndexChanging" >

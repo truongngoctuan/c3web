@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
+﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true"
     CodeBehind="ThongKe.aspx.cs" Inherits="CTLH_C3.ThongKe" %>
     
 <%@ Register Src="~/DynamicData/Content/GridViewPager.ascx" TagName="GridViewPager"
