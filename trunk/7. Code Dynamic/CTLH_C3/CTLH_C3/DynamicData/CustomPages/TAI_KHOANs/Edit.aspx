@@ -18,7 +18,16 @@
                 DataSourceID="DetailsDataSource" DefaultMode="Edit"
                 AutoGenerateEditButton="True" OnItemCommand="DetailsView1_ItemCommand" OnItemUpdated="DetailsView1_ItemUpdated"
                 CssClass="detailstable" FieldHeaderStyle-CssClass="bold" 
-                onitemupdating="DetailsView1_ItemUpdating">
+                onitemupdating="DetailsView1_ItemUpdating"
+                AutoGenerateRows="false">
+                <Fields>
+                    <asp:DynamicField DataField="Username"></asp:DynamicField>
+                    <asp:DynamicField DataField="Password"></asp:DynamicField>
+                    <asp:DynamicField DataField="Salt" Visible="false"></asp:DynamicField>
+                    <asp:DynamicField DataField="Email"></asp:DynamicField>
+                    <asp:DynamicField DataField="LOAI_TAI_KHOAN"></asp:DynamicField>
+                    <asp:DynamicField DataField="NHAN_VIEN"></asp:DynamicField>
+                </Fields>
             </asp:DetailsView>
 
             <asp:LinqDataSource ID="DetailsDataSource" runat="server" EnableUpdate="true">

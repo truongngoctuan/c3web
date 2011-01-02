@@ -191,6 +191,55 @@
     <Compile Include="DieuHanhCongTy\SoLuongKhach\Thang.aspx.designer.cs">
       <DependentUpon>Thang.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DynamicData\CustomPages\TAI_KHOANs\ListDetails.aspx.cs">
+      <DependentUpon>ListDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\TAI_KHOANs\ListDetails.aspx.designer.cs">
+      <DependentUpon>ListDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_ReadOnly.ascx.cs">
+      <DependentUpon>DateTime_ReadOnly.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_ReadOnly.ascx.designer.cs">
+      <DependentUpon>DateTime_ReadOnly.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_ReadOnly_Edit.ascx.cs">
+      <DependentUpon>DateTime_ReadOnly_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_ReadOnly_Edit.ascx.designer.cs">
+      <DependentUpon>DateTime_ReadOnly_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Salt_ReadOnly.ascx.cs">
+      <DependentUpon>Salt_ReadOnly.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Salt_ReadOnly.ascx.designer.cs">
+      <DependentUpon>Salt_ReadOnly.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Salt_ReadOnly_Edit.ascx.cs">
+      <DependentUpon>Salt_ReadOnly_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Salt_ReadOnly_Edit.ascx.designer.cs">
+      <DependentUpon>Salt_ReadOnly_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_ReadOnly.ascx.cs">
+      <DependentUpon>Text_ReadOnly.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_ReadOnly.ascx.designer.cs">
+      <DependentUpon>Text_ReadOnly.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_ReadOnly_Edit.ascx.cs">
+      <DependentUpon>Text_ReadOnly_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_ReadOnly_Edit.ascx.designer.cs">
+      <DependentUpon>Text_ReadOnly_Edit.ascx</DependentUpon>
+    </Compile>
     <Compile Include="TaiXe\MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1038,6 +1087,13 @@
     <Content Include="DieuHanhCongTy\SoLuongKhach\Nam.aspx" />
     <Content Include="DieuHanhCongTy\SoLuongKhach\Quy.aspx" />
     <Content Include="DieuHanhCongTy\SoLuongKhach\Thang.aspx" />
+    <Content Include="DynamicData\CustomPages\TAI_KHOANs\ListDetails.aspx" />
+    <Content Include="DynamicData\FieldTemplates\DateTime_ReadOnly.ascx" />
+    <Content Include="DynamicData\FieldTemplates\DateTime_ReadOnly_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Salt_ReadOnly.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Salt_ReadOnly_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Text_ReadOnly.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Text_ReadOnly_Edit.ascx" />
     <Content Include="gueststyle.css" />
     <Content Include="images\0712164.jpg" />
     <Content Include="images\0712167.jpg" />

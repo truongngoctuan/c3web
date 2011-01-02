@@ -15,15 +15,15 @@ using System.Web.DynamicData;
 
 namespace CTLH_C3
 {
-    public partial class Password_EditField : FieldTemplateUserControl
+    public partial class Salt_ReadOnly_EditField : FieldTemplateUserControl
     {
         string value = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*if (Column.MaxLength < 10)
-            {
-                TextBox1.Columns = Column.MaxLength;
-            }*/
+            //if (Column.MaxLength < 20)
+            //{
+            //    TextBox1.Columns = Column.MaxLength;
+            //}
             TextBox1.Columns = 10;
             TextBox1.ToolTip = Column.Description;
 

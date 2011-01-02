@@ -146,7 +146,11 @@ namespace CTLH_C3
             // Obtain the roles that have limited 
             // access rights.
             Attribute[] anonymousRoles = secInfo.anonymousRoles;
-            
+
+            if (table.Name == "TAI_KHOANs")
+            {
+                string abs = "sdfds";
+            }
 
             // Allow tables access based on the authenticated
             // roles and on the security attributes applied

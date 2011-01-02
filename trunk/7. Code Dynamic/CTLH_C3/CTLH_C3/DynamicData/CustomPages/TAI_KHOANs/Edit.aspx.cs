@@ -52,7 +52,12 @@ namespace CTLH_C3.TAI_KHOANs
             if (!(e.NewValues["Salt"].Equals(e.OldValues["Salt"])))
                 e.Cancel = true;
             else
-                e.NewValues["Password"] = CryptographicHelper.CreatePasswordHash((string)e.NewValues["Password"], (string)e.OldValues["Salt"]);
+            {
+                if (String.IsNullOrEmpty((string)e.NewValues["Password"]))
+                    e.NewValues["Password"] = e.OldValues["Password"];
+                else
+                    e.NewValues["Password"] = CryptographicHelper.CreatePasswordHash((string)e.NewValues["Password"], (string)e.OldValues["Salt"]);
+            }
         }
     }
 }

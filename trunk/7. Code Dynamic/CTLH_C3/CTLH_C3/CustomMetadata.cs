@@ -283,21 +283,23 @@ namespace CTLH_C3
     #region Tai khoan
     public class TAI_KHOAN_Metadata
     {
-        [DisplayName("Username")]
+        [DisplayName("Tên đăng nhập")]
+        [UIHint("Text_ReadOnly")]
         public object Username { set; get; }
 
-        [DisplayName("Password")]
-    
+        [DisplayName("Mật mã")]    
         [UIHint("Password")]
         public object Password { set; get; }
 
         [DisplayName("Salt")]
+        [UIHint("Salt_ReadOnly")]
         public object Salt { set; get; }
 
         [DisplayName("Email")]
         public object Email { set; get; }
 
         [DisplayName("Ngày kích hoạt")]
+        [UIHint("DateTime_ReadOnly")]
         public object NgayKichHoat { set; get; }
 
         [DisplayName("Nhân viên")]

@@ -15,8 +15,16 @@
             <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView1" Display="None" />
 
             <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="DetailsDataSource" OnItemDeleted="DetailsView1_ItemDeleted"
-                CssClass="detailstable" FieldHeaderStyle-CssClass="bold" >
+                CssClass="detailstable" FieldHeaderStyle-CssClass="bold" 
+                AutoGenerateRows="false">
                 <Fields>
+                    <asp:DynamicField DataField="Username"></asp:DynamicField>
+                    <asp:DynamicField DataField="Password"></asp:DynamicField>
+                    <asp:DynamicField DataField="Salt"></asp:DynamicField>
+                    <asp:DynamicField DataField="Email"></asp:DynamicField>
+                    <asp:DynamicField DataField="NgayKichHoat"></asp:DynamicField>
+                    <asp:DynamicField DataField="LOAI_TAI_KHOAN"></asp:DynamicField>
+                    <asp:DynamicField DataField="NHAN_VIEN"></asp:DynamicField> 
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:HyperLink ID="EditHyperLink" runat="server"

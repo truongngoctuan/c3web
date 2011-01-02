@@ -1,10 +1,13 @@
-﻿<%@ Control Language="C#" CodeBehind="Password_Edit.ascx.cs" Inherits="CTLH_C3.Password_EditField" %>
+﻿<%@ Control Language="C#" CodeBehind="Salt_ReadOnly_Edit.ascx.cs" Inherits="CTLH_C3.Salt_ReadOnly_EditField" %>
 
 <asp:TextBox 
     ID="TextBox1" 
     runat="server" 
     TextMode="Password"
     CssClass="DDTextBox" 
+    Enabled = "false"
+    BorderStyle ="None" 
+    BackColor = "White" 
     Value="<%# FieldValueEditString %>">
 </asp:TextBox>
 

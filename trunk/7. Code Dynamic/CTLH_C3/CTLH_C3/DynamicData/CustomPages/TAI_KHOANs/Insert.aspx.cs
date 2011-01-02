@@ -50,6 +50,7 @@ namespace CTLH_C3.TAI_KHOANs
         {
             e.Values["Salt"] = CryptographicHelper.CreateSalt();
             e.Values["Password"] = CryptographicHelper.CreatePasswordHash((string)e.Values["Password"], (string)e.Values["Salt"]);
+            e.Values["NgayKichHoat"] = DateTime.Now;
         }
     }
 }

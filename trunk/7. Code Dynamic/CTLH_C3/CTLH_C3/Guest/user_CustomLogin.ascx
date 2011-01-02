@@ -25,7 +25,7 @@
                             width:245px"></asp:Label>
 
                             <asp:Button ID="Button1" runat="server" Text="Quản lý tài khoản" 
-                            PostBackUrl="~/TAI_KHOANs/List.aspx" SkinID="LeftContent"/>
+                            PostBackUrl="~/TAI_KHOANs/ListDetails.aspx" SkinID="LeftContent"/>
                             <asp:Button ID="Button2" runat="server" Text="Thông tin công ty" 
                             PostBackUrl="~/Admin/ThayDoiGiaoDien.aspx" SkinID="LeftContent"/>
                         </div>
