@@ -1,13 +1,18 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" CodeBehind="Details.aspx.cs" Inherits="CTLH_C3.TRAM_XEs.Details" %>
+<%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
 
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="/dieuhanhcongtystyle.css" />
+    <title>Xem Chi Tiết Một Trạm</title>
+</asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
-    <h2>Entry from table <%= table.DisplayName %></h2>
+    <h1>Xem Chi Tiết Một Trạm</h1>
 
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
-
+    <div class="CanhGiua" style="width:300px;">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
@@ -23,7 +28,7 @@
                                 NavigateUrl='<%# table.GetActionPath(PageAction.Edit, GetDataItem()) %>'
                                 Text="Sửa" />
                             <asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete" CausesValidation="false"
-                                OnClientClick='return confirm("Are you sure you want to delete this item?");'
+                                OnClientClick='return confirm("Bạn có chắc muốn tuyến xe này không?");'
                                 Text="Xóa" />
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -39,8 +44,13 @@
             <br />
 
             <div class="bottomhyperlink">
-                <asp:HyperLink ID="ListHyperLink" runat="server">Show all items</asp:HyperLink>
+                <asp:HyperLink ID="ListHyperLink" runat="server">Xem danh sách trạm</asp:HyperLink>
             </div>        
         </ContentTemplate>
     </asp:UpdatePanel>
+    </div>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
+    <webUC:user_Login ID="user_Login1" runat="server" />
 </asp:Content>

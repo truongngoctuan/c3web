@@ -1,0 +1,16 @@
+﻿div#content
+{
+   width:740px;
+   padding-left:0px;
+}
+
+.CanhGiua
+{
+    margin:0px auto;
+    display:block;
+}
+
+h1
+{
+    text-align:center;
+}

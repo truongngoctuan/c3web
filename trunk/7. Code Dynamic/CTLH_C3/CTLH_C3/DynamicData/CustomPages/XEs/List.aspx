@@ -2,11 +2,17 @@
 
 <%@ Register src="~/DynamicData/Content/GridViewPager.ascx" tagname="GridViewPager" tagprefix="asp" %>
 <%@ Register src="~/DynamicData/Content/FilterUserControl.ascx" tagname="DynamicFilter" tagprefix="asp" %>
+<%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="/dieuhanhcongtystyle.css" />
+    <title>Quản Lý Thông Tin Xe</title>
+</asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
-
-    <h2 align="center">Quản lý thông tin xe</h2>
+<div class="CanhGiua" style="width:450px;">
+    <h1>Quản Lý Thông Tin Xe</h1>
 
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
 
@@ -56,8 +62,13 @@
             <br />
 
             <div class="bottomhyperlink">
-                <asp:HyperLink ID="InsertHyperLink" runat="server"><img runat="server" src="~/DynamicData/Content/Images/plus.gif" alt="Insert new item" />Thêm mới một đối tượng dữ liệu</asp:HyperLink>
+                <asp:HyperLink ID="InsertHyperLink" runat="server"><img runat="server" src="~/DynamicData/Content/Images/plus.gif" alt="Insert new item" />Thêm mới xe</asp:HyperLink>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
+    </div>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
+    <webUC:user_Login ID="user_Login1" runat="server" />
 </asp:Content>

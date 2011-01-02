@@ -108,7 +108,7 @@
                 </asp:LinqDataSource>
             </ContentTemplate>
         </asp:RoleGroup>
-        <asp:RoleGroup Roles="Quản Lý Trạm">
+        <asp:RoleGroup Roles="Điều hành trạm">
             <ContentTemplate>
                 Đăng nhập thành công !!!<br />
                 Tên QLT : 
@@ -120,16 +120,39 @@
                     LogoutPageUrl="~/Default.aspx" />   
                     </ContentTemplate>
                 </asp:RoleGroup>
-        <asp:RoleGroup Roles="Quản Lý Công Ty">
+        <asp:RoleGroup Roles="Điều hành công ty">
             <ContentTemplate>
-                Đăng nhập thành công !!!<br />
-                Tên QLCT : 
-                <asp:LoginName ID="LoginName1" runat="server" />
-                <br />
-                <asp:LoginStatus ID="LoginStatus1" runat="server" 
-                    LoginImageUrl="~/images/login_button.png" 
-                    LogoutImageUrl="~/images/logout-button.png"
-                    LogoutPageUrl="~/Default.aspx" />   
+                <asp:FormView ID="FormView1" runat="server" DataSourceID="ldsTenNhanVien"
+                        Width="245px">
+                        <ItemTemplate>
+                        <div style="width:245px; text-align:center;">
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" 
+                            LoginText="Đăng nhập"
+                            CssClass="ucloginlogout"                            
+                            LogoutText="Đăng xuất"                             
+                            LogoutPageUrl="~/Default.aspx"
+                            style="float:right;clear:both;"/>
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/HinhDaiDien.jpg"
+                        style="float:left; clear:both; margin-left:50px; margin-bottom:5px;"/>
+                        
+                        <asp:Label ID="lbHoTen" runat="server" 
+                        Text='<%#Bind("HoTen")%>' 
+                        style="
+                            float:left; clear:both;
+                            text-align:center;
+                            width:245px"></asp:Label>
+
+                            <%--<asp:Button ID="Button1" runat="server" Text="Quản lý tài khoản" 
+                            PostBackUrl="~/TAI_KHOANs/List.aspx" SkinID="LeftContent"/>
+                            <asp:Button ID="Button2" runat="server" Text="Thông tin công ty" 
+                            PostBackUrl="~/Admin/ThayDoiGiaoDien.aspx" SkinID="LeftContent"/>--%>
+                        </div>
+                    </ItemTemplate>
+                </asp:FormView>   
+                
+                <asp:LinqDataSource ID="ldsTenNhanVien" runat="server" 
+                onselecting="ldsTenNhanVien_Selecting">
+                </asp:LinqDataSource> 
             </ContentTemplate>
         </asp:RoleGroup>
     </RoleGroups>
