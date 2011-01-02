@@ -16,7 +16,7 @@ namespace CTLH_C3
     [Security(Role = "Anonymous", Action = "AnonymousList")]
     [Security(Role = "Điều hành công ty", Action = "All")]
     [Security(Role = "Điều hành trạm", Action = "List")]
-    [Security(Role = "Điều hành trạm", Action = "Detail")]
+    [Security(Role = "Điều hành trạm", Action = "Details")]
     [Security(Role = "Điều hành trạm", Action = "Edit")]
     [Security(Role = "Điều hành trạm", Action = "Insert")]    
     public partial class CHUYEN_XE
@@ -39,11 +39,15 @@ namespace CTLH_C3
     }
     [Security(Role = "Anonymous", Action = "AnonymousList")]
     [Security(Role = "Điều hành công ty", Action = "All")]
+    [Security(Role = "Điều hành trạm", Action = "All")]
     public partial class DAT_CHO
     {
     }
     [Security(Role = "Anonymous", Action = "AnonymousList")]
     [Security(Role = "Điều hành công ty", Action = "All")]
+    [Security(Role = "Điều hành trạm", Action = "List")]
+    [Security(Role = "Điều hành trạm", Action = "Edit")]
+    [Security(Role = "Điều hành trạm", Action = "Details")]
     public partial class PHAN_HOI_KHACH_HANG
     {
     }

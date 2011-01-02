@@ -14,7 +14,7 @@ using System.Web.DynamicData;
 
 namespace CTLH_C3.DAT_CHOs
 {
-    public partial class List : System.Web.UI.Page
+    public partial class List : CTLH_C3.Core.BasePage
     {
         protected MetaTable table;
 

@@ -14,7 +14,7 @@ using System.Web.DynamicData;
 
 namespace CTLH_C3.CHUYEN_XEs
 {
-    public partial class PhanHoi : System.Web.UI.Page
+    public partial class PhanHoi : CTLH_C3.Core.BasePage
     {
         protected MetaTable table;
         public int iMaChuyenXe;
