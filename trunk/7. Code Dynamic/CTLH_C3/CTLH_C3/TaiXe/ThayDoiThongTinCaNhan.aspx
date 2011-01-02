@@ -2,6 +2,8 @@
     CodeBehind="ThayDoiThongTinCaNhan.aspx.cs" Inherits="CTLH_C3.ThayDoiThongTinCaNhan" %>
 <%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
 
+<%@ Register src="../Authenticated/Controls/ucDoiMatKhau.ascx" tagname="ucDoiMatKhau" tagprefix="uc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/taixestyle.css" />
 <title>Thay Đổi Thông Tin Cá Nhân</title>
@@ -43,7 +45,15 @@
                         UpdateText="Cập nhật" />
                 </Fields>
             </asp:DetailsView>
+            
+            <%--Đổi mật khẩu--%>
+            <br />
+            <br />
+            <div id="doiMatKhau" style="border-style: dashed; border-width: medium">
+                <uc1:ucDoiMatKhau ID="ucDoiMatKhau1" runat="server" />
             </div>
+               
+           </div>
             
            <asp:LinqDataSource ID="ThongTinDataSource" runat="server"
                 EnableUpdate="true"   
@@ -51,7 +61,6 @@
                 TableName = "NHAN_VIENs" > 
            </asp:LinqDataSource>
            
-           <%--Thông tin tài khoản--%>
         </ContentTemplate>
     </asp:UpdatePanel>
     </div>
