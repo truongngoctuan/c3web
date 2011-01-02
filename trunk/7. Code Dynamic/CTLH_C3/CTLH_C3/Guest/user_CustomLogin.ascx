@@ -63,15 +63,15 @@
                             float:left; clear:both;
                             text-align:center; width:245px"></asp:Label>
                         
-                        <div style="
+<%--                        <div style="
                             float:left; clear:both;
                             text-align:center; width:245px">
                             Lương: 
                             <asp:Literal ID="Label1" runat="server" 
-                        Text=" <%#Bind('LuongTrongThang')%>"></asp:Literal> VNĐ</div>
+                        Text=" <%#Bind('LuongTrongThang')%>"></asp:Literal> VNĐ</div>--%>
                         
-                    <asp:Button ID="Button1" runat="server" Text="Xem chuyến kế tiếp" 
-                            PostBackUrl="~/TaiXe/TaiXe_Default.aspx" SkinID="LeftContent"/>
+                    <asp:Button ID="Button1" runat="server" Text="Xem lịch chạy" 
+                            PostBackUrl="~/TaiXe/LichChay.aspx" SkinID="LeftContent"/>
                             <asp:Button ID="Button2" runat="server" Text="Xem nhật kí" 
                             PostBackUrl="~/TaiXe/NhatKi.aspx" SkinID="LeftContent"/>
                             <asp:Button ID="Button3" runat="server" Text="Xem phản hồi" 

@@ -4,8 +4,8 @@
 <%@ Register src="~/Guest/user_CustomLogin.ascx" tagname="user_Login" tagprefix="webUC" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" type="text/css" href="adminstyle.css" />
-    <title>Thay Đổi Gian Diện</title>
+    <link rel="stylesheet" type="text/css" href="~/adminstyle.css" />
+    <title>Thay Đổi Giao Diện</title>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
@@ -16,7 +16,7 @@
         }
     </script>
     
-    <h1>Thay Đổi Gian Diện</h1>
+    <h1>Thay Đổi Giao Diện</h1>
     <%--upload file--%>
     <div style="float:left; clear:both; margin-bottom:75px;">
         Banner: <asp:Label runat="server" id="sttBanner" text=" " style="margin-bottom:15px;"/>
