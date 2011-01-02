@@ -6,6 +6,8 @@
       <siteMapNode  url="~/CHUYEN_XEs/List.aspx" title="Chuyến xe"  description="Quản lý thông tin chuyến"/>
       <siteMapNode  url="~/DieuHanhTram/PhatSinhChuyenTuDong.aspx" title="Phát sinh chuyến"  description="Phát sinh chuyến tự động"/>
       <siteMapNode  url="~/DieuHanhTram/PhanCongChuyen.aspx" title="Phân công chuyến"  description="Phân công chuyến xe cho tài xế"/>
+      <siteMapNode  url="~/DieuHanhTram/XacNhanXe.aspx" title="Xác nhận xuất bến"  description="Xác nhận xe đã xuất bến"/>
+      <siteMapNode  url="~/DieuHanhTram/XeDenTram.aspx" title="Xác nhận về bến"  description="Xác nhận xe đã về bến"/>
     </siteMapNode>
     <siteMapNode  title="Quản lý phản hồi"  description="Quản lý phản hồi">
       <siteMapNode url="~/DieuHanhTram/GhiNhanPhanHoi.aspx" title="Ghi nhận phản hồi"  description="Ghi nhận phản hồin" />
