@@ -23,19 +23,19 @@ thay đổi back ground*/
 
 .DynamicItem a
 {
-	color: #FFFFFF;
+	color: #FFFFFF !important;
 }
 
 .DynamicItem a {
-	color: #4AD2FF;
+	color: #4AD2FF !important;
 }
 
 .StaticItem a {	
-    color: #C00;
+    color: #C00 !important;
 }
 
 .StaticItem a:hover {
-	color: #F90;
+	color: #F90 !important;
 }
 
 
@@ -64,7 +64,7 @@ thay đổi back ground*/
 
 .ucDropDownListMouseOver
 {
-    border-width: 3px; 
+    border-width: 1px; 
 }
 
 .ucListBox
