@@ -34,18 +34,14 @@ namespace CTLH_C3.DieuHanhTram
             GridView_PHANHOI.DataBind();
         }
 
-       
-
-       
-
         protected void Button_Tim_Click(object sender, EventArgs e)
         {
             int iMaTuyenXe = Convert.ToInt32(DropDownList_TuyenXe.SelectedValue);
             DateTime KhoiHanh = Calendar1.SelectedDate;
             int iMaTaiXe = Convert.ToInt32(DropDownList_TaiXe.SelectedValue);
-            var cx = db.TimKiemChuyenXe(iMaTuyenXe, iMaTaiXe, KhoiHanh);
+            //var cx = db.TimKiemChuyenXe(iMaTuyenXe, iMaTaiXe, KhoiHanh);
 
-            GridView1.DataSource = cx;
+            //GridView1.DataSource = cx;
             GridView1.DataBind();
         }
 

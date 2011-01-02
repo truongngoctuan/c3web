@@ -7,40 +7,41 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-    <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
+    
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
+        HeaderText="Danh sách lỗi" />
+        
+    <asp:DetailsView ID="DetailsView1" runat="server" 
+        DataSourceID="DetailsDataSource" DefaultMode="Edit"
+        AutoGenerateEditButton="True" OnItemCommand="DetailsView1_ItemCommand" OnItemUpdated="DetailsView1_ItemUpdated"
+        CssClass="detailstable" FieldHeaderStyle-CssClass="bold"
+        AutoGenerateRows="false" onitemupdating="DetailsView1_ItemUpdating"
+        DataKeyNames="MaNhanVien">
+        <Fields>
+            <asp:BoundField DataField="MaNhanVien" HeaderText="Mã nhân viên" 
+                InsertVisible="False" ReadOnly="True" SortExpression="MaNhanVien" />
+            <asp:BoundField DataField="HoTen" HeaderText="Họ tên" SortExpression="HoTen" />
+            <asp:BoundField DataField="DienThoai" HeaderText="Điện thoại" 
+                SortExpression="DienThoai" />
+            <asp:BoundField DataField="DiaChi" HeaderText="Địa chỉ" 
+                SortExpression="DiaChi" />
+            <asp:TemplateField HeaderText="Hình ảnh">
+                <EditItemTemplate>
+                    <div>
+                        <asp:Label runat="server" id="sttImageUpload" text=" " style="margin-bottom:15px;clear:both;color:red"/>
+                    </div>
+                    <asp:FileUpload ID="fileUpload" runat="server" />
+                    <%--<asp:CustomValidator runat="server" id="cusCustom" controltovalidate="fileUpload" onservervalidate="cusCustom_ServerValidate" errormessage="Không hợp lệ" />--%>
+                </EditItemTemplate>
+            </asp:TemplateField>
+            <%--<asp:HyperLinkField HeaderText="Tài khoản" Text="Xem" DataNavigateUrlFields="MaTaiKhoan" DataNavigateUrlFormatString="~/TAI_KHOANs/List.aspx?MaTaiKhoan={0}"/>--%>
+        </Fields>
+    </asp:DetailsView>
 
-    <h1>Cập Nhật Thông Tin Nhân Viên</h1>
-
-    <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
-    <div class="CanhGiua" style="width:300px;">
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" EnableClientScript="true"
-                HeaderText="Danh sách lỗi" />
-            <asp:DynamicValidator runat="server" ID="DetailsViewValidator" ControlToValidate="DetailsView1" Display="None" />
-
-            <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="DetailsDataSource" DefaultMode="Edit"
-                AutoGenerateEditButton="false" OnItemCommand="DetailsView1_ItemCommand" OnItemUpdated="DetailsView1_ItemUpdated"
-                CssClass="detailstable" FieldHeaderStyle-CssClass="bold">
-                <Fields> 
-                    <asp:TemplateField> 
-                        <ItemTemplate> 
-                                <asp:Button ID="UpdateLinkButton" runat="server" CommandName="Update" CausesValidation="false" 
-                                   Text="Cập nhật" /> 
-                                <asp:Button ID="Button1" runat="server" CommandName="Cancel" CausesValidation="false" 
-                                   Text="Hủy bỏ" /> 
-                        </ItemTemplate> 
-                    </asp:TemplateField> 
-                </Fields> 
-            </asp:DetailsView>
-
-            <asp:LinqDataSource ID="DetailsDataSource" runat="server" EnableUpdate="true">
-                <WhereParameters>
-                    <asp:DynamicQueryStringParameter />
-                </WhereParameters>
-            </asp:LinqDataSource>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+    <asp:LinqDataSource ID="DetailsDataSource" runat="server" EnableUpdate="true"
+        ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext" TableName="NHAN_VIENs" >
+    </asp:LinqDataSource>
+        
     </div>
 </asp:Content>
 

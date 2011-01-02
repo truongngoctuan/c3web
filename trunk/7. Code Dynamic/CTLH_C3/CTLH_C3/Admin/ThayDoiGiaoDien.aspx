@@ -27,7 +27,6 @@
 		        <img class="fakefileimg" src="../images/uploadfilebutton.png" alt=""/>
 	        </div>
         </div>
-        
     </div>
 
     <div style="float:left; clear:both; margin-bottom:75px;">
