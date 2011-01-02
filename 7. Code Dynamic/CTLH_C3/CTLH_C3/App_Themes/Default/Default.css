@@ -302,16 +302,18 @@ input.file {
 /*a---------------------------------*/
 a 
 {
-    color: Navy;
+    color: #5E739E;
     text-decoration:none;
 }
 a:hover 
 {
-    color:Maroon;
+    color:#000087;
+    text-decoration:underline;
 }
 a:visited
 {
-    color:Olive;
+    color: #5E739E;
+    text-decoration:none;
 }
 
 /*LeftContentDanhSachTram---------------------------------*/
