@@ -142,6 +142,55 @@
     <Compile Include="Authenticated\DoiMatKhau.aspx.designer.cs">
       <DependentUpon>DoiMatKhau.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DieuHanhCongTy\DoanhThu\Nam.aspx.cs">
+      <DependentUpon>Nam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\DoanhThu\Nam.aspx.designer.cs">
+      <DependentUpon>Nam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\DoanhThu\Quy.aspx.cs">
+      <DependentUpon>Quy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\DoanhThu\Quy.aspx.designer.cs">
+      <DependentUpon>Quy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\DoanhThu\Thang.aspx.cs">
+      <DependentUpon>Thang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\DoanhThu\Thang.aspx.designer.cs">
+      <DependentUpon>Thang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\PhanCongXe.aspx.cs">
+      <DependentUpon>PhanCongXe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\PhanCongXe.aspx.designer.cs">
+      <DependentUpon>PhanCongXe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\SoLuongKhach\Nam.aspx.cs">
+      <DependentUpon>Nam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\SoLuongKhach\Nam.aspx.designer.cs">
+      <DependentUpon>Nam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\SoLuongKhach\Quy.aspx.cs">
+      <DependentUpon>Quy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\SoLuongKhach\Quy.aspx.designer.cs">
+      <DependentUpon>Quy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\SoLuongKhach\Thang.aspx.cs">
+      <DependentUpon>Thang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhCongTy\SoLuongKhach\Thang.aspx.designer.cs">
+      <DependentUpon>Thang.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TaiXe\MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -199,13 +248,6 @@
     </Compile>
     <Compile Include="DieuHanhCongTy\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="DieuHanhCongTy\QuanLyXe.aspx.cs">
-      <DependentUpon>QuanLyXe.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DieuHanhCongTy\QuanLyXe.aspx.designer.cs">
-      <DependentUpon>QuanLyXe.aspx</DependentUpon>
     </Compile>
     <Compile Include="DieuHanhTram\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -909,7 +951,6 @@
     <Content Include="DangNhap.aspx" />
     <Content Include="Default.sitemap" />
     <Content Include="DieuHanhCongTy\Default.aspx" />
-    <Content Include="DieuHanhCongTy\QuanLyXe.aspx" />
     <Content Include="DynamicData\CustomPages\TAI_KHOANs\Details.aspx" />
     <Content Include="DynamicData\CustomPages\TAI_KHOANs\Edit.aspx" />
     <Content Include="DynamicData\CustomPages\TAI_KHOANs\Insert.aspx" />
@@ -989,6 +1030,14 @@
     </Content>
     <Content Include="Authenticated\Controls\ucDoiMatKhau.ascx" />
     <Content Include="Authenticated\DoiMatKhau.aspx" />
+    <Content Include="dieuhanhcongtystyle.css" />
+    <Content Include="DieuHanhCongTy\DoanhThu\Nam.aspx" />
+    <Content Include="DieuHanhCongTy\DoanhThu\Quy.aspx" />
+    <Content Include="DieuHanhCongTy\DoanhThu\Thang.aspx" />
+    <Content Include="DieuHanhCongTy\PhanCongXe.aspx" />
+    <Content Include="DieuHanhCongTy\SoLuongKhach\Nam.aspx" />
+    <Content Include="DieuHanhCongTy\SoLuongKhach\Quy.aspx" />
+    <Content Include="DieuHanhCongTy\SoLuongKhach\Thang.aspx" />
     <Content Include="gueststyle.css" />
     <Content Include="images\0712164.jpg" />
     <Content Include="images\0712167.jpg" />

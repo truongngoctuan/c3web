@@ -14,7 +14,7 @@ using System.Web.DynamicData;
 
 namespace CTLH_C3.TUYEN_XEs
 {
-    public partial class Details : System.Web.UI.Page
+    public partial class Details : CTLH_C3.Core.BasePage
     {
         protected MetaTable table;
 
