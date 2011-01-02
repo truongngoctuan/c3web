@@ -72,6 +72,7 @@ namespace CTLH_C3
         [DisplayName("Tài xế")]
         public object NHAN_VIEN { set; get; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Tình trạng")]
         public object TinhTrang { set; get; }
 
@@ -81,14 +82,26 @@ namespace CTLH_C3
         [DisplayName("Lương tài xế")]
         public object LuongTaiXe { set; get; }
 
+        [DisplayName("Số lượng mua vé")]
+        public object SoLuongMuaVe { set; get; }
+
+        [DisplayName("Dự kiến đến")]
+        public object DuKienDen { set; get; }
+
         [DisplayName("Giá Vé")]
         public object GiaVe { set; get; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Chỗ ngồi")]
         public object DAT_CHOs { set; get; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Phản hồi")]
         public object PHAN_HOIs { set; get; }
+
+        [ScaffoldColumn(false)]
+
+        public object TINH_TRANG_CHUYEN_XE { set; get; }
     }
 
     [MetadataType(typeof(CHUYEN_XE_Metadata))]
@@ -200,7 +213,7 @@ namespace CTLH_C3
         [DisplayName("Hình ảnh")]
         public object IMAGE_STORE { set; get; }
 
-        //[ScaffoldColumn(false)]
+        [ScaffoldColumn(false)]
         [DisplayName("Tài khoản")]
         public object TAI_KHOANs { set; get; }
 
@@ -500,28 +513,7 @@ namespace CTLH_C3
     [DisplayName("Tuyến xe")]
     public partial class TUYEN_XE
     {
-        // Kiem tra loi ten tuyen xe
-        partial void OnTenTuyenXeChanging(string value)
-        {
-            if (string.IsNullOrEmpty(this._TenTuyenXe) == true)
-            {
-                throw new ValidationException("Tên tuyến xe phải có");
-            }
-        }
-
-        // Kiem tra loi SoLuongChuyen
-        partial void OnSoLuongChuyenChanging(int? value)
-        {
-           
-            throw new ValidationException("Khong phai so");
-        }
-        partial void OnValidate(System.Data.Linq.ChangeAction action)
-        {
-            if (string.IsNullOrEmpty(this._TenTuyenXe) == true)
-            {
-                throw new ValidationException("Tên tuyến xe phải có");
-            }
-        }
+        
 
     }
 #endregion

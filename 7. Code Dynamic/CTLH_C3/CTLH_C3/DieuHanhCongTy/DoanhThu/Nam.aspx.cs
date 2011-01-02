@@ -15,7 +15,14 @@ namespace CTLH_C3.DieuHanhCongTy.DoanhThu
            
              TableRow row;
             TableCell cell ;
-            
+            row = new TableRow();
+            cell = new TableCell();
+            cell.Text = "Năm";
+            row.Cells.Add(cell);
+            cell = new TableCell();
+            cell.Text = "Doanh thu";
+            row.Cells.Add(cell);
+            table.Rows.Add(row);
             DateTime min = Convert.ToDateTime((from x in db.CHUYEN_XEs where x.TinhTrang == 3 select x.KhoiHanh).Min());
             int namMin = min.Year;
             int namMax;

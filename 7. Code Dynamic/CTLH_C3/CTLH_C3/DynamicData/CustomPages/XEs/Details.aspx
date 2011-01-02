@@ -16,18 +16,9 @@
 
             <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="DetailsDataSource" OnItemDeleted="DetailsView1_ItemDeleted"
                 CssClass="detailstable" FieldHeaderStyle-CssClass="bold" >
-                <Fields>
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:HyperLink ID="EditHyperLink" runat="server"
-                                NavigateUrl='<%# table.GetActionPath(PageAction.Edit, GetDataItem()) %>'
-                                Text="Sửa" />
-                            <asp:LinkButton ID="DeleteLinkButton" runat="server" CommandName="Delete" CausesValidation="false"
-                                OnClientClick='return confirm("Bạn có chắc chắn muốn chiếc xe này không?");'
-                                Text="Xóa" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Fields>
+                 
+                
+                
             </asp:DetailsView>
 
             <asp:LinqDataSource ID="DetailsDataSource" runat="server" EnableDelete="true">

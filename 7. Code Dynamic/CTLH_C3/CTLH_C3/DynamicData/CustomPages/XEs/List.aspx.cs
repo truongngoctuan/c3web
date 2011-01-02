@@ -37,8 +37,8 @@ namespace CTLH_C3.XEs
                 GridView1.Columns[0].Visible = false;
                 InsertHyperLink.Visible = false;
             }
-            FilterRepeater.Items[0].Visible = false;
-            FilterRepeater.Items[2].Visible = false;
+            FilterRepeater.Items[1].Visible = false;
+            FilterRepeater.Items[3].Visible = false;
             
         }
 
