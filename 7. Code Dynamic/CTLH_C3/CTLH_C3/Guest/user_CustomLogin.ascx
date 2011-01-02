@@ -141,11 +141,19 @@
                             float:left; clear:both;
                             text-align:center;
                             width:245px"></asp:Label>
-
-                            <%--<asp:Button ID="Button1" runat="server" Text="Quản lý tài khoản" 
-                            PostBackUrl="~/TAI_KHOANs/List.aspx" SkinID="LeftContent"/>
-                            <asp:Button ID="Button2" runat="server" Text="Thông tin công ty" 
-                            PostBackUrl="~/Admin/ThayDoiGiaoDien.aspx" SkinID="LeftContent"/>--%>
+                            
+                            <asp:Button ID="Button1" runat="server" Text="Quản lý xe" 
+                            PostBackUrl="~/XEs/List.aspx" SkinID="LeftContent"/>
+                            <asp:Button ID="Button4" runat="server" Text="Quản lý tuyến" 
+                            PostBackUrl="~/TUYEN_XEs/List.aspx" SkinID="LeftContent"/>
+                            <asp:Button ID="Button5" runat="server" Text="Quản lý trạm" 
+                            PostBackUrl="~/TRAM_XEs/List.aspx" SkinID="LeftContent"/>
+                            <asp:Button ID="Button6" runat="server" Text="Phân công xe cho tài xế" 
+                            PostBackUrl="~/DieuHanhCongTy/PhanCongXe.aspx" SkinID="LeftContent"/>
+                            <asp:Button ID="Button7" runat="server" Text="TK khách theo tháng" 
+                            PostBackUrl="~/DieuHanhCongTy/SoLuongKhach/Thang.aspx" SkinID="LeftContent"/>
+                            <asp:Button ID="Button8" runat="server" Text="TK doanh thu theo tháng" 
+                            PostBackUrl="~/DieuHanhCongTy/DoanhThu/Thang.aspx" SkinID="LeftContent"/>
                         </div>
                     </ItemTemplate>
                 </asp:FormView>   
