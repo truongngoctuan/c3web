@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" CodeBehind="PhanCongXe.aspx.cs" Inherits="CTLH_C3.DieuHanhCongTy.List" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/DieuHanhCongTy/MasterPage.master" CodeBehind="PhanCongXe.aspx.cs" Inherits="CTLH_C3.DieuHanhCongTy.List" %>
 
 <%@ Register src="~/DynamicData/Content/GridViewPager.ascx" tagname="GridViewPager" tagprefix="asp" %>
 <%@ Register src="~/DynamicData/Content/FilterUserControl.ascx" tagname="DynamicFilter" tagprefix="asp" %>

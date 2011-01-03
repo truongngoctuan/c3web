@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Thang.aspx.cs" Inherits="CTLH_C3.DieuHanhCongTy.SoLuongKhach.Thang" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/DieuHanhCongTy/MasterPage.Master" AutoEventWireup="true" CodeBehind="Thang.aspx.cs" Inherits="CTLH_C3.DieuHanhCongTy.SoLuongKhach.Thang" %>
 <%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

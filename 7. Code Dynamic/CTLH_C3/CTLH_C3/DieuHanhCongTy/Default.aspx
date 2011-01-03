@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CTLH_C3.DieuHanhCongTy.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DieuHanhCongTy/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CTLH_C3.DieuHanhCongTy.Default" %>
 
 <%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
 <%@ Register Src="~/Guest/user_HotLine.ascx" TagName="user_HotLine" TagPrefix="webUC" %>
@@ -14,7 +14,7 @@
 <%@ Register Src="~/Guest/user_DanhSachTram.ascx" TagName="user_DanhSachTram" TagPrefix="webUC" %>
     
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<link rel="stylesheet" type="text/css" href="gueststyle.css" />
+<link rel="stylesheet" type="text/css" href="/gueststyle.css" />
 <title>Trang chủ</title>
 </asp:Content>
 
