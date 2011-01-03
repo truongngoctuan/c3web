@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" CodeBehind="Details.aspx.cs" Inherits="CTLH_C3.CHUYEN_XEs.Details" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/DieuHanhTram/MasterPage.Master" CodeBehind="Details.aspx.cs" Inherits="CTLH_C3.CHUYEN_XEs.Details" %>
 <%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">

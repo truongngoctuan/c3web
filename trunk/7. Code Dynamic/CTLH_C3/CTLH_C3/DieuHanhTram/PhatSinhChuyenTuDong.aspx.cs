@@ -14,7 +14,7 @@ using System.Web.DynamicData;
 
 namespace CTLH_C3.DieuHanhTram
 {
-    public partial class PhatSinhChuyenTuDong : System.Web.UI.Page
+    public partial class PhatSinhChuyenTuDong : CTLH_C3.Core.BasePage
     {
         protected MetaTable table;
         TRAVEL_WEBDataContext db = new TRAVEL_WEBDataContext();

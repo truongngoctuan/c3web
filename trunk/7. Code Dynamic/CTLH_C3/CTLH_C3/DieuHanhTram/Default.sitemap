@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode>
-    <siteMapNode url="~/Default.aspx" title="Trang Chủ"  description="Trang Chủ"/>
+    <siteMapNode url="~/DieuHanhTram/Default.aspx" title="Trang Chủ"  description="Trang Chủ"/>
     <siteMapNode   title="Quản lý chuyến"  description="Quản lý chuyến">
       <siteMapNode  url="~/CHUYEN_XEs/List.aspx" title="Chuyến xe"  description="Quản lý thông tin chuyến"/>
       <siteMapNode  url="~/DieuHanhTram/PhatSinhChuyenTuDong.aspx" title="Phát sinh chuyến"  description="Phát sinh chuyến tự động"/>

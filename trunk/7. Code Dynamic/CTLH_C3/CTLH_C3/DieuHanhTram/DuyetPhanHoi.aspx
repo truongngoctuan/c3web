@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" CodeBehind="DuyetPhanHoi.aspx.cs" Inherits="CTLH_C3.DieuHanhTram.DuyetPhanHoi" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/DieuHanhTram/MasterPage.master" CodeBehind="DuyetPhanHoi.aspx.cs" Inherits="CTLH_C3.DieuHanhTram.DuyetPhanHoi" %>
 
 <%@ Register src="~/DynamicData/Content/GridViewPager.ascx" tagname="GridViewPager" tagprefix="asp" %>
 <%@ Register src="~/DynamicData/Content/FilterUserControl.ascx" tagname="DynamicFilter" tagprefix="asp" %>
@@ -13,9 +13,9 @@
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
     <h1>Duyệt Phản Hồi Khách Hàng</h1>
-
+    
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
-    <%--<div class="CanhGiua" style="width:300px;">--%>
+    <div class="CanhGiua" style="width:300px;">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             
@@ -126,7 +126,7 @@
             
         </ContentTemplate>
     </asp:UpdatePanel>
-    <%--</div>--%>
+    </div>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">

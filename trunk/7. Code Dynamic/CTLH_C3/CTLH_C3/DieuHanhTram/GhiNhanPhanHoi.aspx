@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="GhiNhanPhanHoi.aspx.cs" Inherits="CTLH_C3.DieuHanhTram.GhiNhanPhanHoi" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/DieuHanhTram/MasterPage.Master" AutoEventWireup="true" CodeBehind="GhiNhanPhanHoi.aspx.cs" Inherits="CTLH_C3.DieuHanhTram.GhiNhanPhanHoi" %>
 
 <%@ Register src="~/DynamicData/Content/GridViewPager.ascx" tagname="GridViewPager" tagprefix="asp" %>
 <%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
@@ -30,11 +30,12 @@
      }  
     </script>
     <h1>Ghi Nhận Phản Hồi</h1>
-
+    <div class="CanhGiua" style="width:300px;">
     <asp:Label ID="Label4" runat="server" Text="Nội dung phản hồi"></asp:Label>
     <br/>
-    <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" Height="110px" 
-        Width="526px"></asp:TextBox>
+    <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" style="height:250px; width:400px;
+                background-image:none;
+                background-color:#EEF9FE;" ></asp:TextBox>
     <br/>
     <asp:Label ID="Label1" runat="server" Text="Chọn tuyến xe"></asp:Label>
     <asp:DropDownList ID="DropDownList_TuyenXe" runat="server" 
@@ -100,7 +101,7 @@
     
     <asp:Button ID="Button_OK" runat="server" Text="Thêm phản hồi" 
         onclick="Button_OK_Click" />
-        
+        </div>
     <asp:LinqDataSource ID="GridDataSource" runat="server" 
         ContextTypeName="CTLH_C3.TRAVEL_WEBDataContext" 
         Select="new (KhoiHanh, MaTuyenXe)" TableName="CHUYEN_XEs" Where="MaTuyenXe == @MaTuyenXe &amp;&amp; MaChuyenXe == @MaChuyenXe" 
