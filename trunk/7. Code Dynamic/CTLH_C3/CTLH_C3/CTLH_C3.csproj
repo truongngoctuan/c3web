@@ -1102,6 +1102,10 @@
     <Content Include="DieuHanhCongTy\DoanhThu\Nam.aspx" />
     <Content Include="DieuHanhCongTy\DoanhThu\Quy.aspx" />
     <Content Include="DieuHanhCongTy\DoanhThu\Thang.aspx" />
+    <Content Include="DieuHanhCongTy\images\banner.jpg" />
+    <Content Include="DieuHanhCongTy\images\Logo.png" />
+    <Content Include="DieuHanhCongTy\images\slogan.png" />
+    <Content Include="DieuHanhCongTy\images\truck.png" />
     <Content Include="DieuHanhCongTy\PhanCongXe.aspx" />
     <Content Include="DieuHanhCongTy\SoLuongKhach\Nam.aspx" />
     <Content Include="DieuHanhCongTy\SoLuongKhach\Quy.aspx" />
