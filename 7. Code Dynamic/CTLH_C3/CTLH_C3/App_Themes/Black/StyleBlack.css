@@ -57,3 +57,332 @@ div#content
 div#right
 {
 }
+
+
+
+/*user control------------------------------------------------------------------------*/
+.ucLabel 
+{
+}
+
+.ucRadioButton
+{
+}
+
+.ucDropDownList
+{
+    border-width: 1px; 
+    border-color:Blue;
+    color: #090d37; 
+    font-family: Verdana; 
+    font-weight: bold;
+    /*http://vinasupport.com/blog/2010/08/tao-goc-bo-tron-rounded-corner-voi-css3/*/
+    /*for chrome, safari*/
+    -webkit-border-radius: 4px;
+    /*for firefox*/
+    -moz-border-radius: 4px;
+}
+
+.ucDropDownListMouseOver
+{
+    border-width: 1px; 
+}
+
+.ucListBox
+{
+}
+/*ucButton, ucPasswordSubmitButton (của guest - quên mật khẩu)-------------------*/
+.ucButton, .ucPasswordSubmitButton
+{    
+    color:#090d37;
+    vertical-align:middle;
+    background-color:Transparent;
+    background-image: url(images/btBackgourndGradient.png);
+    background-repeat:repeat-x;
+    background-position: 0px 0px;
+    
+    /*http://vinasupport.com/blog/2010/08/tao-goc-bo-tron-rounded-corner-voi-css3/*/
+    /*for chrome, safari*/
+    -webkit-border-radius: 4px;
+    /*for firefox*/
+    -moz-border-radius: 4px;
+    border-color:#3a92ff;
+    border-width:1px;
+    
+    font-family:Verdana;
+    font-size:11px;
+    font-weight:bold;
+    height:28px;
+}
+.ucButton 
+{
+    margin: 5px 5px;
+}
+
+.ucButton:hover, .ucPasswordSubmitButton:hover
+{
+    color:White;
+    text-shadow: 0 -1px 0 #4C9021;
+    border-color:#235899;
+    /*background-image: url(images/btBackgroundGradientHover.jpg);*/
+    background-position: 0px -28px;
+}
+.ucButton:active, .ucPasswordSubmitButton:active
+{
+    color:White;
+    text-shadow: 0 -1px 0 #4C9021;
+    border-color:#235899;
+    /*background-image: url(images/btBackgroundGradientActive.jpg);*/
+    background-position: 0px -56px;
+}
+
+/*ucLeftContentButton-----------------------------------------------------------*/
+.ucLeftContentButton
+{    
+    color:#090d37;
+    vertical-align:middle;
+    background-color:Transparent;
+    background-image: url(images/btLeftContent.jpg);
+    
+    border-width:0px;
+    border-style:none;
+    
+    font-family:Verdana;
+    font-size:14px;
+    font-weight:bold;
+    height:101px;
+    width:226px;
+    margin: 5px auto;
+}
+
+.ucLeftContentButton:hover
+{
+    color:Maroon;
+}
+.ucLeftContentButton:active
+{
+    color:Navy;
+}
+
+/*ucTextbox-----------------------------------------------------------*/
+
+.ucTextbox
+{
+    vertical-align:baseline;
+    background-color:Transparent;
+    background-image: url(images/tbBackgroundGradient.jpg);
+    /*http://vinasupport.com/blog/2010/08/tao-goc-bo-tron-rounded-corner-voi-css3/*/
+    /*for chrome, safari*/
+    -webkit-border-radius: 4px;
+    /*for firefox*/
+    -moz-border-radius: 4px;
+    
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.ucRadioButton
+{
+    background-image: url(images/tbBackgroundGradient.jpg);
+}
+
+/* checkbox + radio button-------------------------------------------------- */
+/* wrapper divs */
+.custom-checkbox, .custom-radio { position: relative; }
+	
+/* input, label positioning */
+.custom-checkbox input, 
+.custom-radio input {
+	position: absolute;
+	left: 2px;
+	top: 3px;
+	margin: 0;
+	z-index: 0;
+}
+
+.custom-checkbox label, 
+.custom-radio label {
+	display: block;
+	position: relative;
+	z-index: 1;
+	/*font-size: 1.3em;*/
+	padding-right: 1em;
+	line-height: 1;
+	padding: .5em 0 1em 30px;
+	margin: 0 0 .3em;
+	cursor: pointer;
+}
+
+.custom-checkbox label{ background: url(images/checkbox.gif) no-repeat; }
+
+.custom-radio label { background: url(images/radiobutton.gif) no-repeat; }
+
+.custom-checkbox label, .custom-radio label {
+	background-position: -10px -16px;
+}
+
+.custom-checkbox label.hover,
+.custom-checkbox label.focus,
+.custom-radio label:hover,
+.custom-radio label.focus {
+	background-position: -10px -116px;
+}
+
+.custom-checkbox label.checked, 
+.custom-radio label.checked {
+	background-position: -10px -216px;
+}
+
+.custom-checkbox label.checkedHover, 
+.custom-checkbox label.checkedFocus {
+	background-position: -10px -316px;
+}
+
+.custom-checkbox label.focus, 
+.custom-radio label.focus {
+	outline: 1px dotted #ccc;
+}
+
+/*hyperlink log in, log out------------------------------------------------------*/
+.ucloginlogout
+{    
+    color:#090d37;
+    vertical-align:middle;
+   
+    font-family:Verdana;
+    font-size:11px;
+    font-weight:bold;
+    height:20px;
+    
+    padding: 0px 0px 0px 0px;
+}
+
+.ucloginlogout:hover
+{
+    color:Maroon;
+}
+.ucloginlogout:active
+{
+    color:Olive;
+}
+
+/*fileupload------------------------------------------------------*/
+/*http://www.quirksmode.org/dom/inputfile.html*/
+div.fileinputs {
+	position:relative;
+}
+
+div.fakefile {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+input.file {
+	position: absolute;
+	top: 15px;
+	left: 0px;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+}
+
+.fakeinput 
+{
+    position: absolute;
+	top: 15px;
+	left: 0px;
+	
+	vertical-align:baseline;
+    background-color:Transparent;
+    background-image: url(images/tbBackgroundGradient.jpg);
+    /*http://vinasupport.com/blog/2010/08/tao-goc-bo-tron-rounded-corner-voi-css3/*/
+    /*for chrome, safari*/
+    -webkit-border-radius: 4px;
+    /*for firefox*/
+    -moz-border-radius: 4px;
+    
+    border-width:1px;
+    border-color:#3a92ff;
+    color:#090d37;
+    font-family:Verdana;
+    font-size:11px;
+    height:20px;
+}
+
+.fakefileimg
+{
+    position:absolute;
+    left:120px;
+    top:5px;
+}
+
+/*a---------------------------------*/
+a 
+{
+    color: #5E739E;
+    text-decoration:none;
+}
+a:hover 
+{
+    color:#000087;
+    text-decoration:underline;
+}
+a:visited
+{
+    color: #5E739E;
+    text-decoration:none;
+}
+
+/*LeftContentDanhSachTram---------------------------------*/
+.LeftContentDanhSachTram div
+{
+    background-image: url(images/LeftPanelHeader.jpg);
+    width:179px; 
+    height:42px; 
+    display:block;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.LeftContentDanhSachTram ul
+{
+    list-style:none; 
+    padding: 0px 0px; 
+    margin: 5px 5px;
+    margin-top:0px;
+    padding-top:5px;
+    background-color: #EEFBFF;
+    border: solid 1px #5672C5;
+    border-top-width:0px;
+    width:177px;
+}
+
+.LeftContentDanhSachTram a
+{
+    width:140px; 
+    height:28px; 
+    display:block;
+    background-image: url(images/LeftPanelItem.jpg);
+    background-repeat:no-repeat;
+    background-color: #EEFBFF;
+    padding-left:32px;
+    padding-top:8px;
+    margin-left:5px;
+    text-decoration:none; 
+    color:Navy;
+}
+/*gridviewemtycontent---------------------------------*/
+.gridviewemtycontent
+{
+    border-style:none;
+}
+
+/*gridviewemtycontent---------------------------------*/
+table.gridview th 
+{
+    font-weight:bold;
+}

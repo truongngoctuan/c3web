@@ -1138,6 +1138,15 @@
     <Content Include="App_Data\CTLH_C3_log.ldf">
       <DependentUpon>CTLH_C3.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Themes\Black\images\btBackgroundGradient.jpg" />
+    <Content Include="App_Themes\Black\images\btBackgroundGradientActive.jpg" />
+    <Content Include="App_Themes\Black\images\btBackgroundGradientHover.jpg" />
+    <Content Include="App_Themes\Black\images\btBackgroundGradientNormal.jpg" />
+    <Content Include="App_Themes\Black\images\checkbox.gif" />
+    <Content Include="App_Themes\Black\images\header_bg_right2.gif" />
+    <Content Include="App_Themes\Black\images\menu_bg.gif" />
+    <Content Include="App_Themes\Black\images\radiobutton.gif" />
+    <Content Include="App_Themes\Black\images\tbBackgroundGradient.jpg" />
     <Content Include="Authenticated\Controls\ucDoiMatKhau.ascx" />
     <Content Include="Authenticated\DoiMatKhau.aspx" />
     <Content Include="dieuhanhcongtystyle.css" />

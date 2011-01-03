@@ -15,7 +15,7 @@ using CTLH_C3.Core;
 
 namespace CTLH_C3.TAI_KHOANs
 {
-    public partial class ListDetails : System.Web.UI.Page
+    public partial class ListDetails : CTLH_C3.Core.BasePage
     {
         protected void Page_Init(object sender, EventArgs e)
         {

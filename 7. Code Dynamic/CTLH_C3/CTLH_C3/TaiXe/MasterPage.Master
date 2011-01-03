@@ -80,10 +80,7 @@
             <%--chứa các radio button cho chọn theme--%>
             <div id="header_right"
             style="position:absolute; right:0px; top:0px;
-            width:200px; height:50px;
-            background-color:Silver;
-            border-bottom-width:1px;
-            border-color:Gray;">
+            width:200px; height:50px;">
                 <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
                     TypeName="ThemeManager"></asp:ObjectDataSource>
                 <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" DataSourceID="ThemeDataSource"
