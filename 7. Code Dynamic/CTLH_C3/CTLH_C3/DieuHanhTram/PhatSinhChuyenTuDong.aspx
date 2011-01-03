@@ -1,15 +1,20 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" CodeBehind="PhatSinhChuyenTuDong.aspx.cs" Inherits="CTLH_C3.DieuHanhTram.PhatSinhChuyenTuDong" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/DieuHanhTram/MasterPage.master" CodeBehind="PhatSinhChuyenTuDong.aspx.cs" Inherits="CTLH_C3.DieuHanhTram.PhatSinhChuyenTuDong" %>
 
 <%@ Register src="~/DynamicData/Content/GridViewPager.ascx" tagname="GridViewPager" tagprefix="asp" %>
 <%@ Register src="~/DynamicData/Content/FilterUserControl.ascx" tagname="DynamicFilter" tagprefix="asp" %>
+<%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
 
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="/dieuhanhcongtystyle.css" />
+    <title>Phát Sinh Chuyến Tự Động</title>
+</asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
-    <h2>Các tuyến xe có thể xếp tự động</h2>
+    <h1>Phát Sinh Chuyến Tự Động</h1>
 
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
-
+    <div class="CanhGiua" style="width:300px;">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
 
@@ -65,4 +70,9 @@
 
         </ContentTemplate>
     </asp:UpdatePanel>
+    </div>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
+    <webUC:user_Login ID="user_Login1" runat="server" />
 </asp:Content>
