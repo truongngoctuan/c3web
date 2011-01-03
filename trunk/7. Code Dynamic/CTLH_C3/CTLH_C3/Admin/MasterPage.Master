@@ -1,34 +1,36 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="CTLH_C3.Admin.MasterPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head id="Head1" runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">        
     </asp:ContentPlaceHolder>
-    <link href="~/Master.css" rel="stylesheet" type="text/css" />
-    <script src="~/jquery-1.4.4.js" type="text/javascript"></script>
+    <link href="/Master.css" rel="stylesheet" type="text/css" />
+	<link href="/Site.css" rel="stylesheet" type="text/css" />
+    <script src="/jquery-1.4.4.js" type="text/javascript"></script>
+    
 </head>
 
 <body>    
     <form id="form1" runat="server"> 
     <div id="site">   
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"/>
     <!--****************************************************************-->
     <div id="top">
-        <img style="float:left" src="~/images/header_bg_left.gif" width="270" height="193" alt="" />
-        <img style="float:left" src="~/images/header_bg_mid.gif" width="412" height="193" alt="" />
-        <div id="header_right">
-            <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
-                TypeName="ThemeManager"></asp:ObjectDataSource>
-            <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" DataSourceID="ThemeDataSource"
-                DataTextField="Name" DataValueField="Name" RepeatDirection="Horizontal" OnDataBound="ThemeList_DataBound"
-                OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
-            </asp:RadioButtonList>
-        </div>  
-              
-        <div id="Menu">
+        <asp:Image ID="imgBanner" runat="server" 
+        style="float:left; clear:both;z-index:1;"
+        ImageUrl="images/banner.jpg"/>
+
+        <%--menu and dynamic colorbackground--%>
+        <div id="MenuBackground" style="float:left; clear:both;z-index:1;
+            background-color: #c9e6ff; 
+            width: 995px; height:58px; 
+            margin-bottom:25px;"> 
+        </div> 
+        <div id="Menu" style="position:absolute; z-index:10;
+            margin-left:auto; margin-right:auto; top:193px;
+            background-image: url(/images/MenuBackgroundTransparent.png); ">
             <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSourceMenu"
                             Orientation="Horizontal" 
                             staticdisplaylevels="2" 
@@ -45,37 +47,85 @@
             <DynamicHoverStyle CssClass="dynamicMenuItemHover" />
             <DynamicMenuStyle CssClass="dynamicMenuStyle" />
             <DynamicSelectedStyle CssClass="dynamicMenuItemSelectedStyle" />
-            </asp:Menu>          
-        </div>   
-          
-        <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server" SiteMapProvider="AdminSiteMap" />
-    
-        <div id="header_bg_right2"></div>
-        <img style="float:left;" src="images/menu_bg_bottom.gif" width="995" height="22" alt="" />
+            </asp:Menu>
+         </div> 
+        <%--menu shadow--%>
+        <div style="position:absolute; 
+            margin-left:auto; margin-right:auto; top:181px;z-index:5;">
+            <img style="float:left; clear:both;" 
+            src="/images/menushadowtop.png" width="995" height="12" alt=""/>
+            <img style="float:left; clear:both;z-index:5; margin-top:58px;" 
+            src="/images/menushadowbottom.png" width="995" height="17" alt=""/>
+        </div>
+        
+        
+        <div style="position:absolute; z-index:8;
+        width:995px; height:251px; 
+        margin-left:auto; margin-right:auto;">
+            <%--logo--%>
+            <asp:Image ID="imgLogo" runat="server" 
+            style="position:absolute; 
+                left:59px; top:0px;" 
+                ImageUrl="images/Logo.png"/>
+            
+            <%--slogan--%>
+            <asp:Image ID="imgSlogan" runat="server" 
+            style="position:absolute; 
+                left:0px; top:104px;" 
+                ImageUrl="images/slogan.png"/>
+            
+            <%--truck--%>
+            <asp:Image ID="Image1" runat="server" 
+            style="position:absolute; 
+            right:0px; top:0px;" 
+            width="374" height="277" 
+                ImageUrl="images/truck.png"/>
+            
+            <%--chứa các radio button cho chọn theme--%>
+            <div id="header_right"
+            style="position:absolute; right:0px; top:0px;
+            width:200px; height:50px;
+            background-color:Silver;
+            border-bottom-width:1px;
+            border-color:Gray;">
+                <asp:ObjectDataSource ID="ThemeDataSource" runat="server" SelectMethod="GetThemes"
+                    TypeName="ThemeManager"></asp:ObjectDataSource>
+                <asp:RadioButtonList ID="ThemeList" runat="server" AutoPostBack="True" DataSourceID="ThemeDataSource"
+                    DataTextField="Name" DataValueField="Name" RepeatDirection="Horizontal" OnDataBound="ThemeList_DataBound"
+                    OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
+                </asp:RadioButtonList>
+            </div> 
+        </div>
+        
+
+        <asp:SiteMapDataSource ID="SiteMapDataSourceMenu" runat="server"/>
     </div>
     <!--****************************************************************-->
     <div id="page">
      <!--****************************************************************-->
          <div id="left">
             <asp:ContentPlaceHolder ID="LeftContent" runat="server">
+                &nbsp;
             </asp:ContentPlaceHolder>
         </div>
         <!--****************************************************************-->
         <div id="content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">         
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"> 
+                &nbsp;         
             </asp:ContentPlaceHolder>
         </div>
   
         <!--****************************************************************-->
         <div id="right">
-            <asp:ContentPlaceHolder ID="RightContent" runat="server">          
+            <asp:ContentPlaceHolder ID="RightContent" runat="server"> 
+                &nbsp;           
             </asp:ContentPlaceHolder>
         </div>    
     <!--****************************************************************-->
     </div>
     <!--****************************************************************-->
     <div id="bottom">
-        <img src="../images/footer_bg.gif" width="995" height="101" alt=""/>
+        <img src="/images/footer_bg.gif" width="995" height="101" alt=""/>
     </div>
     <!--****************************************************************-->
     </div>
