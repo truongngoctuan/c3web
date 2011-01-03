@@ -220,6 +220,20 @@
     <Compile Include="DieuHanhTram\QuanLyVe.aspx.designer.cs">
       <DependentUpon>QuanLyVe.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DieuHanhTram\XacNhanXe.aspx.cs">
+      <DependentUpon>XacNhanXe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\XacNhanXe.aspx.designer.cs">
+      <DependentUpon>XacNhanXe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DieuHanhTram\XeDenTram.aspx.cs">
+      <DependentUpon>XeDenTram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DieuHanhTram\XeDenTram.aspx.designer.cs">
+      <DependentUpon>XeDenTram.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DynamicData\CustomPages\TAI_KHOANs\ListDetails.aspx.cs">
       <DependentUpon>ListDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1116,6 +1130,8 @@
     <Content Include="DieuHanhTram\PhanCongChuyen.aspx" />
     <Content Include="DieuHanhTram\PhatSinhChuyenTuDong.aspx" />
     <Content Include="DieuHanhTram\QuanLyVe.aspx" />
+    <Content Include="DieuHanhTram\XacNhanXe.aspx" />
+    <Content Include="DieuHanhTram\XeDenTram.aspx" />
     <Content Include="DynamicData\CustomPages\TAI_KHOANs\ListDetails.aspx" />
     <Content Include="DynamicData\FieldTemplates\Image_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Image.ascx" />
