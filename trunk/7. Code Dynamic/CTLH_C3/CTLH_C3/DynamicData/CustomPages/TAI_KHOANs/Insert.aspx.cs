@@ -15,7 +15,7 @@ using CTLH_C3.Core;
 
 namespace CTLH_C3.TAI_KHOANs
 {
-    public partial class Insert : System.Web.UI.Page
+    public partial class Insert : CTLH_C3.Core.BasePage
     {
         protected MetaTable table;
 

@@ -1,12 +1,18 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" CodeBehind="ListDetails.aspx.cs" Inherits="CTLH_C3.TAI_KHOANs.ListDetails" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Admin/MasterPage.master" CodeBehind="ListDetails.aspx.cs" Inherits="CTLH_C3.TAI_KHOANs.ListDetails" %>
 
 <%@ Register src="~/DynamicData/Content/GridViewPager.ascx" tagname="GridViewPager" tagprefix="asp" %>
 <%@ Register src="~/DynamicData/Content/FilterUserControl.ascx" tagname="DynamicFilter" tagprefix="asp" %>
+<%@ Register Src="~/Guest/user_CustomLogin.ascx" TagName="user_Login" TagPrefix="webUC" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="/dieuhanhcongtystyle.css" />
+    <title>Xem Chi Tiết Tài Khoản</title>
+</asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
-    <h2><%= GridDataSource.GetTable().DisplayName %></h2>
+    <h1>Xem Chi Tiết Tài Khoản</h1>
 
     <asp:ScriptManagerProxy runat="server" ID="ScriptManagerProxy1" />
 
@@ -68,7 +74,7 @@
                   OnItemDeleted="OnDetailsViewItemDeleted" OnItemUpdated="OnDetailsViewItemUpdated" OnItemInserted="OnDetailsViewItemInserted"
                   OnItemUpdating="OnDetailsViewItemUpdating"
                   OnItemInserting="OnDetailsViewItemInserting"
-                  AutoGenerateRows="false">
+                  AutoGenerateRows="false" CssClass="gridview">
                   <Fields>
                     <asp:TemplateField HeaderText="Tên đăng nhập">
                         <ItemTemplate>
@@ -99,4 +105,8 @@
             </asp:Panel>
         </ContentTemplate>
     </asp:UpdatePanel>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
+    <webUC:user_Login ID="user_Login1" runat="server" />
 </asp:Content>
