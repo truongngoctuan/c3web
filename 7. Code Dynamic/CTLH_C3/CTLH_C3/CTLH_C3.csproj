@@ -93,6 +93,13 @@
     <Compile Include="Admin\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\PhanQuyenTaiKhoan.aspx.cs">
+      <DependentUpon>PhanQuyenTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PhanQuyenTaiKhoan.aspx.designer.cs">
+      <DependentUpon>PhanQuyenTaiKhoan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\QuanLyThongTinCongTy.aspx.cs">
       <DependentUpon>QuanLyThongTinCongTy.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -106,6 +113,20 @@
     </Compile>
     <Compile Include="Admin\ThayDoiGiaoDien.aspx.designer.cs">
       <DependentUpon>ThayDoiGiaoDien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ThemTaiKhoan.aspx.cs">
+      <DependentUpon>ThemTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ThemTaiKhoan.aspx.designer.cs">
+      <DependentUpon>ThemTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\XoaTaiKhoan.aspx.cs">
+      <DependentUpon>XoaTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\XoaTaiKhoan.aspx.designer.cs">
+      <DependentUpon>XoaTaiKhoan.aspx</DependentUpon>
     </Compile>
     <Compile Include="Authenticated\Controls\ucDoiMatKhau.ascx.cs">
       <DependentUpon>ucDoiMatKhau.ascx</DependentUpon>
@@ -1105,6 +1126,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminstyle.css" />
+    <Content Include="Admin\images\banner.jpg" />
+    <Content Include="Admin\images\Logo.png" />
+    <Content Include="Admin\images\slogan.png" />
+    <Content Include="Admin\images\truck.png" />
+    <Content Include="Admin\PhanQuyenTaiKhoan.aspx" />
+    <Content Include="Admin\ThemTaiKhoan.aspx" />
+    <Content Include="Admin\XoaTaiKhoan.aspx" />
     <Content Include="App_Data\CTLH_C3.mdf">
     </Content>
     <Content Include="App_Data\CTLH_C3_log.ldf">

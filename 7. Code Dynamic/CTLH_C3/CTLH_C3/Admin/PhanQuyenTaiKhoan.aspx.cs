@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CTLH_C3.Admin
 {
-    public partial class PhanQuyenTaiKhoan : System.Web.UI.Page
+    public partial class PhanQuyenTaiKhoan : CTLH_C3.Core.BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
