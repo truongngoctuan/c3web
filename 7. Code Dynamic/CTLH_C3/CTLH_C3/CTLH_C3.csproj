@@ -1127,6 +1127,10 @@
     <Content Include="DieuHanhTram\Default.aspx" />
     <Content Include="DieuHanhTram\DuyetPhanHoi.aspx" />
     <Content Include="DieuHanhTram\GhiNhanPhanHoi.aspx" />
+    <Content Include="DieuHanhTram\images\banner.jpg" />
+    <Content Include="DieuHanhTram\images\Logo.png" />
+    <Content Include="DieuHanhTram\images\slogan.png" />
+    <Content Include="DieuHanhTram\images\truck.png" />
     <Content Include="DieuHanhTram\PhanCongChuyen.aspx" />
     <Content Include="DieuHanhTram\PhatSinhChuyenTuDong.aspx" />
     <Content Include="DieuHanhTram\QuanLyVe.aspx" />
